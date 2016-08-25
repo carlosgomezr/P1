@@ -1,0 +1,26 @@
+5
+10
+10.0
+-5
+-7.012
+true
+false
+verdadero
+falso
+'c'
+'a'
+'d'
+'^t'
+'^r'
+'^^'
+"cadena 2"
+"javaccx compilador.jj"
+"javacx *.java"
+"javax compilador < prueba.txt"
+"#" hola que hae #""
+"#t me quiero volver chango"
+"cadena"
+"#r"
+"otra cadena"
+"## hola que hace ##"
+"porque putas no acepta"

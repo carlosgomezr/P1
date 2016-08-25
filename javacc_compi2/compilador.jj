@@ -1,0 +1,155 @@
+/*
+
+
+*/
+
+PARSER_BEGIN(compilador)
+class compilador 
+{
+	public static void main( String[] args )throws ParseException
+	{
+		try
+		{
+			compilador analizador = new compilador( System.in ) ;
+			analizador.iniciar() ; 
+		}
+		catch(ParseException e)
+		{
+			System.out.println(e.getMessage());
+			System.out.println("Analizador: Se han encontrado errores en el analisis.");
+		}
+	}
+}
+PARSER_END(compilador)
+
+SKIP : 
+{ 
+	" "|"\n" | "\r" | "\r\n" |"\t"
+}
+TOKEN:
+{
+	 <entero : ("-")?(["0"-"9"])+ > {System.out.print("entero "+image+"\r\n");}
+	| <doble:(<entero>)"."(["0"-"9"])+ > {System.out.print("doble "+image+"\r\n");}
+	| <booleano: "falso"|"false"|"verdadero"|"true" > {System.out.print("boolean "+image+"\r\n");}
+	| <caracter: "'" (~["'","^"]|"^t"|"^r"|"^'"|"^^") "'" > {System.out.print("caracter "+image+"\r\n");}
+	| <cadena: "\"" (~["\"","#"]|"#t"|"#r"|"#\""|"##")+ "\"" > {System.out.print("cadena "+image+"\r\n");}
+	| <id : ["a"-"z","A"-"Z"](["a"-"z","A"-"Z","0"-"9","_"])* > {System.out.print("id -> "+image+"\r\n");}
+	| <comentario :">>" ~["\n"] > {System.out.print("comentario "+image+"\r\n");}
+	| <comentarioall : "<-" ~["-"] "->" > {System.out.print("comentarioall "+image+"\r\n"); }
+	| <dolar: "$" > {System.out.print("dolar-> "+image+"\r\n");}
+	| <sigabrir: "¿" > {System.out.print("sigabrir-> "+image+"\r\n");}
+	| <sigcerrar: "?" > {System.out.print("sigcerrar-> "+image+"\r\n");}
+	| <tentero: "Entero"|"entero" >{System.out.print("tentero "+image+"\r\n");}
+	| <tdoble: "Doble"|"doble" >{System.out.print("tdoble "+image+"\r\n");}
+	| <tcaracter: "Caracter"|"caracter" >{System.out.print("tcaracter "+image+"\r\n");}
+	| <tboolean: "Boolean"|"boolean" >{System.out.print("tboolean "+image+"\r\n");}
+	| <tcadena: "Cadena"|"cadena" >{System.out.print("tcadena "+image+"\r\n");}
+}
+
+TOKEN:
+{
+	 <igualacion: "==" > {System.out.print("igualacion "+image+"\r\n");}
+	|<diferenciacion: "!=" > {System.out.print("diferenciacion "+image+"\r\n");}
+	|<menorque: "<" > {System.out.print("menorque "+image+"\r\n");}
+	|<menorigualque: "<=" > {System.out.print("menorigualque "+image+"\r\n");}
+	|<mayorque: ">" > {System.out.print("mayorque "+image+"\r\n");}
+	|<mayorigualque: ">=" > {System.out.print("mayorigualque "+image+"\r\n");}
+	|<nulo: "!&¡" > {System.out.print("nulo "+image+"\r\n");}
+}
+
+TOKEN:
+{
+	 <or: "||" >{System.out.print("or "+image+"\r\n");}
+	|<and: "&&" >{System.out.print("and "+image+"\r\n");}
+	|<nand: "!&&" >{System.out.print("nand "+image+"\r\n");}
+	|<nor: "!||" >{System.out.print("nor "+image+"\r\n");}
+	|<xor: "&|" >{System.out.print("xor "+image+"\r\n");}
+	|<not: "!" >{System.out.print("not "+image+"\r\n");}
+}
+
+TOKEN:
+{
+	 <mas: "+" >{System.out.print("suma "+image+"\r\n");}
+	|<menos: "-" >{System.out.print("resta "+image+"\r\n");}
+	|<por: "*" >{System.out.print("multi "+image+"\r\n");}
+	|<div: "/" >{System.out.print("div "+image+"\r\n");}
+	|<potencia: "^" >{System.out.print("^"+image+"\r\n");}
+}
+
+TOKEN:
+{
+	 <lienzo: "Lienzo"|"lienzo" >{System.out.print("lienzo "+image+"\r\n");}
+	|<extiende: "Extiende"|"extiende" >{System.out.print("extiende "+image+"\r\n");}
+	|<conservar: "Conservar"|"conservar" >{System.out.print("conservar "+image+"\r\n");}
+	|<coma: "," >{System.out.print("coma "+image+"\r\n");}
+	|<igual: "=" >{System.out.print("igual "+image+"\r\n");}
+	|<publico: "Publico"|"publico" >{System.out.print("publico "+image+"\r\n");}
+	|<privado: "Privado"|"privado" >{System.out.print("privado "+image+"\r\n");}
+	|<protegido: "Protegido"|"protegido" >{System.out.print("protegido "+image+"\r\n");}
+	|<var: "Var"|"var" >{System.out.print("var "+image+"\r\n");}
+	
+}
+
+TOKEN:
+{
+	 <aumento: "++" >{System.out.print("aumento "+image+"\r\n");}
+	|<decremento: "--" >{System.out.print("decremento "+image+"\r\n");}
+	|<sumasim: "+=" >{System.out.print("sumasim "+image+"\r\n");}
+	|<restasim: "-=" >{System.out.print("restasim "+image+"\r\n");}
+	|<arreglo: "Arreglo"|"arreglo" >{System.out.print("arreglo "+image+"\r\n");}
+	|<corchetei: "[" >{System.out.print("corchetei "+image+"\r\n");}
+	|<corcheted: "]" >{System.out.print("corcheted "+image+"\r\n");}
+	|<parenti: "(" >{System.out.print("parenti "+image+"\r\n");}
+	|<parentd: ")" >{System.out.print("parentd "+image+"\r\n");}
+	|<llavei: "{" >{System.out.print("llavei "+image+"\r\n");}
+	|<llaved: "}" >{System.out.print("llaved "+image+"\r\n");}
+	
+}
+
+
+TOKEN:
+{
+	 <si: "Si"|"si" >{System.out.print("si "+image+"\r\n");}
+	|<sino: "Sino"|"sino" >{System.out.print("sino "+image+"\r\n");}
+	|<comprobar: "Comprobar"|"comprobar" >{System.out.print("comprobar "+image+"\r\n");}
+	|<caso: "Caso"|"caso" >{System.out.print("caso "+image+"\r\n");}
+	|<valor: "Valor"|"valor" >{System.out.print("valor "+image+"\r\n");}
+	|<dospuntos: ":" >{System.out.print("dospuntos "+image+"\r\n");}
+	|<salir: "Salir"|"salir" >{System.out.print("salir "+image+"\r\n");}
+	|<defecto: "Defecto"|"defecto" >{System.out.print("defecto "+image+"\r\n");}
+	|<para: "Para"|"para" >{System.out.print("para "+image+"\r\n");}
+	|<puntoycoma: ";" >{System.out.print("puntoycoma "+image+"\r\n");}
+	|<mientras: "Mientras"|"mientras" >{System.out.print("mientras "+image+"\r\n");}
+	|<hacer: "Hacer"|"hacer" >{System.out.print("hacer "+image+"\r\n");}
+	|<continuar: "Continuar"|"continuar" >{System.out.print("continuar "+image+"\r\n");}
+	
+}
+
+TOKEN:
+{
+	 <pintarP: "Pintar_P"|"pintar_P" >{System.out.print("pintar_P "+image+"\r\n");}
+	|<pintarOR: "Pintar_OR"|"pintar_OR" >{System.out.print("pintar_OR "+image+"\r\n");}
+	|<pintarS: "Pintar_S"|"pintar_S" >{System.out.print("pintar_S "+image+"\r\n");}
+}
+
+TOKEN:
+{
+	 <principal: "Principal"|"principal" >{System.out.print("principal "+image+"\r\n");}
+	|<ordenar: "Ordenar"|"ordenar" >{System.out.print("ordenar "+image+"\r\n");}
+	|<sumarizar: "Sumarizar"|"sumarizar" >{System.out.print("sumarizar "+image+"\r\n");}
+	|<ascendente: "Ascendente"|"ascendente" >{System.out.print("ascendente "+image+"\r\n");}
+	|<descendente: "Descendente"|"descendente" >{System.out.print("descendente "+image+"\r\n");}
+	|<pares: "Pares"|"pares" >{System.out.print("pares "+image+"\r\n");}
+	|<impares: "Impares"|"impares" >{System.out.print("impares "+image+"\r\n");}
+	|<primos: "Primos"|"primos" >{System.out.print("primos "+image+"\r\n");}
+	
+}
+
+void iniciar():
+{} //Codigo java. Crear variables
+
+{
+	(<entero>|<doble>|<booleano>|<caracter>|<cadena>)+
+	<EOF> // End of file
+	
+}
