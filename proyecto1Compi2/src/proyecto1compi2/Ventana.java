@@ -8,6 +8,11 @@ package proyecto1compi2;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import javax.swing.JTabbedPane;
 import java.util.*;
 import java.util.logging.Level;
@@ -30,7 +35,9 @@ public class Ventana extends javax.swing.JFrame {
 
 //ArrayList estatico que contiene referencia de los JEditorPane dinamicos    
 ArrayList<JEditorPane> ListaEditor = new ArrayList<JEditorPane>();
-
+public ArrayList<dibujo> LDibujo = new ArrayList<dibujo>();
+compilador ana = new compilador();
+    
     /**
      * Creates new form Ventana
      */
@@ -372,8 +379,34 @@ ArrayList<JEditorPane> ListaEditor = new ArrayList<JEditorPane>();
     }//GEN-LAST:event_jSlider1AncestorMoved
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        int x= jTabbedPane1.getSelectedIndex();
+        String aux = ListaEditor.get(x).getText();
+        final String UTF8_BOM = new String("\u00bf".getBytes(StandardCharsets.UTF_8));
+        System.out.println("Archivo con boom \n"+aux);
+        System.out.println("booom "+UTF8_BOM);
+        aux = aux.replace("\u00bf",UTF8_BOM);
+        System.out.println("Archivo sin boom \n"+aux);
+        Funcion f = new Funcion();
+        f.crearArchivo(aux);
+    try {
+        BufferedReader br = new BufferedReader(
+                            new FileReader("arch.lz"));
+        String s, s2 = new String();
 
-        // TODO add your handling code here:
+        while ((s = br.readLine()) != null){
+            s2 += s;
+        }
+        br.close(); 
+       
+        ana.analizar(s2);
+        
+    } catch (FileNotFoundException ex) {
+        Logger.getLogger(Ventana.class.getName()).log(Level.SEVERE, null, ex);
+    } catch (IOException ex) {
+        Logger.getLogger(Ventana.class.getName()).log(Level.SEVERE, null, ex);
+    } catch (ParseException ex) {
+        Logger.getLogger(Ventana.class.getName()).log(Level.SEVERE, null, ex);
+    }
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -451,13 +484,13 @@ ArrayList<JEditorPane> ListaEditor = new ArrayList<JEditorPane>();
 
     private void jMenuItem10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem10ActionPerformed
         
-        Error s1 = new Error(1,1,"rol1","ambito1");
-        Error s2 = new Error(2,2,"rol2","ambito2");
-        Error s3 = new Error(3,3,"rol3","ambito3");
-        Error s4 = new Error(4,4,"rol4","ambito4");
-        Error s5 = new Error(5,5,"rol5","ambito5");
+        NodeError s1 = new NodeError(1,1,"rol1","ambito1");
+        NodeError s2 = new NodeError(2,2,"rol2","ambito2");
+        NodeError s3 = new NodeError(3,3,"rol3","ambito3");
+        NodeError s4 = new NodeError(4,4,"rol4","ambito4");
+        NodeError s5 = new NodeError(5,5,"rol5","ambito5");
         
-        ArrayList<Error> LS = new ArrayList<Error>();
+        ArrayList<NodeError> LS = new ArrayList<NodeError>();
         LS.add(s1);
         LS.add(s2);
         LS.add(s3);
@@ -500,30 +533,32 @@ ArrayList<JEditorPane> ListaEditor = new ArrayList<JEditorPane>();
         dibujo c7 = new dibujo(0,80,"cadena","mundo",0,0,0,Color.RED);
         dibujo c8 = new dibujo(90,60,"cadena","estoy pintando",0,0,0,Color.YELLOW);
         dibujo c9 = new dibujo(100,70,"cadena","para ver como se ve",0,0,0,Color.BLACK);
-        dibujo c10 = new dibujo(150,100,"cadena","esto",0,0,0,Color.GREEN);
+        dibujo c10 = new dibujo(150,100,"cadena","esto",0,0,0,Color.decode("#990000"));
         
-        p.LDibujo.add(d);
-        p.LDibujo.add(d1);
-        p.LDibujo.add(d2);
-        p.LDibujo.add(d3);
-        p.LDibujo.add(d4);
-        p.LDibujo.add(d5);        
-        p.LDibujo.add(d6);        
-        p.LDibujo.add(d7);
-        p.LDibujo.add(d8);
-        p.LDibujo.add(d9);
-        p.LDibujo.add(c1);
-        p.LDibujo.add(c2);
-        p.LDibujo.add(c3);
-        p.LDibujo.add(c4);
-        p.LDibujo.add(c5);        
-        p.LDibujo.add(c6);
-        p.LDibujo.add(c7);
-        p.LDibujo.add(c8);
-        p.LDibujo.add(c9);
-        p.LDibujo.add(c10);        
+        LDibujo.add(d);
+        LDibujo.add(d1);
+        LDibujo.add(d2);
+        LDibujo.add(d3);
+        LDibujo.add(d4);
+        LDibujo.add(d5);        
+        LDibujo.add(d6);        
+        LDibujo.add(d7);
+        LDibujo.add(d8);
+        LDibujo.add(d9);
+        LDibujo.add(c1);
+        LDibujo.add(c2);
+        LDibujo.add(c3);
+        LDibujo.add(c4);
+        LDibujo.add(c5);        
+        LDibujo.add(c6);
+        LDibujo.add(c7);
+        LDibujo.add(c8);
+        LDibujo.add(c9);
+        LDibujo.add(c10);        
         
-        
+        for(int i=0;i<LDibujo.size();i++){
+            p.LDibujo.add(LDibujo.get(i));
+        }
         p.setVisible(true);
        
         /*

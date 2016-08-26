@@ -8,11 +8,17 @@ package proyecto1compi2;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
+import java.io.Writer;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
 import javax.swing.JEditorPane;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
@@ -135,7 +141,7 @@ public void crearArchivo(JEditorPane cuerpo){
 	    File f;
 	    FileWriter escribir;
 	    try{
-	    f = new File("test.txt");
+	    f = new File("arch.lz");
 	    escribir = new FileWriter(f);
 	    BufferedWriter bw = new BufferedWriter(escribir);
 	    PrintWriter pw = new PrintWriter(bw);
@@ -149,8 +155,27 @@ public void crearArchivo(JEditorPane cuerpo){
 }
 
 
+public void crearArchivo(String contenido){
+            File f;
+	    FileWriter escribir;
+	    try{
+	    f = new File("arch.lz");
+	    escribir = new FileWriter(f);
+	    BufferedWriter bw = new BufferedWriter(escribir);
+	    PrintWriter pw = new PrintWriter(bw);
+	    pw.write(contenido); 
+	    pw.close();
+	    bw.close();
+         
+             //JOptionPane.showMessageDialog(null,"El archivo se ha guardado exitosamente");
+	    }
+	    catch(IOException e){System.out.println("Error: "+e.getMessage());}
+}
+
+
+
 public void generarhtmlTS(ArrayList<Simbolo> simbolo){
-	    
+            Calendar calendario = new GregorianCalendar();
 	    File f;
 	    FileWriter escribir;
 	    try{
@@ -164,6 +189,8 @@ public void generarhtmlTS(ArrayList<Simbolo> simbolo){
             pw.write("<body background=\"fondo1.jpg\">");
             pw.write("<center>");
             pw.write("<h1>Tabla de Simbolos</h1>\n");
+            pw.write("<h2> Fecha: "+calendario.get(Calendar.DAY_OF_MONTH)+ "/" +calendario.get(Calendar.MONTH) + "/"+ calendario.get(Calendar.YEAR)+"</h2>");
+            pw.write("<h2> Hora: "+calendario.get(Calendar.HOUR_OF_DAY)+ " : " +calendario.get(Calendar.MINUTE) + " : "+ calendario.get(Calendar.SECOND)+"</h2>");
             pw.write("<table font face=arial black size=12>");
             pw.write("<tr>\n<td>No</td>\n<td>ID</td>\n<td>Tipo</td>\n<td>Rol</td>\n<td>Ambito</td>\n</tr>");
              for(int i=1;i< simbolo.size();i++){
@@ -189,8 +216,8 @@ public void generarhtmlTS(ArrayList<Simbolo> simbolo){
 	    catch(IOException e){System.out.println("Error: "+e.getMessage());}
 }
 
-public void generarhtmlErrores(ArrayList<Error> error){
-	    
+public void generarhtmlErrores(ArrayList<NodeError> error){
+	    Calendar calendario = new GregorianCalendar();
 	    File f;
 	    FileWriter escribir;
 	    try{
@@ -204,6 +231,8 @@ public void generarhtmlErrores(ArrayList<Error> error){
             pw.write("<body background=\"fondo1.jpg\">");
             pw.write("<center>");
             pw.write("<h1>Lista de Errores</h1>\n");
+            pw.write("<h2> Fecha: "+calendario.get(Calendar.DAY_OF_MONTH)+ "/" +calendario.get(Calendar.MONTH) + "/"+ calendario.get(Calendar.YEAR)+"</h2>");
+            pw.write("<h2> Hora: "+calendario.get(Calendar.HOUR_OF_DAY)+ " : " +calendario.get(Calendar.MINUTE) + " : "+ calendario.get(Calendar.SECOND)+"</h2>");
             pw.write("<table font face=arial black size=12>");
             pw.write("<tr>\n<td>No</td>\n<td>Linea</td>\n<td>Columna</td>\n<td>Tipo de error</td>\n<td>Descripcion</td>\n</tr>");
              for(int i=1;i< error.size();i++){
