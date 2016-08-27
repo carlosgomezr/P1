@@ -12,21 +12,37 @@ public void analizar(String cadena)  throws ParseException {
 
 */
 
+options {
+  STATIC = false;
+}
+
 PARSER_BEGIN(compilador)
 package proyecto1compi2;
 
 
 import java.io.StringReader;
+import java.util.ArrayList;
 
 class compilador 
 {
+	int contador=0;
+	NodoArbol root = new NodoArbol();
+	public String getEtiqueta(){
+
+		contador++;
+		String etiqueta="nodo"+contador;
+		
+		return etiqueta;
+	}
+	
 	public void analizar(String cadena)  throws ParseException {
 	
 		try
 		{
 			compilador analizador = new compilador(new StringReader(cadena) ) ;
-			analizador.iniciar(); 
-			System.out.println("Se analizo correctamente ");
+			
+			root = analizador.iniciar(); 
+			System.out.println("SE ANALIZO CORRECTAMENTE ");
 		}
 		catch(ParseException e)
 		{
@@ -36,6 +52,7 @@ class compilador
 
 	}
 	public compilador(){}
+	
 }
 PARSER_END(compilador)
 
@@ -129,7 +146,7 @@ TOKEN:
 	|<sino: "Sino"|"sino" >{System.out.print("sino "+image+"\r\n");}
 	|<comprobar: "Comprobar"|"comprobar" >{System.out.print("comprobar "+image+"\r\n");}
 	|<caso: "Caso"|"caso" >{System.out.print("caso "+image+"\r\n");}
-	|<valor: "Valor"|"valor" >{System.out.print("valor "+image+"\r\n");}
+	|<tvalor: "Valor"|"valor" >{System.out.print("valor "+image+"\r\n");}
 	|<dospuntos: ":" >{System.out.print("dospuntos "+image+"\r\n");}
 	|<salir: "Salir"|"salir" >{System.out.print("salir "+image+"\r\n");}
 	|<defecto: "Defecto"|"defecto" >{System.out.print("defecto "+image+"\r\n");}
@@ -162,83 +179,190 @@ TOKEN:
 	
 }
 
-void iniciar():
-{} //Codigo java. Crear variables
+NodoArbol iniciar():
 {
-	(COMENTARIOS())* (VISI())? <lienzo> <id> (EXT())? <sigabrir> SENTENCIAS() <sigcerrar> (COMENTARIOS())* <EOF> // End of file
-	
+	 NodoArbol nodo = new NodoArbol();  
+	 nodo.nombre = "Ini"; nodo.grafoname=getEtiqueta(); nodo.cadena = "Ini"; nodo.numero =0;
+} //Codigo java. Crear variables
+{
+	S(nodo) {return nodo;}
 	//<lienzo> <id> 
 	//(<entero>|<doble>|<booleano>|<caracter>|<cadena>)+
 	//<EOF> // End of file
-	
 }
 
-
+void S(NodoArbol padre):
+{
+	NodoArbol nodo = new NodoArbol(); 
+	NodoArbol nodo2 = new NodoArbol();    
+	NodoArbol nodo3 = new NodoArbol();  	
+	nodo.nombre = "S"; nodo.grafoname=getEtiqueta(); nodo.cadena = "S"; nodo.numero =0;
+	padre.hijos.add(nodo);
+}
+{
+	(COMENTARIOS())* (VISI(nodo))? <lienzo> <id> 
+	{	  
+		nodo2.nombre = "Lienzo"; nodo2.grafoname=getEtiqueta(); nodo2.cadena = "Lienzo"; nodo2.numero =0;
+		nodo3.nombre = "id"; nodo3.grafoname=getEtiqueta(); nodo3.cadena = token.image; nodo3.numero =0;
+		nodo.hijos.add(nodo2);
+		nodo.hijos.add(nodo3);
+	}
+													(EXT(nodo))? <sigabrir> (SENTENCIAS(nodo))? <sigcerrar> (COMENTARIOS())* <EOF> // End of file
+}
 void COMENTARIOS():
-{}
+{
+}
 {
 	<comentario>
-	|<comentarioall>
-
+	|<comentarioall> 
 	
 }
 
-void VISI():
-{}
+void VISI(NodoArbol padre):
+{
+	NodoArbol nodo = new NodoArbol();	
+	NodoArbol nodo2 = new NodoArbol();	
+	nodo2.nombre = "VISI"; nodo2.grafoname = getEtiqueta(); nodo2.cadena = "VISI"; nodo2.numero=0;
+	padre.hijos.add(nodo2);
+}
 {
 	<publico>
+	{
+		nodo.nombre = "publico"; nodo.grafoname = getEtiqueta(); nodo.cadena = "publico"; nodo.numero=0;		
+		nodo2.hijos.add(nodo);
+	}
 	|<privado>
+	{
+		nodo.nombre = "privado"; nodo.grafoname = getEtiqueta(); nodo.cadena = "privado"; nodo.numero=0;
+		nodo2.hijos.add(nodo);
+	}
 	|<protegido>
-		
+	{
+		nodo.nombre = "protegido"; nodo.grafoname = getEtiqueta(); nodo.cadena = "protegido"; nodo.numero=0;
+		nodo2.hijos.add(nodo);
+	}	
 }
 
-void EXT():
-{}
+void EXT(NodoArbol padre):
 {
-	<extiende> <id> (EXT1())?
-
+	NodoArbol nodo = new NodoArbol();
+	NodoArbol nodo2 = new NodoArbol();
+	NodoArbol nodo3 = new NodoArbol();
+	nodo.nombre = "EXT"; nodo.grafoname = getEtiqueta(); nodo.cadena = "EXT"; nodo.numero=0;
+	padre.hijos.add(nodo);
+}
+{
+	<extiende> <id> 
+	{
+		nodo2.nombre = "extiende"; nodo2.grafoname = getEtiqueta(); nodo2.cadena = "extiende"; nodo2.numero=0;
+		nodo3.nombre = "id"; nodo3.grafoname = getEtiqueta(); nodo3.cadena = token.image; nodo3.numero=0;
+		nodo.hijos.add(nodo2);
+		nodo.hijos.add(nodo3);
+	}
+						(EXT1(nodo))?
+						
 }
 
-void EXT1():
-{}
+void EXT1(NodoArbol padre):
 {
-	<coma> <id> (EXT1())?
-
+	NodoArbol nodo = new NodoArbol();
+	NodoArbol nodo2 = new NodoArbol();
+	nodo2.nombre = "EXT1"; nodo2.grafoname = getEtiqueta(); nodo2.cadena = "EXT1"; nodo2.numero=0;
+	padre.hijos.add(nodo2);
+	
+}
+{
+	<coma> <id> 
+	{
+		nodo.nombre = "id"; nodo.grafoname = getEtiqueta(); nodo.cadena = token.image; nodo.numero=0;
+		nodo2.hijos.add(nodo);
+	}
+				(EXT1(nodo2))?
 }
 
-void SENTENCIAS():
-{}
+void SENTENCIAS(NodoArbol padre):
 {
-	SEN() (SENTENCIAS())? 
+	NodoArbol nodo = new NodoArbol();
+	NodoArbol nodo2 = new NodoArbol();
+	nodo.nombre = "SENTENCIAS"; nodo.grafoname = getEtiqueta(); nodo.cadena = "SENTENCIAS"; nodo.numero=0;
+	padre.hijos.add(nodo);
+	nodo2.nombre = "SEN"; nodo2.grafoname = getEtiqueta(); nodo2.cadena ="SEN"; nodo2.numero=0;
+	nodo.hijos.add(nodo2);
+}
+{
+	SEN(nodo2) (SENTENCIAS(nodo))? 
 }
 
 
-void SEN():
-{}
+void SEN(NodoArbol padre):
 {
-	<comentario>
+	NodoArbol nodo = new NodoArbol();
+	
+}
+{
+	<comentario> 
 	|<comentarioall>
-	|CONTENIDO()
+	|
+	{
+		nodo.nombre = "CONTENIDO"; nodo.grafoname = getEtiqueta(); nodo.cadena = "CONTENIDO"; nodo.numero=0;
+		padre.hijos.add(nodo);		
+	} 	
+		CONTENIDO(nodo)
 }
 
-void CONTENIDO():
-{}
+
+//----------------------------------------------ACA ME QUEDE FECHA 26/08/2016
+void CONTENIDO(NodoArbol padre):
 {
-	(CONSERV())? (VISI())? CONT()
-	|TIPO() <id> <igual> VALOR() <dolar>
-	|<id> CONT2()
+	NodoArbol nodo = new NodoArbol();
+	NodoArbol nodo2 = new NodoArbol();
+}
+{
+	(CONSERV(padre))? (VISI(padre))? CONT(padre)
+	|TIPO() <id> 
+	{
+		nodo.nombre = "id"; nodo.grafoname = getEtiqueta(); nodo.cadena=token.image; nodo.numero=0;
+		nodo2.nombre = "="; nodo2.grafoname = getEtiqueta(); nodo2.cadena="="; nodo2.numero=0;	
+		padre.hijos.add(nodo);
+		padre.hijos.add(nodo2);
+	}
+								<igual> VALOR() <dolar>
+	|<id> 
+	{
+		nodo.nombre = "id"; nodo.grafoname = getEtiqueta(); nodo.cadena=token.image; nodo.numero=0;
+		padre.hijos.add(nodo);
+	}
+	CONT2(padre) <dolar>
+	
 }
 
-void CONSERV():
-{}
+void CONSERV(NodoArbol padre):
+{
+	NodoArbol nodo = new NodoArbol();
+	NodoArbol nodo2 = new NodoArbol();
+	nodo.nombre = "CONSERV"; nodo.grafoname= getEtiqueta(); nodo.cadena="CONSERV"; nodo.numero=0;
+	padre.hijos.add(nodo);
+}
 {
 	<conservar>
+	{
+		nodo2.nombre = "conversar"; nodo2.grafoname= getEtiqueta(); nodo2.cadena="conservar"; nodo2.numero=0;
+		nodo.hijos.add(nodo2);
+	}
 }
 
-void CONT():
-{}
+void CONT(NodoArbol padre):
 {
-	DECLARACION()
+	NodoArbol nodo = new NodoArbol();
+	NodoArbol nodo2 = new NodoArbol();
+	nodo.nombre = "CONT"; nodo.grafoname= getEtiqueta(); nodo.cadena="CONT"; nodo.numero=0;
+	padre.hijos.add(nodo);
+}
+{
+	DECLARACION() {
+		nodo2.nombre = "DECLARACION"; nodo2.grafoname = getEtiqueta(); nodo2.cadena="DECLARACION"; nodo2.numero=0;
+		nodo.hijos.add(nodo2);
+	}
 	//faltan metodos y funciones
 }
 
@@ -249,7 +373,8 @@ void DECLARACION():
 }
 
 void TIPO():
-{}
+{
+}
 {
 	<tentero>
 	|<tdoble>
@@ -281,20 +406,18 @@ void ASIGN():
 void VALOR():
 {}
 {
-	<entero>
-	|<doble>
-	|<booleano>
-	|<caracter>
-	|<cadena>
-	|<id>
+	C()
 }
 
-//----------------no se ha testeado
-//----------------CALCULADORA
-void CONT2():
-{}
+
+void CONT2(NodoArbol padre):
 {
-	<igual> VALOR() <dolar>
+	NodoArbol nodo = new NodoArbol();
+	nodo.nombre = "CONT2"; nodo.grafoname=getEtiqueta(); nodo.cadena="CONT2"; nodo.numero=0;
+	padre.hijos.add(nodo);
+}
+{
+	<igual> VALOR()
 	|<aumento>
 	|<decremento> 
 	|<sumasim> VALOR()
@@ -302,6 +425,7 @@ void CONT2():
 
 }
 
+//----------------CALCULADORA
 void C():
 {}
 {
@@ -311,39 +435,39 @@ void C():
 void E():
 {}
 {
-	T() EP()
+	T() (EP())?
 }
 
 void EP():
 {}
 {
-	(<mas> T() EP()
-	|<menos> T() EP())?
+	<mas> T() (EP())?
+	|<menos> T() (EP())?
 }
 
 void T():
 {}
 {
-	F() TP()
+	F() (TP())?
 }
 
 void TP():
 {}
 {
-	(<por> F() TP()
-	|<div> F() TP())?	
+	<por> F() (TP())?
+	|<div> F() (TP())?	
 }
 
 void F():
 {}
 {
-	G() FP()
+	G() (FP())?
 }
 
 void FP():
 {}
 {
-	(<potencia> G() FP())?
+	<potencia> G() (FP())?
 }
 
 void G():
@@ -362,7 +486,7 @@ void G():
 void RELACIONAL():
 {}
 {
-	A()
+	A() 
 }
 
 void A():
@@ -389,3 +513,57 @@ void EXP():
 {
 	E()
 }
+
+//-------------------LOGICA
+void LOGICA():
+{}
+{
+	L()
+}
+
+void L():
+{}
+{
+	M() (LP())?
+}
+
+void LP():
+{}
+{
+	<or> M() (LP())?
+	|<nor> M() (LP())?
+	|<xor> M() (LP())?
+	
+}
+
+void M():
+{}
+{
+	N() (MP())?
+}
+
+void MP():
+{}
+{
+	<and> N() (MP())?
+	|<nand> N() (MP())?
+}
+
+void N():
+{}
+{
+	<not> (R())?
+}
+
+//LA PARTE DE DECLARACION NO SE HA COMPLETADO
+//LA PARTE DEL CONT2 NO SE HA COMPLETADO
+
+void R():
+{}
+{
+	E()
+	|RELACIONAL()
+}
+
+
+

@@ -4,15 +4,27 @@ package proyecto1compi2;
 
 
 import java.io.StringReader;
+import java.util.ArrayList;
 
 class compilador implements compiladorConstants {
+        int contador=0;
+        NodoArbol root = new NodoArbol();
+        public String getEtiqueta(){
+
+                contador++;
+                String etiqueta="nodo"+contador;
+
+                return etiqueta;
+        }
+
         public void analizar(String cadena)  throws ParseException {
 
                 try
                 {
                         compilador analizador = new compilador(new StringReader(cadena) ) ;
-                        analizador.iniciar();
-                        System.out.println("Se analizo correctamente ");
+
+                        root = analizador.iniciar();
+                        System.out.println("SE ANALIZO CORRECTAMENTE ");
                 }
                 catch(ParseException e)
                 {
@@ -23,7 +35,18 @@ class compilador implements compiladorConstants {
         }
         public compilador(){}
 
-  static final public void iniciar() throws ParseException {
+  final public NodoArbol iniciar() throws ParseException {NodoArbol nodo = new NodoArbol();
+         nodo.nombre = "Ini"; nodo.grafoname=getEtiqueta(); nodo.cadena = "Ini"; nodo.numero =0;
+    S(nodo);
+{if ("" != null) return nodo;}
+    throw new Error("Missing return statement in function");
+  }
+
+  final public void S(NodoArbol padre) throws ParseException {NodoArbol nodo = new NodoArbol();
+        NodoArbol nodo2 = new NodoArbol();
+        NodoArbol nodo3 = new NodoArbol();
+        nodo.nombre = "S"; nodo.grafoname=getEtiqueta(); nodo.cadena = "S"; nodo.numero =0;
+        padre.hijos.add(nodo);
     label_1:
     while (true) {
       switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
@@ -42,7 +65,7 @@ class compilador implements compiladorConstants {
     case publico:
     case privado:
     case protegido:{
-      VISI();
+      VISI(nodo);
       break;
       }
     default:
@@ -51,9 +74,13 @@ class compilador implements compiladorConstants {
     }
     jj_consume_token(lienzo);
     jj_consume_token(id);
+nodo2.nombre = "Lienzo"; nodo2.grafoname=getEtiqueta(); nodo2.cadena = "Lienzo"; nodo2.numero =0;
+                nodo3.nombre = "id"; nodo3.grafoname=getEtiqueta(); nodo3.cadena = token.image; nodo3.numero =0;
+                nodo.hijos.add(nodo2);
+                nodo.hijos.add(nodo3);
     switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
     case extiende:{
-      EXT();
+      EXT(nodo);
       break;
       }
     default:
@@ -61,93 +88,6 @@ class compilador implements compiladorConstants {
       ;
     }
     jj_consume_token(sigabrir);
-    SENTENCIAS();
-    jj_consume_token(sigcerrar);
-    label_2:
-    while (true) {
-      switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
-      case comentario:
-      case comentarioall:{
-        ;
-        break;
-        }
-      default:
-        jj_la1[3] = jj_gen;
-        break label_2;
-      }
-      COMENTARIOS();
-    }
-    jj_consume_token(0);
-  }
-
-  static final public void COMENTARIOS() throws ParseException {
-    switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
-    case comentario:{
-      jj_consume_token(comentario);
-      break;
-      }
-    case comentarioall:{
-      jj_consume_token(comentarioall);
-      break;
-      }
-    default:
-      jj_la1[4] = jj_gen;
-      jj_consume_token(-1);
-      throw new ParseException();
-    }
-  }
-
-  static final public void VISI() throws ParseException {
-    switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
-    case publico:{
-      jj_consume_token(publico);
-      break;
-      }
-    case privado:{
-      jj_consume_token(privado);
-      break;
-      }
-    case protegido:{
-      jj_consume_token(protegido);
-      break;
-      }
-    default:
-      jj_la1[5] = jj_gen;
-      jj_consume_token(-1);
-      throw new ParseException();
-    }
-  }
-
-  static final public void EXT() throws ParseException {
-    jj_consume_token(extiende);
-    jj_consume_token(id);
-    switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
-    case coma:{
-      EXT1();
-      break;
-      }
-    default:
-      jj_la1[6] = jj_gen;
-      ;
-    }
-  }
-
-  static final public void EXT1() throws ParseException {
-    jj_consume_token(coma);
-    jj_consume_token(id);
-    switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
-    case coma:{
-      EXT1();
-      break;
-      }
-    default:
-      jj_la1[7] = jj_gen;
-      ;
-    }
-  }
-
-  static final public void SENTENCIAS() throws ParseException {
-    SEN();
     switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
     case comentario:
     case comentarioall:
@@ -162,7 +102,111 @@ class compilador implements compiladorConstants {
     case protegido:
     case var:
     case id:{
-      SENTENCIAS();
+      SENTENCIAS(nodo);
+      break;
+      }
+    default:
+      jj_la1[3] = jj_gen;
+      ;
+    }
+    jj_consume_token(sigcerrar);
+    label_2:
+    while (true) {
+      switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
+      case comentario:
+      case comentarioall:{
+        ;
+        break;
+        }
+      default:
+        jj_la1[4] = jj_gen;
+        break label_2;
+      }
+      COMENTARIOS();
+    }
+    jj_consume_token(0);
+  }
+
+  final public void COMENTARIOS() throws ParseException {
+    switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
+    case comentario:{
+      jj_consume_token(comentario);
+      break;
+      }
+    case comentarioall:{
+      jj_consume_token(comentarioall);
+      break;
+      }
+    default:
+      jj_la1[5] = jj_gen;
+      jj_consume_token(-1);
+      throw new ParseException();
+    }
+  }
+
+  final public void VISI(NodoArbol padre) throws ParseException {NodoArbol nodo = new NodoArbol();
+        NodoArbol nodo2 = new NodoArbol();
+        nodo2.nombre = "VISI"; nodo2.grafoname = getEtiqueta(); nodo2.cadena = "VISI"; nodo2.numero=0;
+        padre.hijos.add(nodo2);
+    switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
+    case publico:{
+      jj_consume_token(publico);
+nodo.nombre = "publico"; nodo.grafoname = getEtiqueta(); nodo.cadena = "publico"; nodo.numero=0;
+                nodo2.hijos.add(nodo);
+      break;
+      }
+    case privado:{
+      jj_consume_token(privado);
+nodo.nombre = "privado"; nodo.grafoname = getEtiqueta(); nodo.cadena = "privado"; nodo.numero=0;
+                nodo2.hijos.add(nodo);
+      break;
+      }
+    case protegido:{
+      jj_consume_token(protegido);
+nodo.nombre = "protegido"; nodo.grafoname = getEtiqueta(); nodo.cadena = "protegido"; nodo.numero=0;
+                nodo2.hijos.add(nodo);
+      break;
+      }
+    default:
+      jj_la1[6] = jj_gen;
+      jj_consume_token(-1);
+      throw new ParseException();
+    }
+  }
+
+  final public void EXT(NodoArbol padre) throws ParseException {NodoArbol nodo = new NodoArbol();
+        NodoArbol nodo2 = new NodoArbol();
+        NodoArbol nodo3 = new NodoArbol();
+        nodo.nombre = "EXT"; nodo.grafoname = getEtiqueta(); nodo.cadena = "EXT"; nodo.numero=0;
+        padre.hijos.add(nodo);
+    jj_consume_token(extiende);
+    jj_consume_token(id);
+nodo2.nombre = "extiende"; nodo2.grafoname = getEtiqueta(); nodo2.cadena = "extiende"; nodo2.numero=0;
+                nodo3.nombre = "id"; nodo3.grafoname = getEtiqueta(); nodo3.cadena = token.image; nodo3.numero=0;
+                nodo.hijos.add(nodo2);
+                nodo.hijos.add(nodo3);
+    switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
+    case coma:{
+      EXT1(nodo);
+      break;
+      }
+    default:
+      jj_la1[7] = jj_gen;
+      ;
+    }
+  }
+
+  final public void EXT1(NodoArbol padre) throws ParseException {NodoArbol nodo = new NodoArbol();
+        NodoArbol nodo2 = new NodoArbol();
+        nodo2.nombre = "EXT1"; nodo2.grafoname = getEtiqueta(); nodo2.cadena = "EXT1"; nodo2.numero=0;
+        padre.hijos.add(nodo2);
+    jj_consume_token(coma);
+    jj_consume_token(id);
+nodo.nombre = "id"; nodo.grafoname = getEtiqueta(); nodo.cadena = token.image; nodo.numero=0;
+                nodo2.hijos.add(nodo);
+    switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
+    case coma:{
+      EXT1(nodo2);
       break;
       }
     default:
@@ -171,7 +215,37 @@ class compilador implements compiladorConstants {
     }
   }
 
-  static final public void SEN() throws ParseException {
+  final public void SENTENCIAS(NodoArbol padre) throws ParseException {NodoArbol nodo = new NodoArbol();
+        NodoArbol nodo2 = new NodoArbol();
+        nodo.nombre = "SENTENCIAS"; nodo.grafoname = getEtiqueta(); nodo.cadena = "SENTENCIAS"; nodo.numero=0;
+        padre.hijos.add(nodo);
+        nodo2.nombre = "SEN"; nodo2.grafoname = getEtiqueta(); nodo2.cadena ="SEN"; nodo2.numero=0;
+        nodo.hijos.add(nodo2);
+    SEN(nodo2);
+    switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
+    case comentario:
+    case comentarioall:
+    case tentero:
+    case tdoble:
+    case tcaracter:
+    case tboolean:
+    case tcadena:
+    case conservar:
+    case publico:
+    case privado:
+    case protegido:
+    case var:
+    case id:{
+      SENTENCIAS(nodo);
+      break;
+      }
+    default:
+      jj_la1[9] = jj_gen;
+      ;
+    }
+  }
+
+  final public void SEN(NodoArbol padre) throws ParseException {NodoArbol nodo = new NodoArbol();
     switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
     case comentario:{
       jj_consume_token(comentario);
@@ -192,17 +266,21 @@ class compilador implements compiladorConstants {
     case protegido:
     case var:
     case id:{
-      CONTENIDO();
+nodo.nombre = "CONTENIDO"; nodo.grafoname = getEtiqueta(); nodo.cadena = "CONTENIDO"; nodo.numero=0;
+                padre.hijos.add(nodo);
+      CONTENIDO(nodo);
       break;
       }
     default:
-      jj_la1[9] = jj_gen;
+      jj_la1[10] = jj_gen;
       jj_consume_token(-1);
       throw new ParseException();
     }
   }
 
-  static final public void CONTENIDO() throws ParseException {
+//----------------------------------------------ACA ME QUEDE FECHA 26/08/2016
+  final public void CONTENIDO(NodoArbol padre) throws ParseException {NodoArbol nodo = new NodoArbol();
+        NodoArbol nodo2 = new NodoArbol();
     switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
     case conservar:
     case publico:
@@ -211,25 +289,25 @@ class compilador implements compiladorConstants {
     case var:{
       switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
       case conservar:{
-        CONSERV();
-        break;
-        }
-      default:
-        jj_la1[10] = jj_gen;
-        ;
-      }
-      switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
-      case publico:
-      case privado:
-      case protegido:{
-        VISI();
+        CONSERV(padre);
         break;
         }
       default:
         jj_la1[11] = jj_gen;
         ;
       }
-      CONT();
+      switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
+      case publico:
+      case privado:
+      case protegido:{
+        VISI(padre);
+        break;
+        }
+      default:
+        jj_la1[12] = jj_gen;
+        ;
+      }
+      CONT(padre);
       break;
       }
     case tentero:
@@ -239,6 +317,10 @@ class compilador implements compiladorConstants {
     case tcadena:{
       TIPO();
       jj_consume_token(id);
+nodo.nombre = "id"; nodo.grafoname = getEtiqueta(); nodo.cadena=token.image; nodo.numero=0;
+                nodo2.nombre = "="; nodo2.grafoname = getEtiqueta(); nodo2.cadena="="; nodo2.numero=0;
+                padre.hijos.add(nodo);
+                padre.hijos.add(nodo2);
       jj_consume_token(igual);
       VALOR();
       jj_consume_token(dolar);
@@ -246,32 +328,45 @@ class compilador implements compiladorConstants {
       }
     case id:{
       jj_consume_token(id);
-      CONT2();
+nodo.nombre = "id"; nodo.grafoname = getEtiqueta(); nodo.cadena=token.image; nodo.numero=0;
+                padre.hijos.add(nodo);
+      CONT2(padre);
+      jj_consume_token(dolar);
       break;
       }
     default:
-      jj_la1[12] = jj_gen;
+      jj_la1[13] = jj_gen;
       jj_consume_token(-1);
       throw new ParseException();
     }
   }
 
-  static final public void CONSERV() throws ParseException {
+  final public void CONSERV(NodoArbol padre) throws ParseException {NodoArbol nodo = new NodoArbol();
+        NodoArbol nodo2 = new NodoArbol();
+        nodo.nombre = "CONSERV"; nodo.grafoname= getEtiqueta(); nodo.cadena="CONSERV"; nodo.numero=0;
+        padre.hijos.add(nodo);
     jj_consume_token(conservar);
+nodo2.nombre = "conversar"; nodo2.grafoname= getEtiqueta(); nodo2.cadena="conservar"; nodo2.numero=0;
+                nodo.hijos.add(nodo2);
   }
 
-  static final public void CONT() throws ParseException {
+  final public void CONT(NodoArbol padre) throws ParseException {NodoArbol nodo = new NodoArbol();
+        NodoArbol nodo2 = new NodoArbol();
+        nodo.nombre = "CONT"; nodo.grafoname= getEtiqueta(); nodo.cadena="CONT"; nodo.numero=0;
+        padre.hijos.add(nodo);
     DECLARACION();
+nodo2.nombre = "DECLARACION"; nodo2.grafoname = getEtiqueta(); nodo2.cadena="DECLARACION"; nodo2.numero=0;
+                nodo.hijos.add(nodo2);
   }
 
-  static final public void DECLARACION() throws ParseException {
+  final public void DECLARACION() throws ParseException {
     jj_consume_token(var);
     TIPO();
     NOMBRES();
     jj_consume_token(dolar);
   }
 
-  static final public void TIPO() throws ParseException {
+  final public void TIPO() throws ParseException {
     switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
     case tentero:{
       jj_consume_token(tentero);
@@ -294,13 +389,13 @@ class compilador implements compiladorConstants {
       break;
       }
     default:
-      jj_la1[13] = jj_gen;
+      jj_la1[14] = jj_gen;
       jj_consume_token(-1);
       throw new ParseException();
     }
   }
 
-  static final public void NOMBRES() throws ParseException {
+  final public void NOMBRES() throws ParseException {
     jj_consume_token(id);
     switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
     case igual:{
@@ -308,7 +403,7 @@ class compilador implements compiladorConstants {
       break;
       }
     default:
-      jj_la1[14] = jj_gen;
+      jj_la1[15] = jj_gen;
       ;
     }
     switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
@@ -317,12 +412,12 @@ class compilador implements compiladorConstants {
       break;
       }
     default:
-      jj_la1[15] = jj_gen;
+      jj_la1[16] = jj_gen;
       ;
     }
   }
 
-  static final public void NOM() throws ParseException {
+  final public void NOM() throws ParseException {
     jj_consume_token(coma);
     jj_consume_token(id);
     switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
@@ -331,7 +426,7 @@ class compilador implements compiladorConstants {
       break;
       }
     default:
-      jj_la1[16] = jj_gen;
+      jj_la1[17] = jj_gen;
       ;
     }
     switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
@@ -340,57 +435,27 @@ class compilador implements compiladorConstants {
       break;
       }
     default:
-      jj_la1[17] = jj_gen;
+      jj_la1[18] = jj_gen;
       ;
     }
   }
 
-  static final public void ASIGN() throws ParseException {
+  final public void ASIGN() throws ParseException {
     jj_consume_token(igual);
     VALOR();
   }
 
-  static final public void VALOR() throws ParseException {
-    switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
-    case entero:{
-      jj_consume_token(entero);
-      break;
-      }
-    case doble:{
-      jj_consume_token(doble);
-      break;
-      }
-    case booleano:{
-      jj_consume_token(booleano);
-      break;
-      }
-    case caracter:{
-      jj_consume_token(caracter);
-      break;
-      }
-    case cadena:{
-      jj_consume_token(cadena);
-      break;
-      }
-    case id:{
-      jj_consume_token(id);
-      break;
-      }
-    default:
-      jj_la1[18] = jj_gen;
-      jj_consume_token(-1);
-      throw new ParseException();
-    }
+  final public void VALOR() throws ParseException {
+    C();
   }
 
-//----------------no se ha testeado
-//----------------CALCULADORA
-  static final public void CONT2() throws ParseException {
+  final public void CONT2(NodoArbol padre) throws ParseException {NodoArbol nodo = new NodoArbol();
+        nodo.nombre = "CONT2"; nodo.grafoname=getEtiqueta(); nodo.cadena="CONT2"; nodo.numero=0;
+        padre.hijos.add(nodo);
     switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
     case igual:{
       jj_consume_token(igual);
       VALOR();
-      jj_consume_token(dolar);
       break;
       }
     case aumento:{
@@ -418,91 +483,70 @@ class compilador implements compiladorConstants {
     }
   }
 
-  static final public void C() throws ParseException {
+//----------------CALCULADORA
+  final public void C() throws ParseException {
     E();
   }
 
-  static final public void E() throws ParseException {
+  final public void E() throws ParseException {
     T();
-    EP();
-  }
-
-  static final public void EP() throws ParseException {
     switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
     case mas:
     case menos:{
-      switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
-      case mas:{
-        jj_consume_token(mas);
-        T();
-        EP();
-        break;
-        }
-      case menos:{
-        jj_consume_token(menos);
-        T();
-        EP();
-        break;
-        }
-      default:
-        jj_la1[20] = jj_gen;
-        jj_consume_token(-1);
-        throw new ParseException();
-      }
+      EP();
       break;
       }
     default:
-      jj_la1[21] = jj_gen;
+      jj_la1[20] = jj_gen;
       ;
     }
   }
 
-  static final public void T() throws ParseException {
-    F();
-    TP();
-  }
-
-  static final public void TP() throws ParseException {
+  final public void EP() throws ParseException {
     switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
-    case por:
-    case div:{
+    case mas:{
+      jj_consume_token(mas);
+      T();
       switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
-      case por:{
-        jj_consume_token(por);
-        F();
-        TP();
+      case mas:
+      case menos:{
+        EP();
         break;
         }
-      case div:{
-        jj_consume_token(div);
-        F();
-        TP();
+      default:
+        jj_la1[21] = jj_gen;
+        ;
+      }
+      break;
+      }
+    case menos:{
+      jj_consume_token(menos);
+      T();
+      switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
+      case mas:
+      case menos:{
+        EP();
         break;
         }
       default:
         jj_la1[22] = jj_gen;
-        jj_consume_token(-1);
-        throw new ParseException();
+        ;
       }
       break;
       }
     default:
       jj_la1[23] = jj_gen;
-      ;
+      jj_consume_token(-1);
+      throw new ParseException();
     }
   }
 
-  static final public void F() throws ParseException {
-    G();
-    FP();
-  }
-
-  static final public void FP() throws ParseException {
+  final public void T() throws ParseException {
+    F();
     switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
-    case potencia:{
-      jj_consume_token(potencia);
-      G();
-      FP();
+    case por:
+    case div:{
+      TP();
       break;
       }
     default:
@@ -511,7 +555,73 @@ class compilador implements compiladorConstants {
     }
   }
 
-  static final public void G() throws ParseException {
+  final public void TP() throws ParseException {
+    switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
+    case por:{
+      jj_consume_token(por);
+      F();
+      switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
+      case por:
+      case div:{
+        TP();
+        break;
+        }
+      default:
+        jj_la1[25] = jj_gen;
+        ;
+      }
+      break;
+      }
+    case div:{
+      jj_consume_token(div);
+      F();
+      switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
+      case por:
+      case div:{
+        TP();
+        break;
+        }
+      default:
+        jj_la1[26] = jj_gen;
+        ;
+      }
+      break;
+      }
+    default:
+      jj_la1[27] = jj_gen;
+      jj_consume_token(-1);
+      throw new ParseException();
+    }
+  }
+
+  final public void F() throws ParseException {
+    G();
+    switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
+    case potencia:{
+      FP();
+      break;
+      }
+    default:
+      jj_la1[28] = jj_gen;
+      ;
+    }
+  }
+
+  final public void FP() throws ParseException {
+    jj_consume_token(potencia);
+    G();
+    switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
+    case potencia:{
+      FP();
+      break;
+      }
+    default:
+      jj_la1[29] = jj_gen;
+      ;
+    }
+  }
+
+  final public void G() throws ParseException {
     switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
     case entero:{
       jj_consume_token(entero);
@@ -544,18 +654,18 @@ class compilador implements compiladorConstants {
       break;
       }
     default:
-      jj_la1[25] = jj_gen;
+      jj_la1[30] = jj_gen;
       jj_consume_token(-1);
       throw new ParseException();
     }
   }
 
 //-----------------RELACIONAL
-  static final public void RELACIONAL() throws ParseException {
+  final public void RELACIONAL() throws ParseException {
     A();
   }
 
-  static final public void A() throws ParseException {
+  final public void A() throws ParseException {
     switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
     case entero:
     case doble:
@@ -574,13 +684,13 @@ class compilador implements compiladorConstants {
       break;
       }
     default:
-      jj_la1[26] = jj_gen;
+      jj_la1[31] = jj_gen;
       jj_consume_token(-1);
       throw new ParseException();
     }
   }
 
-  static final public void REL() throws ParseException {
+  final public void REL() throws ParseException {
     switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
     case igualacion:{
       jj_consume_token(igualacion);
@@ -613,27 +723,202 @@ class compilador implements compiladorConstants {
       break;
       }
     default:
-      jj_la1[27] = jj_gen;
+      jj_la1[32] = jj_gen;
       jj_consume_token(-1);
       throw new ParseException();
     }
   }
 
-  static final public void EXP() throws ParseException {
+  final public void EXP() throws ParseException {
     E();
   }
 
-  static private boolean jj_initialized_once = false;
+//-------------------LOGICA
+  final public void LOGICA() throws ParseException {
+    L();
+  }
+
+  final public void L() throws ParseException {
+    M();
+    switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
+    case or:
+    case nor:
+    case xor:{
+      LP();
+      break;
+      }
+    default:
+      jj_la1[33] = jj_gen;
+      ;
+    }
+  }
+
+  final public void LP() throws ParseException {
+    switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
+    case or:{
+      jj_consume_token(or);
+      M();
+      switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
+      case or:
+      case nor:
+      case xor:{
+        LP();
+        break;
+        }
+      default:
+        jj_la1[34] = jj_gen;
+        ;
+      }
+      break;
+      }
+    case nor:{
+      jj_consume_token(nor);
+      M();
+      switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
+      case or:
+      case nor:
+      case xor:{
+        LP();
+        break;
+        }
+      default:
+        jj_la1[35] = jj_gen;
+        ;
+      }
+      break;
+      }
+    case xor:{
+      jj_consume_token(xor);
+      M();
+      switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
+      case or:
+      case nor:
+      case xor:{
+        LP();
+        break;
+        }
+      default:
+        jj_la1[36] = jj_gen;
+        ;
+      }
+      break;
+      }
+    default:
+      jj_la1[37] = jj_gen;
+      jj_consume_token(-1);
+      throw new ParseException();
+    }
+  }
+
+  final public void M() throws ParseException {
+    N();
+    switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
+    case and:
+    case nand:{
+      MP();
+      break;
+      }
+    default:
+      jj_la1[38] = jj_gen;
+      ;
+    }
+  }
+
+  final public void MP() throws ParseException {
+    switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
+    case and:{
+      jj_consume_token(and);
+      N();
+      switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
+      case and:
+      case nand:{
+        MP();
+        break;
+        }
+      default:
+        jj_la1[39] = jj_gen;
+        ;
+      }
+      break;
+      }
+    case nand:{
+      jj_consume_token(nand);
+      N();
+      switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
+      case and:
+      case nand:{
+        MP();
+        break;
+        }
+      default:
+        jj_la1[40] = jj_gen;
+        ;
+      }
+      break;
+      }
+    default:
+      jj_la1[41] = jj_gen;
+      jj_consume_token(-1);
+      throw new ParseException();
+    }
+  }
+
+  final public void N() throws ParseException {
+    jj_consume_token(not);
+    switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
+    case entero:
+    case doble:
+    case booleano:
+    case caracter:
+    case cadena:
+    case nulo:
+    case parenti:
+    case id:{
+      R();
+      break;
+      }
+    default:
+      jj_la1[42] = jj_gen;
+      ;
+    }
+  }
+
+//LA PARTE DE DECLARACION NO SE HA COMPLETADO
+//LA PARTE DEL CONT2 NO SE HA COMPLETADO
+  final public 
+void R() throws ParseException {
+    switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
+    case entero:
+    case doble:
+    case booleano:
+    case caracter:
+    case cadena:
+    case parenti:
+    case id:{
+      E();
+      break;
+      }
+    case nulo:{
+      RELACIONAL();
+      break;
+      }
+    default:
+      jj_la1[43] = jj_gen;
+      jj_consume_token(-1);
+      throw new ParseException();
+    }
+  }
+
   /** Generated Token Manager. */
-  static public compiladorTokenManager token_source;
-  static SimpleCharStream jj_input_stream;
+  public compiladorTokenManager token_source;
+  SimpleCharStream jj_input_stream;
   /** Current token. */
-  static public Token token;
+  public Token token;
   /** Next token. */
-  static public Token jj_nt;
-  static private int jj_ntk;
-  static private int jj_gen;
-  static final private int[] jj_la1 = new int[28];
+  public Token jj_nt;
+  private int jj_ntk;
+  private int jj_gen;
+  final private int[] jj_la1 = new int[44];
   static private int[] jj_la1_0;
   static private int[] jj_la1_1;
   static private int[] jj_la1_2;
@@ -643,13 +928,13 @@ class compilador implements compiladorConstants {
       jj_la1_init_2();
    }
    private static void jj_la1_init_0() {
-      jj_la1_0 = new int[] {0x1800,0x0,0x0,0x1800,0x1800,0x0,0x0,0x0,0x1f1800,0x1f1800,0x0,0x0,0x1f0000,0x1f0000,0x0,0x0,0x0,0x0,0x7c0,0x0,0x0,0x0,0x0,0x0,0x0,0x7c0,0x80007c0,0x7e00000,};
+      jj_la1_0 = new int[] {0x1800,0x0,0x0,0x1f1800,0x1800,0x1800,0x0,0x0,0x0,0x1f1800,0x1f1800,0x0,0x0,0x1f0000,0x1f0000,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x7c0,0x80007c0,0x7e00000,0x90000000,0x90000000,0x90000000,0x90000000,0x90000000,0x60000000,0x60000000,0x60000000,0x60000000,0x80007c0,0x80007c0,};
    }
    private static void jj_la1_init_1() {
-      jj_la1_1 = new int[] {0x0,0x7000,0x100,0x0,0x0,0x7000,0x400,0x400,0xf200,0xf200,0x200,0x7000,0xf200,0x0,0x800,0x400,0x800,0x400,0x0,0xf0800,0xc,0xc,0x30,0x30,0x40,0x800000,0x800000,0x0,};
+      jj_la1_1 = new int[] {0x0,0x7000,0x100,0xf200,0x0,0x0,0x7000,0x400,0x400,0xf200,0xf200,0x200,0x7000,0xf200,0x0,0x800,0x400,0x800,0x400,0xf0800,0xc,0xc,0xc,0xc,0x30,0x30,0x30,0x30,0x40,0x40,0x800000,0x800000,0x0,0x1,0x1,0x1,0x1,0x1,0x0,0x0,0x0,0x0,0x800000,0x800000,};
    }
    private static void jj_la1_init_2() {
-      jj_la1_2 = new int[] {0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x80000,0x80000,0x0,0x0,0x80000,0x0,0x0,0x0,0x0,0x0,0x80000,0x0,0x0,0x0,0x0,0x0,0x0,0x80000,0x80000,0x0,};
+      jj_la1_2 = new int[] {0x0,0x0,0x0,0x80000,0x0,0x0,0x0,0x0,0x0,0x80000,0x80000,0x0,0x0,0x80000,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x80000,0x80000,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x80000,0x80000,};
    }
 
   /** Constructor with InputStream. */
@@ -658,76 +943,55 @@ class compilador implements compiladorConstants {
   }
   /** Constructor with InputStream and supplied encoding */
   public compilador(java.io.InputStream stream, String encoding) {
-    if (jj_initialized_once) {
-      System.out.println("ERROR: Second call to constructor of static parser.  ");
-      System.out.println("       You must either use ReInit() or set the JavaCC option STATIC to false");
-      System.out.println("       during parser generation.");
-      throw new Error();
-    }
-    jj_initialized_once = true;
     try { jj_input_stream = new SimpleCharStream(stream, encoding, 1, 1); } catch(java.io.UnsupportedEncodingException e) { throw new RuntimeException(e); }
     token_source = new compiladorTokenManager(jj_input_stream);
     token = new Token();
     jj_ntk = -1;
     jj_gen = 0;
-    for (int i = 0; i < 28; i++) jj_la1[i] = -1;
+    for (int i = 0; i < 44; i++) jj_la1[i] = -1;
   }
 
   /** Reinitialise. */
-  static public void ReInit(java.io.InputStream stream) {
+  public void ReInit(java.io.InputStream stream) {
      ReInit(stream, null);
   }
   /** Reinitialise. */
-  static public void ReInit(java.io.InputStream stream, String encoding) {
+  public void ReInit(java.io.InputStream stream, String encoding) {
     try { jj_input_stream.ReInit(stream, encoding, 1, 1); } catch(java.io.UnsupportedEncodingException e) { throw new RuntimeException(e); }
     token_source.ReInit(jj_input_stream);
     token = new Token();
     jj_ntk = -1;
     jj_gen = 0;
-    for (int i = 0; i < 28; i++) jj_la1[i] = -1;
+    for (int i = 0; i < 44; i++) jj_la1[i] = -1;
   }
 
   /** Constructor. */
   public compilador(java.io.Reader stream) {
-    if (jj_initialized_once) {
-      System.out.println("ERROR: Second call to constructor of static parser. ");
-      System.out.println("       You must either use ReInit() or set the JavaCC option STATIC to false");
-      System.out.println("       during parser generation.");
-      throw new Error();
-    }
-    jj_initialized_once = true;
     jj_input_stream = new SimpleCharStream(stream, 1, 1);
     token_source = new compiladorTokenManager(jj_input_stream);
     token = new Token();
     jj_ntk = -1;
     jj_gen = 0;
-    for (int i = 0; i < 28; i++) jj_la1[i] = -1;
+    for (int i = 0; i < 44; i++) jj_la1[i] = -1;
   }
 
   /** Reinitialise. */
-  static public void ReInit(java.io.Reader stream) {
+  public void ReInit(java.io.Reader stream) {
     jj_input_stream.ReInit(stream, 1, 1);
     token_source.ReInit(jj_input_stream);
     token = new Token();
     jj_ntk = -1;
     jj_gen = 0;
-    for (int i = 0; i < 28; i++) jj_la1[i] = -1;
+    for (int i = 0; i < 44; i++) jj_la1[i] = -1;
   }
 
   /** Constructor with generated Token Manager. */
   public compilador(compiladorTokenManager tm) {
-    if (jj_initialized_once) {
-      System.out.println("ERROR: Second call to constructor of static parser. ");
-      System.out.println("       You must either use ReInit() or set the JavaCC option STATIC to false");
-      System.out.println("       during parser generation.");
-      throw new Error();
-    }
-    jj_initialized_once = true;
     token_source = tm;
     token = new Token();
     jj_ntk = -1;
     jj_gen = 0;
-    for (int i = 0; i < 28; i++) jj_la1[i] = -1;
+    for (int i = 0; i < 44; i++) jj_la1[i] = -1;
   }
 
   /** Reinitialise. */
@@ -736,10 +1000,10 @@ class compilador implements compiladorConstants {
     token = new Token();
     jj_ntk = -1;
     jj_gen = 0;
-    for (int i = 0; i < 28; i++) jj_la1[i] = -1;
+    for (int i = 0; i < 44; i++) jj_la1[i] = -1;
   }
 
-  static private Token jj_consume_token(int kind) throws ParseException {
+  private Token jj_consume_token(int kind) throws ParseException {
     Token oldToken;
     if ((oldToken = token).next != null) token = token.next;
     else token = token.next = token_source.getNextToken();
@@ -755,7 +1019,7 @@ class compilador implements compiladorConstants {
 
 
 /** Get the next Token. */
-  static final public Token getNextToken() {
+  final public Token getNextToken() {
     if (token.next != null) token = token.next;
     else token = token.next = token_source.getNextToken();
     jj_ntk = -1;
@@ -764,7 +1028,7 @@ class compilador implements compiladorConstants {
   }
 
 /** Get the specific Token. */
-  static final public Token getToken(int index) {
+  final public Token getToken(int index) {
     Token t = token;
     for (int i = 0; i < index; i++) {
       if (t.next != null) t = t.next;
@@ -773,26 +1037,26 @@ class compilador implements compiladorConstants {
     return t;
   }
 
-  static private int jj_ntk_f() {
+  private int jj_ntk_f() {
     if ((jj_nt=token.next) == null)
       return (jj_ntk = (token.next=token_source.getNextToken()).kind);
     else
       return (jj_ntk = jj_nt.kind);
   }
 
-  static private java.util.List<int[]> jj_expentries = new java.util.ArrayList<int[]>();
-  static private int[] jj_expentry;
-  static private int jj_kind = -1;
+  private java.util.List<int[]> jj_expentries = new java.util.ArrayList<int[]>();
+  private int[] jj_expentry;
+  private int jj_kind = -1;
 
   /** Generate ParseException. */
-  static public ParseException generateParseException() {
+  public ParseException generateParseException() {
     jj_expentries.clear();
     boolean[] la1tokens = new boolean[84];
     if (jj_kind >= 0) {
       la1tokens[jj_kind] = true;
       jj_kind = -1;
     }
-    for (int i = 0; i < 28; i++) {
+    for (int i = 0; i < 44; i++) {
       if (jj_la1[i] == jj_gen) {
         for (int j = 0; j < 32; j++) {
           if ((jj_la1_0[i] & (1<<j)) != 0) {
@@ -822,11 +1086,11 @@ class compilador implements compiladorConstants {
   }
 
   /** Enable tracing. */
-  static final public void enable_tracing() {
+  final public void enable_tracing() {
   }
 
   /** Disable tracing. */
-  static final public void disable_tracing() {
+  final public void disable_tracing() {
   }
 
 }

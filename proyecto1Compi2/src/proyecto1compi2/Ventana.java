@@ -381,11 +381,11 @@ compilador ana = new compilador();
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         int x= jTabbedPane1.getSelectedIndex();
         String aux = ListaEditor.get(x).getText();
-        final String UTF8_BOM = new String("\u00bf".getBytes(StandardCharsets.UTF_8));
+        /*final String UTF8_BOM = new String("\u00bf".getBytes(StandardCharsets.UTF_8));
         System.out.println("Archivo con boom \n"+aux);
         System.out.println("booom "+UTF8_BOM);
         aux = aux.replace("\u00bf",UTF8_BOM);
-        System.out.println("Archivo sin boom \n"+aux);
+        System.out.println("Archivo sin boom \n"+aux);*/
         Funcion f = new Funcion();
         f.crearArchivo(aux);
     try {
@@ -394,12 +394,15 @@ compilador ana = new compilador();
         String s, s2 = new String();
 
         while ((s = br.readLine()) != null){
-            s2 += s;
+            s2 += s+"\n";
         }
         br.close(); 
-       
+  
         ana.analizar(s2);
-        
+        f.graphArbol(ana.root);
+        //System.out.println("Root \n Nombre root "+ana.root.nombre+" grafoname "+ana.root.grafoname+" cadena "+ana.root.cadena+" numero "+ana.root.numero); 
+        //System.out.println("S\n Nombre "+ana.root.hijos.get(0).nombre+" grafoname "+ana.root.hijos.get(0).grafoname);
+        //System.out.println("COMMM\n Nombre "+ana.root.hijos.get(0).hijos.get(0).nombre+" grafoname "+ana.root.hijos.get(0).hijos.get(0).grafoname);
     } catch (FileNotFoundException ex) {
         Logger.getLogger(Ventana.class.getName()).log(Level.SEVERE, null, ex);
     } catch (IOException ex) {
@@ -411,6 +414,7 @@ compilador ana = new compilador();
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
+        
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 

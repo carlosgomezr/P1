@@ -1,0 +1,26 @@
+>>comentario de una linea
+<-Comentario de muchas lineas
+javacc archivo de prueba
+.lz cargango...->
+
+lienzo l extiende petalo, hoja, otraclase ¿
+
+	x++$
+	x--$
+	var entero calculo = 115+1904$
+	var entero calculo1 = 200-(-1)$
+	Conservar var entero calculo2 = 1000*2234$
+	Conservar var entero calculo3 = 456/23$
+
+	y++$
+	y--$
+	var entero x, xx, xxx,xxxx=1$
+	var boolean y, yy, yyy,yyyy=0$
+	Conservar var caracter a,aa,aba,bbbb='c'$
+	Conservar var cadena cad, cad1, cad2, cad3="hola fucking mundo"$
+	Conservar var doble z,zz,zzz,zzzz=4.201$
+
+	vari ++$
+	vari --$
+	 
+?

@@ -1,0 +1,15 @@
+digraph G { 
+ label= "Tree LZ "node [shape=record]; 
+ subgraph g {nodo1[label= "Ini
+ :: Ini"]; 
+nodo1->nodo2;
+nodo2[label= "S
+ :: S"]; 
+nodo2->nodo3;
+nodo2->nodo4;
+nodo3[label= "Lienzo
+ :: Lienzo"]; 
+nodo4[label= "id
+ :: ll"]; 
+}
+ }

@@ -125,7 +125,7 @@ public interface compiladorConstants {
   /** RegularExpression Id. */
   int caso = 62;
   /** RegularExpression Id. */
-  int valor = 63;
+  int tvalor = 63;
   /** RegularExpression Id. */
   int dospuntos = 64;
   /** RegularExpression Id. */
@@ -235,7 +235,7 @@ public interface compiladorConstants {
     "<sino>",
     "<comprobar>",
     "<caso>",
-    "<valor>",
+    "<tvalor>",
     "\":\"",
     "<salir>",
     "<defecto>",
