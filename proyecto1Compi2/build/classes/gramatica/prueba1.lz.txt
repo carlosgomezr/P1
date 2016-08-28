@@ -1,16 +1,20 @@
 >>comentario de una linea
-<-Comentario de muchas lineas
-javacc archivo de prueba
-.lz cargango...->
-
 lienzo l extiende petalo, hoja, otraclase ¿
 
 	x++$
 	x--$
-	var entero calculo = 115+1904$
-	var entero calculo1 = 200-(-1)$
-	Conservar var entero calculo2 = 1000*2234$
-	Conservar var entero calculo3 = 456/23$
+	var entero calculo = 115+1904*19/2$
+	var entero calculo1 = 200-(-1)+50-(13)+vari1$
+	Conservar var entero calculo2 = vari/1000*2234-(14)+(15+20*3)$
+	Conservar var entero calculo3 = vari+12456/23$
+	var entero cal = true$
+	var entero dd = var1 + var2$
+	var entero cc = var1 - (var2)$
+	var entero dd = 1131*var2$
+	var entero aa = var2 * 1312$
+	var entero bb = 1312/var2$
+	var entero cc = var2/1555$
+	var entero cc = ((((fa+23)*(123/123123)+(-23423))*2423)+12*fu)$
 
 	y++$
 	y--$

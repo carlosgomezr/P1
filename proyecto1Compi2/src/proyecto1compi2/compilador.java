@@ -37,16 +37,12 @@ class compilador implements compiladorConstants {
 
   final public NodoArbol iniciar() throws ParseException {NodoArbol nodo = new NodoArbol();
          nodo.nombre = "Ini"; nodo.grafoname=getEtiqueta(); nodo.cadena = "Ini"; nodo.numero =0;
-    S(nodo);
+    S();
 {if ("" != null) return nodo;}
     throw new Error("Missing return statement in function");
   }
 
-  final public void S(NodoArbol padre) throws ParseException {NodoArbol nodo = new NodoArbol();
-        NodoArbol nodo2 = new NodoArbol();
-        NodoArbol nodo3 = new NodoArbol();
-        nodo.nombre = "S"; nodo.grafoname=getEtiqueta(); nodo.cadena = "S"; nodo.numero =0;
-        padre.hijos.add(nodo);
+  final public void S() throws ParseException {
     label_1:
     while (true) {
       switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
@@ -65,7 +61,7 @@ class compilador implements compiladorConstants {
     case publico:
     case privado:
     case protegido:{
-      VISI(nodo);
+      VISI();
       break;
       }
     default:
@@ -74,13 +70,9 @@ class compilador implements compiladorConstants {
     }
     jj_consume_token(lienzo);
     jj_consume_token(id);
-nodo2.nombre = "Lienzo"; nodo2.grafoname=getEtiqueta(); nodo2.cadena = "Lienzo"; nodo2.numero =0;
-                nodo3.nombre = "id"; nodo3.grafoname=getEtiqueta(); nodo3.cadena = token.image; nodo3.numero =0;
-                nodo.hijos.add(nodo2);
-                nodo.hijos.add(nodo3);
     switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
     case extiende:{
-      EXT(nodo);
+      EXT();
       break;
       }
     default:
@@ -88,27 +80,7 @@ nodo2.nombre = "Lienzo"; nodo2.grafoname=getEtiqueta(); nodo2.cadena = "Lienzo";
       ;
     }
     jj_consume_token(sigabrir);
-    switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
-    case comentario:
-    case comentarioall:
-    case tentero:
-    case tdoble:
-    case tcaracter:
-    case tboolean:
-    case tcadena:
-    case conservar:
-    case publico:
-    case privado:
-    case protegido:
-    case var:
-    case id:{
-      SENTENCIAS(nodo);
-      break;
-      }
-    default:
-      jj_la1[3] = jj_gen;
-      ;
-    }
+    SENTENCIAS();
     jj_consume_token(sigcerrar);
     label_2:
     while (true) {
@@ -119,7 +91,7 @@ nodo2.nombre = "Lienzo"; nodo2.grafoname=getEtiqueta(); nodo2.cadena = "Lienzo";
         break;
         }
       default:
-        jj_la1[4] = jj_gen;
+        jj_la1[3] = jj_gen;
         break label_2;
       }
       COMENTARIOS();
@@ -138,56 +110,53 @@ nodo2.nombre = "Lienzo"; nodo2.grafoname=getEtiqueta(); nodo2.cadena = "Lienzo";
       break;
       }
     default:
+      jj_la1[4] = jj_gen;
+      jj_consume_token(-1);
+      throw new ParseException();
+    }
+  }
+
+  final public void VISI() throws ParseException {
+    switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
+    case publico:{
+      jj_consume_token(publico);
+      break;
+      }
+    case privado:{
+      jj_consume_token(privado);
+      break;
+      }
+    case protegido:{
+      jj_consume_token(protegido);
+      break;
+      }
+    default:
       jj_la1[5] = jj_gen;
       jj_consume_token(-1);
       throw new ParseException();
     }
   }
 
-  final public void VISI(NodoArbol padre) throws ParseException {NodoArbol nodo = new NodoArbol();
-        NodoArbol nodo2 = new NodoArbol();
-        nodo2.nombre = "VISI"; nodo2.grafoname = getEtiqueta(); nodo2.cadena = "VISI"; nodo2.numero=0;
-        padre.hijos.add(nodo2);
+  final public void EXT() throws ParseException {
+    jj_consume_token(extiende);
+    jj_consume_token(id);
     switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
-    case publico:{
-      jj_consume_token(publico);
-nodo.nombre = "publico"; nodo.grafoname = getEtiqueta(); nodo.cadena = "publico"; nodo.numero=0;
-                nodo2.hijos.add(nodo);
-      break;
-      }
-    case privado:{
-      jj_consume_token(privado);
-nodo.nombre = "privado"; nodo.grafoname = getEtiqueta(); nodo.cadena = "privado"; nodo.numero=0;
-                nodo2.hijos.add(nodo);
-      break;
-      }
-    case protegido:{
-      jj_consume_token(protegido);
-nodo.nombre = "protegido"; nodo.grafoname = getEtiqueta(); nodo.cadena = "protegido"; nodo.numero=0;
-                nodo2.hijos.add(nodo);
+    case coma:{
+      EXT1();
       break;
       }
     default:
       jj_la1[6] = jj_gen;
-      jj_consume_token(-1);
-      throw new ParseException();
+      ;
     }
   }
 
-  final public void EXT(NodoArbol padre) throws ParseException {NodoArbol nodo = new NodoArbol();
-        NodoArbol nodo2 = new NodoArbol();
-        NodoArbol nodo3 = new NodoArbol();
-        nodo.nombre = "EXT"; nodo.grafoname = getEtiqueta(); nodo.cadena = "EXT"; nodo.numero=0;
-        padre.hijos.add(nodo);
-    jj_consume_token(extiende);
+  final public void EXT1() throws ParseException {
+    jj_consume_token(coma);
     jj_consume_token(id);
-nodo2.nombre = "extiende"; nodo2.grafoname = getEtiqueta(); nodo2.cadena = "extiende"; nodo2.numero=0;
-                nodo3.nombre = "id"; nodo3.grafoname = getEtiqueta(); nodo3.cadena = token.image; nodo3.numero=0;
-                nodo.hijos.add(nodo2);
-                nodo.hijos.add(nodo3);
     switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
     case coma:{
-      EXT1(nodo);
+      EXT1();
       break;
       }
     default:
@@ -196,32 +165,8 @@ nodo2.nombre = "extiende"; nodo2.grafoname = getEtiqueta(); nodo2.cadena = "exti
     }
   }
 
-  final public void EXT1(NodoArbol padre) throws ParseException {NodoArbol nodo = new NodoArbol();
-        NodoArbol nodo2 = new NodoArbol();
-        nodo2.nombre = "EXT1"; nodo2.grafoname = getEtiqueta(); nodo2.cadena = "EXT1"; nodo2.numero=0;
-        padre.hijos.add(nodo2);
-    jj_consume_token(coma);
-    jj_consume_token(id);
-nodo.nombre = "id"; nodo.grafoname = getEtiqueta(); nodo.cadena = token.image; nodo.numero=0;
-                nodo2.hijos.add(nodo);
-    switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
-    case coma:{
-      EXT1(nodo2);
-      break;
-      }
-    default:
-      jj_la1[8] = jj_gen;
-      ;
-    }
-  }
-
-  final public void SENTENCIAS(NodoArbol padre) throws ParseException {NodoArbol nodo = new NodoArbol();
-        NodoArbol nodo2 = new NodoArbol();
-        nodo.nombre = "SENTENCIAS"; nodo.grafoname = getEtiqueta(); nodo.cadena = "SENTENCIAS"; nodo.numero=0;
-        padre.hijos.add(nodo);
-        nodo2.nombre = "SEN"; nodo2.grafoname = getEtiqueta(); nodo2.cadena ="SEN"; nodo2.numero=0;
-        nodo.hijos.add(nodo2);
-    SEN(nodo2);
+  final public void SENTENCIAS() throws ParseException {
+    SEN();
     switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
     case comentario:
     case comentarioall:
@@ -235,17 +180,28 @@ nodo.nombre = "id"; nodo.grafoname = getEtiqueta(); nodo.cadena = token.image; n
     case privado:
     case protegido:
     case var:
+    case si:
+    case comprobar:
+    case para:
+    case mientras:
+    case hacer:
+    case continuar:
+    case tvoid:
+    case pintarP:
+    case pintarOR:
+    case pintarS:
+    case principal:
     case id:{
-      SENTENCIAS(nodo);
+      SENTENCIAS();
       break;
       }
     default:
-      jj_la1[9] = jj_gen;
+      jj_la1[8] = jj_gen;
       ;
     }
   }
 
-  final public void SEN(NodoArbol padre) throws ParseException {NodoArbol nodo = new NodoArbol();
+  final public void SEN() throws ParseException {
     switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
     case comentario:{
       jj_consume_token(comentario);
@@ -265,105 +221,114 @@ nodo.nombre = "id"; nodo.grafoname = getEtiqueta(); nodo.cadena = token.image; n
     case privado:
     case protegido:
     case var:
+    case tvoid:
     case id:{
-nodo.nombre = "CONTENIDO"; nodo.grafoname = getEtiqueta(); nodo.cadena = "CONTENIDO"; nodo.numero=0;
-                padre.hijos.add(nodo);
-      CONTENIDO(nodo);
+      CONTENIDO();
+      break;
+      }
+    case si:{
+      SENSI();
+      break;
+      }
+    case comprobar:{
+      SENCOMPROBAR();
+      break;
+      }
+    case para:{
+      SENPARA();
+      break;
+      }
+    case mientras:{
+      SENMIENTRAS();
+      break;
+      }
+    case hacer:{
+      SENHACER();
+      break;
+      }
+    case continuar:{
+      SENCONTINUAR();
+      break;
+      }
+    case pintarP:{
+      DIBUJAR_P();
+      break;
+      }
+    case pintarOR:{
+      DIBUJAR_OR();
+      break;
+      }
+    case pintarS:{
+      DIBUJAR_S();
+      break;
+      }
+    case principal:{
+      PRI();
       break;
       }
     default:
-      jj_la1[10] = jj_gen;
+      jj_la1[9] = jj_gen;
       jj_consume_token(-1);
       throw new ParseException();
     }
   }
 
 //----------------------------------------------ACA ME QUEDE FECHA 26/08/2016
-  final public void CONTENIDO(NodoArbol padre) throws ParseException {NodoArbol nodo = new NodoArbol();
-        NodoArbol nodo2 = new NodoArbol();
+  final public void CONTENIDO() throws ParseException {
     switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
-    case conservar:
+    case conservar:{
+      CONSERV();
+      break;
+      }
+    default:
+      jj_la1[10] = jj_gen;
+      ;
+    }
+    switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
     case publico:
     case privado:
-    case protegido:
+    case protegido:{
+      VISI();
+      break;
+      }
+    default:
+      jj_la1[11] = jj_gen;
+      ;
+    }
+    CONT();
+  }
+
+  final public void CONSERV() throws ParseException {
+    jj_consume_token(conservar);
+  }
+
+  final public void CONT() throws ParseException {
+    switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
     case var:{
-      switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
-      case conservar:{
-        CONSERV(padre);
-        break;
-        }
-      default:
-        jj_la1[11] = jj_gen;
-        ;
-      }
-      switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
-      case publico:
-      case privado:
-      case protegido:{
-        VISI(padre);
-        break;
-        }
-      default:
-        jj_la1[12] = jj_gen;
-        ;
-      }
-      CONT(padre);
+      DECLARACION();
       break;
       }
     case tentero:
     case tdoble:
     case tcaracter:
     case tboolean:
-    case tcadena:{
-      TIPO();
-      jj_consume_token(id);
-nodo.nombre = "id"; nodo.grafoname = getEtiqueta(); nodo.cadena=token.image; nodo.numero=0;
-                nodo2.nombre = "="; nodo2.grafoname = getEtiqueta(); nodo2.cadena="="; nodo2.numero=0;
-                padre.hijos.add(nodo);
-                padre.hijos.add(nodo2);
-      jj_consume_token(igual);
-      VALOR();
-      jj_consume_token(dolar);
-      break;
-      }
+    case tcadena:
+    case tvoid:
     case id:{
-      jj_consume_token(id);
-nodo.nombre = "id"; nodo.grafoname = getEtiqueta(); nodo.cadena=token.image; nodo.numero=0;
-                padre.hijos.add(nodo);
-      CONT2(padre);
-      jj_consume_token(dolar);
+      CONTENIDO3();
       break;
       }
     default:
-      jj_la1[13] = jj_gen;
+      jj_la1[12] = jj_gen;
       jj_consume_token(-1);
       throw new ParseException();
     }
   }
 
-  final public void CONSERV(NodoArbol padre) throws ParseException {NodoArbol nodo = new NodoArbol();
-        NodoArbol nodo2 = new NodoArbol();
-        nodo.nombre = "CONSERV"; nodo.grafoname= getEtiqueta(); nodo.cadena="CONSERV"; nodo.numero=0;
-        padre.hijos.add(nodo);
-    jj_consume_token(conservar);
-nodo2.nombre = "conversar"; nodo2.grafoname= getEtiqueta(); nodo2.cadena="conservar"; nodo2.numero=0;
-                nodo.hijos.add(nodo2);
-  }
-
-  final public void CONT(NodoArbol padre) throws ParseException {NodoArbol nodo = new NodoArbol();
-        NodoArbol nodo2 = new NodoArbol();
-        nodo.nombre = "CONT"; nodo.grafoname= getEtiqueta(); nodo.cadena="CONT"; nodo.numero=0;
-        padre.hijos.add(nodo);
-    DECLARACION();
-nodo2.nombre = "DECLARACION"; nodo2.grafoname = getEtiqueta(); nodo2.cadena="DECLARACION"; nodo2.numero=0;
-                nodo.hijos.add(nodo2);
-  }
-
   final public void DECLARACION() throws ParseException {
     jj_consume_token(var);
     TIPO();
-    NOMBRES();
-    jj_consume_token(dolar);
+    VARIABLE();
   }
 
   final public void TIPO() throws ParseException {
@@ -386,6 +351,24 @@ nodo2.nombre = "DECLARACION"; nodo2.grafoname = getEtiqueta(); nodo2.cadena="DEC
       }
     case tcadena:{
       jj_consume_token(tcadena);
+      break;
+      }
+    default:
+      jj_la1[13] = jj_gen;
+      jj_consume_token(-1);
+      throw new ParseException();
+    }
+  }
+
+  final public void VARIABLE() throws ParseException {
+    switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
+    case id:{
+      NOMBRES();
+      jj_consume_token(dolar);
+      break;
+      }
+    case arreglo:{
+      jj_consume_token(arreglo);
       break;
       }
     default:
@@ -449,15 +432,8 @@ nodo2.nombre = "DECLARACION"; nodo2.grafoname = getEtiqueta(); nodo2.cadena="DEC
     C();
   }
 
-  final public void CONT2(NodoArbol padre) throws ParseException {NodoArbol nodo = new NodoArbol();
-        nodo.nombre = "CONT2"; nodo.grafoname=getEtiqueta(); nodo.cadena="CONT2"; nodo.numero=0;
-        padre.hijos.add(nodo);
+  final public void CONT2() throws ParseException {
     switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
-    case igual:{
-      jj_consume_token(igual);
-      VALOR();
-      break;
-      }
     case aumento:{
       jj_consume_token(aumento);
       break;
@@ -909,6 +885,360 @@ void R() throws ParseException {
     }
   }
 
+//SENTENCIAS DE CONTROL
+  final public void SENSI() throws ParseException {
+    jj_consume_token(si);
+    jj_consume_token(parenti);
+    LOGICA();
+    jj_consume_token(parentd);
+    jj_consume_token(sigabrir);
+    SENTENCIAS();
+    jj_consume_token(sigcerrar);
+    switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
+    case sino:{
+      SENSINO();
+      break;
+      }
+    default:
+      jj_la1[44] = jj_gen;
+      ;
+    }
+  }
+
+  final public void SENSINO() throws ParseException {
+    jj_consume_token(sino);
+    jj_consume_token(sigabrir);
+    SENTENCIAS();
+    jj_consume_token(sigcerrar);
+  }
+
+  final public void SENCOMPROBAR() throws ParseException {
+    jj_consume_token(comprobar);
+    jj_consume_token(parenti);
+    jj_consume_token(id);
+    jj_consume_token(parenti);
+    jj_consume_token(parentd);
+    jj_consume_token(sigabrir);
+    switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
+    case caso:{
+      CUERPO();
+      break;
+      }
+    default:
+      jj_la1[45] = jj_gen;
+      ;
+    }
+    switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
+    case defecto:{
+      DEFE();
+      break;
+      }
+    default:
+      jj_la1[46] = jj_gen;
+      ;
+    }
+    jj_consume_token(sigcerrar);
+  }
+
+  final public void CUERPO() throws ParseException {
+    jj_consume_token(caso);
+    jj_consume_token(tvalor);
+    jj_consume_token(entero);
+    jj_consume_token(dospuntos);
+    SENTENCIAS();
+    switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
+    case salir:{
+      SENSALIR();
+      break;
+      }
+    default:
+      jj_la1[47] = jj_gen;
+      ;
+    }
+    switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
+    case caso:{
+      CUERPO();
+      break;
+      }
+    default:
+      jj_la1[48] = jj_gen;
+      ;
+    }
+  }
+
+  final public void SENSALIR() throws ParseException {
+    jj_consume_token(salir);
+    jj_consume_token(dolar);
+  }
+
+  final public void DEFE() throws ParseException {
+    jj_consume_token(defecto);
+    jj_consume_token(dospuntos);
+    SENTENCIAS();
+  }
+
+  final public void SENPARA() throws ParseException {
+    jj_consume_token(para);
+    jj_consume_token(parenti);
+    INIPARA();
+    jj_consume_token(puntoycoma);
+    LOGICA();
+    jj_consume_token(puntoycoma);
+    jj_consume_token(id);
+    CONT2();
+    jj_consume_token(parentd);
+    jj_consume_token(sigabrir);
+    SENTENCIAS();
+    jj_consume_token(sigcerrar);
+  }
+
+  final public void INIPARA() throws ParseException {
+    switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
+    case var:{
+      DECLARACION();
+      break;
+      }
+    case id:{
+      jj_consume_token(id);
+      switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
+      case igual:{
+        ASIGN();
+        break;
+        }
+      default:
+        jj_la1[49] = jj_gen;
+        ;
+      }
+      break;
+      }
+    default:
+      jj_la1[50] = jj_gen;
+      jj_consume_token(-1);
+      throw new ParseException();
+    }
+  }
+
+  final public void SENMIENTRAS() throws ParseException {
+    jj_consume_token(mientras);
+    jj_consume_token(parenti);
+    LOGICA();
+    jj_consume_token(parentd);
+    jj_consume_token(sigabrir);
+    SENTENCIAS();
+    jj_consume_token(sigcerrar);
+  }
+
+  final public void SENHACER() throws ParseException {
+    jj_consume_token(hacer);
+    jj_consume_token(sigabrir);
+    SENTENCIAS();
+    jj_consume_token(sigcerrar);
+    jj_consume_token(mientras);
+    jj_consume_token(parenti);
+    LOGICA();
+    jj_consume_token(parentd);
+    jj_consume_token(dolar);
+  }
+
+  final public void SENCONTINUAR() throws ParseException {
+    jj_consume_token(continuar);
+    jj_consume_token(dolar);
+  }
+
+  final public void CONTENIDO3() throws ParseException {
+    switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
+    case tentero:
+    case tdoble:
+    case tcaracter:
+    case tboolean:
+    case tcadena:
+    case tvoid:{
+      TIPOMETODO();
+      break;
+      }
+    default:
+      jj_la1[51] = jj_gen;
+      ;
+    }
+    jj_consume_token(id);
+    METODO();
+  }
+
+  final public void TIPOMETODO() throws ParseException {
+    switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
+    case tentero:{
+      jj_consume_token(tentero);
+      break;
+      }
+    case tdoble:{
+      jj_consume_token(tdoble);
+      break;
+      }
+    case tboolean:{
+      jj_consume_token(tboolean);
+      break;
+      }
+    case tcaracter:{
+      jj_consume_token(tcaracter);
+      break;
+      }
+    case tcadena:{
+      jj_consume_token(tcadena);
+      break;
+      }
+    case tvoid:{
+      jj_consume_token(tvoid);
+      break;
+      }
+    default:
+      jj_la1[52] = jj_gen;
+      jj_consume_token(-1);
+      throw new ParseException();
+    }
+  }
+
+  final public void METODO() throws ParseException {
+    switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
+    case parenti:{
+      jj_consume_token(parenti);
+      switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
+      case tentero:
+      case tdoble:
+      case tcaracter:
+      case tboolean:
+      case tcadena:{
+        PARAMETROS();
+        break;
+        }
+      default:
+        jj_la1[53] = jj_gen;
+        ;
+      }
+      jj_consume_token(parentd);
+      jj_consume_token(sigabrir);
+      SENTENCIAS();
+      switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
+      case retorna:{
+        RETO();
+        break;
+        }
+      default:
+        jj_la1[54] = jj_gen;
+        ;
+      }
+      jj_consume_token(sigcerrar);
+      break;
+      }
+    case igual:{
+      jj_consume_token(igual);
+      VALOR();
+      break;
+      }
+    case aumento:
+    case decremento:
+    case sumasim:
+    case restasim:{
+      CONT2();
+      break;
+      }
+    default:
+      jj_la1[55] = jj_gen;
+      jj_consume_token(-1);
+      throw new ParseException();
+    }
+  }
+
+  final public void RETO() throws ParseException {
+    jj_consume_token(retorna);
+    C();
+  }
+
+  final public void PARAMETROS() throws ParseException {
+    TIPO();
+    jj_consume_token(id);
+    switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
+    case coma:{
+      PARAP();
+      break;
+      }
+    default:
+      jj_la1[56] = jj_gen;
+      ;
+    }
+  }
+
+  final public void PARAP() throws ParseException {
+    jj_consume_token(coma);
+    TIPO();
+    jj_consume_token(id);
+    switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
+    case coma:{
+      PARAP();
+      break;
+      }
+    default:
+      jj_la1[57] = jj_gen;
+      ;
+    }
+  }
+
+//----------------------METODOS NATIVOS DEL LENGUAJE
+  final public 
+void DIBUJAR_P() throws ParseException {
+    jj_consume_token(pintarP);
+    jj_consume_token(parenti);
+    C();
+    jj_consume_token(coma);
+    C();
+    jj_consume_token(coma);
+    C();
+    jj_consume_token(coma);
+    C();
+    jj_consume_token(parentd);
+    jj_consume_token(dolar);
+  }
+
+  final public void DIBUJAR_OR() throws ParseException {
+    jj_consume_token(pintarOR);
+    jj_consume_token(parenti);
+    C();
+    jj_consume_token(coma);
+    C();
+    jj_consume_token(coma);
+    C();
+    jj_consume_token(coma);
+    C();
+    jj_consume_token(coma);
+    C();
+    jj_consume_token(coma);
+    C();
+    jj_consume_token(parentd);
+    jj_consume_token(dolar);
+  }
+
+  final public void DIBUJAR_S() throws ParseException {
+    jj_consume_token(pintarS);
+    jj_consume_token(parenti);
+    C();
+    jj_consume_token(coma);
+    C();
+    jj_consume_token(coma);
+    C();
+    jj_consume_token(coma);
+    C();
+    jj_consume_token(parentd);
+    jj_consume_token(dolar);
+  }
+
+  final public void PRI() throws ParseException {
+    jj_consume_token(principal);
+    jj_consume_token(parenti);
+    jj_consume_token(parentd);
+    jj_consume_token(sigabrir);
+    SENTENCIAS();
+    jj_consume_token(sigcerrar);
+  }
+
   /** Generated Token Manager. */
   public compiladorTokenManager token_source;
   SimpleCharStream jj_input_stream;
@@ -918,7 +1248,7 @@ void R() throws ParseException {
   public Token jj_nt;
   private int jj_ntk;
   private int jj_gen;
-  final private int[] jj_la1 = new int[44];
+  final private int[] jj_la1 = new int[58];
   static private int[] jj_la1_0;
   static private int[] jj_la1_1;
   static private int[] jj_la1_2;
@@ -928,13 +1258,13 @@ void R() throws ParseException {
       jj_la1_init_2();
    }
    private static void jj_la1_init_0() {
-      jj_la1_0 = new int[] {0x1800,0x0,0x0,0x1f1800,0x1800,0x1800,0x0,0x0,0x0,0x1f1800,0x1f1800,0x0,0x0,0x1f0000,0x1f0000,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x7c0,0x80007c0,0x7e00000,0x90000000,0x90000000,0x90000000,0x90000000,0x90000000,0x60000000,0x60000000,0x60000000,0x60000000,0x80007c0,0x80007c0,};
+      jj_la1_0 = new int[] {0x1800,0x0,0x0,0x1800,0x1800,0x0,0x0,0x0,0x1f1800,0x1f1800,0x0,0x0,0x1f0000,0x1f0000,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x7c0,0x80007c0,0x7e00000,0x90000000,0x90000000,0x90000000,0x90000000,0x90000000,0x60000000,0x60000000,0x60000000,0x60000000,0x80007c0,0x80007c0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x1f0000,0x1f0000,0x1f0000,0x0,0x0,0x0,0x0,};
    }
    private static void jj_la1_init_1() {
-      jj_la1_1 = new int[] {0x0,0x7000,0x100,0xf200,0x0,0x0,0x7000,0x400,0x400,0xf200,0xf200,0x200,0x7000,0xf200,0x0,0x800,0x400,0x800,0x400,0xf0800,0xc,0xc,0xc,0xc,0x30,0x30,0x30,0x30,0x40,0x40,0x800000,0x800000,0x0,0x1,0x1,0x1,0x1,0x1,0x0,0x0,0x0,0x0,0x800000,0x800000,};
+      jj_la1_1 = new int[] {0x0,0x7000,0x100,0x0,0x0,0x7000,0x400,0x400,0x2800f200,0x2800f200,0x200,0x7000,0x8000,0x0,0x100000,0x800,0x400,0x800,0x400,0xf0000,0xc,0xc,0xc,0xc,0x30,0x30,0x30,0x30,0x40,0x40,0x800000,0x800000,0x0,0x1,0x1,0x1,0x1,0x1,0x0,0x0,0x0,0x0,0x800000,0x800000,0x10000000,0x40000000,0x0,0x0,0x40000000,0x800,0x8000,0x0,0x0,0x0,0x0,0x8f0800,0x400,0x400,};
    }
    private static void jj_la1_init_2() {
-      jj_la1_2 = new int[] {0x0,0x0,0x0,0x80000,0x0,0x0,0x0,0x0,0x0,0x80000,0x80000,0x0,0x0,0x80000,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x80000,0x80000,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x80000,0x80000,};
+      jj_la1_2 = new int[] {0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x203de8,0x203de8,0x0,0x0,0x200100,0x0,0x200000,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x200000,0x200000,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x200000,0x200000,0x0,0x0,0x4,0x2,0x0,0x0,0x200000,0x100,0x100,0x0,0x200,0x0,0x0,0x0,};
    }
 
   /** Constructor with InputStream. */
@@ -948,7 +1278,7 @@ void R() throws ParseException {
     token = new Token();
     jj_ntk = -1;
     jj_gen = 0;
-    for (int i = 0; i < 44; i++) jj_la1[i] = -1;
+    for (int i = 0; i < 58; i++) jj_la1[i] = -1;
   }
 
   /** Reinitialise. */
@@ -962,7 +1292,7 @@ void R() throws ParseException {
     token = new Token();
     jj_ntk = -1;
     jj_gen = 0;
-    for (int i = 0; i < 44; i++) jj_la1[i] = -1;
+    for (int i = 0; i < 58; i++) jj_la1[i] = -1;
   }
 
   /** Constructor. */
@@ -972,7 +1302,7 @@ void R() throws ParseException {
     token = new Token();
     jj_ntk = -1;
     jj_gen = 0;
-    for (int i = 0; i < 44; i++) jj_la1[i] = -1;
+    for (int i = 0; i < 58; i++) jj_la1[i] = -1;
   }
 
   /** Reinitialise. */
@@ -982,7 +1312,7 @@ void R() throws ParseException {
     token = new Token();
     jj_ntk = -1;
     jj_gen = 0;
-    for (int i = 0; i < 44; i++) jj_la1[i] = -1;
+    for (int i = 0; i < 58; i++) jj_la1[i] = -1;
   }
 
   /** Constructor with generated Token Manager. */
@@ -991,7 +1321,7 @@ void R() throws ParseException {
     token = new Token();
     jj_ntk = -1;
     jj_gen = 0;
-    for (int i = 0; i < 44; i++) jj_la1[i] = -1;
+    for (int i = 0; i < 58; i++) jj_la1[i] = -1;
   }
 
   /** Reinitialise. */
@@ -1000,7 +1330,7 @@ void R() throws ParseException {
     token = new Token();
     jj_ntk = -1;
     jj_gen = 0;
-    for (int i = 0; i < 44; i++) jj_la1[i] = -1;
+    for (int i = 0; i < 58; i++) jj_la1[i] = -1;
   }
 
   private Token jj_consume_token(int kind) throws ParseException {
@@ -1051,12 +1381,12 @@ void R() throws ParseException {
   /** Generate ParseException. */
   public ParseException generateParseException() {
     jj_expentries.clear();
-    boolean[] la1tokens = new boolean[84];
+    boolean[] la1tokens = new boolean[86];
     if (jj_kind >= 0) {
       la1tokens[jj_kind] = true;
       jj_kind = -1;
     }
-    for (int i = 0; i < 44; i++) {
+    for (int i = 0; i < 58; i++) {
       if (jj_la1[i] == jj_gen) {
         for (int j = 0; j < 32; j++) {
           if ((jj_la1_0[i] & (1<<j)) != 0) {
@@ -1071,7 +1401,7 @@ void R() throws ParseException {
         }
       }
     }
-    for (int i = 0; i < 84; i++) {
+    for (int i = 0; i < 86; i++) {
       if (la1tokens[i]) {
         jj_expentry = new int[1];
         jj_expentry[0] = i;

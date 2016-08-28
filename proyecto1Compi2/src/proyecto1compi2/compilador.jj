@@ -155,7 +155,8 @@ TOKEN:
 	|<mientras: "Mientras"|"mientras" >{System.out.print("mientras "+image+"\r\n");}
 	|<hacer: "Hacer"|"hacer" >{System.out.print("hacer "+image+"\r\n");}
 	|<continuar: "Continuar"|"continuar" >{System.out.print("continuar "+image+"\r\n");}
-	
+	|<tvoid: "Void"|"void" >{System.out.print("void "+image+"\r\n");}
+	|<retorna: "Retorna"|"retorna" >{System.out.print("void "+image+"\r\n");}
 }
 
 TOKEN:
@@ -185,192 +186,104 @@ NodoArbol iniciar():
 	 nodo.nombre = "Ini"; nodo.grafoname=getEtiqueta(); nodo.cadena = "Ini"; nodo.numero =0;
 } //Codigo java. Crear variables
 {
-	S(nodo) {return nodo;}
+	S() {return nodo;}
 	//<lienzo> <id> 
 	//(<entero>|<doble>|<booleano>|<caracter>|<cadena>)+
 	//<EOF> // End of file
 }
 
-void S(NodoArbol padre):
+void S():
+{}
 {
-	NodoArbol nodo = new NodoArbol(); 
-	NodoArbol nodo2 = new NodoArbol();    
-	NodoArbol nodo3 = new NodoArbol();  	
-	nodo.nombre = "S"; nodo.grafoname=getEtiqueta(); nodo.cadena = "S"; nodo.numero =0;
-	padre.hijos.add(nodo);
-}
-{
-	(COMENTARIOS())* (VISI(nodo))? <lienzo> <id> 
-	{	  
-		nodo2.nombre = "Lienzo"; nodo2.grafoname=getEtiqueta(); nodo2.cadena = "Lienzo"; nodo2.numero =0;
-		nodo3.nombre = "id"; nodo3.grafoname=getEtiqueta(); nodo3.cadena = token.image; nodo3.numero =0;
-		nodo.hijos.add(nodo2);
-		nodo.hijos.add(nodo3);
-	}
-													(EXT(nodo))? <sigabrir> (SENTENCIAS(nodo))? <sigcerrar> (COMENTARIOS())* <EOF> // End of file
+	(COMENTARIOS())* (VISI())? <lienzo> <id> (EXT())? <sigabrir> SENTENCIAS() <sigcerrar> (COMENTARIOS())* <EOF> // End of file
 }
 void COMENTARIOS():
-{
-}
+{}
 {
 	<comentario>
 	|<comentarioall> 
 	
 }
 
-void VISI(NodoArbol padre):
-{
-	NodoArbol nodo = new NodoArbol();	
-	NodoArbol nodo2 = new NodoArbol();	
-	nodo2.nombre = "VISI"; nodo2.grafoname = getEtiqueta(); nodo2.cadena = "VISI"; nodo2.numero=0;
-	padre.hijos.add(nodo2);
-}
+void VISI():
+{}
 {
 	<publico>
-	{
-		nodo.nombre = "publico"; nodo.grafoname = getEtiqueta(); nodo.cadena = "publico"; nodo.numero=0;		
-		nodo2.hijos.add(nodo);
-	}
 	|<privado>
-	{
-		nodo.nombre = "privado"; nodo.grafoname = getEtiqueta(); nodo.cadena = "privado"; nodo.numero=0;
-		nodo2.hijos.add(nodo);
-	}
 	|<protegido>
-	{
-		nodo.nombre = "protegido"; nodo.grafoname = getEtiqueta(); nodo.cadena = "protegido"; nodo.numero=0;
-		nodo2.hijos.add(nodo);
-	}	
 }
 
-void EXT(NodoArbol padre):
+void EXT():
+{}
 {
-	NodoArbol nodo = new NodoArbol();
-	NodoArbol nodo2 = new NodoArbol();
-	NodoArbol nodo3 = new NodoArbol();
-	nodo.nombre = "EXT"; nodo.grafoname = getEtiqueta(); nodo.cadena = "EXT"; nodo.numero=0;
-	padre.hijos.add(nodo);
-}
-{
-	<extiende> <id> 
-	{
-		nodo2.nombre = "extiende"; nodo2.grafoname = getEtiqueta(); nodo2.cadena = "extiende"; nodo2.numero=0;
-		nodo3.nombre = "id"; nodo3.grafoname = getEtiqueta(); nodo3.cadena = token.image; nodo3.numero=0;
-		nodo.hijos.add(nodo2);
-		nodo.hijos.add(nodo3);
-	}
-						(EXT1(nodo))?
+	<extiende> <id> (EXT1())?
 						
 }
 
-void EXT1(NodoArbol padre):
+void EXT1():
+{	}
 {
-	NodoArbol nodo = new NodoArbol();
-	NodoArbol nodo2 = new NodoArbol();
-	nodo2.nombre = "EXT1"; nodo2.grafoname = getEtiqueta(); nodo2.cadena = "EXT1"; nodo2.numero=0;
-	padre.hijos.add(nodo2);
-	
-}
-{
-	<coma> <id> 
-	{
-		nodo.nombre = "id"; nodo.grafoname = getEtiqueta(); nodo.cadena = token.image; nodo.numero=0;
-		nodo2.hijos.add(nodo);
-	}
-				(EXT1(nodo2))?
+	<coma> <id> (EXT1())?
 }
 
-void SENTENCIAS(NodoArbol padre):
+void SENTENCIAS():
+{}
 {
-	NodoArbol nodo = new NodoArbol();
-	NodoArbol nodo2 = new NodoArbol();
-	nodo.nombre = "SENTENCIAS"; nodo.grafoname = getEtiqueta(); nodo.cadena = "SENTENCIAS"; nodo.numero=0;
-	padre.hijos.add(nodo);
-	nodo2.nombre = "SEN"; nodo2.grafoname = getEtiqueta(); nodo2.cadena ="SEN"; nodo2.numero=0;
-	nodo.hijos.add(nodo2);
-}
-{
-	SEN(nodo2) (SENTENCIAS(nodo))? 
+	SEN() (SENTENCIAS())? 
 }
 
 
-void SEN(NodoArbol padre):
-{
-	NodoArbol nodo = new NodoArbol();
-	
-}
+void SEN():
+{}
 {
 	<comentario> 
 	|<comentarioall>
-	|
-	{
-		nodo.nombre = "CONTENIDO"; nodo.grafoname = getEtiqueta(); nodo.cadena = "CONTENIDO"; nodo.numero=0;
-		padre.hijos.add(nodo);		
-	} 	
-		CONTENIDO(nodo)
+	|CONTENIDO()
+	|SENSI()
+	|SENCOMPROBAR()
+	|SENPARA()
+	|SENMIENTRAS()
+	|SENHACER()
+	//|SENSALIR()
+	|SENCONTINUAR()
+	|DIBUJAR_P()
+	|DIBUJAR_OR()
+	|DIBUJAR_S()
+	|PRI()
 }
 
 
 //----------------------------------------------ACA ME QUEDE FECHA 26/08/2016
-void CONTENIDO(NodoArbol padre):
+void CONTENIDO():
+{}
 {
-	NodoArbol nodo = new NodoArbol();
-	NodoArbol nodo2 = new NodoArbol();
-}
-{
-	(CONSERV(padre))? (VISI(padre))? CONT(padre)
-	|TIPO() <id> 
-	{
-		nodo.nombre = "id"; nodo.grafoname = getEtiqueta(); nodo.cadena=token.image; nodo.numero=0;
-		nodo2.nombre = "="; nodo2.grafoname = getEtiqueta(); nodo2.cadena="="; nodo2.numero=0;	
-		padre.hijos.add(nodo);
-		padre.hijos.add(nodo2);
-	}
-								<igual> VALOR() <dolar>
-	|<id> 
-	{
-		nodo.nombre = "id"; nodo.grafoname = getEtiqueta(); nodo.cadena=token.image; nodo.numero=0;
-		padre.hijos.add(nodo);
-	}
-	CONT2(padre) <dolar>
+	(CONSERV())? (VISI())? CONT()
+	//|TIPO() <id> <igual> VALOR() <dolar>
+	//|<id> CONT2() <dolar>
 	
 }
 
-void CONSERV(NodoArbol padre):
-{
-	NodoArbol nodo = new NodoArbol();
-	NodoArbol nodo2 = new NodoArbol();
-	nodo.nombre = "CONSERV"; nodo.grafoname= getEtiqueta(); nodo.cadena="CONSERV"; nodo.numero=0;
-	padre.hijos.add(nodo);
-}
+void CONSERV():
+{}
 {
 	<conservar>
-	{
-		nodo2.nombre = "conversar"; nodo2.grafoname= getEtiqueta(); nodo2.cadena="conservar"; nodo2.numero=0;
-		nodo.hijos.add(nodo2);
-	}
 }
 
-void CONT(NodoArbol padre):
+void CONT():
+{}
 {
-	NodoArbol nodo = new NodoArbol();
-	NodoArbol nodo2 = new NodoArbol();
-	nodo.nombre = "CONT"; nodo.grafoname= getEtiqueta(); nodo.cadena="CONT"; nodo.numero=0;
-	padre.hijos.add(nodo);
-}
-{
-	DECLARACION() {
-		nodo2.nombre = "DECLARACION"; nodo2.grafoname = getEtiqueta(); nodo2.cadena="DECLARACION"; nodo2.numero=0;
-		nodo.hijos.add(nodo2);
-	}
-	//faltan metodos y funciones
+	DECLARACION() 
+	|CONTENIDO3()
+	//faltan metodos y funciones y asignaciones de valorea a variables por temas de factorizacion
 }
 
 void DECLARACION():
 {}
 {
-	<var> TIPO() NOMBRES() <dolar>
-}
+	//<var> TIPO() NOMBRES() <dolar>
+	<var> TIPO() VARIABLE()
+	}
+
 
 void TIPO():
 {
@@ -381,6 +294,14 @@ void TIPO():
 	|<tboolean>
 	|<tcaracter>
 	|<tcadena>
+}
+
+void VARIABLE():
+{}
+{
+	NOMBRES() <dolar>
+	|<arreglo> 
+	
 }
 
 void NOMBRES():
@@ -410,15 +331,11 @@ void VALOR():
 }
 
 
-void CONT2(NodoArbol padre):
+void CONT2():
+{}
 {
-	NodoArbol nodo = new NodoArbol();
-	nodo.nombre = "CONT2"; nodo.grafoname=getEtiqueta(); nodo.cadena="CONT2"; nodo.numero=0;
-	padre.hijos.add(nodo);
-}
-{
-	<igual> VALOR()
-	|<aumento>
+	//<igual> VALOR()
+	<aumento>
 	|<decremento> 
 	|<sumasim> VALOR()
 	|<restasim> VALOR()
@@ -566,4 +483,142 @@ void R():
 }
 
 
+//SENTENCIAS DE CONTROL
+void SENSI():
+{}
+{
+	<si> <parenti> LOGICA() <parentd> <sigabrir> SENTENCIAS() <sigcerrar> (SENSINO())?
+}
 
+void SENSINO():
+{}
+{
+	<sino> <sigabrir> SENTENCIAS() <sigcerrar>
+	
+}
+
+void SENCOMPROBAR():
+{}
+{
+	<comprobar> <parenti> <id> <parenti> <parentd> <sigabrir> (CUERPO())? (DEFE())? <sigcerrar>
+}
+
+void CUERPO():
+{}
+{
+	<caso> <tvalor> <entero> <dospuntos> SENTENCIAS() (SENSALIR())? (CUERPO())?
+}
+
+void SENSALIR():
+{}
+{
+	<salir> <dolar>
+}
+
+void DEFE():
+{}
+{
+	<defecto> <dospuntos> SENTENCIAS()
+}
+
+void SENPARA():
+{}
+{
+	<para> <parenti> INIPARA() <puntoycoma> LOGICA() <puntoycoma> <id> CONT2() <parentd> <sigabrir> SENTENCIAS() <sigcerrar>
+}
+
+void INIPARA():
+{}
+{
+	DECLARACION()
+	| <id> (ASIGN())?
+}
+
+void SENMIENTRAS():
+{}
+{
+	<mientras> <parenti> LOGICA() <parentd> <sigabrir> SENTENCIAS() <sigcerrar>	
+}
+
+void SENHACER():
+{}
+{
+	<hacer> <sigabrir> SENTENCIAS() <sigcerrar> <mientras> <parenti> LOGICA() <parentd> <dolar>
+}
+
+void SENCONTINUAR():
+{}
+{
+	<continuar> <dolar>
+}
+
+void CONTENIDO3():
+{}
+{
+	(TIPOMETODO())? <id> METODO()  
+}
+
+void TIPOMETODO():
+{}
+{
+	<tentero>
+	|<tdoble>
+	|<tboolean>
+	|<tcaracter>
+	|<tcadena>
+	|<tvoid>
+}
+
+void METODO():
+{}
+{
+	<parenti> (PARAMETROS())? <parentd> <sigabrir> SENTENCIAS() (RETO())? <sigcerrar>
+	|<igual> VALOR()
+	|CONT2()
+}
+
+void RETO():
+{}
+{
+	<retorna>  C()
+}
+
+void PARAMETROS():
+{}
+{
+	TIPO() <id> (PARAP())?
+}
+
+void PARAP():
+{}
+{
+	<coma> TIPO() <id> (PARAP())?
+}
+
+
+//----------------------METODOS NATIVOS DEL LENGUAJE
+
+void DIBUJAR_P():
+{}
+{
+	<pintarP> <parenti> C() <coma> C() <coma> C() <coma> C() <parentd> <dolar>
+}
+
+void DIBUJAR_OR():
+{}
+{
+	<pintarOR> <parenti> C() <coma> C() <coma> C() <coma> C() <coma> C() <coma> C() <parentd> <dolar>
+}
+
+void DIBUJAR_S():
+{}
+{
+	<pintarS> <parenti> C() <coma> C() <coma> C() <coma> C() <parentd> <dolar>
+}
+
+
+void PRI():
+{}
+{
+	<principal> <parenti> <parentd> <sigabrir> SENTENCIAS() <sigcerrar>
+}

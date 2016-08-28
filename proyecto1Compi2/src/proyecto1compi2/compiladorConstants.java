@@ -143,29 +143,33 @@ public interface compiladorConstants {
   /** RegularExpression Id. */
   int continuar = 71;
   /** RegularExpression Id. */
-  int pintarP = 72;
+  int tvoid = 72;
   /** RegularExpression Id. */
-  int pintarOR = 73;
+  int retorna = 73;
   /** RegularExpression Id. */
-  int pintarS = 74;
+  int pintarP = 74;
   /** RegularExpression Id. */
-  int principal = 75;
+  int pintarOR = 75;
   /** RegularExpression Id. */
-  int ordenar = 76;
+  int pintarS = 76;
   /** RegularExpression Id. */
-  int sumarizar = 77;
+  int principal = 77;
   /** RegularExpression Id. */
-  int ascendente = 78;
+  int ordenar = 78;
   /** RegularExpression Id. */
-  int descendente = 79;
+  int sumarizar = 79;
   /** RegularExpression Id. */
-  int pares = 80;
+  int ascendente = 80;
   /** RegularExpression Id. */
-  int impares = 81;
+  int descendente = 81;
   /** RegularExpression Id. */
-  int primos = 82;
+  int pares = 82;
   /** RegularExpression Id. */
-  int id = 83;
+  int impares = 83;
+  /** RegularExpression Id. */
+  int primos = 84;
+  /** RegularExpression Id. */
+  int id = 85;
 
   /** Lexical state. */
   int DEFAULT = 0;
@@ -244,6 +248,8 @@ public interface compiladorConstants {
     "<mientras>",
     "<hacer>",
     "<continuar>",
+    "<tvoid>",
+    "<retorna>",
     "<pintarP>",
     "<pintarOR>",
     "<pintarS>",
