@@ -32,6 +32,7 @@ public class Panel extends javax.swing.JFrame {
     }
 
     public void pintar(){
+        
         jPaneColor panel = new jPaneColor();
         panel.LDibujo = this.LDibujo;
         panel.setVisible(true);

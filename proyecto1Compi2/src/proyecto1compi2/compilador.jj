@@ -65,8 +65,8 @@ TOKEN:
 	 <entero : ("-")?(["0"-"9"])+ > {System.out.print("entero "+image+"\r\n");}
 	| <doble:(<entero>)"."(["0"-"9"])+ > {System.out.print("doble "+image+"\r\n");}
 	| <booleano: "falso"|"false"|"verdadero"|"true" > {System.out.print("boolean "+image+"\r\n");}
-	| <caracter: "'" (~["'","^"]|"^t"|"^r"|"^'"|"^^") "'" > {System.out.print("caracter "+image+"\r\n");}
-	| <cadena: "\"" (~["\"","#"]|"#t"|"#r"|"#\""|"##")+ "\"" > {System.out.print("cadena "+image+"\r\n");}
+	| <caracter: "'" (~["'","^"]|"^n"|"^t"|"^r"|"^'"|"^^") "'" > {System.out.print("caracter "+image+"\r\n");}
+	| <cadena: "\"" (~["\"","#"]|"#n"|"#t"|"#r"|"#\""|"##")+ "\"" > {System.out.print("cadena "+image+"\r\n");}
 	| <comentario :">>" (~["\n"])* > {System.out.print("comentario "+image+"\r\n");}
 	| <comentarioall : "<-" (~["-"])* "->" > {System.out.print("comentarioall "+image+"\r\n"); }
 	| <dolar: "$" > {System.out.print("dolar-> "+image+"\r\n");}
@@ -244,7 +244,7 @@ void SEN():
 	|SENPARA()
 	|SENMIENTRAS()
 	|SENHACER()
-	//|SENSALIR()
+	|SENSALIR()
 	|SENCONTINUAR()
 	|DIBUJAR_P()
 	|DIBUJAR_OR()
@@ -300,8 +300,63 @@ void VARIABLE():
 {}
 {
 	NOMBRES() <dolar>
-	|<arreglo> 
+	|<arreglo>  NOMARREGLO() DIMENSION() (ASIGNARREGLO())? <dolar>
 	
+}
+
+void NOMARREGLO():
+{}
+{
+	<id> (NOMARR())?
+}
+
+void NOMARR():
+{}
+{
+	<coma> <id> (NOMARR())?
+}
+
+void DIMENSION():
+{}
+{
+	<corchetei> VALOR() <corcheted> (DIMENSION())?
+}
+
+void ASIGNARREGLO():
+{}
+{
+	<igual> VALORARREGLO()
+}
+
+void VALORARREGLO():
+{}
+{
+	<llavei> VALARR() <llaved>
+}
+
+void VALARR():
+{}
+{
+	R2()
+	|<llavei> R2() <llaved> LVAL2()
+}
+
+void R2():
+{}
+{
+	VALOR() (LVAL())?
+}
+
+void LVAL():
+{}
+{
+	<coma> VALOR() (LVAL())?
+}
+
+void LVAL2():
+{}
+{
+	<coma> <llavei> R2() <llaved> (LVAL2())?
 }
 
 void NOMBRES():
@@ -395,7 +450,9 @@ void G():
 	|<booleano>
 	|<caracter>
 	|<cadena>
-	|<id>
+	|<id> (DIMENSION())?
+	|ORDEN()
+	|SUMARI()
 	|<parenti> E() <parentd>
 }
 
@@ -500,13 +557,13 @@ void SENSINO():
 void SENCOMPROBAR():
 {}
 {
-	<comprobar> <parenti> <id> <parenti> <parentd> <sigabrir> (CUERPO())? (DEFE())? <sigcerrar>
+	<comprobar> <parenti> VALOR() <parenti> <parentd> <sigabrir> (CUERPO())? (DEFE())? <sigcerrar>
 }
 
 void CUERPO():
 {}
 {
-	<caso> <tvalor> <entero> <dospuntos> SENTENCIAS() (SENSALIR())? (CUERPO())?
+	<caso> VALOR() <dospuntos> SENTENCIAS() (CUERPO())?
 }
 
 void SENSALIR():
@@ -555,7 +612,7 @@ void SENCONTINUAR():
 void CONTENIDO3():
 {}
 {
-	(TIPOMETODO())? <id> METODO()  
+	(TIPOMETODO())? <id> (DIMENSION())? METODO()  
 }
 
 void TIPOMETODO():
@@ -573,8 +630,8 @@ void METODO():
 {}
 {
 	<parenti> (PARAMETROS())? <parentd> <sigabrir> SENTENCIAS() (RETO())? <sigcerrar>
-	|<igual> VALOR()
-	|CONT2()
+	|<igual> VALOR() <dolar>
+	|CONT2() <dolar>
 }
 
 void RETO():
@@ -621,4 +678,34 @@ void PRI():
 {}
 {
 	<principal> <parenti> <parentd> <sigabrir> SENTENCIAS() <sigcerrar>
+}
+
+
+void ORDEN():
+{}
+{
+	<ordenar> <parenti> <id> <coma> FORMAORDEN() <parentd>
+}
+
+void FORMAORDEN():
+{}
+{
+	<ascendente>
+	|<descendente>
+	|<pares>
+	|<impares>
+	|<primos>
+}
+
+void SUMARI():
+{}
+{
+	<sumarizar> <parenti> CONT5() <parentd>	
+}
+
+void CONT5():
+{}
+{
+	<id>
+	|VALORARREGLO()
 }
