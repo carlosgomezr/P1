@@ -157,19 +157,23 @@ public interface compiladorConstants {
   /** RegularExpression Id. */
   int ordenar = 78;
   /** RegularExpression Id. */
-  int sumarizar = 79;
+  int tipo = 79;
   /** RegularExpression Id. */
-  int ascendente = 80;
+  int sumarizar = 80;
   /** RegularExpression Id. */
-  int descendente = 81;
+  int ascendente = 81;
   /** RegularExpression Id. */
-  int pares = 82;
+  int descendente = 82;
   /** RegularExpression Id. */
-  int impares = 83;
+  int pares = 83;
   /** RegularExpression Id. */
-  int primos = 84;
+  int impares = 84;
   /** RegularExpression Id. */
-  int id = 85;
+  int primos = 85;
+  /** RegularExpression Id. */
+  int id = 86;
+  /** RegularExpression Id. */
+  int colore = 87;
 
   /** Lexical state. */
   int DEFAULT = 0;
@@ -255,6 +259,7 @@ public interface compiladorConstants {
     "<pintarS>",
     "<principal>",
     "<ordenar>",
+    "<tipo>",
     "<sumarizar>",
     "<ascendente>",
     "<descendente>",
@@ -262,6 +267,7 @@ public interface compiladorConstants {
     "<impares>",
     "<primos>",
     "<id>",
+    "<colore>",
   };
 
 }

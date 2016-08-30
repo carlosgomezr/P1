@@ -1,0 +1,36 @@
+<-COMENTARIO
+SENTENCIAS DE CONTROL
+SI EN JAVACC->
+
+privado lienzo sensi¿
+si((a+b)>(2+var1))¿
+>>comentario
+?
+
+si((a+b))¿
+>>comentario
+?
+
+si((a+b)<(5+2*3-(b)))¿
+>>comentario
+?
+
+
+si(a>=b || (c))¿
+>>comentario
+?
+
+
+
+si(a>=b || (c) && d)¿
+>>comentario
+?
+
+
+si(a>=b || c && d)¿
+>>comentario
+?
+
+
+?
+<-comentario final5->

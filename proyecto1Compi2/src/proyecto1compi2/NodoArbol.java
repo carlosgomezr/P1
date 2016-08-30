@@ -14,14 +14,20 @@ public class NodoArbol {
     public String grafoname;
     public String cadena;
     public int numero;
+    public int f;
+    public int c;
+    public String ty;
     ArrayList<NodoArbol> hijos = new ArrayList<NodoArbol>();
     
-    NodoArbol(String nombre, String grafoname, String cadena, int numero){
+    NodoArbol(String nombre, String grafoname, String cadena, int numero,int f, int c){
         this.nombre = nombre;
         this.grafoname = grafoname;
         this.cadena = cadena;
         this.numero = numero;
+        this.f = f;
+        this.c = c;
     }
+    
     
     NodoArbol(){
     

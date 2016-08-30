@@ -1,0 +1,34 @@
+publico Lienzo Flores extiende Hoja
+¿
+Conservar var caracter arreglo arr1,arr2,arr3[id][ident][var2] $
+Conservar var caracter arreglo arr1,arr2,arr3[id][ident][var2]={{id,id,id},{id,id,id},{id,id,id}} $
+Conservar var caracter arreglo arr1,arr2,arr3[id][ident][var2]={{{id,id,id},{id,id,id},{id,id,id}},{{id,id,id},{id,id,id},{id,id,id}},{{id,id,id},{id,id,id},{id,id,id}}} $
+
+var boolean f2=id,f1=GetValor(1,2) $
+var cadena palabra2,palabra3 = id $
+Conservar var boolean flag2 $
+
+
+Principal()
+¿
+    cadenaN1++$
+	cadenaN1+=5$
+	Ordenar(arreglo arr1,tipo pares)$
+	var entero Ordneado=Ordenar(arreglo arr2,tipo impares)+1$
+	var boolean f2=id,f1=id $
+	var cadena palabra2,palabra3 = id $
+	Conservar var boolean flag2 $
+	bool1= 1$
+	vec2[0][1]= 5 $
+	Dibujar()$
+	Dibujar(1,2)$
+	salir $
+	Continuar$
+	>>retorna arrayy[1][5]$
+	pintar_P(1,2,"#FFFF",3)$
+	Pintar_OR(100,100,"#000000",50,100,'o')$
+	Pintar_S(8,8,"#FFFF","Este es el titulo")$
+?
+
+
+?<-coment xd->

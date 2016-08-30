@@ -156,7 +156,7 @@ TOKEN:
 	|<hacer: "Hacer"|"hacer" >{System.out.print("hacer "+image+"\r\n");}
 	|<continuar: "Continuar"|"continuar" >{System.out.print("continuar "+image+"\r\n");}
 	|<tvoid: "Void"|"void" >{System.out.print("void "+image+"\r\n");}
-	|<retorna: "Retorna"|"retorna" >{System.out.print("void "+image+"\r\n");}
+	|<retorna: "Retorna"|"retorna" >{System.out.print("retorna "+image+"\r\n");}
 }
 
 TOKEN:
@@ -170,6 +170,7 @@ TOKEN:
 {
 	 <principal: "Principal"|"principal" >{System.out.print("principal "+image+"\r\n");}
 	|<ordenar: "Ordenar"|"ordenar" >{System.out.print("ordenar "+image+"\r\n");}
+	|<tipo: "Tipo"|"tipo" >{System.out.print("tipo "+image+"\r\n");}
 	|<sumarizar: "Sumarizar"|"sumarizar" >{System.out.print("sumarizar "+image+"\r\n");}
 	|<ascendente: "Ascendente"|"ascendente" >{System.out.print("ascendente "+image+"\r\n");}
 	|<descendente: "Descendente"|"descendente" >{System.out.print("descendente "+image+"\r\n");}
@@ -177,6 +178,7 @@ TOKEN:
 	|<impares: "Impares"|"impares" >{System.out.print("impares "+image+"\r\n");}
 	|<primos: "Primos"|"primos" >{System.out.print("primos "+image+"\r\n");}
 	|<id : ["a"-"z","A"-"Z"](["a"-"z","A"-"Z","0"-"9","_"])* > {System.out.print("id -> "+image+"\r\n");}
+	|<colore: "\"" (~["\""])+ "\"" > {System.out.print("colore "+image+"\r\n");}
 	
 }
 
@@ -195,7 +197,7 @@ NodoArbol iniciar():
 void S():
 {}
 {
-	(COMENTARIOS())* (VISI())? <lienzo> <id> (EXT())? <sigabrir> SENTENCIAS() <sigcerrar> (COMENTARIOS())* <EOF> // End of file
+	(COMENTARIOS())* (VISI())? <lienzo> <id> (EXT())? <sigabrir> (SENTENCIAS())? <sigcerrar> (COMENTARIOS())* <EOF> // End of file
 }
 void COMENTARIOS():
 {}
@@ -250,6 +252,8 @@ void SEN():
 	|DIBUJAR_OR()
 	|DIBUJAR_S()
 	|PRI()
+	|ORDEN() <dolar>
+	|SUMARI() <dolar>
 }
 
 
@@ -332,13 +336,14 @@ void VALORARREGLO():
 {}
 {
 	<llavei> VALARR() <llaved>
+	
 }
 
 void VALARR():
 {}
 {
 	R2()
-	|<llavei> R2() <llaved> LVAL2()
+	|<llavei> VALARR() <llaved> (LVAL2())?
 }
 
 void R2():
@@ -356,7 +361,7 @@ void LVAL():
 void LVAL2():
 {}
 {
-	<coma> <llavei> R2() <llaved> (LVAL2())?
+	<coma> <llavei> VALARR() <llaved> (LVAL2())?
 }
 
 void NOMBRES():
@@ -450,27 +455,36 @@ void G():
 	|<booleano>
 	|<caracter>
 	|<cadena>
-	|<id> (DIMENSION())?
+	|<id> (HH())? 
 	|ORDEN()
 	|SUMARI()
+	//|CONTENIDO3()
 	|<parenti> E() <parentd>
 }
 
+void HH():
+{}
+{
+	DIMENSION()
+	|<parenti> (PARAMETROS())? <parentd>		//llamada a metodo
+	//|<igual> <id> CONT2()	//id = id ++ 
+}
 //-----------------RELACIONAL
 void RELACIONAL():
 {}
 {
-	A() 
+	A()	
 }
+
 
 void A():
 {}
 {
-	EXP() REL()
-	|<nulo> EXP() 
+	EXP() (AP())?
+	|<nulo> EXP()	
 }
 
-void REL():
+void AP():
 {}
 {
 	<igualacion> EXP()
@@ -481,6 +495,7 @@ void REL():
 	|<mayorigualque> EXP()
 	
 }
+
 
 void EXP():
 {}
@@ -526,7 +541,13 @@ void MP():
 void N():
 {}
 {
-	<not> (R())?
+	R() (NP())?
+}
+
+void NP():
+{}
+{
+	<not> R() (NP())?
 }
 
 //LA PARTE DE DECLARACION NO SE HA COMPLETADO
@@ -535,35 +556,37 @@ void N():
 void R():
 {}
 {
-	E()
-	|RELACIONAL()
+	//E()
+	RELACIONAL()
+
 }
+
 
 
 //SENTENCIAS DE CONTROL
 void SENSI():
 {}
 {
-	<si> <parenti> LOGICA() <parentd> <sigabrir> SENTENCIAS() <sigcerrar> (SENSINO())?
+	<si> <parenti> LOGICA() <parentd> <sigabrir> (SENTENCIAS())? <sigcerrar> (SENSINO())?
 }
 
 void SENSINO():
 {}
 {
-	<sino> <sigabrir> SENTENCIAS() <sigcerrar>
+	<sino> <sigabrir> (SENTENCIAS())? <sigcerrar>
 	
 }
 
 void SENCOMPROBAR():
 {}
 {
-	<comprobar> <parenti> VALOR() <parenti> <parentd> <sigabrir> (CUERPO())? (DEFE())? <sigcerrar>
+	<comprobar> <parenti> VALOR() <parentd> <sigabrir> (CUERPO())? (DEFE())? <sigcerrar>
 }
 
 void CUERPO():
 {}
 {
-	<caso> VALOR() <dospuntos> SENTENCIAS() (CUERPO())?
+	<caso> VALOR() <dospuntos> (SENTENCIAS())? (CUERPO())?
 }
 
 void SENSALIR():
@@ -575,13 +598,13 @@ void SENSALIR():
 void DEFE():
 {}
 {
-	<defecto> <dospuntos> SENTENCIAS()
+	<defecto> <dospuntos> (SENTENCIAS())?
 }
 
 void SENPARA():
 {}
 {
-	<para> <parenti> INIPARA() <puntoycoma> LOGICA() <puntoycoma> <id> CONT2() <parentd> <sigabrir> SENTENCIAS() <sigcerrar>
+	<para> <parenti> INIPARA() <puntoycoma> LOGICA() <puntoycoma> <id> CONT2() <parentd> <sigabrir> (SENTENCIAS())? <sigcerrar>
 }
 
 void INIPARA():
@@ -589,18 +612,19 @@ void INIPARA():
 {
 	DECLARACION()
 	| <id> (ASIGN())?
+	| TIPO() <id> <igual> VALOR()
 }
 
 void SENMIENTRAS():
 {}
 {
-	<mientras> <parenti> LOGICA() <parentd> <sigabrir> SENTENCIAS() <sigcerrar>	
+	<mientras> <parenti> LOGICA() <parentd> <sigabrir> (SENTENCIAS())? <sigcerrar>	
 }
 
 void SENHACER():
 {}
 {
-	<hacer> <sigabrir> SENTENCIAS() <sigcerrar> <mientras> <parenti> LOGICA() <parentd> <dolar>
+	<hacer> <sigabrir> (SENTENCIAS())? <sigcerrar> <mientras> <parenti> LOGICA() <parentd> <dolar>
 }
 
 void SENCONTINUAR():
@@ -618,32 +642,54 @@ void CONTENIDO3():
 void TIPOMETODO():
 {}
 {
-	<tentero>
-	|<tdoble>
-	|<tboolean>
-	|<tcaracter>
-	|<tcadena>
-	|<tvoid>
+	<tentero> (<corchetei> <corcheted>	{System.out.println("[]");})*
+	|<tdoble> (<corchetei> <corcheted>	{System.out.println("[]");})*
+	|<tboolean> (<corchetei> <corcheted>	{System.out.println("[]");})*
+	|<tcaracter> (<corchetei> <corcheted>	{System.out.println("[]");})*
+	|<tcadena> (<corchetei> <corcheted>	{System.out.println("[]");})*
+	|<tvoid> (<corchetei> <corcheted>	{System.out.println("[]");})*
 }
 
 void METODO():
 {}
 {
-	<parenti> (PARAMETROS())? <parentd> <sigabrir> SENTENCIAS() (RETO())? <sigcerrar>
-	|<igual> VALOR() <dolar>
-	|CONT2() <dolar>
+	<parenti> (PARAMETROS())? <parentd> (METOD())? 
+	|<igual> VALOR() (CONT2())? <dolar> //asignacion de variable
+	|CONT2() <dolar> // sentencias de sumas y restas simplificadas
+	
+}
+
+
+void METOD():
+{}
+{
+	<sigabrir> (SENTENCIAS())? (RETO())? <sigcerrar>//declaracion de metodos
+	|<dolar>	//invocacion de metodo
+}
+
+void LISTPARAMETRO():
+{}
+{
+	VALOR() (LISTPARAMETRO2())?
+}
+
+void LISTPARAMETRO2():
+{}
+{
+	<coma> VALOR() (LISTPARAMETRO2())?	
 }
 
 void RETO():
 {}
 {
-	<retorna>  C()
+	<retorna>  C() <dolar>
 }
 
 void PARAMETROS():
 {}
 {
 	TIPO() <id> (PARAP())?
+	|LISTPARAMETRO() 
 }
 
 void PARAP():
@@ -658,33 +704,39 @@ void PARAP():
 void DIBUJAR_P():
 {}
 {
-	<pintarP> <parenti> C() <coma> C() <coma> C() <coma> C() <parentd> <dolar>
+	<pintarP> <parenti> C() <coma> C() <coma> COLOR() <coma> C() <parentd> <dolar>
 }
 
 void DIBUJAR_OR():
 {}
 {
-	<pintarOR> <parenti> C() <coma> C() <coma> C() <coma> C() <coma> C() <coma> C() <parentd> <dolar>
+	<pintarOR> <parenti> C() <coma> C() <coma> COLOR() <coma> C() <coma> C() <coma> C() <parentd> <dolar>
 }
 
 void DIBUJAR_S():
 {}
 {
-	<pintarS> <parenti> C() <coma> C() <coma> C() <coma> C() <parentd> <dolar>
+	<pintarS> <parenti> C() <coma> C() <coma> COLOR() <coma> C() <parentd> <dolar>
 }
 
+void COLOR():
+{}
+{
+	C()
+	|<colore>
+}
 
 void PRI():
 {}
 {
-	<principal> <parenti> <parentd> <sigabrir> SENTENCIAS() <sigcerrar>
+	<principal> <parenti> <parentd> <sigabrir> (SENTENCIAS())? <sigcerrar>
 }
 
 
 void ORDEN():
 {}
 {
-	<ordenar> <parenti> <id> <coma> FORMAORDEN() <parentd>
+	<ordenar> <parenti> <arreglo> <id> <coma> <tipo> FORMAORDEN() <parentd>
 }
 
 void FORMAORDEN():

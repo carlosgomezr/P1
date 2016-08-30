@@ -43,7 +43,7 @@ Conservar cadena Dibujo(entero var1, cadena var2, boolean var3)
 	mientras("Hola"==cad1)$
 	
 	?
-    retorna arrayy$
+    retorna arrayy
 ?
 
 entero Dibujo()
@@ -60,4 +60,4 @@ entero Dibujo()
 ?
 
 
-<-commen final1 array1->
+<-commen final1 array return->

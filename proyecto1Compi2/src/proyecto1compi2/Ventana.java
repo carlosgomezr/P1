@@ -189,7 +189,7 @@ compilador ana = new compilador();
 
         jTabbedPane1.addTab("tab1", jScrollPane2);
 
-        getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(21, 182, 870, 480));
+        getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(21, 182, 1190, 480));
 
         jLabel1.setText("Reporte de Errores");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 110, 111, -1));
@@ -413,13 +413,15 @@ compilador ana = new compilador();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-
+        int x;
+        x = jSlider1.getValue() * 99 + 10; 
+        JOptionPane.showMessageDialog(null, "Velocidad del Debugger "+x,"DEBUGGER", JOptionPane.INFORMATION_MESSAGE);
+       
         
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jSlider1StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jSlider1StateChanged
-        JOptionPane.showMessageDialog(null, "Velocidad del Debugger "+jSlider1.getValue(),"DEBUGGER", JOptionPane.INFORMATION_MESSAGE);
         
         // TODO add your handling code here:
     }//GEN-LAST:event_jSlider1StateChanged
