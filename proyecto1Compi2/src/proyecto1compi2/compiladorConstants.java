@@ -41,31 +41,31 @@ public interface compiladorConstants {
   /** RegularExpression Id. */
   int tcadena = 20;
   /** RegularExpression Id. */
-  int igualacion = 21;
+  int or = 21;
   /** RegularExpression Id. */
-  int diferenciacion = 22;
+  int and = 22;
   /** RegularExpression Id. */
-  int menorque = 23;
+  int nand = 23;
   /** RegularExpression Id. */
-  int menorigualque = 24;
+  int nor = 24;
   /** RegularExpression Id. */
-  int mayorque = 25;
+  int xor = 25;
   /** RegularExpression Id. */
-  int mayorigualque = 26;
+  int nulo = 26;
   /** RegularExpression Id. */
-  int nulo = 27;
+  int not = 27;
   /** RegularExpression Id. */
-  int or = 28;
+  int igualacion = 28;
   /** RegularExpression Id. */
-  int and = 29;
+  int diferenciacion = 29;
   /** RegularExpression Id. */
-  int nand = 30;
+  int menorque = 30;
   /** RegularExpression Id. */
-  int nor = 31;
+  int menorigualque = 31;
   /** RegularExpression Id. */
-  int xor = 32;
+  int mayorque = 32;
   /** RegularExpression Id. */
-  int not = 33;
+  int mayorigualque = 33;
   /** RegularExpression Id. */
   int mas = 34;
   /** RegularExpression Id. */
@@ -201,19 +201,19 @@ public interface compiladorConstants {
     "<tcaracter>",
     "<tboolean>",
     "<tcadena>",
+    "\"||\"",
+    "\"&&\"",
+    "\"!&&\"",
+    "\"!||\"",
+    "\"&|\"",
+    "<nulo>",
+    "\"!\"",
     "\"==\"",
     "\"!=\"",
     "\"<\"",
     "\"<=\"",
     "\">\"",
     "\">=\"",
-    "\"!&\\u00c2\\u00a1\"",
-    "\"||\"",
-    "\"&&\"",
-    "\"!&&\"",
-    "\"!||\"",
-    "\"&|\"",
-    "\"!\"",
     "\"+\"",
     "\"-\"",
     "\"*\"",

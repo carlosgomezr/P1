@@ -5,15 +5,15 @@ DE LOS MISMOS ->
 publico lienzo arreglos extiende arr¿
 
 >>DECLARACION DE ARREGLOS SIN CONSERV
-var entero arreglo arr1 [a+b+(a+(5+1)/5)]$ 
-var entero arreglo arr2,arr3,arr4  [5][5*5+5-(4)]$ 
-var entero arreglo arr5[arr1[1-(1)]][(arr1[5+arr2[0][4]]/5)+1][1][8][15]$ 
+var entero arreglo arr1 [a+b+a+5+1/5]$ 
+var entero arreglo arr2,arr3,arr4  [5][5*5+5-4]$ 
+var entero arreglo arr5[arr1[1-1]][arr1[5+arr2[0][4]]/5+1][1][8][15]$ 
 
 >>DECLARACION DE ARREGLOS CON CONSERV
 
-conservar var entero arreglo arr1 [a+b+(a+(5+1)/5)]$ 
-Conservar var entero arreglo arr2,arr3,arr4  [5][5*5+5-(4)]$ 
-conservar var entero arreglo arr5[arr1[1-(1)]][(arr1[5+arr2[0][4]]/5)+1][1][8][15]$ 
+conservar var entero arreglo arr1 [a+b+a+5+1/5]$ 
+Conservar var entero arreglo arr2,arr3,arr4  [5][5*5+5-4]$ 
+conservar var entero arreglo arr5[arr1[1-1]][arr1[5+arr2[0][4]]/5+1][1][8][15]$ 
 
 >>ASIGNACION DE VALORES A ARREGLO
 var entero arreglo arr0 [3]={5,10,15}$
@@ -24,10 +24,10 @@ var entero arreglo arr10,arr20,arr30 [2][3]={{5,10,15},{20,25,30}}$
 
 >>ASIGNAR VALOR A POSICION DE ARREGLO
 arr0[2] = 5+5$
-arr0[1][2] = 2+b*c+d-(-3+d)*3$
-arr1 [(a+(5+1)/5)] = arr0[2]+5*8+b $  
-arr4 [5+arr1[5]] [5*arr1[4]+5*arr1[5]-(4)] = arr1[(a+5)/2] $ 
+arr0[1][2] = 2+b*c+d-3+d*3$
+arr1 [a+5+1/5] = arr0[2]+5*8+b $  
+arr4 [5+arr1[5]] [5*arr1[4]+5*arr1[5]-4] = arr1[a+5/2] $ 
 
 
 ?
-<-COMENTARIO FINAL5->
+<-COMENTARIO FINAL x->

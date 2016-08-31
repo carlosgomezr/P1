@@ -43,14 +43,16 @@ Conservar cadena Dibujo(entero var1, cadena var2, boolean var3)
 	mientras("Hola"==cad1)$
 	
 	?
-    retorna arrayy
+    retorna true$
+    retorna false$
+    retorna arrayy[1][1]$
 ?
 
 entero Dibujo()
 ¿
-    si (a==b||6!=5*5+(6*8))
+    si (a==b||6!=5*5+6*8)
 	¿
-		si (a2==b2||6!=5*5+(6*8))
+		si (a2==b2||6!=5*5+6*8)
 		¿
 	        >>comment	
 		?

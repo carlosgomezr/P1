@@ -15,49 +15,49 @@ Lienzo kaya extiende ashe, vayne0, velkoz, wukong170¿
 	
 	>>DECLARACION DE VARIABLES SIN CONSERV
 	var entero x=0$
-	var doble y=-231.0021$
+	var doble y=231.0021$
 	var boolean z=true$
 	var caracter a='c'$
 	var cadena b="world"$
 	
 	>>DECLARACION DE VARIABLES CON CONSERV 
-	Conservar var entero x1=-600$
-	Conservar var doble y2=-700.2223$
+	Conservar var entero x1=600$
+	Conservar var doble y2=700.2223$
 	Conservar var boolean z3=false$
 	Conservar var caracter a4='^t'$
 	Conservar var cadena g="cadena #" hola #t mundo #""$
 
 	>>DECLARACION DE 2 VARIABLES CON EL MISMO VALOR
 	var entero x,xx=0$
-	var doble y,yy=-231.0021$
+	var doble y,yy=231.0021$
 	var boolean z,zz=verdadero$
 	var caracter a,aa='c'$
 	var cadena b,bb="world"$
 	
 	>>DECLARACION DE 2 VARIABLES CON EL MISMO VALOR CON CONSERV
 	conservar Var Entero x,xx=0$
-	conservar Var Doble y,yy=-231.0021$
+	conservar Var Doble y,yy=231.0021$
 	conservar Var Boolean z,zz=verdadero$
 	conservar Var Caracter a,aa='c'$
 	conservar Var Cadena b,bb="world"$
 	
 	>>DECLARACION DE MULTIPLES VARIABLES CON EL MISMO VALOR SIN CONSER
 	var entero x,xx,XXX=130$
-	var doble y,yy,YYY=-401.3021$
+	var doble y,yy,YYY=401.3021$
 	var boolean z,zz,ZZZ=falso$
 	var caracter a,aa,AAA='^r'$
 	var cadena b,bb,BBB="world#r"$
 	
 	>>DECLARACION DE MULTIPLES VARIABLES CON EL MISMO VALOR CON CONSERV
 	Conservar var entero x,xx,XXX=130$
-	Conservar var doble y,yy,YYY=-401.3021$
+	Conservar var doble y,yy,YYY=34401.3021$
 	Conservar var boolean z,zz,ZZZ=falso$
 	Conservar var caracter a,aa,AAA='^''$
 	Conservar var cadena b,bb,BBB="world#r"$
 	
 	>>DECLARACION DE MULTIPLES VARIABLES CON EL MISMO VALOR SIN CONSERV
 	var entero x,xx,XXX=130$
-	var doble y,yy,YYY=-401.3021$
+	var doble y,yy,YYY=401.3021$
 	var boolean z,zz,ZZZ=falso$
 	var caracter a,aa,AAA='^^'$
 	var cadena b,bb,BBB="world#r"$
@@ -65,7 +65,7 @@ Lienzo kaya extiende ashe, vayne0, velkoz, wukong170¿
 	
 	>>DECLARACION DE MULTIPLES VARIABLES CON EL MISMO VALOR CON CONSERV
 	Conservar var entero x,xx,XXX=130$
-	Conservar var doble y,yy,YYY=-401.3021$
+	Conservar var doble y,yy,YYY=401.3021$
 	Conservar var boolean z,zz,ZZZ=falso$
 	Conservar var caracter a='^t',aa='^n',AAA='^r'$
 	Conservar var cadena b,bb,BBB="world#r"$
@@ -82,7 +82,7 @@ Lienzo kaya extiende ashe, vayne0, velkoz, wukong170¿
 	variablez = false$
 	variablea = verdadero$
 	variableb = falso$
-	variablec = 100.2013123+(1*242-(b-c)/s+14-(21)*c50)$
+	variablec = 100.2013123+1*242-b-c/s+14-21*c50$
 	variabled = '^^'$
 	variablee = '^r'$
 	variablef = '^t'$
@@ -96,7 +96,7 @@ Lienzo kaya extiende ashe, vayne0, velkoz, wukong170¿
 	 
     entero numero1=true$   
     boolean contador = 50.5*20+115*b $   
-    cadena cad = "holamundo"+(a)-c$
+    cadena cad = "holamundo"+a-c$
     caracter car = 'c'+150$
     doble dob = 12.3201+2342+true$
     

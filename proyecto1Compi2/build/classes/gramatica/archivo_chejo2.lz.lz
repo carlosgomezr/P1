@@ -1,0 +1,28 @@
+publico Lienzo Petalos extiende Flores
+¿
+Principal()
+¿
+para (i=0;i<10;i++)
+¿
+?
+para (entero i=0;i<10;i++)
+¿
+?
+comprobar(variable) ¿
+caso valor1:
+    bool1=identificador--$
+salir $
+caso valor2:
+    bool1=identificador--$
+salir $
+caso valor3:
+    bool1=identificador--$
+salir $
+
+defecto:
+    bool1=identificador--$
+salir $
+?
+?
+?
+<-this is sparta->

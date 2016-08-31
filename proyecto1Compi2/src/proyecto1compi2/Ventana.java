@@ -439,7 +439,8 @@ compilador ana = new compilador();
         JScrollPane scroll = new javax.swing.JScrollPane(editor);
         scroll.setBounds(0,0,810, 290);        
         jTabbedPane1.addTab("new", scroll);
-        
+        int x = 0;
+        int y = x+= 0+2;
         this.iniciarEditor(editor);
 
         

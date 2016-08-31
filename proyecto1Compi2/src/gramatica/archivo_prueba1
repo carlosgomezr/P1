@@ -1,0 +1,140 @@
+lienzo l ¿
+
+Conservar var doble contador = 50.5, contador2 = 30.55$ 
+
+	var boolean f2=false,f1=true $ 
+	var cadena palabra2,palabra3 = "esto es un ejemplo :D #n"+"v" $ 
+	var boolean bandera2,bandera3=true $ 
+	Conservar var boolean flag2,flag3=!(contador) $  
+	var boolean flag4=flag2 $ 
+	Conservar var caracter letra="A" $  
+	var boolean x = !((x || z) && !c) $
+
+    numero1 = 25$     
+    entero numero1=true$     
+    boolean contador = 50.5*20+115*b $
+    entero retorno = 5 + get() - epsilon$
+
+    int++ $
+    int2-- $
+    variable = get(s,y,4) + int++ + 2$
+    var1 += var1 + var2 + get()$
+    
+    var entero arreglo arr1 [a+b+a+5+1/5]$    
+    
+    Conservar var entero arreglo arr2,arr3,arr4  [5][5*5+5-4]$   
+    var entero arreglo arr5[arr1[get()]][arr1[5+arr2[0][4]]/5+1][1][8][15]$ 
+    
+    var entero arreglo arr0 [3]={5,10,15}  $
+    var  entero arreglo arr10,arr20,arr30 [2][3]={{5,10,15},{20,25,30}}$
+    
+    arr0[2] = 5+5$    
+    arr1 [a+5+1/5] = arr0[2]+5*8+b $  
+    arr4 [5+arr1[get(x,y,z)]] [getValor()*arr1[4]+5*arr1[5]-4] = arr1[a+5/2] $ 
+    
+    
+    si(x<b)
+    ¿
+        >>comentario xd
+        retorna xx $
+    ?
+    
+    si(valor1!=valor2)¿
+        si(false)¿
+            init = !false $
+        ?
+        retorna arr$
+    ?
+
+    si(arr[0][1]<f || ar[0][1]<c && !¡c)¿
+        continuar$
+    ?
+    sino¿
+        retorna true$
+    ?
+    
+    si(getvalor()<5 !&& 12 !|| (b<c) || (b>=a) &| xor || (x==y))¿
+        si((x<a) || (x<=b) || (x==d) || (x>=e) || (x<d) || !¡c)¿
+        
+        ?
+        sino¿
+            >>COMMENTARIO DEL SINO
+        ?
+    ?
+    
+    si((x>=d) || (x<w) && (x || d || c && d) &| (epsilon < delta))¿
+        si((y<d) || (a>c) && (d<dvalor) !&& (nand == nor) !|| (nand != nor) &| !(b<c))¿
+        ?
+    ?
+    
+    si(!(!¡true))¿
+        >>this is a :v
+    ?
+    
+    comprobar(variable[1][0]) ¿
+			caso "rojo"+c:
+			    bool1=identificador--$
+			salir $
+			caso "verde"+d:
+			    bool1=identificador--$
+			salir $
+			caso true+1:
+			    bool1=identificador--$
+			salir $
+			
+            caso false+1:
+			    bool1=identificador--$
+			>>salir $
+			
+            caso 'c'+"##":
+			    bool1=identificador--$
+			>>salir $
+			
+            caso 230.0203+223:
+			    bool1=identificador--$
+			>>salir $
+
+            caso getvalor():
+			    bool1=identificador--$
+			>>salir $			
+
+            caso getvalor(x,y,z):
+			    bool1=identificador--$
+			>>salir $
+
+			>>defecto:
+			    bool1=identificador--$
+			>>salir $
+    ?
+    
+    var entero i$ 
+    para(i=0; i<10; i++)¿ 
+    
+    ?
+    
+    para(entero i=0;i<10;i=i+2*3)¿
+    
+    ?  
+    
+    para(var entero i=1$; i==10; i++)¿
+    
+    ?
+    
+    para(var entero i=1$; i!=10; i--)¿
+    
+    ?
+    
+    para(i[0]=1; i==10; i+=12+4)¿
+    
+    ?
+    
+    para(i[1][2]=1; i==10; i-=12+i)¿
+    
+    ?
+    
+
+    
+
+    
+?
+<-comment31->

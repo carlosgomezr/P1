@@ -62,7 +62,7 @@ SKIP :
 }
 TOKEN:
 {
-	 <entero : ("-")?(["0"-"9"])+ > {System.out.print("entero "+image+"\r\n");}
+	 <entero : (["0"-"9"])+ > {System.out.print("entero "+image+"\r\n");}
 	| <doble:(<entero>)"."(["0"-"9"])+ > {System.out.print("doble "+image+"\r\n");}
 	| <booleano: "falso"|"false"|"verdadero"|"true" > {System.out.print("boolean "+image+"\r\n");}
 	| <caracter: "'" (~["'","^"]|"^n"|"^t"|"^r"|"^'"|"^^") "'" > {System.out.print("caracter "+image+"\r\n");}
@@ -79,16 +79,6 @@ TOKEN:
 	| <tcadena: "Cadena"|"cadena" >{System.out.print("tcadena "+image+"\r\n");}
 }
 
-TOKEN:
-{
-	 <igualacion: "==" > {System.out.print("igualacion "+image+"\r\n");}
-	|<diferenciacion: "!=" > {System.out.print("diferenciacion "+image+"\r\n");}
-	|<menorque: "<" > {System.out.print("menorque "+image+"\r\n");}
-	|<menorigualque: "<=" > {System.out.print("menorigualque "+image+"\r\n");}
-	|<mayorque: ">" > {System.out.print("mayorque "+image+"\r\n");}
-	|<mayorigualque: ">=" > {System.out.print("mayorigualque "+image+"\r\n");}
-	|<nulo: "!&¡" > {System.out.print("nulo "+image+"\r\n");}
-}
 
 TOKEN:
 {
@@ -97,8 +87,22 @@ TOKEN:
 	|<nand: "!&&" >{System.out.print("nand "+image+"\r\n");}
 	|<nor: "!||" >{System.out.print("nor "+image+"\r\n");}
 	|<xor: "&|" >{System.out.print("xor "+image+"\r\n");}
+	|<nulo: "!\u00a1"|"!&\u00a1" > {System.out.print("nulo "+image+"\r\n");}
 	|<not: "!" >{System.out.print("not "+image+"\r\n");}
 }
+
+
+TOKEN:
+{
+	 <igualacion: "==" > {System.out.print("igualacion "+image+"\r\n");}
+	|<diferenciacion: "!=" > {System.out.print("diferenciacion "+image+"\r\n");}
+	|<menorque: "<" > {System.out.print("menorque "+image+"\r\n");}
+	|<menorigualque: "<=" > {System.out.print("menorigualque "+image+"\r\n");}
+	|<mayorque: ">" > {System.out.print("mayorque "+image+"\r\n");}
+	|<mayorigualque: ">=" > {System.out.print("mayorigualque "+image+"\r\n");}
+	
+}
+
 
 TOKEN:
 {
@@ -247,6 +251,7 @@ void SEN():
 	|SENMIENTRAS()
 	|SENHACER()
 	|SENSALIR()
+	|RETO()
 	|SENCONTINUAR()
 	|DIBUJAR_P()
 	|DIBUJAR_OR()
@@ -276,7 +281,7 @@ void CONSERV():
 void CONT():
 {}
 {
-	DECLARACION() 
+	DECLARACION() <dolar>
 	|CONTENIDO3()
 	//faltan metodos y funciones y asignaciones de valorea a variables por temas de factorizacion
 }
@@ -303,8 +308,8 @@ void TIPO():
 void VARIABLE():
 {}
 {
-	NOMBRES() <dolar>
-	|<arreglo>  NOMARREGLO() DIMENSION() (ASIGNARREGLO())? <dolar>
+	NOMBRES() 
+	|<arreglo>  NOMARREGLO() DIMENSION() (ASIGNARREGLO())? 
 	
 }
 
@@ -387,7 +392,8 @@ void ASIGN():
 void VALOR():
 {}
 {
-	C()
+//	C()
+	LOGICA()
 }
 
 
@@ -397,8 +403,9 @@ void CONT2():
 	//<igual> VALOR()
 	<aumento>
 	|<decremento> 
-	|<sumasim> VALOR()
-	|<restasim> VALOR()
+	|<sumasim>
+	|<restasim>
+	//|<igual>
 
 }
 
@@ -459,7 +466,7 @@ void G():
 	|ORDEN()
 	|SUMARI()
 	//|CONTENIDO3()
-	|<parenti> E() <parentd>
+	//|<parenti> E() <parentd>
 }
 
 void HH():
@@ -467,6 +474,7 @@ void HH():
 {
 	DIMENSION()
 	|<parenti> (PARAMETROS())? <parentd>		//llamada a metodo
+	|CONT2()
 	//|<igual> <id> CONT2()	//id = id ++ 
 }
 //-----------------RELACIONAL
@@ -481,7 +489,7 @@ void A():
 {}
 {
 	EXP() (AP())?
-	|<nulo> EXP()	
+	//|<nulo> EXP()	
 }
 
 void AP():
@@ -500,7 +508,8 @@ void AP():
 void EXP():
 {}
 {
-	E()
+	(<nulo>)? E()
+//	|<parenti> A() <parentd>
 }
 
 //-------------------LOGICA
@@ -547,7 +556,7 @@ void N():
 void NP():
 {}
 {
-	<not> R() (NP())?
+	R() (NP())?
 }
 
 //LA PARTE DE DECLARACION NO SE HA COMPLETADO
@@ -557,10 +566,14 @@ void R():
 {}
 {
 	//E()
-	RELACIONAL()
-
+	(<not>)? Z()
 }
-
+void Z():
+{}
+{
+	RELACIONAL()
+	|<parenti> LOGICA() <parentd>
+}
 
 
 //SENTENCIAS DE CONTROL
@@ -604,17 +617,24 @@ void DEFE():
 void SENPARA():
 {}
 {
-	<para> <parenti> INIPARA() <puntoycoma> LOGICA() <puntoycoma> <id> CONT2() <parentd> <sigabrir> (SENTENCIAS())? <sigcerrar>
+	<para> <parenti> INIPARA() <puntoycoma> LOGICA() <puntoycoma> <id> FINPARA() <parentd> <sigabrir> (SENTENCIAS())? <sigcerrar>
 }
 
 void INIPARA():
 {}
 {
 	DECLARACION()
-	| <id> (ASIGN())?
+	| <id> (DIMENSION())? (ASIGN())?
 	| TIPO() <id> <igual> VALOR()
 }
 
+
+void FINPARA():
+{}
+{
+	<igual> VALOR()
+	|CONT2() (VALOR())?
+}
 void SENMIENTRAS():
 {}
 {
@@ -654,16 +674,16 @@ void METODO():
 {}
 {
 	<parenti> (PARAMETROS())? <parentd> (METOD())? 
-	|<igual> VALOR() (CONT2())? <dolar> //asignacion de variable
-	|CONT2() <dolar> // sentencias de sumas y restas simplificadas
-	
+	|<igual> VALOR() <dolar> //asignacion de variable
+	//|CONT2() <dolar> // sentencias de sumas y restas simplificadas
+	|CONT2() (VALOR())? <dolar>
 }
 
 
 void METOD():
 {}
 {
-	<sigabrir> (SENTENCIAS())? (RETO())? <sigcerrar>//declaracion de metodos
+	<sigabrir> (SENTENCIAS())? <sigcerrar>//declaracion de metodos
 	|<dolar>	//invocacion de metodo
 }
 
@@ -682,7 +702,7 @@ void LISTPARAMETRO2():
 void RETO():
 {}
 {
-	<retorna>  C() <dolar>
+	<retorna>  VALOR() <dolar>
 }
 
 void PARAMETROS():
@@ -724,6 +744,7 @@ void COLOR():
 {
 	C()
 	|<colore>
+	
 }
 
 void PRI():

@@ -2,12 +2,23 @@ publico Lienzo Petalos extiende Flores
 ¿
 	Principal()
 	¿
-		para (entero i=0;i<10;i++)
+        id += id$
+        id++$
+        id--$
+        id += id + x$
+		para (entero i=0;i<10;i=i++)
 		¿
 		?
 		para (i=0;i<10;i++)
 		¿
 		?
+		para (i=0;i<10;i--)
+		¿
+		?
+		para (i=0;i<10;i=i+2*3)
+		¿
+		?
+
 	   comprobar(variable) ¿
 			caso 1:
 			    bool1=identificador--$
@@ -26,4 +37,4 @@ publico Lienzo Petalos extiende Flores
 	?
 ?
 
-<- metodo de comprobar->
+<- metodo de comprobar x->

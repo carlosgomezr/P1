@@ -1,29 +1,119 @@
-publico Lienzo Petalos extiende Flores
-¿
-	Principal()
-	¿
-		para (entero i=0;i<10;i++)
-		¿
-		?
-		para (i=0;i<10;i++)
-		¿
-		?
-	   comprobar(variable) ¿
-			caso 1:
-			    bool1=identificador--$
-			salir $
-			caso 2:
-			    bool1=identificador--$
-			salir $
-			caso 3:
-			    bool1=identificador--$
-			salir $
-			
-			defecto:
-			    bool1=identificador--$
-			salir $
-		?
-	?
-?
+<- COMMENT JAVACC
+THIS IS A EXAMPLE GRAMMAR JAVACC
+archivo de entrada para testear declaracion de variables
+en mi gramatica ->
 
-<- metodo de comprobar->
+
+Lienzo kaya extiende ashe, vayne0, velkoz, wukong170¿ 
+	
+	>>DECLARACION DE VARIABLES SIN VALOR ASIGNADO SIN CONSERV
+	var entero x$
+	var doble y$
+	var boolean z$
+	var caracter a$
+	var cadena b$
+	
+	>>DECLARACION DE VARIABLES SIN CONSERV
+	var entero x=0$
+	var doble y=231.0021$
+	var boolean z=true$
+	var caracter a='c'$
+	var cadena b="world"$
+	
+	>>DECLARACION DE VARIABLES CON CONSERV 
+	Conservar var entero x1=600$
+	Conservar var doble y2=700.2223$
+	Conservar var boolean z3=false$
+	Conservar var caracter a4='^t'$
+	Conservar var cadena g="cadena #" hola #t mundo #""$
+
+	>>DECLARACION DE 2 VARIABLES CON EL MISMO VALOR
+	var entero x,xx=0$
+	var doble y,yy=231.0021$
+	var boolean z,zz=verdadero$
+	var caracter a,aa='c'$
+	var cadena b,bb="world"$
+	
+	>>DECLARACION DE 2 VARIABLES CON EL MISMO VALOR CON CONSERV
+	conservar Var Entero x,xx=0$
+	conservar Var Doble y,yy=231.0021$
+	conservar Var Boolean z,zz=verdadero$
+	conservar Var Caracter a,aa='c'$
+	conservar Var Cadena b,bb="world"$
+	
+	>>DECLARACION DE MULTIPLES VARIABLES CON EL MISMO VALOR SIN CONSER
+	var entero x,xx,XXX=130$
+	var doble y,yy,YYY=401.3021$
+	var boolean z,zz,ZZZ=falso$
+	var caracter a,aa,AAA='^r'$
+	var cadena b,bb,BBB="world#r"$
+	
+	>>DECLARACION DE MULTIPLES VARIABLES CON EL MISMO VALOR CON CONSERV
+	Conservar var entero x,xx,XXX=130$
+	Conservar var doble y,yy,YYY=34401.3021$
+	Conservar var boolean z,zz,ZZZ=falso$
+	Conservar var caracter a,aa,AAA='^''$
+	Conservar var cadena b,bb,BBB="world#r"$
+	
+	>>DECLARACION DE MULTIPLES VARIABLES CON EL MISMO VALOR SIN CONSERV
+	var entero x,xx,XXX=130$
+	var doble y,yy,YYY=401.3021$
+	var boolean z,zz,ZZZ=falso$
+	var caracter a,aa,AAA='^^'$
+	var cadena b,bb,BBB="world#r"$
+	
+	
+	>>DECLARACION DE MULTIPLES VARIABLES CON EL MISMO VALOR CON CONSERV
+	Conservar var entero x,xx,XXX=130$
+	Conservar var doble y,yy,YYY=401.3021$
+	Conservar var boolean z,zz,ZZZ=falso$
+	Conservar var caracter a='^t',aa='^n',AAA='^r'$
+	Conservar var cadena b,bb,BBB="world#r"$
+
+    >>ejemplos enunciado
+	Conservar var cadena cad1,cad2,cad3,ejex,ejey ="el miedo a traspasar la frontera de los nobles"$ 
+    Conservar var doble contador = 50.5, contador2 = 30.55$ 
+    var boolean f2=false,f1=true $
+    var cadena palabra2,palabra3 ="#"esto es un ejemplo #r#t:D#n"+"v"+"heroe##"$ 
+
+    >>ASIGNACION DE VALORES A VARIABLES
+	variablex = 100$
+	variabley = true$
+	variablez = false$
+	variablea = verdadero$
+	variableb = falso$
+	variablec = 100.2013123+1*242-b-c/s+14-21*c50$
+	variabled = '^^'$
+	variablee = '^r'$
+	variablef = '^t'$
+	variableg = '^n'$
+	variableh = '^''$
+	variablei = "##"$
+	variablei = "#r"$
+	variablei = "#t"$
+	variablei = "#n"$
+	variablei = "#""$
+	 
+    entero numero1=true$   
+    boolean contador = 50.5*20+115*b $   
+    cadena cad = "holamundo"+a-c$
+    caracter car = 'c'+150$
+    doble dob = 12.3201+2342+true$
+    
+    variable1++$
+    variable2--$
+    varc ++$
+    vard --$
+
+    varmas += c + d + quepisados$
+    varmas += 10 + perro$
+    varmas += cad$
+    varmas += 14234$
+
+    varmenos -= c - d -quepisados$
+    varmenos -= 10 - perro$
+    varmenos -= cad$
+    varmenos -= 14234$
+        
+?
+<-7aca se acaba el archivo de declaracion de variables7->

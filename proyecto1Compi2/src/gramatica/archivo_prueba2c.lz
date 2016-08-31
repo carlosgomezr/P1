@@ -1,0 +1,23 @@
+publico Lienzo PetalosVerdes¿
+
+EjecutarSent()
+¿
+Conservar var cadena arreglo arr1,arr2,arr3[5]$
+var cadena palabra2,palabra3 = id $
+var boolean f2=5 , f1=7, f3="esto es una cadena", f4=5.25, f7='h', f3=true $
+var doble d1,d2=8*7/5*2/9 $
+?
+
+doble ObtenerValor(entero e1, entero e2, doble d1)
+¿
+var doble resultado=e1*e1+d1*5-8+95*7 $
+retorna resultado$
+?
+
+Principal()
+¿
+EjecutarSent()$
+?
+
+?
+>>comentario final1
