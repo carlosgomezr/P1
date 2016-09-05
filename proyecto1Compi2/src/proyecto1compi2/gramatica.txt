@@ -1,0 +1,589 @@
+
+NodoArbol iniciar():
+
+	S() return nodo;
+
+
+void S():
+
+
+	(COMENTARIOS())* (VISI())? <lienzo> <id> (EXT())? <sigabrir> (SENTENCIAS())? <sigcerrar> (COMENTARIOS())* <EOF> // End of file
+
+void COMENTARIOS():
+
+
+	<comentario>
+	|<comentarioall> 
+	
+
+
+void VISI():
+
+
+	<publico>
+	|<privado>
+	|<protegido>
+
+
+void EXT():
+
+
+	<extiende> <id> (EXT1())?
+						
+
+
+void EXT1():
+	
+
+	<coma> <id> (EXT1())?
+
+
+void SENTENCIAS():
+
+
+	SEN() (SENTENCIAS())? 
+
+
+
+void SEN():
+
+
+	<comentario> 
+	|<comentarioall>
+	|CONTENIDO()
+	|SENSI()
+	|SENCOMPROBAR()
+	|SENPARA()
+	|SENMIENTRAS()
+	|SENHACER()
+	|SENSALIR()
+	|RETO()
+	|SENCONTINUAR()
+	|DIBUJAR_P()
+	|DIBUJAR_OR()
+	|DIBUJAR_S()
+	|PRI()
+	|ORDEN() <dolar>
+	|SUMARI() <dolar>
+
+
+
+//----------------------------------------------ACA ME QUEDE FECHA 26/08/2016
+void CONTENIDO():
+
+
+	(CONSERV())? (VISI())? CONT()
+	//|TIPO() <id> <igual> VALOR() <dolar>
+	//|<id> CONT2() <dolar>
+	
+
+
+void CONSERV():
+
+
+	<conservar>
+
+
+void CONT():
+
+
+	DECLARACION() <dolar>
+	|CONTENIDO3()
+	//faltan metodos y funciones y asignaciones de valorea a variables por temas de factorizacion
+
+
+void DECLARACION():
+
+
+	//<var> TIPO() NOMBRES() <dolar>
+	<var> TIPO() VARIABLE()
+	
+
+
+void TIPO():
+
+
+
+	<tentero>
+	|<tdoble>
+	|<tboolean>
+	|<tcaracter>
+	|<tcadena>
+
+
+void VARIABLE():
+
+
+	NOMBRES() 
+	|<arreglo>  NOMARREGLO() DIMENSION() (ASIGNARREGLO())? 
+	
+
+
+void NOMARREGLO():
+
+
+	<id> (NOMARR())?
+
+
+void NOMARR():
+
+
+	<coma> <id> (NOMARR())?
+
+
+void DIMENSION():
+
+
+	<corchetei> VALOR() <corcheted> (DIMENSION())?
+
+
+void ASIGNARREGLO():
+
+
+	<igual> VALORARREGLO()
+
+
+void VALORARREGLO():
+
+
+	<llavei> VALARR() <llaved>
+	
+
+
+void VALARR():
+
+
+	R2()
+	|<llavei> VALARR() <llaved> (LVAL2())?
+
+
+void R2():
+
+
+	VALOR() (LVAL())?
+
+
+void LVAL():
+
+
+	<coma> VALOR() (LVAL())?
+
+
+void LVAL2():
+
+
+	<coma> <llavei> VALARR() <llaved> (LVAL2())?
+
+
+void NOMBRES():
+
+
+	<id> (ASIGN())? (NOM())?
+
+
+void NOM():
+
+
+	<coma> <id> (ASIGN())? (NOM())?
+	
+
+
+void ASIGN():
+
+
+	<igual> VALOR()
+	
+
+
+void VALOR():
+
+
+//	C()
+	LOGICA()
+
+
+
+void CONT2():
+
+
+	//<igual> VALOR()
+	<aumento>
+	|<decremento> 
+	|<sumasim>
+	|<restasim>
+	//|<igual>
+
+
+
+//----------------CALCULADORA
+void C():
+
+
+	E()
+
+
+void E():
+
+
+	T() (EP())?
+
+
+void EP():
+
+
+	<mas> T() (EP())?
+	|<menos> T() (EP())?
+
+
+void T():
+
+
+	F() (TP())?
+
+
+void TP():
+
+
+	<por> F() (TP())?
+	|<div> F() (TP())?	
+
+
+void F():
+
+
+	G() (FP())?
+
+
+void FP():
+
+
+	<potencia> G() (FP())?
+
+
+void G():
+
+
+	<entero>
+	|<doble>
+	|<booleano>
+	|<caracter>
+	|<cadena>
+	|<id> (HH())? 
+	|ORDEN()
+	|SUMARI()
+	//|CONTENIDO3()
+	//|<parenti> E() <parentd>
+
+
+void HH():
+
+
+	DIMENSION()
+	|<parenti> (PARAMETROS())? <parentd>		//llamada a metodo
+	|CONT2()
+	//|<igual> <id> CONT2()	//id = id ++ 
+
+//-----------------RELACIONAL
+void RELACIONAL():
+
+
+	A()	
+
+
+
+void A():
+
+
+	EXP() (AP())?
+	//|<nulo> EXP()	
+
+
+void AP():
+
+
+	<igualacion> EXP()
+	|<diferenciacion> EXP()
+	|<menorque> EXP()
+	|<menorigualque> EXP()
+	|<mayorque> EXP()
+	|<mayorigualque> EXP()
+	
+
+
+
+void EXP():
+
+
+	(<nulo>)? E()
+//	|<parenti> A() <parentd>
+
+
+//-------------------LOGICA
+void LOGICA():
+
+
+	L()
+
+
+void L():
+
+
+	M() (LP())?
+
+
+void LP():
+
+
+	<or> M() (LP())?
+	|<nor> M() (LP())?
+	|<xor> M() (LP())?
+	
+
+
+void M():
+
+
+	N() (MP())?
+
+
+void MP():
+
+
+	<and> N() (MP())?
+	|<nand> N() (MP())?
+
+
+void N():
+
+
+	R() (NP())?
+
+
+void NP():
+
+
+	R() (NP())?
+
+
+//LA PARTE DE DECLARACION NO SE HA COMPLETADO
+//LA PARTE DEL CONT2 NO SE HA COMPLETADO
+
+void R():
+
+
+	//E()
+	(<not>)? Z()
+
+void Z():
+
+
+	RELACIONAL()
+	|<parenti> LOGICA() <parentd>
+
+
+
+//SENTENCIAS DE CONTROL
+void SENSI():
+
+
+	<si> <parenti> LOGICA() <parentd> <sigabrir> (SENTENCIAS())? <sigcerrar> (SENSINO())?
+
+
+void SENSINO():
+
+
+	<sino> <sigabrir> (SENTENCIAS())? <sigcerrar>
+	
+
+
+void SENCOMPROBAR():
+
+
+	<comprobar> <parenti> VALOR() <parentd> <sigabrir> (CUERPO())? (DEFE())? <sigcerrar>
+
+
+void CUERPO():
+
+
+	<caso> VALOR() <dospuntos> (SENTENCIAS())? (CUERPO())?
+
+
+void SENSALIR():
+
+
+	<salir> <dolar>
+
+
+void DEFE():
+
+
+	<defecto> <dospuntos> (SENTENCIAS())?
+
+
+void SENPARA():
+
+
+	<para> <parenti> INIPARA() <puntoycoma> LOGICA() <puntoycoma> <id> FINPARA() <parentd> <sigabrir> (SENTENCIAS())? <sigcerrar>
+
+
+void INIPARA():
+
+
+	DECLARACION()
+	| <id> (DIMENSION())? (ASIGN())?
+	| TIPO() <id> <igual> VALOR()
+
+
+
+void FINPARA():
+
+
+	<igual> VALOR()
+	|CONT2() (VALOR())?
+
+void SENMIENTRAS():
+
+
+	<mientras> <parenti> LOGICA() <parentd> <sigabrir> (SENTENCIAS())? <sigcerrar>	
+
+
+void SENHACER():
+
+
+	<hacer> <sigabrir> (SENTENCIAS())? <sigcerrar> <mientras> <parenti> LOGICA() <parentd> <dolar>
+
+
+void SENCONTINUAR():
+
+
+	<continuar> <dolar>
+
+
+void CONTENIDO3():
+
+
+	(TIPOMETODO())? <id> (DIMENSION())? METODO()  
+
+
+void TIPOMETODO():
+
+
+	<tentero> (<corchetei> <corcheted>	System.out.println("[]");)*
+	|<tdoble> (<corchetei> <corcheted>	System.out.println("[]");)*
+	|<tboolean> (<corchetei> <corcheted>	System.out.println("[]");)*
+	|<tcaracter> (<corchetei> <corcheted>	System.out.println("[]");)*
+	|<tcadena> (<corchetei> <corcheted>	System.out.println("[]");)*
+	|<tvoid> (<corchetei> <corcheted>	System.out.println("[]");)*
+
+
+void METODO():
+
+
+	<parenti> (PARAMETROS())? <parentd> (METOD())? 
+	|<igual> VALOR() <dolar> //asignacion de variable
+	//|CONT2() <dolar> // sentencias de sumas y restas simplificadas
+	|CONT2() (VALOR())? <dolar>
+
+
+
+void METOD():
+
+
+	<sigabrir> (SENTENCIAS())? <sigcerrar>//declaracion de metodos
+	|<dolar>	//invocacion de metodo
+
+
+void LISTPARAMETRO():
+
+
+	VALOR() (LISTPARAMETRO2())?
+
+
+void LISTPARAMETRO2():
+
+
+	<coma> VALOR() (LISTPARAMETRO2())?	
+
+
+void RETO():
+
+
+	<retorna>  VALOR() <dolar>
+
+
+void PARAMETROS():
+
+
+	TIPO() <id> (PARAP())?
+	|LISTPARAMETRO() 
+
+
+void PARAP():
+
+
+	<coma> TIPO() <id> (PARAP())?
+
+
+
+//----------------------METODOS NATIVOS DEL LENGUAJE
+
+void DIBUJAR_P():
+
+
+	<pintarP> <parenti> C() <coma> C() <coma> COLOR() <coma> C() <parentd> <dolar>
+
+
+void DIBUJAR_OR():
+
+
+	<pintarOR> <parenti> C() <coma> C() <coma> COLOR() <coma> C() <coma> C() <coma> C() <parentd> <dolar>
+
+
+void DIBUJAR_S():
+
+
+	<pintarS> <parenti> C() <coma> C() <coma> COLOR() <coma> C() <parentd> <dolar>
+
+
+void COLOR():
+
+
+	C()
+	|<colore>
+	
+
+
+void PRI():
+
+
+	<principal> <parenti> <parentd> <sigabrir> (SENTENCIAS())? <sigcerrar>
+
+
+
+void ORDEN():
+
+
+	<ordenar> <parenti> <arreglo> <id> <coma> <tipo> FORMAORDEN() <parentd>
+
+
+void FORMAORDEN():
+
+
+	<ascendente>
+	|<descendente>
+	|<pares>
+	|<impares>
+	|<primos>
+
+
+void SUMARI():
+
+
+	<sumarizar> <parenti> CONT5() <parentd>	
+
+
+void CONT5():
+
+
+	<id>
+	|VALORARREGLO()

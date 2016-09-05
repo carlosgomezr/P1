@@ -37,12 +37,16 @@ class compilador implements compiladorConstants {
 
   final public NodoArbol iniciar() throws ParseException {NodoArbol nodo = new NodoArbol();
          nodo.nombre = "Ini"; nodo.grafoname=getEtiqueta(); nodo.cadena = "Ini"; nodo.numero =0;
-    S();
+    S(nodo);
 {if ("" != null) return nodo;}
     throw new Error("Missing return statement in function");
   }
 
-  final public void S() throws ParseException {
+  final public void S(NodoArbol padre) throws ParseException {NodoArbol nodo = new NodoArbol();
+        NodoArbol nodo2 = new NodoArbol();
+        NodoArbol nodo3 = new NodoArbol();
+        nodo.grafoname=getEtiqueta(); nodo.cadena="S";
+        padre.hijos.add(nodo);
     label_1:
     while (true) {
       switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
@@ -61,7 +65,7 @@ class compilador implements compiladorConstants {
     case publico:
     case privado:
     case protegido:{
-      VISI();
+      VISI(nodo);
       break;
       }
     default:
@@ -70,9 +74,13 @@ class compilador implements compiladorConstants {
     }
     jj_consume_token(lienzo);
     jj_consume_token(id);
+nodo2.grafoname=getEtiqueta(); nodo2.cadena="lienzo";
+                nodo3.grafoname=getEtiqueta(); nodo3.cadena=token.image; nodo3.f = token.beginLine; nodo3.c = token.beginColumn;
+                nodo.hijos.add(nodo2);
+                nodo.hijos.add(nodo3);
     switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
     case extiende:{
-      EXT();
+      EXT(nodo);
       break;
       }
     default:
@@ -109,7 +117,7 @@ class compilador implements compiladorConstants {
     case ordenar:
     case sumarizar:
     case id:{
-      SENTENCIAS();
+      SENTENCIAS(nodo);
       break;
       }
     default:
@@ -151,18 +159,27 @@ class compilador implements compiladorConstants {
     }
   }
 
-  final public void VISI() throws ParseException {
+  final public void VISI(NodoArbol padre) throws ParseException {NodoArbol nodo = new NodoArbol();
+        NodoArbol nodo2 = new NodoArbol();
+        nodo.grafoname=getEtiqueta(); nodo.cadena="VISI";
+        padre.hijos.add(nodo);
     switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
     case publico:{
       jj_consume_token(publico);
+nodo2.grafoname=getEtiqueta(); nodo2.cadena="publico";
+                nodo.hijos.add(nodo2);
       break;
       }
     case privado:{
       jj_consume_token(privado);
+nodo2.grafoname=getEtiqueta(); nodo2.cadena="privado";
+                nodo.hijos.add(nodo2);
       break;
       }
     case protegido:{
       jj_consume_token(protegido);
+nodo2.grafoname=getEtiqueta(); nodo2.cadena="protegido";
+                nodo.hijos.add(nodo2);
       break;
       }
     default:
@@ -172,12 +189,20 @@ class compilador implements compiladorConstants {
     }
   }
 
-  final public void EXT() throws ParseException {
+  final public void EXT(NodoArbol padre) throws ParseException {NodoArbol nodo = new NodoArbol();
+        NodoArbol nodo2 = new NodoArbol();
+        NodoArbol nodo3 = new NodoArbol();
+        nodo.grafoname=getEtiqueta(); nodo.cadena="EXT";
+        padre.hijos.add(nodo);
     jj_consume_token(extiende);
     jj_consume_token(id);
+nodo2.grafoname=getEtiqueta(); nodo2.cadena="extiende";
+                nodo3.grafoname=getEtiqueta(); nodo3.cadena=token.image; nodo3.f=token.beginLine; nodo3.c=token.beginColumn;
+                nodo.hijos.add(nodo2);
+                nodo.hijos.add(nodo3);
     switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
     case coma:{
-      EXT1();
+      EXT1(nodo);
       break;
       }
     default:
@@ -186,12 +211,17 @@ class compilador implements compiladorConstants {
     }
   }
 
-  final public void EXT1() throws ParseException {
+  final public void EXT1(NodoArbol padre) throws ParseException {NodoArbol nodo = new NodoArbol();
+        NodoArbol nodo2 = new NodoArbol();
+        nodo.grafoname=getEtiqueta(); nodo.cadena="EXT1";
+        padre.hijos.add(nodo);
     jj_consume_token(coma);
     jj_consume_token(id);
+nodo2.grafoname=getEtiqueta(); nodo2.cadena=token.image; nodo2.f=token.beginLine; nodo2.c=token.beginColumn;
+                nodo.hijos.add(nodo2);
     switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
     case coma:{
-      EXT1();
+      EXT1(nodo);
       break;
       }
     default:
@@ -200,8 +230,16 @@ class compilador implements compiladorConstants {
     }
   }
 
-  final public void SENTENCIAS() throws ParseException {
-    SEN();
+  final public void SENTENCIAS(NodoArbol padre) throws ParseException {NodoArbol nodo = new NodoArbol();
+        NodoArbol nodo2 = new NodoArbol();
+        nodo2.grafoname=getEtiqueta(); nodo2.cadena="SEN";
+        padre.hijos.add(nodo2);
+        nodo.grafoname=getEtiqueta(); nodo.cadena="SENTENCIAS";
+        padre.hijos.add(nodo);
+
+        //System.out.println("\n SENTENCIAS \n");
+
+    SEN(nodo2);
     switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
     case comentario:
     case comentarioall:
@@ -231,7 +269,7 @@ class compilador implements compiladorConstants {
     case ordenar:
     case sumarizar:
     case id:{
-      SENTENCIAS();
+      SENTENCIAS(nodo);
       break;
       }
     default:
@@ -240,7 +278,7 @@ class compilador implements compiladorConstants {
     }
   }
 
-  final public void SEN() throws ParseException {
+  final public void SEN(NodoArbol padre) throws ParseException {
     switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
     case comentario:{
       jj_consume_token(comentario);
@@ -262,64 +300,64 @@ class compilador implements compiladorConstants {
     case var:
     case tvoid:
     case id:{
-      CONTENIDO();
+      CONTENIDO(padre);
       break;
       }
     case si:{
-      SENSI();
+      SENSI(padre);
       break;
       }
     case comprobar:{
-      SENCOMPROBAR();
+      SENCOMPROBAR(padre);
       break;
       }
     case para:{
-      SENPARA();
+      SENPARA(padre);
       break;
       }
     case mientras:{
-      SENMIENTRAS();
+      SENMIENTRAS(padre);
       break;
       }
     case hacer:{
-      SENHACER();
+      SENHACER(padre);
       break;
       }
     case salir:{
-      SENSALIR();
+      SENSALIR(padre);
       break;
       }
     case retorna:{
-      RETO();
+      RETO(padre);
       break;
       }
     case continuar:{
-      SENCONTINUAR();
+      SENCONTINUAR(padre);
       break;
       }
     case pintarP:{
-      DIBUJAR_P();
+      DIBUJAR_P(padre);
       break;
       }
     case pintarOR:{
-      DIBUJAR_OR();
+      DIBUJAR_OR(padre);
       break;
       }
     case pintarS:{
-      DIBUJAR_S();
+      DIBUJAR_S(padre);
       break;
       }
     case principal:{
-      PRI();
+      PRI(padre);
       break;
       }
     case ordenar:{
-      ORDEN();
+      ORDEN(padre);
       jj_consume_token(dolar);
       break;
       }
     case sumarizar:{
-      SUMARI();
+      SUMARI(padre);
       jj_consume_token(dolar);
       break;
       }
@@ -331,10 +369,12 @@ class compilador implements compiladorConstants {
   }
 
 //----------------------------------------------ACA ME QUEDE FECHA 26/08/2016
-  final public void CONTENIDO() throws ParseException {
+  final public void CONTENIDO(NodoArbol padre) throws ParseException {NodoArbol nodo = new NodoArbol();
+        nodo.grafoname=getEtiqueta(); nodo.cadena="CONTENIDO";
+        padre.hijos.add(nodo);
     switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
     case conservar:{
-      CONSERV();
+      CONSERV(nodo);
       break;
       }
     default:
@@ -345,24 +385,31 @@ class compilador implements compiladorConstants {
     case publico:
     case privado:
     case protegido:{
-      VISI();
+      VISI(nodo);
       break;
       }
     default:
       jj_la1[12] = jj_gen;
       ;
     }
-    CONT();
+    CONT(nodo);
   }
 
-  final public void CONSERV() throws ParseException {
+  final public void CONSERV(NodoArbol padre) throws ParseException {NodoArbol nodo = new NodoArbol();
+        NodoArbol nodo2 = new NodoArbol();
+        nodo.grafoname=getEtiqueta(); nodo.cadena="CONSERV";
+        padre.hijos.add(nodo);
     jj_consume_token(conservar);
+nodo2.grafoname=getEtiqueta(); nodo2.cadena="conservar";
+                nodo.hijos.add(nodo2);
   }
 
-  final public void CONT() throws ParseException {
+  final public void CONT(NodoArbol padre) throws ParseException {NodoArbol nodo = new NodoArbol();
+        nodo.grafoname=getEtiqueta(); nodo.cadena="CONT";
+        padre.hijos.add(nodo);
     switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
     case var:{
-      DECLARACION();
+      DECLARACION(nodo);
       jj_consume_token(dolar);
       break;
       }
@@ -373,7 +420,7 @@ class compilador implements compiladorConstants {
     case tcadena:
     case tvoid:
     case id:{
-      CONTENIDO3();
+      CONTENIDO3(nodo);
       break;
       }
     default:
@@ -383,32 +430,42 @@ class compilador implements compiladorConstants {
     }
   }
 
-  final public void DECLARACION() throws ParseException {
+  final public void DECLARACION(NodoArbol padre) throws ParseException {NodoArbol nodo = new NodoArbol();
+        nodo.grafoname=getEtiqueta(); nodo.cadena="DECLARACION";
+        padre.hijos.add(nodo);
     jj_consume_token(var);
-    TIPO();
-    VARIABLE();
+    TIPO(nodo);
+    VARIABLE(nodo);
   }
 
-  final public void TIPO() throws ParseException {
+  final public void TIPO(NodoArbol padre) throws ParseException {NodoArbol nodo = new NodoArbol();
+        NodoArbol nodo2 = new NodoArbol();
+        nodo.grafoname=getEtiqueta(); nodo.cadena="TIPO";
+        padre.hijos.add(nodo);
     switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
     case tentero:{
       jj_consume_token(tentero);
+nodo2.grafoname=getEtiqueta(); nodo2.cadena="tentero";        nodo.hijos.add(nodo2);
       break;
       }
     case tdoble:{
       jj_consume_token(tdoble);
+nodo2.grafoname=getEtiqueta(); nodo2.cadena="tdoble";         nodo.hijos.add(nodo2);
       break;
       }
     case tboolean:{
       jj_consume_token(tboolean);
+nodo2.grafoname=getEtiqueta(); nodo2.cadena="tboolean";       nodo.hijos.add(nodo2);
       break;
       }
     case tcaracter:{
       jj_consume_token(tcaracter);
+nodo2.grafoname=getEtiqueta(); nodo2.cadena="tcaracter";      nodo.hijos.add(nodo2);
       break;
       }
     case tcadena:{
       jj_consume_token(tcadena);
+nodo2.grafoname=getEtiqueta(); nodo2.cadena="tcadena";        nodo.hijos.add(nodo2);
       break;
       }
     default:
@@ -418,19 +475,21 @@ class compilador implements compiladorConstants {
     }
   }
 
-  final public void VARIABLE() throws ParseException {
+  final public void VARIABLE(NodoArbol padre) throws ParseException {NodoArbol nodo = new NodoArbol();
+        nodo.grafoname=getEtiqueta(); nodo.cadena="VARIABLE";
+        padre.hijos.add(nodo);
     switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
     case id:{
-      NOMBRES();
+      NOMBRES(nodo);
       break;
       }
     case arreglo:{
       jj_consume_token(arreglo);
-      NOMARREGLO();
-      DIMENSION();
+      NOMARREGLO(nodo);
+      DIMENSION(nodo);
       switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
       case igual:{
-        ASIGNARREGLO();
+        ASIGNARREGLO(nodo);
         break;
         }
       default:
@@ -446,11 +505,15 @@ class compilador implements compiladorConstants {
     }
   }
 
-  final public void NOMARREGLO() throws ParseException {
+  final public void NOMARREGLO(NodoArbol padre) throws ParseException {NodoArbol nodo = new NodoArbol();
+        NodoArbol nodo2 = new NodoArbol();
+        nodo.grafoname=getEtiqueta(); nodo.cadena="NOMARREGLO";
+        padre.hijos.add(nodo);
     jj_consume_token(id);
+nodo2.grafoname=getEtiqueta(); nodo2.cadena=token.image; nodo2.f=token.beginLine; nodo2.c=token.beginColumn; nodo.hijos.add(nodo2);
     switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
     case coma:{
-      NOMARR();
+      NOMARR(nodo);
       break;
       }
     default:
@@ -459,12 +522,16 @@ class compilador implements compiladorConstants {
     }
   }
 
-  final public void NOMARR() throws ParseException {
+  final public void NOMARR(NodoArbol padre) throws ParseException {NodoArbol nodo = new NodoArbol();
+        NodoArbol nodo2 = new NodoArbol();
+        nodo.grafoname=getEtiqueta(); nodo.cadena="NOMARR";
+        padre.hijos.add(nodo);
     jj_consume_token(coma);
     jj_consume_token(id);
+nodo2.grafoname=getEtiqueta(); nodo2.cadena=token.image; nodo2.f=token.beginLine; nodo2.c=token.beginColumn; nodo.hijos.add(nodo2);
     switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
     case coma:{
-      NOMARR();
+      NOMARR(nodo);
       break;
       }
     default:
@@ -473,13 +540,15 @@ class compilador implements compiladorConstants {
     }
   }
 
-  final public void DIMENSION() throws ParseException {
+  final public void DIMENSION(NodoArbol padre) throws ParseException {NodoArbol nodo = new NodoArbol();
+        nodo.grafoname=getEtiqueta(); nodo.cadena="DIMENSION";
+        padre.hijos.add(nodo);
     jj_consume_token(corchetei);
-    VALOR();
+    VALOR(nodo);
     jj_consume_token(corcheted);
     switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
     case corchetei:{
-      DIMENSION();
+      DIMENSION(nodo);
       break;
       }
     default:
@@ -488,18 +557,24 @@ class compilador implements compiladorConstants {
     }
   }
 
-  final public void ASIGNARREGLO() throws ParseException {
+  final public void ASIGNARREGLO(NodoArbol padre) throws ParseException {NodoArbol nodo = new NodoArbol();
+        nodo.grafoname=getEtiqueta(); nodo.cadena="ASIGNARREGLO";
+        padre.hijos.add(nodo);
     jj_consume_token(igual);
-    VALORARREGLO();
+    VALORARREGLO(nodo);
   }
 
-  final public void VALORARREGLO() throws ParseException {
+  final public void VALORARREGLO(NodoArbol padre) throws ParseException {NodoArbol nodo = new NodoArbol();
+        nodo.grafoname=getEtiqueta(); nodo.cadena="VALORARREGLO";
+        padre.hijos.add(nodo);
     jj_consume_token(llavei);
-    VALARR();
+    VALARR(nodo);
     jj_consume_token(llaved);
   }
 
-  final public void VALARR() throws ParseException {
+  final public void VALARR(NodoArbol padre) throws ParseException {NodoArbol nodo = new NodoArbol();
+        nodo.grafoname=getEtiqueta(); nodo.cadena="VALARR";
+        padre.hijos.add(nodo);
     switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
     case entero:
     case doble:
@@ -512,16 +587,16 @@ class compilador implements compiladorConstants {
     case ordenar:
     case sumarizar:
     case id:{
-      R2();
+      R2(nodo);
       break;
       }
     case llavei:{
       jj_consume_token(llavei);
-      VALARR();
+      VALARR(nodo);
       jj_consume_token(llaved);
       switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
       case coma:{
-        LVAL2();
+        LVAL2(nodo);
         break;
         }
       default:
@@ -537,11 +612,13 @@ class compilador implements compiladorConstants {
     }
   }
 
-  final public void R2() throws ParseException {
-    VALOR();
+  final public void R2(NodoArbol padre) throws ParseException {NodoArbol nodo = new NodoArbol();
+        nodo.grafoname=getEtiqueta(); nodo.cadena="R2";
+        padre.hijos.add(nodo);
+    VALOR(nodo);
     switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
     case coma:{
-      LVAL();
+      LVAL(nodo);
       break;
       }
     default:
@@ -550,12 +627,14 @@ class compilador implements compiladorConstants {
     }
   }
 
-  final public void LVAL() throws ParseException {
+  final public void LVAL(NodoArbol padre) throws ParseException {NodoArbol nodo = new NodoArbol();
+        nodo.grafoname=getEtiqueta(); nodo.cadena="LVAL";
+        padre.hijos.add(nodo);
     jj_consume_token(coma);
-    VALOR();
+    VALOR(nodo);
     switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
     case coma:{
-      LVAL();
+      LVAL(nodo);
       break;
       }
     default:
@@ -564,14 +643,16 @@ class compilador implements compiladorConstants {
     }
   }
 
-  final public void LVAL2() throws ParseException {
+  final public void LVAL2(NodoArbol padre) throws ParseException {NodoArbol nodo = new NodoArbol();
+        nodo.grafoname=getEtiqueta(); nodo.cadena="LVAL2";
+        padre.hijos.add(nodo);
     jj_consume_token(coma);
     jj_consume_token(llavei);
-    VALARR();
+    VALARR(nodo);
     jj_consume_token(llaved);
     switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
     case coma:{
-      LVAL2();
+      LVAL2(nodo);
       break;
       }
     default:
@@ -580,11 +661,15 @@ class compilador implements compiladorConstants {
     }
   }
 
-  final public void NOMBRES() throws ParseException {
+  final public void NOMBRES(NodoArbol padre) throws ParseException {NodoArbol nodo = new NodoArbol();
+        NodoArbol nodo2 = new NodoArbol();
+        nodo.grafoname=getEtiqueta(); nodo.cadena="NOMBRES";
+        padre.hijos.add(nodo);
     jj_consume_token(id);
+nodo2.grafoname=getEtiqueta(); nodo2.cadena=token.image; nodo2.f=token.beginLine; nodo2.c=token.beginColumn; nodo.hijos.add(nodo2);
     switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
     case igual:{
-      ASIGN();
+      ASIGN(nodo);
       break;
       }
     default:
@@ -593,7 +678,7 @@ class compilador implements compiladorConstants {
     }
     switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
     case coma:{
-      NOM();
+      NOM(nodo);
       break;
       }
     default:
@@ -602,12 +687,16 @@ class compilador implements compiladorConstants {
     }
   }
 
-  final public void NOM() throws ParseException {
+  final public void NOM(NodoArbol padre) throws ParseException {NodoArbol nodo = new NodoArbol();
+        NodoArbol nodo2 = new NodoArbol();
+        nodo.grafoname=getEtiqueta(); nodo.cadena="NOM";
+        padre.hijos.add(nodo);
     jj_consume_token(coma);
     jj_consume_token(id);
+nodo2.grafoname=getEtiqueta(); nodo2.cadena=token.image; nodo2.f=token.beginLine; nodo2.c=token.beginColumn; nodo.hijos.add(nodo2);
     switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
     case igual:{
-      ASIGN();
+      ASIGN(nodo);
       break;
       }
     default:
@@ -616,7 +705,7 @@ class compilador implements compiladorConstants {
     }
     switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
     case coma:{
-      NOM();
+      NOM(nodo);
       break;
       }
     default:
@@ -625,31 +714,42 @@ class compilador implements compiladorConstants {
     }
   }
 
-  final public void ASIGN() throws ParseException {
+  final public void ASIGN(NodoArbol padre) throws ParseException {NodoArbol nodo = new NodoArbol();
+        nodo.grafoname=getEtiqueta(); nodo.cadena="ASIGN";
+        padre.hijos.add(nodo);
     jj_consume_token(igual);
-    VALOR();
+    VALOR(nodo);
   }
 
-  final public void VALOR() throws ParseException {
-    LOGICA();
+  final public void VALOR(NodoArbol padre) throws ParseException {NodoArbol nodo = new NodoArbol();
+        nodo.grafoname=getEtiqueta(); nodo.cadena="VALOR";
+        padre.hijos.add(nodo);
+    LOGICA(nodo);
   }
 
-  final public void CONT2() throws ParseException {
+  final public void CONT2(NodoArbol padre) throws ParseException {NodoArbol nodo = new NodoArbol();
+        NodoArbol nodo2 = new NodoArbol();
+        nodo.grafoname=getEtiqueta(); nodo.cadena="CONT2";
+        padre.hijos.add(nodo);
     switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
     case aumento:{
       jj_consume_token(aumento);
+nodo2.grafoname=getEtiqueta(); nodo2.cadena="++"; nodo.hijos.add(nodo2);
       break;
       }
     case decremento:{
       jj_consume_token(decremento);
+nodo2.grafoname=getEtiqueta(); nodo2.cadena="--"; nodo.hijos.add(nodo2);
       break;
       }
     case sumasim:{
       jj_consume_token(sumasim);
+nodo2.grafoname=getEtiqueta(); nodo2.cadena="+="; nodo.hijos.add(nodo2);
       break;
       }
     case restasim:{
       jj_consume_token(restasim);
+nodo2.grafoname=getEtiqueta(); nodo2.cadena="-="; nodo.hijos.add(nodo2);
       break;
       }
     default:
@@ -660,16 +760,20 @@ class compilador implements compiladorConstants {
   }
 
 //----------------CALCULADORA
-  final public void C() throws ParseException {
-    E();
+  final public void C(NodoArbol padre) throws ParseException {NodoArbol nodo = new NodoArbol();
+        nodo.grafoname=getEtiqueta(); nodo.cadena="C";
+        padre.hijos.add(nodo);
+    E(nodo);
   }
 
-  final public void E() throws ParseException {
-    T();
+  final public void E(NodoArbol padre) throws ParseException {NodoArbol nodo = new NodoArbol();
+        nodo.grafoname=getEtiqueta(); nodo.cadena="E";
+        padre.hijos.add(nodo);
+    T(nodo);
     switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
     case mas:
     case menos:{
-      EP();
+      EP(nodo);
       break;
       }
     default:
@@ -678,15 +782,19 @@ class compilador implements compiladorConstants {
     }
   }
 
-  final public void EP() throws ParseException {
+  final public void EP(NodoArbol padre) throws ParseException {NodoArbol nodo = new NodoArbol();
+        NodoArbol nodo2 = new NodoArbol();
+        nodo.grafoname=getEtiqueta(); nodo.cadena="EP";
+        padre.hijos.add(nodo);
     switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
     case mas:{
       jj_consume_token(mas);
-      T();
+nodo2.grafoname=getEtiqueta(); nodo2.cadena="+"; nodo.hijos.add(nodo2);
+      T(nodo);
       switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
       case mas:
       case menos:{
-        EP();
+        EP(nodo);
         break;
         }
       default:
@@ -697,11 +805,12 @@ class compilador implements compiladorConstants {
       }
     case menos:{
       jj_consume_token(menos);
-      T();
+nodo2.grafoname=getEtiqueta(); nodo2.cadena="-"; nodo.hijos.add(nodo2);
+      T(nodo);
       switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
       case mas:
       case menos:{
-        EP();
+        EP(nodo);
         break;
         }
       default:
@@ -717,12 +826,14 @@ class compilador implements compiladorConstants {
     }
   }
 
-  final public void T() throws ParseException {
-    F();
+  final public void T(NodoArbol padre) throws ParseException {NodoArbol nodo = new NodoArbol();
+        nodo.grafoname=getEtiqueta(); nodo.cadena="T";
+        padre.hijos.add(nodo);
+    F(nodo);
     switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
     case por:
     case div:{
-      TP();
+      TP(nodo);
       break;
       }
     default:
@@ -731,15 +842,19 @@ class compilador implements compiladorConstants {
     }
   }
 
-  final public void TP() throws ParseException {
+  final public void TP(NodoArbol padre) throws ParseException {NodoArbol nodo = new NodoArbol();
+        NodoArbol nodo2 = new NodoArbol();
+        nodo.grafoname=getEtiqueta(); nodo.cadena="TP";
+        padre.hijos.add(nodo);
     switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
     case por:{
       jj_consume_token(por);
-      F();
+nodo2.grafoname=getEtiqueta(); nodo2.cadena="*"; nodo.hijos.add(nodo2);
+      F(nodo);
       switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
       case por:
       case div:{
-        TP();
+        TP(nodo);
         break;
         }
       default:
@@ -750,11 +865,12 @@ class compilador implements compiladorConstants {
       }
     case div:{
       jj_consume_token(div);
-      F();
+nodo2.grafoname=getEtiqueta(); nodo2.cadena="/"; nodo.hijos.add(nodo2);
+      F(nodo);
       switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
       case por:
       case div:{
-        TP();
+        TP(nodo);
         break;
         }
       default:
@@ -770,11 +886,13 @@ class compilador implements compiladorConstants {
     }
   }
 
-  final public void F() throws ParseException {
-    G();
+  final public void F(NodoArbol padre) throws ParseException {NodoArbol nodo = new NodoArbol();
+        nodo.grafoname=getEtiqueta(); nodo.cadena="F";
+        padre.hijos.add(nodo);
+    G(nodo);
     switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
     case potencia:{
-      FP();
+      FP(nodo);
       break;
       }
     default:
@@ -783,12 +901,16 @@ class compilador implements compiladorConstants {
     }
   }
 
-  final public void FP() throws ParseException {
+  final public void FP(NodoArbol padre) throws ParseException {NodoArbol nodo = new NodoArbol();
+        NodoArbol nodo2 = new NodoArbol();
+        nodo.grafoname=getEtiqueta(); nodo.cadena="FP";
+        padre.hijos.add(nodo);
     jj_consume_token(potencia);
-    G();
+nodo2.grafoname=getEtiqueta(); nodo2.cadena="^"; nodo.hijos.add(nodo2);
+    G(nodo);
     switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
     case potencia:{
-      FP();
+      FP(nodo);
       break;
       }
     default:
@@ -797,30 +919,39 @@ class compilador implements compiladorConstants {
     }
   }
 
-  final public void G() throws ParseException {
+  final public void G(NodoArbol padre) throws ParseException {NodoArbol nodo = new NodoArbol();
+        NodoArbol nodo2 = new NodoArbol();
+        nodo.grafoname=getEtiqueta(); nodo.cadena="G";
+        padre.hijos.add(nodo);
     switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
     case entero:{
       jj_consume_token(entero);
+nodo2.grafoname=getEtiqueta(); nodo2.cadena=token.image; nodo2.f=token.beginLine; nodo2.c=token.beginColumn; nodo2.ty="entero";         nodo.hijos.add(nodo2);
       break;
       }
     case doble:{
       jj_consume_token(doble);
+nodo2.grafoname=getEtiqueta(); nodo2.cadena=token.image; nodo2.f=token.beginLine; nodo2.c=token.beginColumn; nodo2.ty="doble";  nodo.hijos.add(nodo2);
       break;
       }
     case booleano:{
       jj_consume_token(booleano);
+nodo2.grafoname=getEtiqueta(); nodo2.cadena=token.image; nodo2.f=token.beginLine; nodo2.c=token.beginColumn; nodo2.ty="boolean"; nodo.hijos.add(nodo2);
       break;
       }
     case caracter:{
       jj_consume_token(caracter);
+nodo2.grafoname=getEtiqueta(); nodo2.cadena=token.image; nodo2.f=token.beginLine; nodo2.c=token.beginColumn; nodo2.ty="caracter";nodo.hijos.add(nodo2);
       break;
       }
     case cadena:{
       jj_consume_token(cadena);
+nodo2.grafoname=getEtiqueta(); nodo2.cadena=token.image; nodo2.f=token.beginLine; nodo2.c=token.beginColumn; nodo2.ty="cadena";         nodo.hijos.add(nodo2);
       break;
       }
     case id:{
       jj_consume_token(id);
+nodo2.grafoname=getEtiqueta(); nodo2.cadena=token.image; nodo2.f=token.beginLine; nodo2.c=token.beginColumn; nodo2.ty="id";             nodo.hijos.add(nodo2);
       switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
       case aumento:
       case decremento:
@@ -828,7 +959,7 @@ class compilador implements compiladorConstants {
       case restasim:
       case corchetei:
       case parenti:{
-        HH();
+        HH(nodo);
         break;
         }
       default:
@@ -838,11 +969,11 @@ class compilador implements compiladorConstants {
       break;
       }
     case ordenar:{
-      ORDEN();
+      ORDEN(nodo);
       break;
       }
     case sumarizar:{
-      SUMARI();
+      SUMARI(nodo);
       break;
       }
     default:
@@ -852,10 +983,12 @@ class compilador implements compiladorConstants {
     }
   }
 
-  final public void HH() throws ParseException {
+  final public void HH(NodoArbol padre) throws ParseException {NodoArbol nodo = new NodoArbol();
+        nodo.grafoname=getEtiqueta(); nodo.cadena="HH";
+        padre.hijos.add(nodo);
     switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
     case corchetei:{
-      DIMENSION();
+      DIMENSION(nodo);
       break;
       }
     case parenti:{
@@ -877,7 +1010,7 @@ class compilador implements compiladorConstants {
       case ordenar:
       case sumarizar:
       case id:{
-        PARAMETROS();
+        PARAMETROS(nodo);
         break;
         }
       default:
@@ -891,7 +1024,7 @@ class compilador implements compiladorConstants {
     case decremento:
     case sumasim:
     case restasim:{
-      CONT2();
+      CONT2(nodo);
       break;
       }
     default:
@@ -902,12 +1035,16 @@ class compilador implements compiladorConstants {
   }
 
 //-----------------RELACIONAL
-  final public void RELACIONAL() throws ParseException {
-    A();
+  final public void RELACIONAL(NodoArbol padre) throws ParseException {NodoArbol nodo = new NodoArbol();
+        nodo.grafoname=getEtiqueta(); nodo.cadena="RELACIONAL";
+        padre.hijos.add(nodo);
+    A(nodo);
   }
 
-  final public void A() throws ParseException {
-    EXP();
+  final public void A(NodoArbol padre) throws ParseException {NodoArbol nodo = new NodoArbol();
+        nodo.grafoname=getEtiqueta(); nodo.cadena="A";
+        padre.hijos.add(nodo);
+    EXP(nodo);
     switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
     case igualacion:
     case diferenciacion:
@@ -915,7 +1052,7 @@ class compilador implements compiladorConstants {
     case menorigualque:
     case mayorque:
     case mayorigualque:{
-      AP();
+      AP(nodo);
       break;
       }
     default:
@@ -924,36 +1061,45 @@ class compilador implements compiladorConstants {
     }
   }
 
-  final public void AP() throws ParseException {
+  final public void AP(NodoArbol padre) throws ParseException {NodoArbol nodo = new NodoArbol();
+        NodoArbol nodo2 = new NodoArbol();
+        nodo.grafoname=getEtiqueta(); nodo.cadena="AP";
+        padre.hijos.add(nodo);
     switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
     case igualacion:{
       jj_consume_token(igualacion);
-      EXP();
+nodo2.grafoname=getEtiqueta(); nodo2.cadena="=="; nodo.hijos.add(nodo2);
+      EXP(nodo);
       break;
       }
     case diferenciacion:{
       jj_consume_token(diferenciacion);
-      EXP();
+nodo2.grafoname=getEtiqueta(); nodo2.cadena="!="; nodo.hijos.add(nodo2);
+      EXP(nodo);
       break;
       }
     case menorque:{
       jj_consume_token(menorque);
-      EXP();
+nodo2.grafoname=getEtiqueta(); nodo2.cadena="<"; nodo.hijos.add(nodo2);
+      EXP(nodo);
       break;
       }
     case menorigualque:{
       jj_consume_token(menorigualque);
-      EXP();
+nodo2.grafoname=getEtiqueta(); nodo2.cadena="<="; nodo.hijos.add(nodo2);
+      EXP(nodo);
       break;
       }
     case mayorque:{
       jj_consume_token(mayorque);
-      EXP();
+nodo2.grafoname=getEtiqueta(); nodo2.cadena=">"; nodo.hijos.add(nodo2);
+      EXP(nodo);
       break;
       }
     case mayorigualque:{
       jj_consume_token(mayorigualque);
-      EXP();
+nodo2.grafoname=getEtiqueta(); nodo2.cadena=">="; nodo.hijos.add(nodo2);
+      EXP(nodo);
       break;
       }
     default:
@@ -963,31 +1109,39 @@ class compilador implements compiladorConstants {
     }
   }
 
-  final public void EXP() throws ParseException {
+  final public void EXP(NodoArbol padre) throws ParseException {NodoArbol nodo = new NodoArbol();
+        NodoArbol nodo2 = new NodoArbol();
+        nodo.grafoname=getEtiqueta(); nodo.cadena="EXP";
+        padre.hijos.add(nodo);
     switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
     case nulo:{
       jj_consume_token(nulo);
+nodo2.grafoname=getEtiqueta(); nodo2.cadena="!\u00c2\u00a1"; nodo.hijos.add(nodo2);
       break;
       }
     default:
       jj_la1[46] = jj_gen;
       ;
     }
-    E();
+    E(nodo);
   }
 
 //-------------------LOGICA
-  final public void LOGICA() throws ParseException {
-    L();
+  final public void LOGICA(NodoArbol padre) throws ParseException {NodoArbol nodo = new NodoArbol();
+        nodo.grafoname=getEtiqueta(); nodo.cadena="LOGICA";
+        padre.hijos.add(nodo);
+    L(nodo);
   }
 
-  final public void L() throws ParseException {
-    M();
+  final public void L(NodoArbol padre) throws ParseException {NodoArbol nodo = new NodoArbol();
+        nodo.grafoname=getEtiqueta(); nodo.cadena="L";
+        padre.hijos.add(nodo);
+    M(nodo);
     switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
     case or:
     case nor:
     case xor:{
-      LP();
+      LP(nodo);
       break;
       }
     default:
@@ -996,16 +1150,20 @@ class compilador implements compiladorConstants {
     }
   }
 
-  final public void LP() throws ParseException {
+  final public void LP(NodoArbol padre) throws ParseException {NodoArbol nodo = new NodoArbol();
+        NodoArbol nodo2 = new NodoArbol();
+        nodo.grafoname=getEtiqueta(); nodo.cadena="LP";
+        padre.hijos.add(nodo);
     switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
     case or:{
       jj_consume_token(or);
-      M();
+nodo2.grafoname=getEtiqueta(); nodo2.cadena="||"; nodo.hijos.add(nodo2);
+      M(nodo);
       switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
       case or:
       case nor:
       case xor:{
-        LP();
+        LP(nodo);
         break;
         }
       default:
@@ -1016,12 +1174,13 @@ class compilador implements compiladorConstants {
       }
     case nor:{
       jj_consume_token(nor);
-      M();
+nodo2.grafoname=getEtiqueta(); nodo2.cadena="!||"; nodo.hijos.add(nodo2);
+      M(nodo);
       switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
       case or:
       case nor:
       case xor:{
-        LP();
+        LP(nodo);
         break;
         }
       default:
@@ -1032,12 +1191,13 @@ class compilador implements compiladorConstants {
       }
     case xor:{
       jj_consume_token(xor);
-      M();
+nodo2.grafoname=getEtiqueta(); nodo2.cadena="&|"; nodo.hijos.add(nodo2);
+      M(nodo);
       switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
       case or:
       case nor:
       case xor:{
-        LP();
+        LP(nodo);
         break;
         }
       default:
@@ -1053,12 +1213,14 @@ class compilador implements compiladorConstants {
     }
   }
 
-  final public void M() throws ParseException {
-    N();
+  final public void M(NodoArbol padre) throws ParseException {NodoArbol nodo = new NodoArbol();
+        nodo.grafoname=getEtiqueta(); nodo.cadena="M";
+        padre.hijos.add(nodo);
+    N(nodo);
     switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
     case and:
     case nand:{
-      MP();
+      MP(nodo);
       break;
       }
     default:
@@ -1067,15 +1229,19 @@ class compilador implements compiladorConstants {
     }
   }
 
-  final public void MP() throws ParseException {
+  final public void MP(NodoArbol padre) throws ParseException {NodoArbol nodo = new NodoArbol();
+        NodoArbol nodo2 = new NodoArbol();
+        nodo.grafoname=getEtiqueta(); nodo.cadena="MP";
+        padre.hijos.add(nodo);
     switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
     case and:{
       jj_consume_token(and);
-      N();
+nodo2.grafoname=getEtiqueta(); nodo2.cadena="&&"; nodo.hijos.add(nodo2);
+      N(nodo);
       switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
       case and:
       case nand:{
-        MP();
+        MP(nodo);
         break;
         }
       default:
@@ -1086,11 +1252,12 @@ class compilador implements compiladorConstants {
       }
     case nand:{
       jj_consume_token(nand);
-      N();
+nodo2.grafoname=getEtiqueta(); nodo2.cadena="!&&"; nodo.hijos.add(nodo2);
+      N(nodo);
       switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
       case and:
       case nand:{
-        MP();
+        MP(nodo);
         break;
         }
       default:
@@ -1106,8 +1273,10 @@ class compilador implements compiladorConstants {
     }
   }
 
-  final public void N() throws ParseException {
-    R();
+  final public void N(NodoArbol padre) throws ParseException {NodoArbol nodo = new NodoArbol();
+        nodo.grafoname=getEtiqueta(); nodo.cadena="N";
+        padre.hijos.add(nodo);
+    R(nodo);
     switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
     case entero:
     case doble:
@@ -1120,7 +1289,7 @@ class compilador implements compiladorConstants {
     case ordenar:
     case sumarizar:
     case id:{
-      NP();
+      NP(nodo);
       break;
       }
     default:
@@ -1129,8 +1298,10 @@ class compilador implements compiladorConstants {
     }
   }
 
-  final public void NP() throws ParseException {
-    R();
+  final public void NP(NodoArbol padre) throws ParseException {NodoArbol nodo = new NodoArbol();
+        nodo.grafoname=getEtiqueta(); nodo.cadena="NP";
+        padre.hijos.add(nodo);
+    R(nodo);
     switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
     case entero:
     case doble:
@@ -1143,7 +1314,7 @@ class compilador implements compiladorConstants {
     case ordenar:
     case sumarizar:
     case id:{
-      NP();
+      NP(nodo);
       break;
       }
     default:
@@ -1155,20 +1326,26 @@ class compilador implements compiladorConstants {
 //LA PARTE DE DECLARACION NO SE HA COMPLETADO
 //LA PARTE DEL CONT2 NO SE HA COMPLETADO
   final public 
-void R() throws ParseException {
+void R(NodoArbol padre) throws ParseException {NodoArbol nodo = new NodoArbol();
+        NodoArbol nodo2 = new NodoArbol();
+        nodo.grafoname=getEtiqueta(); nodo.cadena="R";
+        padre.hijos.add(nodo);
     switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
     case not:{
       jj_consume_token(not);
+nodo2.grafoname=getEtiqueta(); nodo2.cadena="!"; nodo.hijos.add(nodo2);
       break;
       }
     default:
       jj_la1[58] = jj_gen;
       ;
     }
-    Z();
+    Z(nodo);
   }
 
-  final public void Z() throws ParseException {
+  final public void Z(NodoArbol padre) throws ParseException {NodoArbol nodo = new NodoArbol();
+        nodo.grafoname=getEtiqueta(); nodo.cadena="Z";
+        padre.hijos.add(nodo);
     switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
     case entero:
     case doble:
@@ -1179,12 +1356,12 @@ void R() throws ParseException {
     case ordenar:
     case sumarizar:
     case id:{
-      RELACIONAL();
+      RELACIONAL(nodo);
       break;
       }
     case parenti:{
       jj_consume_token(parenti);
-      LOGICA();
+      LOGICA(nodo);
       jj_consume_token(parentd);
       break;
       }
@@ -1196,10 +1373,14 @@ void R() throws ParseException {
   }
 
 //SENTENCIAS DE CONTROL
-  final public void SENSI() throws ParseException {
+  final public void SENSI(NodoArbol padre) throws ParseException {NodoArbol nodo = new NodoArbol();
+        NodoArbol nodo2 = new NodoArbol();
+        nodo.grafoname=getEtiqueta(); nodo.cadena="SENSI";
+        padre.hijos.add(nodo);
     jj_consume_token(si);
+nodo2.grafoname=getEtiqueta(); nodo2.cadena="si"; nodo.hijos.add(nodo2);
     jj_consume_token(parenti);
-    LOGICA();
+    LOGICA(nodo);
     jj_consume_token(parentd);
     jj_consume_token(sigabrir);
     switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
@@ -1231,7 +1412,7 @@ void R() throws ParseException {
     case ordenar:
     case sumarizar:
     case id:{
-      SENTENCIAS();
+      SENTENCIAS(nodo);
       break;
       }
     default:
@@ -1241,7 +1422,7 @@ void R() throws ParseException {
     jj_consume_token(sigcerrar);
     switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
     case sino:{
-      SENSINO();
+      SENSINO(nodo);
       break;
       }
     default:
@@ -1250,8 +1431,12 @@ void R() throws ParseException {
     }
   }
 
-  final public void SENSINO() throws ParseException {
+  final public void SENSINO(NodoArbol padre) throws ParseException {NodoArbol nodo = new NodoArbol();
+        NodoArbol nodo2 = new NodoArbol();
+        nodo.grafoname=getEtiqueta(); nodo.cadena="SENSINO";
+        padre.hijos.add(nodo);
     jj_consume_token(sino);
+nodo2.grafoname=getEtiqueta(); nodo2.cadena="sino"; nodo.hijos.add(nodo2);
     jj_consume_token(sigabrir);
     switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
     case comentario:
@@ -1282,7 +1467,7 @@ void R() throws ParseException {
     case ordenar:
     case sumarizar:
     case id:{
-      SENTENCIAS();
+      SENTENCIAS(nodo);
       break;
       }
     default:
@@ -1292,15 +1477,19 @@ void R() throws ParseException {
     jj_consume_token(sigcerrar);
   }
 
-  final public void SENCOMPROBAR() throws ParseException {
+  final public void SENCOMPROBAR(NodoArbol padre) throws ParseException {NodoArbol nodo = new NodoArbol();
+        NodoArbol nodo2 = new NodoArbol();
+        nodo.grafoname=getEtiqueta(); nodo.cadena="SENCOMPROBAR";
+        padre.hijos.add(nodo);
     jj_consume_token(comprobar);
+nodo2.grafoname=getEtiqueta(); nodo2.cadena="comprobar"; nodo.hijos.add(nodo2);
     jj_consume_token(parenti);
-    VALOR();
+    VALOR(nodo);
     jj_consume_token(parentd);
     jj_consume_token(sigabrir);
     switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
     case caso:{
-      CUERPO();
+      CUERPO(nodo);
       break;
       }
     default:
@@ -1309,7 +1498,7 @@ void R() throws ParseException {
     }
     switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
     case defecto:{
-      DEFE();
+      DEFE(nodo);
       break;
       }
     default:
@@ -1319,9 +1508,13 @@ void R() throws ParseException {
     jj_consume_token(sigcerrar);
   }
 
-  final public void CUERPO() throws ParseException {
+  final public void CUERPO(NodoArbol padre) throws ParseException {NodoArbol nodo = new NodoArbol();
+        NodoArbol nodo2 = new NodoArbol();
+        nodo.grafoname=getEtiqueta(); nodo.cadena="CUERPO";
+        padre.hijos.add(nodo);
     jj_consume_token(caso);
-    VALOR();
+nodo2.grafoname=getEtiqueta(); nodo2.cadena="caso"; nodo.hijos.add(nodo2);
+    VALOR(nodo);
     jj_consume_token(dospuntos);
     switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
     case comentario:
@@ -1352,7 +1545,7 @@ void R() throws ParseException {
     case ordenar:
     case sumarizar:
     case id:{
-      SENTENCIAS();
+      SENTENCIAS(nodo);
       break;
       }
     default:
@@ -1361,7 +1554,7 @@ void R() throws ParseException {
     }
     switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
     case caso:{
-      CUERPO();
+      CUERPO(nodo);
       break;
       }
     default:
@@ -1370,13 +1563,21 @@ void R() throws ParseException {
     }
   }
 
-  final public void SENSALIR() throws ParseException {
+  final public void SENSALIR(NodoArbol padre) throws ParseException {NodoArbol nodo = new NodoArbol();
+        NodoArbol nodo2 = new NodoArbol();
+        nodo.grafoname=getEtiqueta(); nodo.cadena="SENSALIR";
+        padre.hijos.add(nodo);
     jj_consume_token(salir);
+nodo2.grafoname=getEtiqueta(); nodo2.cadena="salir"; nodo.hijos.add(nodo2);
     jj_consume_token(dolar);
   }
 
-  final public void DEFE() throws ParseException {
+  final public void DEFE(NodoArbol padre) throws ParseException {NodoArbol nodo = new NodoArbol();
+        NodoArbol nodo2 = new NodoArbol();
+        nodo.grafoname=getEtiqueta(); nodo.cadena="DEFE";
+        padre.hijos.add(nodo);
     jj_consume_token(defecto);
+nodo2.grafoname=getEtiqueta(); nodo2.cadena="defecto"; nodo.hijos.add(nodo2);
     jj_consume_token(dospuntos);
     switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
     case comentario:
@@ -1407,7 +1608,7 @@ void R() throws ParseException {
     case ordenar:
     case sumarizar:
     case id:{
-      SENTENCIAS();
+      SENTENCIAS(nodo);
       break;
       }
     default:
@@ -1416,15 +1617,21 @@ void R() throws ParseException {
     }
   }
 
-  final public void SENPARA() throws ParseException {
+  final public void SENPARA(NodoArbol padre) throws ParseException {NodoArbol nodo = new NodoArbol();
+        NodoArbol nodo2 = new NodoArbol();
+        NodoArbol nodo3 = new NodoArbol();
+        nodo.grafoname=getEtiqueta(); nodo.cadena="SENPARA";
+        padre.hijos.add(nodo);
     jj_consume_token(para);
+nodo2.grafoname=getEtiqueta(); nodo2.cadena="para"; nodo.hijos.add(nodo2);
     jj_consume_token(parenti);
-    INIPARA();
+    INIPARA(nodo);
     jj_consume_token(puntoycoma);
-    LOGICA();
+    LOGICA(nodo);
     jj_consume_token(puntoycoma);
     jj_consume_token(id);
-    FINPARA();
+nodo3.grafoname=getEtiqueta(); nodo3.cadena=token.image; nodo3.f=token.beginLine; nodo3.c=token.beginColumn; nodo.hijos.add(nodo3);
+    FINPARA(nodo);
     jj_consume_token(parentd);
     jj_consume_token(sigabrir);
     switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
@@ -1456,7 +1663,7 @@ void R() throws ParseException {
     case ordenar:
     case sumarizar:
     case id:{
-      SENTENCIAS();
+      SENTENCIAS(nodo);
       break;
       }
     default:
@@ -1466,17 +1673,21 @@ void R() throws ParseException {
     jj_consume_token(sigcerrar);
   }
 
-  final public void INIPARA() throws ParseException {
+  final public void INIPARA(NodoArbol padre) throws ParseException {NodoArbol nodo = new NodoArbol();
+        NodoArbol nodo2 = new NodoArbol();
+        nodo.grafoname=getEtiqueta(); nodo.cadena="INIPARA";
+        padre.hijos.add(nodo);
     switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
     case var:{
-      DECLARACION();
+      DECLARACION(nodo);
       break;
       }
     case id:{
       jj_consume_token(id);
+nodo2.grafoname=getEtiqueta(); nodo2.cadena=token.image; nodo2.f=token.beginLine; nodo2.c=token.beginColumn; nodo.hijos.add(nodo2);
       switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
       case corchetei:{
-        DIMENSION();
+        DIMENSION(nodo);
         break;
         }
       default:
@@ -1485,7 +1696,7 @@ void R() throws ParseException {
       }
       switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
       case igual:{
-        ASIGN();
+        ASIGN(nodo);
         break;
         }
       default:
@@ -1499,10 +1710,11 @@ void R() throws ParseException {
     case tcaracter:
     case tboolean:
     case tcadena:{
-      TIPO();
+      TIPO(nodo);
       jj_consume_token(id);
+nodo2.grafoname=getEtiqueta(); nodo2.cadena=token.image; nodo2.f=token.beginLine; nodo2.c=token.beginColumn; nodo.hijos.add(nodo2);
       jj_consume_token(igual);
-      VALOR();
+      VALOR(nodo);
       break;
       }
     default:
@@ -1512,18 +1724,22 @@ void R() throws ParseException {
     }
   }
 
-  final public void FINPARA() throws ParseException {
+  final public void FINPARA(NodoArbol padre) throws ParseException {NodoArbol nodo = new NodoArbol();
+        NodoArbol nodo2 = new NodoArbol();
+        nodo.grafoname=getEtiqueta(); nodo.cadena="FINPARA";
+        padre.hijos.add(nodo);
     switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
     case igual:{
       jj_consume_token(igual);
-      VALOR();
+nodo2.grafoname=getEtiqueta(); nodo2.cadena="="; nodo.hijos.add(nodo2);
+      VALOR(nodo);
       break;
       }
     case aumento:
     case decremento:
     case sumasim:
     case restasim:{
-      CONT2();
+      CONT2(nodo);
       switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
       case entero:
       case doble:
@@ -1536,7 +1752,7 @@ void R() throws ParseException {
       case ordenar:
       case sumarizar:
       case id:{
-        VALOR();
+        VALOR(nodo);
         break;
         }
       default:
@@ -1552,10 +1768,14 @@ void R() throws ParseException {
     }
   }
 
-  final public void SENMIENTRAS() throws ParseException {
+  final public void SENMIENTRAS(NodoArbol padre) throws ParseException {NodoArbol nodo = new NodoArbol();
+        NodoArbol nodo2 = new NodoArbol();
+        nodo.grafoname=getEtiqueta(); nodo.cadena="SENMIENTRAS";
+        padre.hijos.add(nodo);
     jj_consume_token(mientras);
+nodo2.grafoname=getEtiqueta(); nodo2.cadena="mientras"; nodo.hijos.add(nodo2);
     jj_consume_token(parenti);
-    LOGICA();
+    LOGICA(nodo);
     jj_consume_token(parentd);
     jj_consume_token(sigabrir);
     switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
@@ -1587,7 +1807,7 @@ void R() throws ParseException {
     case ordenar:
     case sumarizar:
     case id:{
-      SENTENCIAS();
+      SENTENCIAS(nodo);
       break;
       }
     default:
@@ -1597,8 +1817,12 @@ void R() throws ParseException {
     jj_consume_token(sigcerrar);
   }
 
-  final public void SENHACER() throws ParseException {
+  final public void SENHACER(NodoArbol padre) throws ParseException {NodoArbol nodo = new NodoArbol();
+        NodoArbol nodo2 = new NodoArbol();
+        nodo.grafoname=getEtiqueta(); nodo.cadena="SENHACER";
+        padre.hijos.add(nodo);
     jj_consume_token(hacer);
+nodo2.grafoname=getEtiqueta(); nodo2.cadena="hacer"; nodo.hijos.add(nodo2);
     jj_consume_token(sigabrir);
     switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
     case comentario:
@@ -1629,7 +1853,7 @@ void R() throws ParseException {
     case ordenar:
     case sumarizar:
     case id:{
-      SENTENCIAS();
+      SENTENCIAS(nodo);
       break;
       }
     default:
@@ -1639,17 +1863,22 @@ void R() throws ParseException {
     jj_consume_token(sigcerrar);
     jj_consume_token(mientras);
     jj_consume_token(parenti);
-    LOGICA();
+    LOGICA(nodo);
     jj_consume_token(parentd);
     jj_consume_token(dolar);
   }
 
-  final public void SENCONTINUAR() throws ParseException {
+  final public void SENCONTINUAR(NodoArbol padre) throws ParseException {NodoArbol nodo = new NodoArbol();
+        nodo.grafoname=getEtiqueta(); nodo.cadena="SENCONTINUAR";
+        padre.hijos.add(nodo);
     jj_consume_token(continuar);
     jj_consume_token(dolar);
   }
 
-  final public void CONTENIDO3() throws ParseException {
+  final public void CONTENIDO3(NodoArbol padre) throws ParseException {NodoArbol nodo = new NodoArbol();
+        NodoArbol nodo2 = new NodoArbol();
+        nodo.grafoname=getEtiqueta(); nodo.cadena="CONTENIDO3";
+        padre.hijos.add(nodo);
     switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
     case tentero:
     case tdoble:
@@ -1657,7 +1886,7 @@ void R() throws ParseException {
     case tboolean:
     case tcadena:
     case tvoid:{
-      TIPOMETODO();
+      TIPOMETODO(nodo);
       break;
       }
     default:
@@ -1665,22 +1894,27 @@ void R() throws ParseException {
       ;
     }
     jj_consume_token(id);
+nodo2.grafoname=getEtiqueta(); nodo2.cadena=token.image; nodo2.f=token.beginLine; nodo2.c=token.beginColumn; nodo.hijos.add(nodo2);
     switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
     case corchetei:{
-      DIMENSION();
+      DIMENSION(nodo);
       break;
       }
     default:
       jj_la1[77] = jj_gen;
       ;
     }
-    METODO();
+    METODO(nodo);
   }
 
-  final public void TIPOMETODO() throws ParseException {
+  final public void TIPOMETODO(NodoArbol padre) throws ParseException {NodoArbol nodo = new NodoArbol();
+        NodoArbol nodo2 = new NodoArbol();
+        nodo.grafoname=getEtiqueta(); nodo.cadena="TIPOMETODO";
+        padre.hijos.add(nodo);
     switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
     case tentero:{
       jj_consume_token(tentero);
+nodo2.grafoname=getEtiqueta(); nodo2.cadena="tentero"; nodo.hijos.add(nodo2);
       label_3:
       while (true) {
         switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
@@ -1694,12 +1928,13 @@ void R() throws ParseException {
         }
         jj_consume_token(corchetei);
         jj_consume_token(corcheted);
-System.out.println("[]");
+NodoArbol nodo3 = new NodoArbol(); nodo3.grafoname=getEtiqueta(); nodo3.cadena="[]"; nodo.hijos.add(nodo3);
       }
       break;
       }
     case tdoble:{
       jj_consume_token(tdoble);
+nodo2.grafoname=getEtiqueta(); nodo2.cadena="tdoble"; nodo.hijos.add(nodo2);
       label_4:
       while (true) {
         switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
@@ -1713,12 +1948,13 @@ System.out.println("[]");
         }
         jj_consume_token(corchetei);
         jj_consume_token(corcheted);
-System.out.println("[]");
+NodoArbol nodo3 = new NodoArbol(); nodo3.grafoname=getEtiqueta(); nodo3.cadena="[]"; nodo.hijos.add(nodo3);
       }
       break;
       }
     case tboolean:{
       jj_consume_token(tboolean);
+nodo2.grafoname=getEtiqueta(); nodo2.cadena="tboolean"; nodo.hijos.add(nodo2);
       label_5:
       while (true) {
         switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
@@ -1732,12 +1968,13 @@ System.out.println("[]");
         }
         jj_consume_token(corchetei);
         jj_consume_token(corcheted);
-System.out.println("[]");
+NodoArbol nodo3 = new NodoArbol(); nodo3.grafoname=getEtiqueta(); nodo3.cadena="[]"; nodo.hijos.add(nodo3);
       }
       break;
       }
     case tcaracter:{
       jj_consume_token(tcaracter);
+nodo2.grafoname=getEtiqueta(); nodo2.cadena="tcaracter"; nodo.hijos.add(nodo2);
       label_6:
       while (true) {
         switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
@@ -1751,12 +1988,13 @@ System.out.println("[]");
         }
         jj_consume_token(corchetei);
         jj_consume_token(corcheted);
-System.out.println("[]");
+NodoArbol nodo3 = new NodoArbol(); nodo3.grafoname=getEtiqueta(); nodo3.cadena="[]"; nodo.hijos.add(nodo3);
       }
       break;
       }
     case tcadena:{
       jj_consume_token(tcadena);
+nodo2.grafoname=getEtiqueta(); nodo2.cadena="tcadena"; nodo.hijos.add(nodo2);
       label_7:
       while (true) {
         switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
@@ -1770,12 +2008,13 @@ System.out.println("[]");
         }
         jj_consume_token(corchetei);
         jj_consume_token(corcheted);
-System.out.println("[]");
+NodoArbol nodo3 = new NodoArbol(); nodo3.grafoname=getEtiqueta(); nodo3.cadena="[]"; nodo.hijos.add(nodo3);
       }
       break;
       }
     case tvoid:{
       jj_consume_token(tvoid);
+nodo2.grafoname=getEtiqueta(); nodo2.cadena="tvoid"; nodo.hijos.add(nodo2);
       label_8:
       while (true) {
         switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
@@ -1789,7 +2028,7 @@ System.out.println("[]");
         }
         jj_consume_token(corchetei);
         jj_consume_token(corcheted);
-System.out.println("[]");
+NodoArbol nodo3 = new NodoArbol(); nodo3.grafoname=getEtiqueta(); nodo3.cadena="[]"; nodo.hijos.add(nodo3);
       }
       break;
       }
@@ -1800,7 +2039,9 @@ System.out.println("[]");
     }
   }
 
-  final public void METODO() throws ParseException {
+  final public void METODO(NodoArbol padre) throws ParseException {NodoArbol nodo = new NodoArbol();
+        nodo.grafoname=getEtiqueta(); nodo.cadena="METODO";
+        padre.hijos.add(nodo);
     switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
     case parenti:{
       jj_consume_token(parenti);
@@ -1821,7 +2062,7 @@ System.out.println("[]");
       case ordenar:
       case sumarizar:
       case id:{
-        PARAMETROS();
+        PARAMETROS(nodo);
         break;
         }
       default:
@@ -1832,7 +2073,7 @@ System.out.println("[]");
       switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
       case dolar:
       case sigabrir:{
-        METOD();
+        METOD(nodo);
         break;
         }
       default:
@@ -1843,7 +2084,7 @@ System.out.println("[]");
       }
     case igual:{
       jj_consume_token(igual);
-      VALOR();
+      VALOR(nodo);
       jj_consume_token(dolar);
       break;
       }
@@ -1851,7 +2092,7 @@ System.out.println("[]");
     case decremento:
     case sumasim:
     case restasim:{
-      CONT2();
+      CONT2(nodo);
       switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
       case entero:
       case doble:
@@ -1864,7 +2105,7 @@ System.out.println("[]");
       case ordenar:
       case sumarizar:
       case id:{
-        VALOR();
+        VALOR(nodo);
         break;
         }
       default:
@@ -1881,7 +2122,10 @@ System.out.println("[]");
     }
   }
 
-  final public void METOD() throws ParseException {
+  final public void METOD(NodoArbol padre) throws ParseException {NodoArbol nodo = new NodoArbol();
+        NodoArbol nodo2 = new NodoArbol();
+        nodo.grafoname=getEtiqueta(); nodo.cadena="METOD";
+        padre.hijos.add(nodo);
     switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
     case sigabrir:{
       jj_consume_token(sigabrir);
@@ -1914,7 +2158,7 @@ System.out.println("[]");
       case ordenar:
       case sumarizar:
       case id:{
-        SENTENCIAS();
+        SENTENCIAS(nodo);
         break;
         }
       default:
@@ -1926,6 +2170,7 @@ System.out.println("[]");
       }
     case dolar:{
       jj_consume_token(dolar);
+nodo2.grafoname=getEtiqueta(); nodo2.cadena="dolar"; nodo.hijos.add(nodo2);
       break;
       }
     default:
@@ -1935,11 +2180,13 @@ System.out.println("[]");
     }
   }
 
-  final public void LISTPARAMETRO() throws ParseException {
-    VALOR();
+  final public void LISTPARAMETRO(NodoArbol padre) throws ParseException {NodoArbol nodo = new NodoArbol();
+        nodo.grafoname=getEtiqueta(); nodo.cadena="LISTPARAMETRO";
+        padre.hijos.add(nodo);
+    VALOR(nodo);
     switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
     case coma:{
-      LISTPARAMETRO2();
+      LISTPARAMETRO2(nodo);
       break;
       }
     default:
@@ -1948,12 +2195,14 @@ System.out.println("[]");
     }
   }
 
-  final public void LISTPARAMETRO2() throws ParseException {
+  final public void LISTPARAMETRO2(NodoArbol padre) throws ParseException {NodoArbol nodo = new NodoArbol();
+        nodo.grafoname=getEtiqueta(); nodo.cadena="LISTPARAMETRO2";
+        padre.hijos.add(nodo);
     jj_consume_token(coma);
-    VALOR();
+    VALOR(nodo);
     switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
     case coma:{
-      LISTPARAMETRO2();
+      LISTPARAMETRO2(nodo);
       break;
       }
     default:
@@ -1962,24 +2211,30 @@ System.out.println("[]");
     }
   }
 
-  final public void RETO() throws ParseException {
+  final public void RETO(NodoArbol padre) throws ParseException {NodoArbol nodo = new NodoArbol();
+        nodo.grafoname=getEtiqueta(); nodo.cadena="RETO";
+        padre.hijos.add(nodo);
     jj_consume_token(retorna);
-    VALOR();
+    VALOR(nodo);
     jj_consume_token(dolar);
   }
 
-  final public void PARAMETROS() throws ParseException {
+  final public void PARAMETROS(NodoArbol padre) throws ParseException {NodoArbol nodo = new NodoArbol();
+        NodoArbol nodo2 = new NodoArbol();
+        nodo.grafoname=getEtiqueta(); nodo.cadena="PARAMETROS";
+        padre.hijos.add(nodo);
     switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
     case tentero:
     case tdoble:
     case tcaracter:
     case tboolean:
     case tcadena:{
-      TIPO();
+      TIPO(nodo);
       jj_consume_token(id);
+nodo2.grafoname=getEtiqueta(); nodo2.cadena=token.image; nodo2.f=token.beginLine; nodo2.c=token.beginColumn; nodo.hijos.add(nodo2);
       switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
       case coma:{
-        PARAP();
+        PARAP(nodo);
         break;
         }
       default:
@@ -1999,7 +2254,7 @@ System.out.println("[]");
     case ordenar:
     case sumarizar:
     case id:{
-      LISTPARAMETRO();
+      LISTPARAMETRO(nodo);
       break;
       }
     default:
@@ -2009,13 +2264,17 @@ System.out.println("[]");
     }
   }
 
-  final public void PARAP() throws ParseException {
+  final public void PARAP(NodoArbol padre) throws ParseException {NodoArbol nodo = new NodoArbol();
+        NodoArbol nodo2 = new NodoArbol();
+        nodo.grafoname=getEtiqueta(); nodo.cadena="PARAP";
+        padre.hijos.add(nodo);
     jj_consume_token(coma);
-    TIPO();
+    TIPO(nodo);
     jj_consume_token(id);
+nodo2.grafoname=getEtiqueta(); nodo2.cadena=token.image; nodo2.f=token.beginLine; nodo2.c=token.beginColumn; nodo.hijos.add(nodo2);
     switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
     case coma:{
-      PARAP();
+      PARAP(nodo);
       break;
       }
     default:
@@ -2026,53 +2285,62 @@ System.out.println("[]");
 
 //----------------------METODOS NATIVOS DEL LENGUAJE
   final public 
-void DIBUJAR_P() throws ParseException {
+void DIBUJAR_P(NodoArbol padre) throws ParseException {NodoArbol nodo = new NodoArbol();
+        nodo.grafoname=getEtiqueta(); nodo.cadena="DIBUJAR_P";
+        padre.hijos.add(nodo);
     jj_consume_token(pintarP);
     jj_consume_token(parenti);
-    C();
+    C(nodo);
     jj_consume_token(coma);
-    C();
+    C(nodo);
     jj_consume_token(coma);
-    COLOR();
+    COLOR(nodo);
     jj_consume_token(coma);
-    C();
+    C(nodo);
     jj_consume_token(parentd);
     jj_consume_token(dolar);
   }
 
-  final public void DIBUJAR_OR() throws ParseException {
+  final public void DIBUJAR_OR(NodoArbol padre) throws ParseException {NodoArbol nodo = new NodoArbol();
+        nodo.grafoname=getEtiqueta(); nodo.cadena="DIBUJAR_OR";
+        padre.hijos.add(nodo);
     jj_consume_token(pintarOR);
     jj_consume_token(parenti);
-    C();
+    C(nodo);
     jj_consume_token(coma);
-    C();
+    C(nodo);
     jj_consume_token(coma);
-    COLOR();
+    COLOR(nodo);
     jj_consume_token(coma);
-    C();
+    C(nodo);
     jj_consume_token(coma);
-    C();
+    C(nodo);
     jj_consume_token(coma);
-    C();
+    C(nodo);
     jj_consume_token(parentd);
     jj_consume_token(dolar);
   }
 
-  final public void DIBUJAR_S() throws ParseException {
+  final public void DIBUJAR_S(NodoArbol padre) throws ParseException {NodoArbol nodo = new NodoArbol();
+        nodo.grafoname=getEtiqueta(); nodo.cadena="DIBUJAR_S";
+        padre.hijos.add(nodo);
     jj_consume_token(pintarS);
     jj_consume_token(parenti);
-    C();
+    C(nodo);
     jj_consume_token(coma);
-    C();
+    C(nodo);
     jj_consume_token(coma);
-    COLOR();
+    COLOR(nodo);
     jj_consume_token(coma);
-    C();
+    C(nodo);
     jj_consume_token(parentd);
     jj_consume_token(dolar);
   }
 
-  final public void COLOR() throws ParseException {
+  final public void COLOR(NodoArbol padre) throws ParseException {NodoArbol nodo = new NodoArbol();
+        NodoArbol nodo2 = new NodoArbol();
+        nodo.grafoname=getEtiqueta(); nodo.cadena="COLOR";
+        padre.hijos.add(nodo);
     switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
     case entero:
     case doble:
@@ -2082,11 +2350,12 @@ void DIBUJAR_P() throws ParseException {
     case ordenar:
     case sumarizar:
     case id:{
-      C();
+      C(nodo);
       break;
       }
     case colore:{
       jj_consume_token(colore);
+nodo2.grafoname=getEtiqueta(); nodo2.cadena=token.image; nodo2.f=token.beginLine; nodo2.c=token.beginColumn; nodo.hijos.add(nodo2);
       break;
       }
     default:
@@ -2096,7 +2365,9 @@ void DIBUJAR_P() throws ParseException {
     }
   }
 
-  final public void PRI() throws ParseException {
+  final public void PRI(NodoArbol padre) throws ParseException {NodoArbol nodo = new NodoArbol();
+        nodo.grafoname=getEtiqueta(); nodo.cadena="PRI";
+        padre.hijos.add(nodo);
     jj_consume_token(principal);
     jj_consume_token(parenti);
     jj_consume_token(parentd);
@@ -2130,7 +2401,7 @@ void DIBUJAR_P() throws ParseException {
     case ordenar:
     case sumarizar:
     case id:{
-      SENTENCIAS();
+      SENTENCIAS(nodo);
       break;
       }
     default:
@@ -2140,37 +2411,49 @@ void DIBUJAR_P() throws ParseException {
     jj_consume_token(sigcerrar);
   }
 
-  final public void ORDEN() throws ParseException {
+  final public void ORDEN(NodoArbol padre) throws ParseException {NodoArbol nodo = new NodoArbol();
+        NodoArbol nodo2 = new NodoArbol();
+        nodo.grafoname=getEtiqueta(); nodo.cadena="ORDEN";
+        padre.hijos.add(nodo);
     jj_consume_token(ordenar);
     jj_consume_token(parenti);
     jj_consume_token(arreglo);
     jj_consume_token(id);
+nodo2.grafoname=getEtiqueta(); nodo2.cadena=token.image; nodo2.f=token.beginLine; nodo2.c=token.beginColumn; nodo.hijos.add(nodo2);
     jj_consume_token(coma);
     jj_consume_token(tipo);
-    FORMAORDEN();
+    FORMAORDEN(nodo);
     jj_consume_token(parentd);
   }
 
-  final public void FORMAORDEN() throws ParseException {
+  final public void FORMAORDEN(NodoArbol padre) throws ParseException {NodoArbol nodo = new NodoArbol();
+        NodoArbol nodo2 = new NodoArbol();
+        nodo.grafoname=getEtiqueta(); nodo.cadena="FORMAORDEN";
+        padre.hijos.add(nodo);
     switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
     case ascendente:{
       jj_consume_token(ascendente);
+nodo2.grafoname=getEtiqueta(); nodo2.cadena="ascendente";      nodo.hijos.add(nodo2);
       break;
       }
     case descendente:{
       jj_consume_token(descendente);
+nodo2.grafoname=getEtiqueta(); nodo2.cadena="descendente"; nodo.hijos.add(nodo2);
       break;
       }
     case pares:{
       jj_consume_token(pares);
+nodo2.grafoname=getEtiqueta(); nodo2.cadena="pares";           nodo.hijos.add(nodo2);
       break;
       }
     case impares:{
       jj_consume_token(impares);
+nodo2.grafoname=getEtiqueta(); nodo2.cadena="impares";         nodo.hijos.add(nodo2);
       break;
       }
     case primos:{
       jj_consume_token(primos);
+nodo2.grafoname=getEtiqueta(); nodo2.cadena="primos";          nodo.hijos.add(nodo2);
       break;
       }
     default:
@@ -2180,21 +2463,27 @@ void DIBUJAR_P() throws ParseException {
     }
   }
 
-  final public void SUMARI() throws ParseException {
+  final public void SUMARI(NodoArbol padre) throws ParseException {NodoArbol nodo = new NodoArbol();
+        nodo.grafoname=getEtiqueta(); nodo.cadena="SUMARI";
+        padre.hijos.add(nodo);
     jj_consume_token(sumarizar);
     jj_consume_token(parenti);
-    CONT5();
+    CONT5(nodo);
     jj_consume_token(parentd);
   }
 
-  final public void CONT5() throws ParseException {
+  final public void CONT5(NodoArbol padre) throws ParseException {NodoArbol nodo = new NodoArbol();
+        NodoArbol nodo2 = new NodoArbol();
+        nodo.grafoname=getEtiqueta(); nodo.cadena="CONT5";
+        padre.hijos.add(nodo);
     switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
     case id:{
       jj_consume_token(id);
+nodo2.grafoname=getEtiqueta(); nodo2.cadena=token.image; nodo2.f=token.beginLine; nodo2.c=token.beginColumn; nodo.hijos.add(nodo2);
       break;
       }
     case llavei:{
-      VALORARREGLO();
+      VALORARREGLO(nodo);
       break;
       }
     default:

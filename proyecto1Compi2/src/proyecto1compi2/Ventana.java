@@ -35,7 +35,17 @@ public class Ventana extends javax.swing.JFrame {
 
 //ArrayList estatico que contiene referencia de los JEditorPane dinamicos    
 ArrayList<JEditorPane> ListaEditor = new ArrayList<JEditorPane>();
-public ArrayList<dibujo> LDibujo = new ArrayList<dibujo>();
+//ArrayList estatico que contiene referencia de los dibujos
+ArrayList<dibujo> LDibujo = new ArrayList<dibujo>();
+//ArrayList estatico que contiene la tabla de simbolos
+ArrayList<Simbolo> LS = new ArrayList<Simbolo>();
+ArrayList<Simbolo> LS2 = new ArrayList<Simbolo>();
+
+//ArrayList estatico que contiene la tabla de errores
+ArrayList<NodeError> LE = new ArrayList<NodeError>();
+       
+
+
 compilador ana = new compilador();
     
     /**
@@ -400,6 +410,12 @@ compilador ana = new compilador();
   
         ana.analizar(s2);
         f.graphArbol(ana.root);
+        ejecutar ejec = new ejecutar();
+        ejec.ejecucion(ana.root, LS);
+        System.out.println("TABLA DE SIMBOLOS \n");
+        for(int i=0; i<LS.size();i++){
+            System.out.println("Simbolo "+LS.get(i).id+" size "+LS.size()+"\n");
+        }
         //System.out.println("Root \n Nombre root "+ana.root.nombre+" grafoname "+ana.root.grafoname+" cadena "+ana.root.cadena+" numero "+ana.root.numero); 
         //System.out.println("S\n Nombre "+ana.root.hijos.get(0).nombre+" grafoname "+ana.root.hijos.get(0).grafoname);
         //System.out.println("COMMM\n Nombre "+ana.root.hijos.get(0).hijos.get(0).nombre+" grafoname "+ana.root.hijos.get(0).hijos.get(0).grafoname);
@@ -461,20 +477,13 @@ compilador ana = new compilador();
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
-        Simbolo s1 = new Simbolo("id1","tipo1","rol1","ambito1");
-        Simbolo s2 = new Simbolo("id2","tipo2","rol2","ambito2");
-        Simbolo s3 = new Simbolo("id3","tipo3","rol3","ambito3");
-        Simbolo s4 = new Simbolo("id4","tipo4","rol4","ambito4");
-        Simbolo s5 = new Simbolo("id5","tipo5","rol5","ambito5");
-        
-        ArrayList<Simbolo> LS = new ArrayList<Simbolo>();
-        LS.add(s1);
-        LS.add(s2);
-        LS.add(s3);
-        LS.add(s4);
-        LS.add(s5);
+        System.out.println("Tabla de Simbolos --\n");
         Funcion f = new Funcion();
         f.generarhtmlTS(LS);
+        char c = '\n';
+        int x = 10 + c;
+        System.out.println("--\n"+x);
+       
         // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem9ActionPerformed
 
@@ -497,14 +506,13 @@ compilador ana = new compilador();
         NodeError s4 = new NodeError(4,4,"rol4","ambito4");
         NodeError s5 = new NodeError(5,5,"rol5","ambito5");
         
-        ArrayList<NodeError> LS = new ArrayList<NodeError>();
-        LS.add(s1);
-        LS.add(s2);
-        LS.add(s3);
-        LS.add(s4);
-        LS.add(s5);
+        LE.add(s1);
+        LE.add(s2);
+        LE.add(s3);
+        LE.add(s4);
+        LE.add(s5);
         Funcion f = new Funcion();
-        f.generarhtmlErrores(LS);
+        f.generarhtmlErrores(LE);
         
         
         // TODO add your handling code here:

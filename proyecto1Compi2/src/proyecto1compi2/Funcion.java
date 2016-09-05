@@ -207,7 +207,7 @@ public void generarhtmlTS(ArrayList<Simbolo> simbolo){
             pw.write("<h2> Hora: "+calendario.get(Calendar.HOUR_OF_DAY)+ " : " +calendario.get(Calendar.MINUTE) + " : "+ calendario.get(Calendar.SECOND)+"</h2>");
             pw.write("<table font face=arial black size=12>");
             pw.write("<tr>\n<td>No</td>\n<td>ID</td>\n<td>Tipo</td>\n<td>Rol</td>\n<td>Ambito</td>\n</tr>");
-             for(int i=1;i< simbolo.size();i++){
+             for(int i=0;i< simbolo.size();i++){
                        pw.write("<tr>\n");
                        pw.write("<td>"+i+"</td>\n");
                        pw.write("<td>"+ simbolo.get(i).id + "</td>\n");
@@ -249,7 +249,7 @@ public void generarhtmlErrores(ArrayList<NodeError> error){
             pw.write("<h2> Hora: "+calendario.get(Calendar.HOUR_OF_DAY)+ " : " +calendario.get(Calendar.MINUTE) + " : "+ calendario.get(Calendar.SECOND)+"</h2>");
             pw.write("<table font face=arial black size=12>");
             pw.write("<tr>\n<td>No</td>\n<td>Linea</td>\n<td>Columna</td>\n<td>Tipo de error</td>\n<td>Descripcion</td>\n</tr>");
-             for(int i=1;i< error.size();i++){
+             for(int i=0;i< error.size();i++){
                        pw.write("<tr>\n");
                        pw.write("<td>"+i+"</td>\n");
                        pw.write("<td>"+ error.get(i).linea + "</td>\n");
@@ -274,7 +274,10 @@ public void generarhtmlErrores(ArrayList<NodeError> error){
 
 public String getTexto(NodoArbol node, String cadena){
     cadena = cadena + node.grafoname;
-    cadena=cadena+"[label= \""+node.nombre+"\n :: "+node.cadena+"\"]; \n";
+    NodoArbol auxnodo = new NodoArbol();
+    auxnodo.cadena = node.cadena;
+    
+    cadena=cadena+"[label= \""+"\n :: "+auxnodo.cadena.replace('"','\'')+"\"]; \n";
     for(int i=0; i<node.hijos.size();i++){
         cadena = cadena + node.grafoname + "->" +node.hijos.get(i).grafoname+";\n";
     }
@@ -325,6 +328,12 @@ public void generarImagen(String nombre,String ruta, String pathimagen) {
 }
 
 
+public void imprimirLS(ArrayList<Simbolo> LS){
+
+    for(int i=0; i<LS.size();i++){
+            System.out.println("Simboloxx "+LS.get(i).id+" size "+LS.size()+"\n"); 
+        }
+}
 
 }
 

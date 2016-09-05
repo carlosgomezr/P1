@@ -1,6 +1,6867 @@
 digraph G { 
  label= "Tree LZ "node [shape=record]; 
- subgraph g {nodo1[label= "Ini
+ subgraph g {nodo1[label= "
  :: Ini"]; 
+nodo1->nodo2;
+nodo2[label= "
+ :: S"]; 
+nodo2->nodo3;
+nodo2->nodo4;
+nodo2->nodo5;
+nodo2->nodo12;
+nodo2->nodo13;
+nodo3[label= "
+ :: lienzo"]; 
+nodo4[label= "
+ :: kaya"]; 
+nodo5[label= "
+ :: EXT"]; 
+nodo5->nodo6;
+nodo5->nodo7;
+nodo5->nodo8;
+nodo6[label= "
+ :: extiende"]; 
+nodo7[label= "
+ :: ashe"]; 
+nodo8[label= "
+ :: EXT1"]; 
+nodo8->nodo9;
+nodo8->nodo10;
+nodo9[label= "
+ :: velkoz"]; 
+nodo10[label= "
+ :: EXT1"]; 
+nodo10->nodo11;
+nodo11[label= "
+ :: homero"]; 
+nodo12[label= "
+ :: SEN"]; 
+nodo13[label= "
+ :: SENTENCIAS"]; 
+nodo13->nodo14;
+nodo13->nodo15;
+nodo14[label= "
+ :: SEN"]; 
+nodo14->nodo16;
+nodo16[label= "
+ :: CONTENIDO"]; 
+nodo16->nodo17;
+nodo17[label= "
+ :: CONT"]; 
+nodo17->nodo18;
+nodo18[label= "
+ :: DECLARACION"]; 
+nodo18->nodo19;
+nodo18->nodo21;
+nodo19[label= "
+ :: TIPO"]; 
+nodo19->nodo20;
+nodo20[label= "
+ :: tentero"]; 
+nodo21[label= "
+ :: VARIABLE"]; 
+nodo21->nodo22;
+nodo22[label= "
+ :: NOMBRES"]; 
+nodo22->nodo23;
+nodo23[label= "
+ :: x"]; 
+nodo15[label= "
+ :: SENTENCIAS"]; 
+nodo15->nodo24;
+nodo15->nodo25;
+nodo24[label= "
+ :: SEN"]; 
+nodo24->nodo26;
+nodo26[label= "
+ :: CONTENIDO"]; 
+nodo26->nodo27;
+nodo27[label= "
+ :: CONT"]; 
+nodo27->nodo28;
+nodo28[label= "
+ :: DECLARACION"]; 
+nodo28->nodo29;
+nodo28->nodo31;
+nodo29[label= "
+ :: TIPO"]; 
+nodo29->nodo30;
+nodo30[label= "
+ :: tdoble"]; 
+nodo31[label= "
+ :: VARIABLE"]; 
+nodo31->nodo32;
+nodo32[label= "
+ :: NOMBRES"]; 
+nodo32->nodo33;
+nodo33[label= "
+ :: y"]; 
+nodo25[label= "
+ :: SENTENCIAS"]; 
+nodo25->nodo34;
+nodo25->nodo35;
+nodo34[label= "
+ :: SEN"]; 
+nodo34->nodo36;
+nodo36[label= "
+ :: CONTENIDO"]; 
+nodo36->nodo37;
+nodo37[label= "
+ :: CONT"]; 
+nodo37->nodo38;
+nodo38[label= "
+ :: DECLARACION"]; 
+nodo38->nodo39;
+nodo38->nodo41;
+nodo39[label= "
+ :: TIPO"]; 
+nodo39->nodo40;
+nodo40[label= "
+ :: tboolean"]; 
+nodo41[label= "
+ :: VARIABLE"]; 
+nodo41->nodo42;
+nodo42[label= "
+ :: NOMBRES"]; 
+nodo42->nodo43;
+nodo43[label= "
+ :: z"]; 
+nodo35[label= "
+ :: SENTENCIAS"]; 
+nodo35->nodo44;
+nodo35->nodo45;
+nodo44[label= "
+ :: SEN"]; 
+nodo44->nodo46;
+nodo46[label= "
+ :: CONTENIDO"]; 
+nodo46->nodo47;
+nodo47[label= "
+ :: CONT"]; 
+nodo47->nodo48;
+nodo48[label= "
+ :: DECLARACION"]; 
+nodo48->nodo49;
+nodo48->nodo51;
+nodo49[label= "
+ :: TIPO"]; 
+nodo49->nodo50;
+nodo50[label= "
+ :: tcaracter"]; 
+nodo51[label= "
+ :: VARIABLE"]; 
+nodo51->nodo52;
+nodo52[label= "
+ :: NOMBRES"]; 
+nodo52->nodo53;
+nodo53[label= "
+ :: a"]; 
+nodo45[label= "
+ :: SENTENCIAS"]; 
+nodo45->nodo54;
+nodo45->nodo55;
+nodo54[label= "
+ :: SEN"]; 
+nodo54->nodo56;
+nodo56[label= "
+ :: CONTENIDO"]; 
+nodo56->nodo57;
+nodo57[label= "
+ :: CONT"]; 
+nodo57->nodo58;
+nodo58[label= "
+ :: DECLARACION"]; 
+nodo58->nodo59;
+nodo58->nodo61;
+nodo59[label= "
+ :: TIPO"]; 
+nodo59->nodo60;
+nodo60[label= "
+ :: tcadena"]; 
+nodo61[label= "
+ :: VARIABLE"]; 
+nodo61->nodo62;
+nodo62[label= "
+ :: NOMBRES"]; 
+nodo62->nodo63;
+nodo63[label= "
+ :: b"]; 
+nodo55[label= "
+ :: SENTENCIAS"]; 
+nodo55->nodo64;
+nodo55->nodo65;
+nodo64[label= "
+ :: SEN"]; 
+nodo65[label= "
+ :: SENTENCIAS"]; 
+nodo65->nodo66;
+nodo65->nodo67;
+nodo66[label= "
+ :: SEN"]; 
+nodo66->nodo68;
+nodo68[label= "
+ :: CONTENIDO"]; 
+nodo68->nodo69;
+nodo69[label= "
+ :: CONT"]; 
+nodo69->nodo70;
+nodo70[label= "
+ :: DECLARACION"]; 
+nodo70->nodo71;
+nodo70->nodo73;
+nodo71[label= "
+ :: TIPO"]; 
+nodo71->nodo72;
+nodo72[label= "
+ :: tentero"]; 
+nodo73[label= "
+ :: VARIABLE"]; 
+nodo73->nodo74;
+nodo74[label= "
+ :: NOMBRES"]; 
+nodo74->nodo75;
+nodo74->nodo76;
+nodo75[label= "
+ :: x"]; 
+nodo76[label= "
+ :: ASIGN"]; 
+nodo76->nodo77;
+nodo77[label= "
+ :: VALOR"]; 
+nodo77->nodo78;
+nodo78[label= "
+ :: LOGICA"]; 
+nodo78->nodo79;
+nodo79[label= "
+ :: L"]; 
+nodo79->nodo80;
+nodo80[label= "
+ :: M"]; 
+nodo80->nodo81;
+nodo81[label= "
+ :: N"]; 
+nodo81->nodo82;
+nodo82[label= "
+ :: R"]; 
+nodo82->nodo83;
+nodo83[label= "
+ :: Z"]; 
+nodo83->nodo84;
+nodo84[label= "
+ :: RELACIONAL"]; 
+nodo84->nodo85;
+nodo85[label= "
+ :: A"]; 
+nodo85->nodo86;
+nodo86[label= "
+ :: EXP"]; 
+nodo86->nodo87;
+nodo87[label= "
+ :: E"]; 
+nodo87->nodo88;
+nodo88[label= "
+ :: T"]; 
+nodo88->nodo89;
+nodo89[label= "
+ :: F"]; 
+nodo89->nodo90;
+nodo90[label= "
+ :: G"]; 
+nodo90->nodo91;
+nodo91[label= "
+ :: 0"]; 
+nodo67[label= "
+ :: SENTENCIAS"]; 
+nodo67->nodo92;
+nodo67->nodo93;
+nodo92[label= "
+ :: SEN"]; 
+nodo92->nodo94;
+nodo94[label= "
+ :: CONTENIDO"]; 
+nodo94->nodo95;
+nodo95[label= "
+ :: CONT"]; 
+nodo95->nodo96;
+nodo96[label= "
+ :: DECLARACION"]; 
+nodo96->nodo97;
+nodo96->nodo99;
+nodo97[label= "
+ :: TIPO"]; 
+nodo97->nodo98;
+nodo98[label= "
+ :: tdoble"]; 
+nodo99[label= "
+ :: VARIABLE"]; 
+nodo99->nodo100;
+nodo100[label= "
+ :: NOMBRES"]; 
+nodo100->nodo101;
+nodo100->nodo102;
+nodo101[label= "
+ :: y"]; 
+nodo102[label= "
+ :: ASIGN"]; 
+nodo102->nodo103;
+nodo103[label= "
+ :: VALOR"]; 
+nodo103->nodo104;
+nodo104[label= "
+ :: LOGICA"]; 
+nodo104->nodo105;
+nodo105[label= "
+ :: L"]; 
+nodo105->nodo106;
+nodo106[label= "
+ :: M"]; 
+nodo106->nodo107;
+nodo107[label= "
+ :: N"]; 
+nodo107->nodo108;
+nodo108[label= "
+ :: R"]; 
+nodo108->nodo109;
+nodo109[label= "
+ :: Z"]; 
+nodo109->nodo110;
+nodo110[label= "
+ :: RELACIONAL"]; 
+nodo110->nodo111;
+nodo111[label= "
+ :: A"]; 
+nodo111->nodo112;
+nodo112[label= "
+ :: EXP"]; 
+nodo112->nodo113;
+nodo113[label= "
+ :: E"]; 
+nodo113->nodo114;
+nodo114[label= "
+ :: T"]; 
+nodo114->nodo115;
+nodo115[label= "
+ :: F"]; 
+nodo115->nodo116;
+nodo116[label= "
+ :: G"]; 
+nodo116->nodo117;
+nodo117[label= "
+ :: 231.0021"]; 
+nodo93[label= "
+ :: SENTENCIAS"]; 
+nodo93->nodo118;
+nodo93->nodo119;
+nodo118[label= "
+ :: SEN"]; 
+nodo118->nodo120;
+nodo120[label= "
+ :: CONTENIDO"]; 
+nodo120->nodo121;
+nodo121[label= "
+ :: CONT"]; 
+nodo121->nodo122;
+nodo122[label= "
+ :: DECLARACION"]; 
+nodo122->nodo123;
+nodo122->nodo125;
+nodo123[label= "
+ :: TIPO"]; 
+nodo123->nodo124;
+nodo124[label= "
+ :: tboolean"]; 
+nodo125[label= "
+ :: VARIABLE"]; 
+nodo125->nodo126;
+nodo126[label= "
+ :: NOMBRES"]; 
+nodo126->nodo127;
+nodo126->nodo128;
+nodo127[label= "
+ :: z"]; 
+nodo128[label= "
+ :: ASIGN"]; 
+nodo128->nodo129;
+nodo129[label= "
+ :: VALOR"]; 
+nodo129->nodo130;
+nodo130[label= "
+ :: LOGICA"]; 
+nodo130->nodo131;
+nodo131[label= "
+ :: L"]; 
+nodo131->nodo132;
+nodo132[label= "
+ :: M"]; 
+nodo132->nodo133;
+nodo133[label= "
+ :: N"]; 
+nodo133->nodo134;
+nodo134[label= "
+ :: R"]; 
+nodo134->nodo135;
+nodo135[label= "
+ :: Z"]; 
+nodo135->nodo136;
+nodo136[label= "
+ :: RELACIONAL"]; 
+nodo136->nodo137;
+nodo137[label= "
+ :: A"]; 
+nodo137->nodo138;
+nodo138[label= "
+ :: EXP"]; 
+nodo138->nodo139;
+nodo139[label= "
+ :: E"]; 
+nodo139->nodo140;
+nodo140[label= "
+ :: T"]; 
+nodo140->nodo141;
+nodo141[label= "
+ :: F"]; 
+nodo141->nodo142;
+nodo142[label= "
+ :: G"]; 
+nodo142->nodo143;
+nodo143[label= "
+ :: true"]; 
+nodo119[label= "
+ :: SENTENCIAS"]; 
+nodo119->nodo144;
+nodo119->nodo145;
+nodo144[label= "
+ :: SEN"]; 
+nodo144->nodo146;
+nodo146[label= "
+ :: CONTENIDO"]; 
+nodo146->nodo147;
+nodo147[label= "
+ :: CONT"]; 
+nodo147->nodo148;
+nodo148[label= "
+ :: DECLARACION"]; 
+nodo148->nodo149;
+nodo148->nodo151;
+nodo149[label= "
+ :: TIPO"]; 
+nodo149->nodo150;
+nodo150[label= "
+ :: tcaracter"]; 
+nodo151[label= "
+ :: VARIABLE"]; 
+nodo151->nodo152;
+nodo152[label= "
+ :: NOMBRES"]; 
+nodo152->nodo153;
+nodo152->nodo154;
+nodo153[label= "
+ :: a"]; 
+nodo154[label= "
+ :: ASIGN"]; 
+nodo154->nodo155;
+nodo155[label= "
+ :: VALOR"]; 
+nodo155->nodo156;
+nodo156[label= "
+ :: LOGICA"]; 
+nodo156->nodo157;
+nodo157[label= "
+ :: L"]; 
+nodo157->nodo158;
+nodo158[label= "
+ :: M"]; 
+nodo158->nodo159;
+nodo159[label= "
+ :: N"]; 
+nodo159->nodo160;
+nodo160[label= "
+ :: R"]; 
+nodo160->nodo161;
+nodo161[label= "
+ :: Z"]; 
+nodo161->nodo162;
+nodo162[label= "
+ :: RELACIONAL"]; 
+nodo162->nodo163;
+nodo163[label= "
+ :: A"]; 
+nodo163->nodo164;
+nodo164[label= "
+ :: EXP"]; 
+nodo164->nodo165;
+nodo165[label= "
+ :: E"]; 
+nodo165->nodo166;
+nodo166[label= "
+ :: T"]; 
+nodo166->nodo167;
+nodo167[label= "
+ :: F"]; 
+nodo167->nodo168;
+nodo168[label= "
+ :: G"]; 
+nodo168->nodo169;
+nodo169[label= "
+ :: 'c'"]; 
+nodo145[label= "
+ :: SENTENCIAS"]; 
+nodo145->nodo170;
+nodo145->nodo171;
+nodo170[label= "
+ :: SEN"]; 
+nodo170->nodo172;
+nodo172[label= "
+ :: CONTENIDO"]; 
+nodo172->nodo173;
+nodo173[label= "
+ :: CONT"]; 
+nodo173->nodo174;
+nodo174[label= "
+ :: DECLARACION"]; 
+nodo174->nodo175;
+nodo174->nodo177;
+nodo175[label= "
+ :: TIPO"]; 
+nodo175->nodo176;
+nodo176[label= "
+ :: tcadena"]; 
+nodo177[label= "
+ :: VARIABLE"]; 
+nodo177->nodo178;
+nodo178[label= "
+ :: NOMBRES"]; 
+nodo178->nodo179;
+nodo178->nodo180;
+nodo179[label= "
+ :: b"]; 
+nodo180[label= "
+ :: ASIGN"]; 
+nodo180->nodo181;
+nodo181[label= "
+ :: VALOR"]; 
+nodo181->nodo182;
+nodo182[label= "
+ :: LOGICA"]; 
+nodo182->nodo183;
+nodo183[label= "
+ :: L"]; 
+nodo183->nodo184;
+nodo184[label= "
+ :: M"]; 
+nodo184->nodo185;
+nodo185[label= "
+ :: N"]; 
+nodo185->nodo186;
+nodo186[label= "
+ :: R"]; 
+nodo186->nodo187;
+nodo187[label= "
+ :: Z"]; 
+nodo187->nodo188;
+nodo188[label= "
+ :: RELACIONAL"]; 
+nodo188->nodo189;
+nodo189[label= "
+ :: A"]; 
+nodo189->nodo190;
+nodo190[label= "
+ :: EXP"]; 
+nodo190->nodo191;
+nodo191[label= "
+ :: E"]; 
+nodo191->nodo192;
+nodo192[label= "
+ :: T"]; 
+nodo192->nodo193;
+nodo193[label= "
+ :: F"]; 
+nodo193->nodo194;
+nodo194[label= "
+ :: G"]; 
+nodo194->nodo195;
+nodo195[label= "
+ :: 'world'"]; 
+nodo171[label= "
+ :: SENTENCIAS"]; 
+nodo171->nodo196;
+nodo171->nodo197;
+nodo196[label= "
+ :: SEN"]; 
+nodo197[label= "
+ :: SENTENCIAS"]; 
+nodo197->nodo198;
+nodo197->nodo199;
+nodo198[label= "
+ :: SEN"]; 
+nodo198->nodo200;
+nodo200[label= "
+ :: CONTENIDO"]; 
+nodo200->nodo201;
+nodo200->nodo203;
+nodo201[label= "
+ :: CONSERV"]; 
+nodo201->nodo202;
+nodo202[label= "
+ :: conservar"]; 
+nodo203[label= "
+ :: CONT"]; 
+nodo203->nodo204;
+nodo204[label= "
+ :: DECLARACION"]; 
+nodo204->nodo205;
+nodo204->nodo207;
+nodo205[label= "
+ :: TIPO"]; 
+nodo205->nodo206;
+nodo206[label= "
+ :: tentero"]; 
+nodo207[label= "
+ :: VARIABLE"]; 
+nodo207->nodo208;
+nodo208[label= "
+ :: NOMBRES"]; 
+nodo208->nodo209;
+nodo208->nodo210;
+nodo209[label= "
+ :: x1"]; 
+nodo210[label= "
+ :: ASIGN"]; 
+nodo210->nodo211;
+nodo211[label= "
+ :: VALOR"]; 
+nodo211->nodo212;
+nodo212[label= "
+ :: LOGICA"]; 
+nodo212->nodo213;
+nodo213[label= "
+ :: L"]; 
+nodo213->nodo214;
+nodo214[label= "
+ :: M"]; 
+nodo214->nodo215;
+nodo215[label= "
+ :: N"]; 
+nodo215->nodo216;
+nodo216[label= "
+ :: R"]; 
+nodo216->nodo217;
+nodo217[label= "
+ :: Z"]; 
+nodo217->nodo218;
+nodo218[label= "
+ :: RELACIONAL"]; 
+nodo218->nodo219;
+nodo219[label= "
+ :: A"]; 
+nodo219->nodo220;
+nodo220[label= "
+ :: EXP"]; 
+nodo220->nodo221;
+nodo221[label= "
+ :: E"]; 
+nodo221->nodo222;
+nodo222[label= "
+ :: T"]; 
+nodo222->nodo223;
+nodo223[label= "
+ :: F"]; 
+nodo223->nodo224;
+nodo224[label= "
+ :: G"]; 
+nodo224->nodo225;
+nodo225[label= "
+ :: 600"]; 
+nodo199[label= "
+ :: SENTENCIAS"]; 
+nodo199->nodo226;
+nodo199->nodo227;
+nodo226[label= "
+ :: SEN"]; 
+nodo226->nodo228;
+nodo228[label= "
+ :: CONTENIDO"]; 
+nodo228->nodo229;
+nodo228->nodo231;
+nodo229[label= "
+ :: CONSERV"]; 
+nodo229->nodo230;
+nodo230[label= "
+ :: conservar"]; 
+nodo231[label= "
+ :: CONT"]; 
+nodo231->nodo232;
+nodo232[label= "
+ :: DECLARACION"]; 
+nodo232->nodo233;
+nodo232->nodo235;
+nodo233[label= "
+ :: TIPO"]; 
+nodo233->nodo234;
+nodo234[label= "
+ :: tdoble"]; 
+nodo235[label= "
+ :: VARIABLE"]; 
+nodo235->nodo236;
+nodo236[label= "
+ :: NOMBRES"]; 
+nodo236->nodo237;
+nodo236->nodo238;
+nodo237[label= "
+ :: y2"]; 
+nodo238[label= "
+ :: ASIGN"]; 
+nodo238->nodo239;
+nodo239[label= "
+ :: VALOR"]; 
+nodo239->nodo240;
+nodo240[label= "
+ :: LOGICA"]; 
+nodo240->nodo241;
+nodo241[label= "
+ :: L"]; 
+nodo241->nodo242;
+nodo242[label= "
+ :: M"]; 
+nodo242->nodo243;
+nodo243[label= "
+ :: N"]; 
+nodo243->nodo244;
+nodo244[label= "
+ :: R"]; 
+nodo244->nodo245;
+nodo245[label= "
+ :: Z"]; 
+nodo245->nodo246;
+nodo246[label= "
+ :: RELACIONAL"]; 
+nodo246->nodo247;
+nodo247[label= "
+ :: A"]; 
+nodo247->nodo248;
+nodo248[label= "
+ :: EXP"]; 
+nodo248->nodo249;
+nodo249[label= "
+ :: E"]; 
+nodo249->nodo250;
+nodo250[label= "
+ :: T"]; 
+nodo250->nodo251;
+nodo251[label= "
+ :: F"]; 
+nodo251->nodo252;
+nodo252[label= "
+ :: G"]; 
+nodo252->nodo253;
+nodo253[label= "
+ :: 700.2223"]; 
+nodo227[label= "
+ :: SENTENCIAS"]; 
+nodo227->nodo254;
+nodo227->nodo255;
+nodo254[label= "
+ :: SEN"]; 
+nodo254->nodo256;
+nodo256[label= "
+ :: CONTENIDO"]; 
+nodo256->nodo257;
+nodo256->nodo259;
+nodo257[label= "
+ :: CONSERV"]; 
+nodo257->nodo258;
+nodo258[label= "
+ :: conservar"]; 
+nodo259[label= "
+ :: CONT"]; 
+nodo259->nodo260;
+nodo260[label= "
+ :: DECLARACION"]; 
+nodo260->nodo261;
+nodo260->nodo263;
+nodo261[label= "
+ :: TIPO"]; 
+nodo261->nodo262;
+nodo262[label= "
+ :: tboolean"]; 
+nodo263[label= "
+ :: VARIABLE"]; 
+nodo263->nodo264;
+nodo264[label= "
+ :: NOMBRES"]; 
+nodo264->nodo265;
+nodo264->nodo266;
+nodo265[label= "
+ :: z3"]; 
+nodo266[label= "
+ :: ASIGN"]; 
+nodo266->nodo267;
+nodo267[label= "
+ :: VALOR"]; 
+nodo267->nodo268;
+nodo268[label= "
+ :: LOGICA"]; 
+nodo268->nodo269;
+nodo269[label= "
+ :: L"]; 
+nodo269->nodo270;
+nodo270[label= "
+ :: M"]; 
+nodo270->nodo271;
+nodo271[label= "
+ :: N"]; 
+nodo271->nodo272;
+nodo272[label= "
+ :: R"]; 
+nodo272->nodo273;
+nodo273[label= "
+ :: Z"]; 
+nodo273->nodo274;
+nodo274[label= "
+ :: RELACIONAL"]; 
+nodo274->nodo275;
+nodo275[label= "
+ :: A"]; 
+nodo275->nodo276;
+nodo276[label= "
+ :: EXP"]; 
+nodo276->nodo277;
+nodo277[label= "
+ :: E"]; 
+nodo277->nodo278;
+nodo278[label= "
+ :: T"]; 
+nodo278->nodo279;
+nodo279[label= "
+ :: F"]; 
+nodo279->nodo280;
+nodo280[label= "
+ :: G"]; 
+nodo280->nodo281;
+nodo281[label= "
+ :: false"]; 
+nodo255[label= "
+ :: SENTENCIAS"]; 
+nodo255->nodo282;
+nodo255->nodo283;
+nodo282[label= "
+ :: SEN"]; 
+nodo282->nodo284;
+nodo284[label= "
+ :: CONTENIDO"]; 
+nodo284->nodo285;
+nodo284->nodo287;
+nodo285[label= "
+ :: CONSERV"]; 
+nodo285->nodo286;
+nodo286[label= "
+ :: conservar"]; 
+nodo287[label= "
+ :: CONT"]; 
+nodo287->nodo288;
+nodo288[label= "
+ :: DECLARACION"]; 
+nodo288->nodo289;
+nodo288->nodo291;
+nodo289[label= "
+ :: TIPO"]; 
+nodo289->nodo290;
+nodo290[label= "
+ :: tcaracter"]; 
+nodo291[label= "
+ :: VARIABLE"]; 
+nodo291->nodo292;
+nodo292[label= "
+ :: NOMBRES"]; 
+nodo292->nodo293;
+nodo292->nodo294;
+nodo293[label= "
+ :: a4"]; 
+nodo294[label= "
+ :: ASIGN"]; 
+nodo294->nodo295;
+nodo295[label= "
+ :: VALOR"]; 
+nodo295->nodo296;
+nodo296[label= "
+ :: LOGICA"]; 
+nodo296->nodo297;
+nodo297[label= "
+ :: L"]; 
+nodo297->nodo298;
+nodo298[label= "
+ :: M"]; 
+nodo298->nodo299;
+nodo299[label= "
+ :: N"]; 
+nodo299->nodo300;
+nodo300[label= "
+ :: R"]; 
+nodo300->nodo301;
+nodo301[label= "
+ :: Z"]; 
+nodo301->nodo302;
+nodo302[label= "
+ :: RELACIONAL"]; 
+nodo302->nodo303;
+nodo303[label= "
+ :: A"]; 
+nodo303->nodo304;
+nodo304[label= "
+ :: EXP"]; 
+nodo304->nodo305;
+nodo305[label= "
+ :: E"]; 
+nodo305->nodo306;
+nodo306[label= "
+ :: T"]; 
+nodo306->nodo307;
+nodo307[label= "
+ :: F"]; 
+nodo307->nodo308;
+nodo308[label= "
+ :: G"]; 
+nodo308->nodo309;
+nodo309[label= "
+ :: '^t'"]; 
+nodo283[label= "
+ :: SENTENCIAS"]; 
+nodo283->nodo310;
+nodo283->nodo311;
+nodo310[label= "
+ :: SEN"]; 
+nodo310->nodo312;
+nodo312[label= "
+ :: CONTENIDO"]; 
+nodo312->nodo313;
+nodo312->nodo315;
+nodo313[label= "
+ :: CONSERV"]; 
+nodo313->nodo314;
+nodo314[label= "
+ :: conservar"]; 
+nodo315[label= "
+ :: CONT"]; 
+nodo315->nodo316;
+nodo316[label= "
+ :: DECLARACION"]; 
+nodo316->nodo317;
+nodo316->nodo319;
+nodo317[label= "
+ :: TIPO"]; 
+nodo317->nodo318;
+nodo318[label= "
+ :: tcadena"]; 
+nodo319[label= "
+ :: VARIABLE"]; 
+nodo319->nodo320;
+nodo320[label= "
+ :: NOMBRES"]; 
+nodo320->nodo321;
+nodo320->nodo322;
+nodo321[label= "
+ :: g"]; 
+nodo322[label= "
+ :: ASIGN"]; 
+nodo322->nodo323;
+nodo323[label= "
+ :: VALOR"]; 
+nodo323->nodo324;
+nodo324[label= "
+ :: LOGICA"]; 
+nodo324->nodo325;
+nodo325[label= "
+ :: L"]; 
+nodo325->nodo326;
+nodo326[label= "
+ :: M"]; 
+nodo326->nodo327;
+nodo327[label= "
+ :: N"]; 
+nodo327->nodo328;
+nodo328[label= "
+ :: R"]; 
+nodo328->nodo329;
+nodo329[label= "
+ :: Z"]; 
+nodo329->nodo330;
+nodo330[label= "
+ :: RELACIONAL"]; 
+nodo330->nodo331;
+nodo331[label= "
+ :: A"]; 
+nodo331->nodo332;
+nodo332[label= "
+ :: EXP"]; 
+nodo332->nodo333;
+nodo333[label= "
+ :: E"]; 
+nodo333->nodo334;
+nodo334[label= "
+ :: T"]; 
+nodo334->nodo335;
+nodo335[label= "
+ :: F"]; 
+nodo335->nodo336;
+nodo336[label= "
+ :: G"]; 
+nodo336->nodo337;
+nodo337[label= "
+ :: 'cadena #' hola #t mundo #''"]; 
+nodo311[label= "
+ :: SENTENCIAS"]; 
+nodo311->nodo338;
+nodo311->nodo339;
+nodo338[label= "
+ :: SEN"]; 
+nodo339[label= "
+ :: SENTENCIAS"]; 
+nodo339->nodo340;
+nodo339->nodo341;
+nodo340[label= "
+ :: SEN"]; 
+nodo340->nodo342;
+nodo342[label= "
+ :: CONTENIDO"]; 
+nodo342->nodo343;
+nodo343[label= "
+ :: CONT"]; 
+nodo343->nodo344;
+nodo344[label= "
+ :: DECLARACION"]; 
+nodo344->nodo345;
+nodo344->nodo347;
+nodo345[label= "
+ :: TIPO"]; 
+nodo345->nodo346;
+nodo346[label= "
+ :: tentero"]; 
+nodo347[label= "
+ :: VARIABLE"]; 
+nodo347->nodo348;
+nodo348[label= "
+ :: NOMBRES"]; 
+nodo348->nodo349;
+nodo348->nodo350;
+nodo349[label= "
+ :: x"]; 
+nodo350[label= "
+ :: NOM"]; 
+nodo350->nodo351;
+nodo350->nodo352;
+nodo351[label= "
+ :: xx"]; 
+nodo352[label= "
+ :: ASIGN"]; 
+nodo352->nodo353;
+nodo353[label= "
+ :: VALOR"]; 
+nodo353->nodo354;
+nodo354[label= "
+ :: LOGICA"]; 
+nodo354->nodo355;
+nodo355[label= "
+ :: L"]; 
+nodo355->nodo356;
+nodo356[label= "
+ :: M"]; 
+nodo356->nodo357;
+nodo357[label= "
+ :: N"]; 
+nodo357->nodo358;
+nodo358[label= "
+ :: R"]; 
+nodo358->nodo359;
+nodo359[label= "
+ :: Z"]; 
+nodo359->nodo360;
+nodo360[label= "
+ :: RELACIONAL"]; 
+nodo360->nodo361;
+nodo361[label= "
+ :: A"]; 
+nodo361->nodo362;
+nodo362[label= "
+ :: EXP"]; 
+nodo362->nodo363;
+nodo363[label= "
+ :: E"]; 
+nodo363->nodo364;
+nodo364[label= "
+ :: T"]; 
+nodo364->nodo365;
+nodo365[label= "
+ :: F"]; 
+nodo365->nodo366;
+nodo366[label= "
+ :: G"]; 
+nodo366->nodo367;
+nodo367[label= "
+ :: 0"]; 
+nodo341[label= "
+ :: SENTENCIAS"]; 
+nodo341->nodo368;
+nodo341->nodo369;
+nodo368[label= "
+ :: SEN"]; 
+nodo368->nodo370;
+nodo370[label= "
+ :: CONTENIDO"]; 
+nodo370->nodo371;
+nodo371[label= "
+ :: CONT"]; 
+nodo371->nodo372;
+nodo372[label= "
+ :: DECLARACION"]; 
+nodo372->nodo373;
+nodo372->nodo375;
+nodo373[label= "
+ :: TIPO"]; 
+nodo373->nodo374;
+nodo374[label= "
+ :: tdoble"]; 
+nodo375[label= "
+ :: VARIABLE"]; 
+nodo375->nodo376;
+nodo376[label= "
+ :: NOMBRES"]; 
+nodo376->nodo377;
+nodo376->nodo378;
+nodo377[label= "
+ :: y"]; 
+nodo378[label= "
+ :: NOM"]; 
+nodo378->nodo379;
+nodo378->nodo380;
+nodo379[label= "
+ :: yy"]; 
+nodo380[label= "
+ :: ASIGN"]; 
+nodo380->nodo381;
+nodo381[label= "
+ :: VALOR"]; 
+nodo381->nodo382;
+nodo382[label= "
+ :: LOGICA"]; 
+nodo382->nodo383;
+nodo383[label= "
+ :: L"]; 
+nodo383->nodo384;
+nodo384[label= "
+ :: M"]; 
+nodo384->nodo385;
+nodo385[label= "
+ :: N"]; 
+nodo385->nodo386;
+nodo386[label= "
+ :: R"]; 
+nodo386->nodo387;
+nodo387[label= "
+ :: Z"]; 
+nodo387->nodo388;
+nodo388[label= "
+ :: RELACIONAL"]; 
+nodo388->nodo389;
+nodo389[label= "
+ :: A"]; 
+nodo389->nodo390;
+nodo390[label= "
+ :: EXP"]; 
+nodo390->nodo391;
+nodo391[label= "
+ :: E"]; 
+nodo391->nodo392;
+nodo392[label= "
+ :: T"]; 
+nodo392->nodo393;
+nodo393[label= "
+ :: F"]; 
+nodo393->nodo394;
+nodo394[label= "
+ :: G"]; 
+nodo394->nodo395;
+nodo395[label= "
+ :: 231.0021"]; 
+nodo369[label= "
+ :: SENTENCIAS"]; 
+nodo369->nodo396;
+nodo369->nodo397;
+nodo396[label= "
+ :: SEN"]; 
+nodo396->nodo398;
+nodo398[label= "
+ :: CONTENIDO"]; 
+nodo398->nodo399;
+nodo399[label= "
+ :: CONT"]; 
+nodo399->nodo400;
+nodo400[label= "
+ :: DECLARACION"]; 
+nodo400->nodo401;
+nodo400->nodo403;
+nodo401[label= "
+ :: TIPO"]; 
+nodo401->nodo402;
+nodo402[label= "
+ :: tboolean"]; 
+nodo403[label= "
+ :: VARIABLE"]; 
+nodo403->nodo404;
+nodo404[label= "
+ :: NOMBRES"]; 
+nodo404->nodo405;
+nodo404->nodo406;
+nodo405[label= "
+ :: z"]; 
+nodo406[label= "
+ :: NOM"]; 
+nodo406->nodo407;
+nodo406->nodo408;
+nodo407[label= "
+ :: zz"]; 
+nodo408[label= "
+ :: ASIGN"]; 
+nodo408->nodo409;
+nodo409[label= "
+ :: VALOR"]; 
+nodo409->nodo410;
+nodo410[label= "
+ :: LOGICA"]; 
+nodo410->nodo411;
+nodo411[label= "
+ :: L"]; 
+nodo411->nodo412;
+nodo412[label= "
+ :: M"]; 
+nodo412->nodo413;
+nodo413[label= "
+ :: N"]; 
+nodo413->nodo414;
+nodo414[label= "
+ :: R"]; 
+nodo414->nodo415;
+nodo415[label= "
+ :: Z"]; 
+nodo415->nodo416;
+nodo416[label= "
+ :: RELACIONAL"]; 
+nodo416->nodo417;
+nodo417[label= "
+ :: A"]; 
+nodo417->nodo418;
+nodo418[label= "
+ :: EXP"]; 
+nodo418->nodo419;
+nodo419[label= "
+ :: E"]; 
+nodo419->nodo420;
+nodo420[label= "
+ :: T"]; 
+nodo420->nodo421;
+nodo421[label= "
+ :: F"]; 
+nodo421->nodo422;
+nodo422[label= "
+ :: G"]; 
+nodo422->nodo423;
+nodo423[label= "
+ :: verdadero"]; 
+nodo397[label= "
+ :: SENTENCIAS"]; 
+nodo397->nodo424;
+nodo397->nodo425;
+nodo424[label= "
+ :: SEN"]; 
+nodo424->nodo426;
+nodo426[label= "
+ :: CONTENIDO"]; 
+nodo426->nodo427;
+nodo427[label= "
+ :: CONT"]; 
+nodo427->nodo428;
+nodo428[label= "
+ :: DECLARACION"]; 
+nodo428->nodo429;
+nodo428->nodo431;
+nodo429[label= "
+ :: TIPO"]; 
+nodo429->nodo430;
+nodo430[label= "
+ :: tcaracter"]; 
+nodo431[label= "
+ :: VARIABLE"]; 
+nodo431->nodo432;
+nodo432[label= "
+ :: NOMBRES"]; 
+nodo432->nodo433;
+nodo432->nodo434;
+nodo433[label= "
+ :: a"]; 
+nodo434[label= "
+ :: NOM"]; 
+nodo434->nodo435;
+nodo434->nodo436;
+nodo435[label= "
+ :: aa"]; 
+nodo436[label= "
+ :: ASIGN"]; 
+nodo436->nodo437;
+nodo437[label= "
+ :: VALOR"]; 
+nodo437->nodo438;
+nodo438[label= "
+ :: LOGICA"]; 
+nodo438->nodo439;
+nodo439[label= "
+ :: L"]; 
+nodo439->nodo440;
+nodo440[label= "
+ :: M"]; 
+nodo440->nodo441;
+nodo441[label= "
+ :: N"]; 
+nodo441->nodo442;
+nodo442[label= "
+ :: R"]; 
+nodo442->nodo443;
+nodo443[label= "
+ :: Z"]; 
+nodo443->nodo444;
+nodo444[label= "
+ :: RELACIONAL"]; 
+nodo444->nodo445;
+nodo445[label= "
+ :: A"]; 
+nodo445->nodo446;
+nodo446[label= "
+ :: EXP"]; 
+nodo446->nodo447;
+nodo447[label= "
+ :: E"]; 
+nodo447->nodo448;
+nodo448[label= "
+ :: T"]; 
+nodo448->nodo449;
+nodo449[label= "
+ :: F"]; 
+nodo449->nodo450;
+nodo450[label= "
+ :: G"]; 
+nodo450->nodo451;
+nodo451[label= "
+ :: 'c'"]; 
+nodo425[label= "
+ :: SENTENCIAS"]; 
+nodo425->nodo452;
+nodo425->nodo453;
+nodo452[label= "
+ :: SEN"]; 
+nodo452->nodo454;
+nodo454[label= "
+ :: CONTENIDO"]; 
+nodo454->nodo455;
+nodo455[label= "
+ :: CONT"]; 
+nodo455->nodo456;
+nodo456[label= "
+ :: DECLARACION"]; 
+nodo456->nodo457;
+nodo456->nodo459;
+nodo457[label= "
+ :: TIPO"]; 
+nodo457->nodo458;
+nodo458[label= "
+ :: tcadena"]; 
+nodo459[label= "
+ :: VARIABLE"]; 
+nodo459->nodo460;
+nodo460[label= "
+ :: NOMBRES"]; 
+nodo460->nodo461;
+nodo460->nodo462;
+nodo461[label= "
+ :: b"]; 
+nodo462[label= "
+ :: NOM"]; 
+nodo462->nodo463;
+nodo462->nodo464;
+nodo463[label= "
+ :: bb"]; 
+nodo464[label= "
+ :: ASIGN"]; 
+nodo464->nodo465;
+nodo465[label= "
+ :: VALOR"]; 
+nodo465->nodo466;
+nodo466[label= "
+ :: LOGICA"]; 
+nodo466->nodo467;
+nodo467[label= "
+ :: L"]; 
+nodo467->nodo468;
+nodo468[label= "
+ :: M"]; 
+nodo468->nodo469;
+nodo469[label= "
+ :: N"]; 
+nodo469->nodo470;
+nodo470[label= "
+ :: R"]; 
+nodo470->nodo471;
+nodo471[label= "
+ :: Z"]; 
+nodo471->nodo472;
+nodo472[label= "
+ :: RELACIONAL"]; 
+nodo472->nodo473;
+nodo473[label= "
+ :: A"]; 
+nodo473->nodo474;
+nodo474[label= "
+ :: EXP"]; 
+nodo474->nodo475;
+nodo475[label= "
+ :: E"]; 
+nodo475->nodo476;
+nodo476[label= "
+ :: T"]; 
+nodo476->nodo477;
+nodo477[label= "
+ :: F"]; 
+nodo477->nodo478;
+nodo478[label= "
+ :: G"]; 
+nodo478->nodo479;
+nodo479[label= "
+ :: 'world'"]; 
+nodo453[label= "
+ :: SENTENCIAS"]; 
+nodo453->nodo480;
+nodo453->nodo481;
+nodo480[label= "
+ :: SEN"]; 
+nodo481[label= "
+ :: SENTENCIAS"]; 
+nodo481->nodo482;
+nodo481->nodo483;
+nodo482[label= "
+ :: SEN"]; 
+nodo482->nodo484;
+nodo484[label= "
+ :: CONTENIDO"]; 
+nodo484->nodo485;
+nodo484->nodo487;
+nodo485[label= "
+ :: CONSERV"]; 
+nodo485->nodo486;
+nodo486[label= "
+ :: conservar"]; 
+nodo487[label= "
+ :: CONT"]; 
+nodo487->nodo488;
+nodo488[label= "
+ :: DECLARACION"]; 
+nodo488->nodo489;
+nodo488->nodo491;
+nodo489[label= "
+ :: TIPO"]; 
+nodo489->nodo490;
+nodo490[label= "
+ :: tentero"]; 
+nodo491[label= "
+ :: VARIABLE"]; 
+nodo491->nodo492;
+nodo492[label= "
+ :: NOMBRES"]; 
+nodo492->nodo493;
+nodo492->nodo494;
+nodo493[label= "
+ :: x"]; 
+nodo494[label= "
+ :: NOM"]; 
+nodo494->nodo495;
+nodo494->nodo496;
+nodo495[label= "
+ :: xx"]; 
+nodo496[label= "
+ :: ASIGN"]; 
+nodo496->nodo497;
+nodo497[label= "
+ :: VALOR"]; 
+nodo497->nodo498;
+nodo498[label= "
+ :: LOGICA"]; 
+nodo498->nodo499;
+nodo499[label= "
+ :: L"]; 
+nodo499->nodo500;
+nodo500[label= "
+ :: M"]; 
+nodo500->nodo501;
+nodo501[label= "
+ :: N"]; 
+nodo501->nodo502;
+nodo502[label= "
+ :: R"]; 
+nodo502->nodo503;
+nodo503[label= "
+ :: Z"]; 
+nodo503->nodo504;
+nodo504[label= "
+ :: RELACIONAL"]; 
+nodo504->nodo505;
+nodo505[label= "
+ :: A"]; 
+nodo505->nodo506;
+nodo506[label= "
+ :: EXP"]; 
+nodo506->nodo507;
+nodo507[label= "
+ :: E"]; 
+nodo507->nodo508;
+nodo508[label= "
+ :: T"]; 
+nodo508->nodo509;
+nodo509[label= "
+ :: F"]; 
+nodo509->nodo510;
+nodo510[label= "
+ :: G"]; 
+nodo510->nodo511;
+nodo511[label= "
+ :: 0"]; 
+nodo483[label= "
+ :: SENTENCIAS"]; 
+nodo483->nodo512;
+nodo483->nodo513;
+nodo512[label= "
+ :: SEN"]; 
+nodo512->nodo514;
+nodo514[label= "
+ :: CONTENIDO"]; 
+nodo514->nodo515;
+nodo514->nodo517;
+nodo515[label= "
+ :: CONSERV"]; 
+nodo515->nodo516;
+nodo516[label= "
+ :: conservar"]; 
+nodo517[label= "
+ :: CONT"]; 
+nodo517->nodo518;
+nodo518[label= "
+ :: DECLARACION"]; 
+nodo518->nodo519;
+nodo518->nodo521;
+nodo519[label= "
+ :: TIPO"]; 
+nodo519->nodo520;
+nodo520[label= "
+ :: tdoble"]; 
+nodo521[label= "
+ :: VARIABLE"]; 
+nodo521->nodo522;
+nodo522[label= "
+ :: NOMBRES"]; 
+nodo522->nodo523;
+nodo522->nodo524;
+nodo523[label= "
+ :: y"]; 
+nodo524[label= "
+ :: NOM"]; 
+nodo524->nodo525;
+nodo524->nodo526;
+nodo525[label= "
+ :: yy"]; 
+nodo526[label= "
+ :: ASIGN"]; 
+nodo526->nodo527;
+nodo527[label= "
+ :: VALOR"]; 
+nodo527->nodo528;
+nodo528[label= "
+ :: LOGICA"]; 
+nodo528->nodo529;
+nodo529[label= "
+ :: L"]; 
+nodo529->nodo530;
+nodo530[label= "
+ :: M"]; 
+nodo530->nodo531;
+nodo531[label= "
+ :: N"]; 
+nodo531->nodo532;
+nodo532[label= "
+ :: R"]; 
+nodo532->nodo533;
+nodo533[label= "
+ :: Z"]; 
+nodo533->nodo534;
+nodo534[label= "
+ :: RELACIONAL"]; 
+nodo534->nodo535;
+nodo535[label= "
+ :: A"]; 
+nodo535->nodo536;
+nodo536[label= "
+ :: EXP"]; 
+nodo536->nodo537;
+nodo537[label= "
+ :: E"]; 
+nodo537->nodo538;
+nodo538[label= "
+ :: T"]; 
+nodo538->nodo539;
+nodo539[label= "
+ :: F"]; 
+nodo539->nodo540;
+nodo540[label= "
+ :: G"]; 
+nodo540->nodo541;
+nodo541[label= "
+ :: 231.0021"]; 
+nodo513[label= "
+ :: SENTENCIAS"]; 
+nodo513->nodo542;
+nodo513->nodo543;
+nodo542[label= "
+ :: SEN"]; 
+nodo542->nodo544;
+nodo544[label= "
+ :: CONTENIDO"]; 
+nodo544->nodo545;
+nodo544->nodo547;
+nodo545[label= "
+ :: CONSERV"]; 
+nodo545->nodo546;
+nodo546[label= "
+ :: conservar"]; 
+nodo547[label= "
+ :: CONT"]; 
+nodo547->nodo548;
+nodo548[label= "
+ :: DECLARACION"]; 
+nodo548->nodo549;
+nodo548->nodo551;
+nodo549[label= "
+ :: TIPO"]; 
+nodo549->nodo550;
+nodo550[label= "
+ :: tboolean"]; 
+nodo551[label= "
+ :: VARIABLE"]; 
+nodo551->nodo552;
+nodo552[label= "
+ :: NOMBRES"]; 
+nodo552->nodo553;
+nodo552->nodo554;
+nodo553[label= "
+ :: z"]; 
+nodo554[label= "
+ :: NOM"]; 
+nodo554->nodo555;
+nodo554->nodo556;
+nodo555[label= "
+ :: zz"]; 
+nodo556[label= "
+ :: ASIGN"]; 
+nodo556->nodo557;
+nodo557[label= "
+ :: VALOR"]; 
+nodo557->nodo558;
+nodo558[label= "
+ :: LOGICA"]; 
+nodo558->nodo559;
+nodo559[label= "
+ :: L"]; 
+nodo559->nodo560;
+nodo560[label= "
+ :: M"]; 
+nodo560->nodo561;
+nodo561[label= "
+ :: N"]; 
+nodo561->nodo562;
+nodo562[label= "
+ :: R"]; 
+nodo562->nodo563;
+nodo563[label= "
+ :: Z"]; 
+nodo563->nodo564;
+nodo564[label= "
+ :: RELACIONAL"]; 
+nodo564->nodo565;
+nodo565[label= "
+ :: A"]; 
+nodo565->nodo566;
+nodo566[label= "
+ :: EXP"]; 
+nodo566->nodo567;
+nodo567[label= "
+ :: E"]; 
+nodo567->nodo568;
+nodo568[label= "
+ :: T"]; 
+nodo568->nodo569;
+nodo569[label= "
+ :: F"]; 
+nodo569->nodo570;
+nodo570[label= "
+ :: G"]; 
+nodo570->nodo571;
+nodo571[label= "
+ :: verdadero"]; 
+nodo543[label= "
+ :: SENTENCIAS"]; 
+nodo543->nodo572;
+nodo543->nodo573;
+nodo572[label= "
+ :: SEN"]; 
+nodo572->nodo574;
+nodo574[label= "
+ :: CONTENIDO"]; 
+nodo574->nodo575;
+nodo574->nodo577;
+nodo575[label= "
+ :: CONSERV"]; 
+nodo575->nodo576;
+nodo576[label= "
+ :: conservar"]; 
+nodo577[label= "
+ :: CONT"]; 
+nodo577->nodo578;
+nodo578[label= "
+ :: DECLARACION"]; 
+nodo578->nodo579;
+nodo578->nodo581;
+nodo579[label= "
+ :: TIPO"]; 
+nodo579->nodo580;
+nodo580[label= "
+ :: tcaracter"]; 
+nodo581[label= "
+ :: VARIABLE"]; 
+nodo581->nodo582;
+nodo582[label= "
+ :: NOMBRES"]; 
+nodo582->nodo583;
+nodo582->nodo584;
+nodo583[label= "
+ :: a"]; 
+nodo584[label= "
+ :: NOM"]; 
+nodo584->nodo585;
+nodo584->nodo586;
+nodo585[label= "
+ :: aa"]; 
+nodo586[label= "
+ :: ASIGN"]; 
+nodo586->nodo587;
+nodo587[label= "
+ :: VALOR"]; 
+nodo587->nodo588;
+nodo588[label= "
+ :: LOGICA"]; 
+nodo588->nodo589;
+nodo589[label= "
+ :: L"]; 
+nodo589->nodo590;
+nodo590[label= "
+ :: M"]; 
+nodo590->nodo591;
+nodo591[label= "
+ :: N"]; 
+nodo591->nodo592;
+nodo592[label= "
+ :: R"]; 
+nodo592->nodo593;
+nodo593[label= "
+ :: Z"]; 
+nodo593->nodo594;
+nodo594[label= "
+ :: RELACIONAL"]; 
+nodo594->nodo595;
+nodo595[label= "
+ :: A"]; 
+nodo595->nodo596;
+nodo596[label= "
+ :: EXP"]; 
+nodo596->nodo597;
+nodo597[label= "
+ :: E"]; 
+nodo597->nodo598;
+nodo598[label= "
+ :: T"]; 
+nodo598->nodo599;
+nodo599[label= "
+ :: F"]; 
+nodo599->nodo600;
+nodo600[label= "
+ :: G"]; 
+nodo600->nodo601;
+nodo601[label= "
+ :: 'c'"]; 
+nodo573[label= "
+ :: SENTENCIAS"]; 
+nodo573->nodo602;
+nodo573->nodo603;
+nodo602[label= "
+ :: SEN"]; 
+nodo602->nodo604;
+nodo604[label= "
+ :: CONTENIDO"]; 
+nodo604->nodo605;
+nodo604->nodo607;
+nodo605[label= "
+ :: CONSERV"]; 
+nodo605->nodo606;
+nodo606[label= "
+ :: conservar"]; 
+nodo607[label= "
+ :: CONT"]; 
+nodo607->nodo608;
+nodo608[label= "
+ :: DECLARACION"]; 
+nodo608->nodo609;
+nodo608->nodo611;
+nodo609[label= "
+ :: TIPO"]; 
+nodo609->nodo610;
+nodo610[label= "
+ :: tcadena"]; 
+nodo611[label= "
+ :: VARIABLE"]; 
+nodo611->nodo612;
+nodo612[label= "
+ :: NOMBRES"]; 
+nodo612->nodo613;
+nodo612->nodo614;
+nodo613[label= "
+ :: b"]; 
+nodo614[label= "
+ :: NOM"]; 
+nodo614->nodo615;
+nodo614->nodo616;
+nodo615[label= "
+ :: bb"]; 
+nodo616[label= "
+ :: ASIGN"]; 
+nodo616->nodo617;
+nodo617[label= "
+ :: VALOR"]; 
+nodo617->nodo618;
+nodo618[label= "
+ :: LOGICA"]; 
+nodo618->nodo619;
+nodo619[label= "
+ :: L"]; 
+nodo619->nodo620;
+nodo620[label= "
+ :: M"]; 
+nodo620->nodo621;
+nodo621[label= "
+ :: N"]; 
+nodo621->nodo622;
+nodo622[label= "
+ :: R"]; 
+nodo622->nodo623;
+nodo623[label= "
+ :: Z"]; 
+nodo623->nodo624;
+nodo624[label= "
+ :: RELACIONAL"]; 
+nodo624->nodo625;
+nodo625[label= "
+ :: A"]; 
+nodo625->nodo626;
+nodo626[label= "
+ :: EXP"]; 
+nodo626->nodo627;
+nodo627[label= "
+ :: E"]; 
+nodo627->nodo628;
+nodo628[label= "
+ :: T"]; 
+nodo628->nodo629;
+nodo629[label= "
+ :: F"]; 
+nodo629->nodo630;
+nodo630[label= "
+ :: G"]; 
+nodo630->nodo631;
+nodo631[label= "
+ :: 'world'"]; 
+nodo603[label= "
+ :: SENTENCIAS"]; 
+nodo603->nodo632;
+nodo603->nodo633;
+nodo632[label= "
+ :: SEN"]; 
+nodo633[label= "
+ :: SENTENCIAS"]; 
+nodo633->nodo634;
+nodo633->nodo635;
+nodo634[label= "
+ :: SEN"]; 
+nodo634->nodo636;
+nodo636[label= "
+ :: CONTENIDO"]; 
+nodo636->nodo637;
+nodo637[label= "
+ :: CONT"]; 
+nodo637->nodo638;
+nodo638[label= "
+ :: DECLARACION"]; 
+nodo638->nodo639;
+nodo638->nodo641;
+nodo639[label= "
+ :: TIPO"]; 
+nodo639->nodo640;
+nodo640[label= "
+ :: tentero"]; 
+nodo641[label= "
+ :: VARIABLE"]; 
+nodo641->nodo642;
+nodo642[label= "
+ :: NOMBRES"]; 
+nodo642->nodo643;
+nodo642->nodo644;
+nodo643[label= "
+ :: x"]; 
+nodo644[label= "
+ :: NOM"]; 
+nodo644->nodo645;
+nodo644->nodo646;
+nodo645[label= "
+ :: xx"]; 
+nodo646[label= "
+ :: NOM"]; 
+nodo646->nodo647;
+nodo646->nodo648;
+nodo647[label= "
+ :: XXX"]; 
+nodo648[label= "
+ :: ASIGN"]; 
+nodo648->nodo649;
+nodo649[label= "
+ :: VALOR"]; 
+nodo649->nodo650;
+nodo650[label= "
+ :: LOGICA"]; 
+nodo650->nodo651;
+nodo651[label= "
+ :: L"]; 
+nodo651->nodo652;
+nodo652[label= "
+ :: M"]; 
+nodo652->nodo653;
+nodo653[label= "
+ :: N"]; 
+nodo653->nodo654;
+nodo654[label= "
+ :: R"]; 
+nodo654->nodo655;
+nodo655[label= "
+ :: Z"]; 
+nodo655->nodo656;
+nodo656[label= "
+ :: RELACIONAL"]; 
+nodo656->nodo657;
+nodo657[label= "
+ :: A"]; 
+nodo657->nodo658;
+nodo658[label= "
+ :: EXP"]; 
+nodo658->nodo659;
+nodo659[label= "
+ :: E"]; 
+nodo659->nodo660;
+nodo660[label= "
+ :: T"]; 
+nodo660->nodo661;
+nodo661[label= "
+ :: F"]; 
+nodo661->nodo662;
+nodo662[label= "
+ :: G"]; 
+nodo662->nodo663;
+nodo663[label= "
+ :: 130"]; 
+nodo635[label= "
+ :: SENTENCIAS"]; 
+nodo635->nodo664;
+nodo635->nodo665;
+nodo664[label= "
+ :: SEN"]; 
+nodo664->nodo666;
+nodo666[label= "
+ :: CONTENIDO"]; 
+nodo666->nodo667;
+nodo667[label= "
+ :: CONT"]; 
+nodo667->nodo668;
+nodo668[label= "
+ :: DECLARACION"]; 
+nodo668->nodo669;
+nodo668->nodo671;
+nodo669[label= "
+ :: TIPO"]; 
+nodo669->nodo670;
+nodo670[label= "
+ :: tdoble"]; 
+nodo671[label= "
+ :: VARIABLE"]; 
+nodo671->nodo672;
+nodo672[label= "
+ :: NOMBRES"]; 
+nodo672->nodo673;
+nodo672->nodo674;
+nodo673[label= "
+ :: y"]; 
+nodo674[label= "
+ :: NOM"]; 
+nodo674->nodo675;
+nodo674->nodo676;
+nodo675[label= "
+ :: yy"]; 
+nodo676[label= "
+ :: NOM"]; 
+nodo676->nodo677;
+nodo676->nodo678;
+nodo677[label= "
+ :: YYY"]; 
+nodo678[label= "
+ :: ASIGN"]; 
+nodo678->nodo679;
+nodo679[label= "
+ :: VALOR"]; 
+nodo679->nodo680;
+nodo680[label= "
+ :: LOGICA"]; 
+nodo680->nodo681;
+nodo681[label= "
+ :: L"]; 
+nodo681->nodo682;
+nodo682[label= "
+ :: M"]; 
+nodo682->nodo683;
+nodo683[label= "
+ :: N"]; 
+nodo683->nodo684;
+nodo684[label= "
+ :: R"]; 
+nodo684->nodo685;
+nodo685[label= "
+ :: Z"]; 
+nodo685->nodo686;
+nodo686[label= "
+ :: RELACIONAL"]; 
+nodo686->nodo687;
+nodo687[label= "
+ :: A"]; 
+nodo687->nodo688;
+nodo688[label= "
+ :: EXP"]; 
+nodo688->nodo689;
+nodo689[label= "
+ :: E"]; 
+nodo689->nodo690;
+nodo690[label= "
+ :: T"]; 
+nodo690->nodo691;
+nodo691[label= "
+ :: F"]; 
+nodo691->nodo692;
+nodo692[label= "
+ :: G"]; 
+nodo692->nodo693;
+nodo693[label= "
+ :: 401.3021"]; 
+nodo665[label= "
+ :: SENTENCIAS"]; 
+nodo665->nodo694;
+nodo665->nodo695;
+nodo694[label= "
+ :: SEN"]; 
+nodo694->nodo696;
+nodo696[label= "
+ :: CONTENIDO"]; 
+nodo696->nodo697;
+nodo697[label= "
+ :: CONT"]; 
+nodo697->nodo698;
+nodo698[label= "
+ :: DECLARACION"]; 
+nodo698->nodo699;
+nodo698->nodo701;
+nodo699[label= "
+ :: TIPO"]; 
+nodo699->nodo700;
+nodo700[label= "
+ :: tboolean"]; 
+nodo701[label= "
+ :: VARIABLE"]; 
+nodo701->nodo702;
+nodo702[label= "
+ :: NOMBRES"]; 
+nodo702->nodo703;
+nodo702->nodo704;
+nodo703[label= "
+ :: z"]; 
+nodo704[label= "
+ :: NOM"]; 
+nodo704->nodo705;
+nodo704->nodo706;
+nodo705[label= "
+ :: zz"]; 
+nodo706[label= "
+ :: NOM"]; 
+nodo706->nodo707;
+nodo706->nodo708;
+nodo707[label= "
+ :: ZZZ"]; 
+nodo708[label= "
+ :: ASIGN"]; 
+nodo708->nodo709;
+nodo709[label= "
+ :: VALOR"]; 
+nodo709->nodo710;
+nodo710[label= "
+ :: LOGICA"]; 
+nodo710->nodo711;
+nodo711[label= "
+ :: L"]; 
+nodo711->nodo712;
+nodo712[label= "
+ :: M"]; 
+nodo712->nodo713;
+nodo713[label= "
+ :: N"]; 
+nodo713->nodo714;
+nodo714[label= "
+ :: R"]; 
+nodo714->nodo715;
+nodo715[label= "
+ :: Z"]; 
+nodo715->nodo716;
+nodo716[label= "
+ :: RELACIONAL"]; 
+nodo716->nodo717;
+nodo717[label= "
+ :: A"]; 
+nodo717->nodo718;
+nodo718[label= "
+ :: EXP"]; 
+nodo718->nodo719;
+nodo719[label= "
+ :: E"]; 
+nodo719->nodo720;
+nodo720[label= "
+ :: T"]; 
+nodo720->nodo721;
+nodo721[label= "
+ :: F"]; 
+nodo721->nodo722;
+nodo722[label= "
+ :: G"]; 
+nodo722->nodo723;
+nodo723[label= "
+ :: falso"]; 
+nodo695[label= "
+ :: SENTENCIAS"]; 
+nodo695->nodo724;
+nodo695->nodo725;
+nodo724[label= "
+ :: SEN"]; 
+nodo724->nodo726;
+nodo726[label= "
+ :: CONTENIDO"]; 
+nodo726->nodo727;
+nodo727[label= "
+ :: CONT"]; 
+nodo727->nodo728;
+nodo728[label= "
+ :: DECLARACION"]; 
+nodo728->nodo729;
+nodo728->nodo731;
+nodo729[label= "
+ :: TIPO"]; 
+nodo729->nodo730;
+nodo730[label= "
+ :: tcaracter"]; 
+nodo731[label= "
+ :: VARIABLE"]; 
+nodo731->nodo732;
+nodo732[label= "
+ :: NOMBRES"]; 
+nodo732->nodo733;
+nodo732->nodo734;
+nodo733[label= "
+ :: a"]; 
+nodo734[label= "
+ :: NOM"]; 
+nodo734->nodo735;
+nodo734->nodo736;
+nodo735[label= "
+ :: aa"]; 
+nodo736[label= "
+ :: NOM"]; 
+nodo736->nodo737;
+nodo736->nodo738;
+nodo737[label= "
+ :: AAA"]; 
+nodo738[label= "
+ :: ASIGN"]; 
+nodo738->nodo739;
+nodo739[label= "
+ :: VALOR"]; 
+nodo739->nodo740;
+nodo740[label= "
+ :: LOGICA"]; 
+nodo740->nodo741;
+nodo741[label= "
+ :: L"]; 
+nodo741->nodo742;
+nodo742[label= "
+ :: M"]; 
+nodo742->nodo743;
+nodo743[label= "
+ :: N"]; 
+nodo743->nodo744;
+nodo744[label= "
+ :: R"]; 
+nodo744->nodo745;
+nodo745[label= "
+ :: Z"]; 
+nodo745->nodo746;
+nodo746[label= "
+ :: RELACIONAL"]; 
+nodo746->nodo747;
+nodo747[label= "
+ :: A"]; 
+nodo747->nodo748;
+nodo748[label= "
+ :: EXP"]; 
+nodo748->nodo749;
+nodo749[label= "
+ :: E"]; 
+nodo749->nodo750;
+nodo750[label= "
+ :: T"]; 
+nodo750->nodo751;
+nodo751[label= "
+ :: F"]; 
+nodo751->nodo752;
+nodo752[label= "
+ :: G"]; 
+nodo752->nodo753;
+nodo753[label= "
+ :: '^r'"]; 
+nodo725[label= "
+ :: SENTENCIAS"]; 
+nodo725->nodo754;
+nodo725->nodo755;
+nodo754[label= "
+ :: SEN"]; 
+nodo754->nodo756;
+nodo756[label= "
+ :: CONTENIDO"]; 
+nodo756->nodo757;
+nodo757[label= "
+ :: CONT"]; 
+nodo757->nodo758;
+nodo758[label= "
+ :: DECLARACION"]; 
+nodo758->nodo759;
+nodo758->nodo761;
+nodo759[label= "
+ :: TIPO"]; 
+nodo759->nodo760;
+nodo760[label= "
+ :: tcadena"]; 
+nodo761[label= "
+ :: VARIABLE"]; 
+nodo761->nodo762;
+nodo762[label= "
+ :: NOMBRES"]; 
+nodo762->nodo763;
+nodo762->nodo764;
+nodo763[label= "
+ :: b"]; 
+nodo764[label= "
+ :: NOM"]; 
+nodo764->nodo765;
+nodo764->nodo766;
+nodo765[label= "
+ :: bb"]; 
+nodo766[label= "
+ :: NOM"]; 
+nodo766->nodo767;
+nodo766->nodo768;
+nodo767[label= "
+ :: BBB"]; 
+nodo768[label= "
+ :: ASIGN"]; 
+nodo768->nodo769;
+nodo769[label= "
+ :: VALOR"]; 
+nodo769->nodo770;
+nodo770[label= "
+ :: LOGICA"]; 
+nodo770->nodo771;
+nodo771[label= "
+ :: L"]; 
+nodo771->nodo772;
+nodo772[label= "
+ :: M"]; 
+nodo772->nodo773;
+nodo773[label= "
+ :: N"]; 
+nodo773->nodo774;
+nodo774[label= "
+ :: R"]; 
+nodo774->nodo775;
+nodo775[label= "
+ :: Z"]; 
+nodo775->nodo776;
+nodo776[label= "
+ :: RELACIONAL"]; 
+nodo776->nodo777;
+nodo777[label= "
+ :: A"]; 
+nodo777->nodo778;
+nodo778[label= "
+ :: EXP"]; 
+nodo778->nodo779;
+nodo779[label= "
+ :: E"]; 
+nodo779->nodo780;
+nodo780[label= "
+ :: T"]; 
+nodo780->nodo781;
+nodo781[label= "
+ :: F"]; 
+nodo781->nodo782;
+nodo782[label= "
+ :: G"]; 
+nodo782->nodo783;
+nodo783[label= "
+ :: 'world#r'"]; 
+nodo755[label= "
+ :: SENTENCIAS"]; 
+nodo755->nodo784;
+nodo755->nodo785;
+nodo784[label= "
+ :: SEN"]; 
+nodo785[label= "
+ :: SENTENCIAS"]; 
+nodo785->nodo786;
+nodo785->nodo787;
+nodo786[label= "
+ :: SEN"]; 
+nodo786->nodo788;
+nodo788[label= "
+ :: CONTENIDO"]; 
+nodo788->nodo789;
+nodo788->nodo791;
+nodo789[label= "
+ :: CONSERV"]; 
+nodo789->nodo790;
+nodo790[label= "
+ :: conservar"]; 
+nodo791[label= "
+ :: CONT"]; 
+nodo791->nodo792;
+nodo792[label= "
+ :: DECLARACION"]; 
+nodo792->nodo793;
+nodo792->nodo795;
+nodo793[label= "
+ :: TIPO"]; 
+nodo793->nodo794;
+nodo794[label= "
+ :: tentero"]; 
+nodo795[label= "
+ :: VARIABLE"]; 
+nodo795->nodo796;
+nodo796[label= "
+ :: NOMBRES"]; 
+nodo796->nodo797;
+nodo796->nodo798;
+nodo797[label= "
+ :: x"]; 
+nodo798[label= "
+ :: NOM"]; 
+nodo798->nodo799;
+nodo798->nodo800;
+nodo799[label= "
+ :: xx"]; 
+nodo800[label= "
+ :: NOM"]; 
+nodo800->nodo801;
+nodo800->nodo802;
+nodo801[label= "
+ :: XXX"]; 
+nodo802[label= "
+ :: ASIGN"]; 
+nodo802->nodo803;
+nodo803[label= "
+ :: VALOR"]; 
+nodo803->nodo804;
+nodo804[label= "
+ :: LOGICA"]; 
+nodo804->nodo805;
+nodo805[label= "
+ :: L"]; 
+nodo805->nodo806;
+nodo806[label= "
+ :: M"]; 
+nodo806->nodo807;
+nodo807[label= "
+ :: N"]; 
+nodo807->nodo808;
+nodo808[label= "
+ :: R"]; 
+nodo808->nodo809;
+nodo809[label= "
+ :: Z"]; 
+nodo809->nodo810;
+nodo810[label= "
+ :: RELACIONAL"]; 
+nodo810->nodo811;
+nodo811[label= "
+ :: A"]; 
+nodo811->nodo812;
+nodo812[label= "
+ :: EXP"]; 
+nodo812->nodo813;
+nodo813[label= "
+ :: E"]; 
+nodo813->nodo814;
+nodo814[label= "
+ :: T"]; 
+nodo814->nodo815;
+nodo815[label= "
+ :: F"]; 
+nodo815->nodo816;
+nodo816[label= "
+ :: G"]; 
+nodo816->nodo817;
+nodo817[label= "
+ :: 130"]; 
+nodo787[label= "
+ :: SENTENCIAS"]; 
+nodo787->nodo818;
+nodo787->nodo819;
+nodo818[label= "
+ :: SEN"]; 
+nodo818->nodo820;
+nodo820[label= "
+ :: CONTENIDO"]; 
+nodo820->nodo821;
+nodo820->nodo823;
+nodo821[label= "
+ :: CONSERV"]; 
+nodo821->nodo822;
+nodo822[label= "
+ :: conservar"]; 
+nodo823[label= "
+ :: CONT"]; 
+nodo823->nodo824;
+nodo824[label= "
+ :: DECLARACION"]; 
+nodo824->nodo825;
+nodo824->nodo827;
+nodo825[label= "
+ :: TIPO"]; 
+nodo825->nodo826;
+nodo826[label= "
+ :: tdoble"]; 
+nodo827[label= "
+ :: VARIABLE"]; 
+nodo827->nodo828;
+nodo828[label= "
+ :: NOMBRES"]; 
+nodo828->nodo829;
+nodo828->nodo830;
+nodo829[label= "
+ :: y"]; 
+nodo830[label= "
+ :: NOM"]; 
+nodo830->nodo831;
+nodo830->nodo832;
+nodo831[label= "
+ :: yy"]; 
+nodo832[label= "
+ :: NOM"]; 
+nodo832->nodo833;
+nodo832->nodo834;
+nodo833[label= "
+ :: YYY"]; 
+nodo834[label= "
+ :: ASIGN"]; 
+nodo834->nodo835;
+nodo835[label= "
+ :: VALOR"]; 
+nodo835->nodo836;
+nodo836[label= "
+ :: LOGICA"]; 
+nodo836->nodo837;
+nodo837[label= "
+ :: L"]; 
+nodo837->nodo838;
+nodo838[label= "
+ :: M"]; 
+nodo838->nodo839;
+nodo839[label= "
+ :: N"]; 
+nodo839->nodo840;
+nodo840[label= "
+ :: R"]; 
+nodo840->nodo841;
+nodo841[label= "
+ :: Z"]; 
+nodo841->nodo842;
+nodo842[label= "
+ :: RELACIONAL"]; 
+nodo842->nodo843;
+nodo843[label= "
+ :: A"]; 
+nodo843->nodo844;
+nodo844[label= "
+ :: EXP"]; 
+nodo844->nodo845;
+nodo845[label= "
+ :: E"]; 
+nodo845->nodo846;
+nodo846[label= "
+ :: T"]; 
+nodo846->nodo847;
+nodo847[label= "
+ :: F"]; 
+nodo847->nodo848;
+nodo848[label= "
+ :: G"]; 
+nodo848->nodo849;
+nodo849[label= "
+ :: 34401.3021"]; 
+nodo819[label= "
+ :: SENTENCIAS"]; 
+nodo819->nodo850;
+nodo819->nodo851;
+nodo850[label= "
+ :: SEN"]; 
+nodo850->nodo852;
+nodo852[label= "
+ :: CONTENIDO"]; 
+nodo852->nodo853;
+nodo852->nodo855;
+nodo853[label= "
+ :: CONSERV"]; 
+nodo853->nodo854;
+nodo854[label= "
+ :: conservar"]; 
+nodo855[label= "
+ :: CONT"]; 
+nodo855->nodo856;
+nodo856[label= "
+ :: DECLARACION"]; 
+nodo856->nodo857;
+nodo856->nodo859;
+nodo857[label= "
+ :: TIPO"]; 
+nodo857->nodo858;
+nodo858[label= "
+ :: tboolean"]; 
+nodo859[label= "
+ :: VARIABLE"]; 
+nodo859->nodo860;
+nodo860[label= "
+ :: NOMBRES"]; 
+nodo860->nodo861;
+nodo860->nodo862;
+nodo861[label= "
+ :: z"]; 
+nodo862[label= "
+ :: NOM"]; 
+nodo862->nodo863;
+nodo862->nodo864;
+nodo863[label= "
+ :: zz"]; 
+nodo864[label= "
+ :: NOM"]; 
+nodo864->nodo865;
+nodo864->nodo866;
+nodo865[label= "
+ :: ZZZ"]; 
+nodo866[label= "
+ :: ASIGN"]; 
+nodo866->nodo867;
+nodo867[label= "
+ :: VALOR"]; 
+nodo867->nodo868;
+nodo868[label= "
+ :: LOGICA"]; 
+nodo868->nodo869;
+nodo869[label= "
+ :: L"]; 
+nodo869->nodo870;
+nodo870[label= "
+ :: M"]; 
+nodo870->nodo871;
+nodo871[label= "
+ :: N"]; 
+nodo871->nodo872;
+nodo872[label= "
+ :: R"]; 
+nodo872->nodo873;
+nodo873[label= "
+ :: Z"]; 
+nodo873->nodo874;
+nodo874[label= "
+ :: RELACIONAL"]; 
+nodo874->nodo875;
+nodo875[label= "
+ :: A"]; 
+nodo875->nodo876;
+nodo876[label= "
+ :: EXP"]; 
+nodo876->nodo877;
+nodo877[label= "
+ :: E"]; 
+nodo877->nodo878;
+nodo878[label= "
+ :: T"]; 
+nodo878->nodo879;
+nodo879[label= "
+ :: F"]; 
+nodo879->nodo880;
+nodo880[label= "
+ :: G"]; 
+nodo880->nodo881;
+nodo881[label= "
+ :: falso"]; 
+nodo851[label= "
+ :: SENTENCIAS"]; 
+nodo851->nodo882;
+nodo851->nodo883;
+nodo882[label= "
+ :: SEN"]; 
+nodo882->nodo884;
+nodo884[label= "
+ :: CONTENIDO"]; 
+nodo884->nodo885;
+nodo884->nodo887;
+nodo885[label= "
+ :: CONSERV"]; 
+nodo885->nodo886;
+nodo886[label= "
+ :: conservar"]; 
+nodo887[label= "
+ :: CONT"]; 
+nodo887->nodo888;
+nodo888[label= "
+ :: DECLARACION"]; 
+nodo888->nodo889;
+nodo888->nodo891;
+nodo889[label= "
+ :: TIPO"]; 
+nodo889->nodo890;
+nodo890[label= "
+ :: tcaracter"]; 
+nodo891[label= "
+ :: VARIABLE"]; 
+nodo891->nodo892;
+nodo892[label= "
+ :: NOMBRES"]; 
+nodo892->nodo893;
+nodo892->nodo894;
+nodo893[label= "
+ :: a"]; 
+nodo894[label= "
+ :: NOM"]; 
+nodo894->nodo895;
+nodo894->nodo896;
+nodo895[label= "
+ :: aa"]; 
+nodo896[label= "
+ :: NOM"]; 
+nodo896->nodo897;
+nodo896->nodo898;
+nodo897[label= "
+ :: AAA"]; 
+nodo898[label= "
+ :: ASIGN"]; 
+nodo898->nodo899;
+nodo899[label= "
+ :: VALOR"]; 
+nodo899->nodo900;
+nodo900[label= "
+ :: LOGICA"]; 
+nodo900->nodo901;
+nodo901[label= "
+ :: L"]; 
+nodo901->nodo902;
+nodo902[label= "
+ :: M"]; 
+nodo902->nodo903;
+nodo903[label= "
+ :: N"]; 
+nodo903->nodo904;
+nodo904[label= "
+ :: R"]; 
+nodo904->nodo905;
+nodo905[label= "
+ :: Z"]; 
+nodo905->nodo906;
+nodo906[label= "
+ :: RELACIONAL"]; 
+nodo906->nodo907;
+nodo907[label= "
+ :: A"]; 
+nodo907->nodo908;
+nodo908[label= "
+ :: EXP"]; 
+nodo908->nodo909;
+nodo909[label= "
+ :: E"]; 
+nodo909->nodo910;
+nodo910[label= "
+ :: T"]; 
+nodo910->nodo911;
+nodo911[label= "
+ :: F"]; 
+nodo911->nodo912;
+nodo912[label= "
+ :: G"]; 
+nodo912->nodo913;
+nodo913[label= "
+ :: '^''"]; 
+nodo883[label= "
+ :: SENTENCIAS"]; 
+nodo883->nodo914;
+nodo883->nodo915;
+nodo914[label= "
+ :: SEN"]; 
+nodo914->nodo916;
+nodo916[label= "
+ :: CONTENIDO"]; 
+nodo916->nodo917;
+nodo916->nodo919;
+nodo917[label= "
+ :: CONSERV"]; 
+nodo917->nodo918;
+nodo918[label= "
+ :: conservar"]; 
+nodo919[label= "
+ :: CONT"]; 
+nodo919->nodo920;
+nodo920[label= "
+ :: DECLARACION"]; 
+nodo920->nodo921;
+nodo920->nodo923;
+nodo921[label= "
+ :: TIPO"]; 
+nodo921->nodo922;
+nodo922[label= "
+ :: tcadena"]; 
+nodo923[label= "
+ :: VARIABLE"]; 
+nodo923->nodo924;
+nodo924[label= "
+ :: NOMBRES"]; 
+nodo924->nodo925;
+nodo924->nodo926;
+nodo925[label= "
+ :: b"]; 
+nodo926[label= "
+ :: NOM"]; 
+nodo926->nodo927;
+nodo926->nodo928;
+nodo927[label= "
+ :: bb"]; 
+nodo928[label= "
+ :: NOM"]; 
+nodo928->nodo929;
+nodo928->nodo930;
+nodo929[label= "
+ :: BBB"]; 
+nodo930[label= "
+ :: ASIGN"]; 
+nodo930->nodo931;
+nodo931[label= "
+ :: VALOR"]; 
+nodo931->nodo932;
+nodo932[label= "
+ :: LOGICA"]; 
+nodo932->nodo933;
+nodo933[label= "
+ :: L"]; 
+nodo933->nodo934;
+nodo934[label= "
+ :: M"]; 
+nodo934->nodo935;
+nodo935[label= "
+ :: N"]; 
+nodo935->nodo936;
+nodo936[label= "
+ :: R"]; 
+nodo936->nodo937;
+nodo937[label= "
+ :: Z"]; 
+nodo937->nodo938;
+nodo938[label= "
+ :: RELACIONAL"]; 
+nodo938->nodo939;
+nodo939[label= "
+ :: A"]; 
+nodo939->nodo940;
+nodo940[label= "
+ :: EXP"]; 
+nodo940->nodo941;
+nodo941[label= "
+ :: E"]; 
+nodo941->nodo942;
+nodo942[label= "
+ :: T"]; 
+nodo942->nodo943;
+nodo943[label= "
+ :: F"]; 
+nodo943->nodo944;
+nodo944[label= "
+ :: G"]; 
+nodo944->nodo945;
+nodo945[label= "
+ :: 'world#r'"]; 
+nodo915[label= "
+ :: SENTENCIAS"]; 
+nodo915->nodo946;
+nodo915->nodo947;
+nodo946[label= "
+ :: SEN"]; 
+nodo947[label= "
+ :: SENTENCIAS"]; 
+nodo947->nodo948;
+nodo947->nodo949;
+nodo948[label= "
+ :: SEN"]; 
+nodo948->nodo950;
+nodo950[label= "
+ :: CONTENIDO"]; 
+nodo950->nodo951;
+nodo951[label= "
+ :: CONT"]; 
+nodo951->nodo952;
+nodo952[label= "
+ :: DECLARACION"]; 
+nodo952->nodo953;
+nodo952->nodo955;
+nodo953[label= "
+ :: TIPO"]; 
+nodo953->nodo954;
+nodo954[label= "
+ :: tentero"]; 
+nodo955[label= "
+ :: VARIABLE"]; 
+nodo955->nodo956;
+nodo956[label= "
+ :: NOMBRES"]; 
+nodo956->nodo957;
+nodo956->nodo958;
+nodo957[label= "
+ :: x"]; 
+nodo958[label= "
+ :: NOM"]; 
+nodo958->nodo959;
+nodo958->nodo960;
+nodo959[label= "
+ :: xx"]; 
+nodo960[label= "
+ :: NOM"]; 
+nodo960->nodo961;
+nodo960->nodo962;
+nodo961[label= "
+ :: XXX"]; 
+nodo962[label= "
+ :: ASIGN"]; 
+nodo962->nodo963;
+nodo963[label= "
+ :: VALOR"]; 
+nodo963->nodo964;
+nodo964[label= "
+ :: LOGICA"]; 
+nodo964->nodo965;
+nodo965[label= "
+ :: L"]; 
+nodo965->nodo966;
+nodo966[label= "
+ :: M"]; 
+nodo966->nodo967;
+nodo967[label= "
+ :: N"]; 
+nodo967->nodo968;
+nodo968[label= "
+ :: R"]; 
+nodo968->nodo969;
+nodo969[label= "
+ :: Z"]; 
+nodo969->nodo970;
+nodo970[label= "
+ :: RELACIONAL"]; 
+nodo970->nodo971;
+nodo971[label= "
+ :: A"]; 
+nodo971->nodo972;
+nodo972[label= "
+ :: EXP"]; 
+nodo972->nodo973;
+nodo973[label= "
+ :: E"]; 
+nodo973->nodo974;
+nodo974[label= "
+ :: T"]; 
+nodo974->nodo975;
+nodo975[label= "
+ :: F"]; 
+nodo975->nodo976;
+nodo976[label= "
+ :: G"]; 
+nodo976->nodo977;
+nodo977[label= "
+ :: 130"]; 
+nodo949[label= "
+ :: SENTENCIAS"]; 
+nodo949->nodo978;
+nodo949->nodo979;
+nodo978[label= "
+ :: SEN"]; 
+nodo978->nodo980;
+nodo980[label= "
+ :: CONTENIDO"]; 
+nodo980->nodo981;
+nodo981[label= "
+ :: CONT"]; 
+nodo981->nodo982;
+nodo982[label= "
+ :: DECLARACION"]; 
+nodo982->nodo983;
+nodo982->nodo985;
+nodo983[label= "
+ :: TIPO"]; 
+nodo983->nodo984;
+nodo984[label= "
+ :: tdoble"]; 
+nodo985[label= "
+ :: VARIABLE"]; 
+nodo985->nodo986;
+nodo986[label= "
+ :: NOMBRES"]; 
+nodo986->nodo987;
+nodo986->nodo988;
+nodo987[label= "
+ :: y"]; 
+nodo988[label= "
+ :: NOM"]; 
+nodo988->nodo989;
+nodo988->nodo990;
+nodo989[label= "
+ :: yy"]; 
+nodo990[label= "
+ :: NOM"]; 
+nodo990->nodo991;
+nodo990->nodo992;
+nodo991[label= "
+ :: YYY"]; 
+nodo992[label= "
+ :: ASIGN"]; 
+nodo992->nodo993;
+nodo993[label= "
+ :: VALOR"]; 
+nodo993->nodo994;
+nodo994[label= "
+ :: LOGICA"]; 
+nodo994->nodo995;
+nodo995[label= "
+ :: L"]; 
+nodo995->nodo996;
+nodo996[label= "
+ :: M"]; 
+nodo996->nodo997;
+nodo997[label= "
+ :: N"]; 
+nodo997->nodo998;
+nodo998[label= "
+ :: R"]; 
+nodo998->nodo999;
+nodo999[label= "
+ :: Z"]; 
+nodo999->nodo1000;
+nodo1000[label= "
+ :: RELACIONAL"]; 
+nodo1000->nodo1001;
+nodo1001[label= "
+ :: A"]; 
+nodo1001->nodo1002;
+nodo1002[label= "
+ :: EXP"]; 
+nodo1002->nodo1003;
+nodo1003[label= "
+ :: E"]; 
+nodo1003->nodo1004;
+nodo1004[label= "
+ :: T"]; 
+nodo1004->nodo1005;
+nodo1005[label= "
+ :: F"]; 
+nodo1005->nodo1006;
+nodo1006[label= "
+ :: G"]; 
+nodo1006->nodo1007;
+nodo1007[label= "
+ :: 401.3021"]; 
+nodo979[label= "
+ :: SENTENCIAS"]; 
+nodo979->nodo1008;
+nodo979->nodo1009;
+nodo1008[label= "
+ :: SEN"]; 
+nodo1008->nodo1010;
+nodo1010[label= "
+ :: CONTENIDO"]; 
+nodo1010->nodo1011;
+nodo1011[label= "
+ :: CONT"]; 
+nodo1011->nodo1012;
+nodo1012[label= "
+ :: DECLARACION"]; 
+nodo1012->nodo1013;
+nodo1012->nodo1015;
+nodo1013[label= "
+ :: TIPO"]; 
+nodo1013->nodo1014;
+nodo1014[label= "
+ :: tboolean"]; 
+nodo1015[label= "
+ :: VARIABLE"]; 
+nodo1015->nodo1016;
+nodo1016[label= "
+ :: NOMBRES"]; 
+nodo1016->nodo1017;
+nodo1016->nodo1018;
+nodo1017[label= "
+ :: z"]; 
+nodo1018[label= "
+ :: NOM"]; 
+nodo1018->nodo1019;
+nodo1018->nodo1020;
+nodo1019[label= "
+ :: zz"]; 
+nodo1020[label= "
+ :: NOM"]; 
+nodo1020->nodo1021;
+nodo1020->nodo1022;
+nodo1021[label= "
+ :: ZZZ"]; 
+nodo1022[label= "
+ :: ASIGN"]; 
+nodo1022->nodo1023;
+nodo1023[label= "
+ :: VALOR"]; 
+nodo1023->nodo1024;
+nodo1024[label= "
+ :: LOGICA"]; 
+nodo1024->nodo1025;
+nodo1025[label= "
+ :: L"]; 
+nodo1025->nodo1026;
+nodo1026[label= "
+ :: M"]; 
+nodo1026->nodo1027;
+nodo1027[label= "
+ :: N"]; 
+nodo1027->nodo1028;
+nodo1028[label= "
+ :: R"]; 
+nodo1028->nodo1029;
+nodo1029[label= "
+ :: Z"]; 
+nodo1029->nodo1030;
+nodo1030[label= "
+ :: RELACIONAL"]; 
+nodo1030->nodo1031;
+nodo1031[label= "
+ :: A"]; 
+nodo1031->nodo1032;
+nodo1032[label= "
+ :: EXP"]; 
+nodo1032->nodo1033;
+nodo1033[label= "
+ :: E"]; 
+nodo1033->nodo1034;
+nodo1034[label= "
+ :: T"]; 
+nodo1034->nodo1035;
+nodo1035[label= "
+ :: F"]; 
+nodo1035->nodo1036;
+nodo1036[label= "
+ :: G"]; 
+nodo1036->nodo1037;
+nodo1037[label= "
+ :: falso"]; 
+nodo1009[label= "
+ :: SENTENCIAS"]; 
+nodo1009->nodo1038;
+nodo1009->nodo1039;
+nodo1038[label= "
+ :: SEN"]; 
+nodo1038->nodo1040;
+nodo1040[label= "
+ :: CONTENIDO"]; 
+nodo1040->nodo1041;
+nodo1041[label= "
+ :: CONT"]; 
+nodo1041->nodo1042;
+nodo1042[label= "
+ :: DECLARACION"]; 
+nodo1042->nodo1043;
+nodo1042->nodo1045;
+nodo1043[label= "
+ :: TIPO"]; 
+nodo1043->nodo1044;
+nodo1044[label= "
+ :: tcaracter"]; 
+nodo1045[label= "
+ :: VARIABLE"]; 
+nodo1045->nodo1046;
+nodo1046[label= "
+ :: NOMBRES"]; 
+nodo1046->nodo1047;
+nodo1046->nodo1048;
+nodo1047[label= "
+ :: a"]; 
+nodo1048[label= "
+ :: NOM"]; 
+nodo1048->nodo1049;
+nodo1048->nodo1050;
+nodo1049[label= "
+ :: aa"]; 
+nodo1050[label= "
+ :: NOM"]; 
+nodo1050->nodo1051;
+nodo1050->nodo1052;
+nodo1051[label= "
+ :: AAA"]; 
+nodo1052[label= "
+ :: ASIGN"]; 
+nodo1052->nodo1053;
+nodo1053[label= "
+ :: VALOR"]; 
+nodo1053->nodo1054;
+nodo1054[label= "
+ :: LOGICA"]; 
+nodo1054->nodo1055;
+nodo1055[label= "
+ :: L"]; 
+nodo1055->nodo1056;
+nodo1056[label= "
+ :: M"]; 
+nodo1056->nodo1057;
+nodo1057[label= "
+ :: N"]; 
+nodo1057->nodo1058;
+nodo1058[label= "
+ :: R"]; 
+nodo1058->nodo1059;
+nodo1059[label= "
+ :: Z"]; 
+nodo1059->nodo1060;
+nodo1060[label= "
+ :: RELACIONAL"]; 
+nodo1060->nodo1061;
+nodo1061[label= "
+ :: A"]; 
+nodo1061->nodo1062;
+nodo1062[label= "
+ :: EXP"]; 
+nodo1062->nodo1063;
+nodo1063[label= "
+ :: E"]; 
+nodo1063->nodo1064;
+nodo1064[label= "
+ :: T"]; 
+nodo1064->nodo1065;
+nodo1065[label= "
+ :: F"]; 
+nodo1065->nodo1066;
+nodo1066[label= "
+ :: G"]; 
+nodo1066->nodo1067;
+nodo1067[label= "
+ :: '^^'"]; 
+nodo1039[label= "
+ :: SENTENCIAS"]; 
+nodo1039->nodo1068;
+nodo1039->nodo1069;
+nodo1068[label= "
+ :: SEN"]; 
+nodo1068->nodo1070;
+nodo1070[label= "
+ :: CONTENIDO"]; 
+nodo1070->nodo1071;
+nodo1071[label= "
+ :: CONT"]; 
+nodo1071->nodo1072;
+nodo1072[label= "
+ :: DECLARACION"]; 
+nodo1072->nodo1073;
+nodo1072->nodo1075;
+nodo1073[label= "
+ :: TIPO"]; 
+nodo1073->nodo1074;
+nodo1074[label= "
+ :: tcadena"]; 
+nodo1075[label= "
+ :: VARIABLE"]; 
+nodo1075->nodo1076;
+nodo1076[label= "
+ :: NOMBRES"]; 
+nodo1076->nodo1077;
+nodo1076->nodo1078;
+nodo1077[label= "
+ :: b"]; 
+nodo1078[label= "
+ :: NOM"]; 
+nodo1078->nodo1079;
+nodo1078->nodo1080;
+nodo1079[label= "
+ :: bb"]; 
+nodo1080[label= "
+ :: NOM"]; 
+nodo1080->nodo1081;
+nodo1080->nodo1082;
+nodo1081[label= "
+ :: BBB"]; 
+nodo1082[label= "
+ :: ASIGN"]; 
+nodo1082->nodo1083;
+nodo1083[label= "
+ :: VALOR"]; 
+nodo1083->nodo1084;
+nodo1084[label= "
+ :: LOGICA"]; 
+nodo1084->nodo1085;
+nodo1085[label= "
+ :: L"]; 
+nodo1085->nodo1086;
+nodo1086[label= "
+ :: M"]; 
+nodo1086->nodo1087;
+nodo1087[label= "
+ :: N"]; 
+nodo1087->nodo1088;
+nodo1088[label= "
+ :: R"]; 
+nodo1088->nodo1089;
+nodo1089[label= "
+ :: Z"]; 
+nodo1089->nodo1090;
+nodo1090[label= "
+ :: RELACIONAL"]; 
+nodo1090->nodo1091;
+nodo1091[label= "
+ :: A"]; 
+nodo1091->nodo1092;
+nodo1092[label= "
+ :: EXP"]; 
+nodo1092->nodo1093;
+nodo1093[label= "
+ :: E"]; 
+nodo1093->nodo1094;
+nodo1094[label= "
+ :: T"]; 
+nodo1094->nodo1095;
+nodo1095[label= "
+ :: F"]; 
+nodo1095->nodo1096;
+nodo1096[label= "
+ :: G"]; 
+nodo1096->nodo1097;
+nodo1097[label= "
+ :: 'world#r'"]; 
+nodo1069[label= "
+ :: SENTENCIAS"]; 
+nodo1069->nodo1098;
+nodo1069->nodo1099;
+nodo1098[label= "
+ :: SEN"]; 
+nodo1099[label= "
+ :: SENTENCIAS"]; 
+nodo1099->nodo1100;
+nodo1099->nodo1101;
+nodo1100[label= "
+ :: SEN"]; 
+nodo1100->nodo1102;
+nodo1102[label= "
+ :: CONTENIDO"]; 
+nodo1102->nodo1103;
+nodo1102->nodo1105;
+nodo1103[label= "
+ :: CONSERV"]; 
+nodo1103->nodo1104;
+nodo1104[label= "
+ :: conservar"]; 
+nodo1105[label= "
+ :: CONT"]; 
+nodo1105->nodo1106;
+nodo1106[label= "
+ :: DECLARACION"]; 
+nodo1106->nodo1107;
+nodo1106->nodo1109;
+nodo1107[label= "
+ :: TIPO"]; 
+nodo1107->nodo1108;
+nodo1108[label= "
+ :: tentero"]; 
+nodo1109[label= "
+ :: VARIABLE"]; 
+nodo1109->nodo1110;
+nodo1110[label= "
+ :: NOMBRES"]; 
+nodo1110->nodo1111;
+nodo1110->nodo1112;
+nodo1111[label= "
+ :: x"]; 
+nodo1112[label= "
+ :: NOM"]; 
+nodo1112->nodo1113;
+nodo1112->nodo1114;
+nodo1113[label= "
+ :: xx"]; 
+nodo1114[label= "
+ :: NOM"]; 
+nodo1114->nodo1115;
+nodo1114->nodo1116;
+nodo1115[label= "
+ :: XXX"]; 
+nodo1116[label= "
+ :: ASIGN"]; 
+nodo1116->nodo1117;
+nodo1117[label= "
+ :: VALOR"]; 
+nodo1117->nodo1118;
+nodo1118[label= "
+ :: LOGICA"]; 
+nodo1118->nodo1119;
+nodo1119[label= "
+ :: L"]; 
+nodo1119->nodo1120;
+nodo1120[label= "
+ :: M"]; 
+nodo1120->nodo1121;
+nodo1121[label= "
+ :: N"]; 
+nodo1121->nodo1122;
+nodo1122[label= "
+ :: R"]; 
+nodo1122->nodo1123;
+nodo1123[label= "
+ :: Z"]; 
+nodo1123->nodo1124;
+nodo1124[label= "
+ :: RELACIONAL"]; 
+nodo1124->nodo1125;
+nodo1125[label= "
+ :: A"]; 
+nodo1125->nodo1126;
+nodo1126[label= "
+ :: EXP"]; 
+nodo1126->nodo1127;
+nodo1127[label= "
+ :: E"]; 
+nodo1127->nodo1128;
+nodo1128[label= "
+ :: T"]; 
+nodo1128->nodo1129;
+nodo1129[label= "
+ :: F"]; 
+nodo1129->nodo1130;
+nodo1130[label= "
+ :: G"]; 
+nodo1130->nodo1131;
+nodo1131[label= "
+ :: 130"]; 
+nodo1101[label= "
+ :: SENTENCIAS"]; 
+nodo1101->nodo1132;
+nodo1101->nodo1133;
+nodo1132[label= "
+ :: SEN"]; 
+nodo1132->nodo1134;
+nodo1134[label= "
+ :: CONTENIDO"]; 
+nodo1134->nodo1135;
+nodo1134->nodo1137;
+nodo1135[label= "
+ :: CONSERV"]; 
+nodo1135->nodo1136;
+nodo1136[label= "
+ :: conservar"]; 
+nodo1137[label= "
+ :: CONT"]; 
+nodo1137->nodo1138;
+nodo1138[label= "
+ :: DECLARACION"]; 
+nodo1138->nodo1139;
+nodo1138->nodo1141;
+nodo1139[label= "
+ :: TIPO"]; 
+nodo1139->nodo1140;
+nodo1140[label= "
+ :: tdoble"]; 
+nodo1141[label= "
+ :: VARIABLE"]; 
+nodo1141->nodo1142;
+nodo1142[label= "
+ :: NOMBRES"]; 
+nodo1142->nodo1143;
+nodo1142->nodo1144;
+nodo1143[label= "
+ :: y"]; 
+nodo1144[label= "
+ :: NOM"]; 
+nodo1144->nodo1145;
+nodo1144->nodo1146;
+nodo1145[label= "
+ :: yy"]; 
+nodo1146[label= "
+ :: NOM"]; 
+nodo1146->nodo1147;
+nodo1146->nodo1148;
+nodo1147[label= "
+ :: YYY"]; 
+nodo1148[label= "
+ :: ASIGN"]; 
+nodo1148->nodo1149;
+nodo1149[label= "
+ :: VALOR"]; 
+nodo1149->nodo1150;
+nodo1150[label= "
+ :: LOGICA"]; 
+nodo1150->nodo1151;
+nodo1151[label= "
+ :: L"]; 
+nodo1151->nodo1152;
+nodo1152[label= "
+ :: M"]; 
+nodo1152->nodo1153;
+nodo1153[label= "
+ :: N"]; 
+nodo1153->nodo1154;
+nodo1154[label= "
+ :: R"]; 
+nodo1154->nodo1155;
+nodo1155[label= "
+ :: Z"]; 
+nodo1155->nodo1156;
+nodo1156[label= "
+ :: RELACIONAL"]; 
+nodo1156->nodo1157;
+nodo1157[label= "
+ :: A"]; 
+nodo1157->nodo1158;
+nodo1158[label= "
+ :: EXP"]; 
+nodo1158->nodo1159;
+nodo1159[label= "
+ :: E"]; 
+nodo1159->nodo1160;
+nodo1160[label= "
+ :: T"]; 
+nodo1160->nodo1161;
+nodo1161[label= "
+ :: F"]; 
+nodo1161->nodo1162;
+nodo1162[label= "
+ :: G"]; 
+nodo1162->nodo1163;
+nodo1163[label= "
+ :: 401.3021"]; 
+nodo1133[label= "
+ :: SENTENCIAS"]; 
+nodo1133->nodo1164;
+nodo1133->nodo1165;
+nodo1164[label= "
+ :: SEN"]; 
+nodo1164->nodo1166;
+nodo1166[label= "
+ :: CONTENIDO"]; 
+nodo1166->nodo1167;
+nodo1166->nodo1169;
+nodo1167[label= "
+ :: CONSERV"]; 
+nodo1167->nodo1168;
+nodo1168[label= "
+ :: conservar"]; 
+nodo1169[label= "
+ :: CONT"]; 
+nodo1169->nodo1170;
+nodo1170[label= "
+ :: DECLARACION"]; 
+nodo1170->nodo1171;
+nodo1170->nodo1173;
+nodo1171[label= "
+ :: TIPO"]; 
+nodo1171->nodo1172;
+nodo1172[label= "
+ :: tboolean"]; 
+nodo1173[label= "
+ :: VARIABLE"]; 
+nodo1173->nodo1174;
+nodo1174[label= "
+ :: NOMBRES"]; 
+nodo1174->nodo1175;
+nodo1174->nodo1176;
+nodo1175[label= "
+ :: z"]; 
+nodo1176[label= "
+ :: NOM"]; 
+nodo1176->nodo1177;
+nodo1176->nodo1178;
+nodo1177[label= "
+ :: zz"]; 
+nodo1178[label= "
+ :: NOM"]; 
+nodo1178->nodo1179;
+nodo1178->nodo1180;
+nodo1179[label= "
+ :: ZZZ"]; 
+nodo1180[label= "
+ :: ASIGN"]; 
+nodo1180->nodo1181;
+nodo1181[label= "
+ :: VALOR"]; 
+nodo1181->nodo1182;
+nodo1182[label= "
+ :: LOGICA"]; 
+nodo1182->nodo1183;
+nodo1183[label= "
+ :: L"]; 
+nodo1183->nodo1184;
+nodo1184[label= "
+ :: M"]; 
+nodo1184->nodo1185;
+nodo1185[label= "
+ :: N"]; 
+nodo1185->nodo1186;
+nodo1186[label= "
+ :: R"]; 
+nodo1186->nodo1187;
+nodo1187[label= "
+ :: Z"]; 
+nodo1187->nodo1188;
+nodo1188[label= "
+ :: RELACIONAL"]; 
+nodo1188->nodo1189;
+nodo1189[label= "
+ :: A"]; 
+nodo1189->nodo1190;
+nodo1190[label= "
+ :: EXP"]; 
+nodo1190->nodo1191;
+nodo1191[label= "
+ :: E"]; 
+nodo1191->nodo1192;
+nodo1192[label= "
+ :: T"]; 
+nodo1192->nodo1193;
+nodo1193[label= "
+ :: F"]; 
+nodo1193->nodo1194;
+nodo1194[label= "
+ :: G"]; 
+nodo1194->nodo1195;
+nodo1195[label= "
+ :: falso"]; 
+nodo1165[label= "
+ :: SENTENCIAS"]; 
+nodo1165->nodo1196;
+nodo1165->nodo1197;
+nodo1196[label= "
+ :: SEN"]; 
+nodo1196->nodo1198;
+nodo1198[label= "
+ :: CONTENIDO"]; 
+nodo1198->nodo1199;
+nodo1198->nodo1201;
+nodo1199[label= "
+ :: CONSERV"]; 
+nodo1199->nodo1200;
+nodo1200[label= "
+ :: conservar"]; 
+nodo1201[label= "
+ :: CONT"]; 
+nodo1201->nodo1202;
+nodo1202[label= "
+ :: DECLARACION"]; 
+nodo1202->nodo1203;
+nodo1202->nodo1205;
+nodo1203[label= "
+ :: TIPO"]; 
+nodo1203->nodo1204;
+nodo1204[label= "
+ :: tcaracter"]; 
+nodo1205[label= "
+ :: VARIABLE"]; 
+nodo1205->nodo1206;
+nodo1206[label= "
+ :: NOMBRES"]; 
+nodo1206->nodo1207;
+nodo1206->nodo1208;
+nodo1206->nodo1224;
+nodo1207[label= "
+ :: a"]; 
+nodo1208[label= "
+ :: ASIGN"]; 
+nodo1208->nodo1209;
+nodo1209[label= "
+ :: VALOR"]; 
+nodo1209->nodo1210;
+nodo1210[label= "
+ :: LOGICA"]; 
+nodo1210->nodo1211;
+nodo1211[label= "
+ :: L"]; 
+nodo1211->nodo1212;
+nodo1212[label= "
+ :: M"]; 
+nodo1212->nodo1213;
+nodo1213[label= "
+ :: N"]; 
+nodo1213->nodo1214;
+nodo1214[label= "
+ :: R"]; 
+nodo1214->nodo1215;
+nodo1215[label= "
+ :: Z"]; 
+nodo1215->nodo1216;
+nodo1216[label= "
+ :: RELACIONAL"]; 
+nodo1216->nodo1217;
+nodo1217[label= "
+ :: A"]; 
+nodo1217->nodo1218;
+nodo1218[label= "
+ :: EXP"]; 
+nodo1218->nodo1219;
+nodo1219[label= "
+ :: E"]; 
+nodo1219->nodo1220;
+nodo1220[label= "
+ :: T"]; 
+nodo1220->nodo1221;
+nodo1221[label= "
+ :: F"]; 
+nodo1221->nodo1222;
+nodo1222[label= "
+ :: G"]; 
+nodo1222->nodo1223;
+nodo1223[label= "
+ :: '^t'"]; 
+nodo1224[label= "
+ :: NOM"]; 
+nodo1224->nodo1225;
+nodo1224->nodo1226;
+nodo1224->nodo1242;
+nodo1225[label= "
+ :: aa"]; 
+nodo1226[label= "
+ :: ASIGN"]; 
+nodo1226->nodo1227;
+nodo1227[label= "
+ :: VALOR"]; 
+nodo1227->nodo1228;
+nodo1228[label= "
+ :: LOGICA"]; 
+nodo1228->nodo1229;
+nodo1229[label= "
+ :: L"]; 
+nodo1229->nodo1230;
+nodo1230[label= "
+ :: M"]; 
+nodo1230->nodo1231;
+nodo1231[label= "
+ :: N"]; 
+nodo1231->nodo1232;
+nodo1232[label= "
+ :: R"]; 
+nodo1232->nodo1233;
+nodo1233[label= "
+ :: Z"]; 
+nodo1233->nodo1234;
+nodo1234[label= "
+ :: RELACIONAL"]; 
+nodo1234->nodo1235;
+nodo1235[label= "
+ :: A"]; 
+nodo1235->nodo1236;
+nodo1236[label= "
+ :: EXP"]; 
+nodo1236->nodo1237;
+nodo1237[label= "
+ :: E"]; 
+nodo1237->nodo1238;
+nodo1238[label= "
+ :: T"]; 
+nodo1238->nodo1239;
+nodo1239[label= "
+ :: F"]; 
+nodo1239->nodo1240;
+nodo1240[label= "
+ :: G"]; 
+nodo1240->nodo1241;
+nodo1241[label= "
+ :: '^n'"]; 
+nodo1242[label= "
+ :: NOM"]; 
+nodo1242->nodo1243;
+nodo1242->nodo1244;
+nodo1243[label= "
+ :: AAA"]; 
+nodo1244[label= "
+ :: ASIGN"]; 
+nodo1244->nodo1245;
+nodo1245[label= "
+ :: VALOR"]; 
+nodo1245->nodo1246;
+nodo1246[label= "
+ :: LOGICA"]; 
+nodo1246->nodo1247;
+nodo1247[label= "
+ :: L"]; 
+nodo1247->nodo1248;
+nodo1248[label= "
+ :: M"]; 
+nodo1248->nodo1249;
+nodo1249[label= "
+ :: N"]; 
+nodo1249->nodo1250;
+nodo1250[label= "
+ :: R"]; 
+nodo1250->nodo1251;
+nodo1251[label= "
+ :: Z"]; 
+nodo1251->nodo1252;
+nodo1252[label= "
+ :: RELACIONAL"]; 
+nodo1252->nodo1253;
+nodo1253[label= "
+ :: A"]; 
+nodo1253->nodo1254;
+nodo1254[label= "
+ :: EXP"]; 
+nodo1254->nodo1255;
+nodo1255[label= "
+ :: E"]; 
+nodo1255->nodo1256;
+nodo1256[label= "
+ :: T"]; 
+nodo1256->nodo1257;
+nodo1257[label= "
+ :: F"]; 
+nodo1257->nodo1258;
+nodo1258[label= "
+ :: G"]; 
+nodo1258->nodo1259;
+nodo1259[label= "
+ :: '^r'"]; 
+nodo1197[label= "
+ :: SENTENCIAS"]; 
+nodo1197->nodo1260;
+nodo1197->nodo1261;
+nodo1260[label= "
+ :: SEN"]; 
+nodo1260->nodo1262;
+nodo1262[label= "
+ :: CONTENIDO"]; 
+nodo1262->nodo1263;
+nodo1262->nodo1265;
+nodo1263[label= "
+ :: CONSERV"]; 
+nodo1263->nodo1264;
+nodo1264[label= "
+ :: conservar"]; 
+nodo1265[label= "
+ :: CONT"]; 
+nodo1265->nodo1266;
+nodo1266[label= "
+ :: DECLARACION"]; 
+nodo1266->nodo1267;
+nodo1266->nodo1269;
+nodo1267[label= "
+ :: TIPO"]; 
+nodo1267->nodo1268;
+nodo1268[label= "
+ :: tcadena"]; 
+nodo1269[label= "
+ :: VARIABLE"]; 
+nodo1269->nodo1270;
+nodo1270[label= "
+ :: NOMBRES"]; 
+nodo1270->nodo1271;
+nodo1270->nodo1272;
+nodo1271[label= "
+ :: b"]; 
+nodo1272[label= "
+ :: NOM"]; 
+nodo1272->nodo1273;
+nodo1272->nodo1274;
+nodo1273[label= "
+ :: bb"]; 
+nodo1274[label= "
+ :: NOM"]; 
+nodo1274->nodo1275;
+nodo1274->nodo1276;
+nodo1275[label= "
+ :: BBB"]; 
+nodo1276[label= "
+ :: ASIGN"]; 
+nodo1276->nodo1277;
+nodo1277[label= "
+ :: VALOR"]; 
+nodo1277->nodo1278;
+nodo1278[label= "
+ :: LOGICA"]; 
+nodo1278->nodo1279;
+nodo1279[label= "
+ :: L"]; 
+nodo1279->nodo1280;
+nodo1280[label= "
+ :: M"]; 
+nodo1280->nodo1281;
+nodo1281[label= "
+ :: N"]; 
+nodo1281->nodo1282;
+nodo1282[label= "
+ :: R"]; 
+nodo1282->nodo1283;
+nodo1283[label= "
+ :: Z"]; 
+nodo1283->nodo1284;
+nodo1284[label= "
+ :: RELACIONAL"]; 
+nodo1284->nodo1285;
+nodo1285[label= "
+ :: A"]; 
+nodo1285->nodo1286;
+nodo1286[label= "
+ :: EXP"]; 
+nodo1286->nodo1287;
+nodo1287[label= "
+ :: E"]; 
+nodo1287->nodo1288;
+nodo1288[label= "
+ :: T"]; 
+nodo1288->nodo1289;
+nodo1289[label= "
+ :: F"]; 
+nodo1289->nodo1290;
+nodo1290[label= "
+ :: G"]; 
+nodo1290->nodo1291;
+nodo1291[label= "
+ :: 'world#r'"]; 
+nodo1261[label= "
+ :: SENTENCIAS"]; 
+nodo1261->nodo1292;
+nodo1261->nodo1293;
+nodo1292[label= "
+ :: SEN"]; 
+nodo1293[label= "
+ :: SENTENCIAS"]; 
+nodo1293->nodo1294;
+nodo1293->nodo1295;
+nodo1294[label= "
+ :: SEN"]; 
+nodo1294->nodo1296;
+nodo1296[label= "
+ :: CONTENIDO"]; 
+nodo1296->nodo1297;
+nodo1296->nodo1299;
+nodo1297[label= "
+ :: CONSERV"]; 
+nodo1297->nodo1298;
+nodo1298[label= "
+ :: conservar"]; 
+nodo1299[label= "
+ :: CONT"]; 
+nodo1299->nodo1300;
+nodo1300[label= "
+ :: DECLARACION"]; 
+nodo1300->nodo1301;
+nodo1300->nodo1303;
+nodo1301[label= "
+ :: TIPO"]; 
+nodo1301->nodo1302;
+nodo1302[label= "
+ :: tcadena"]; 
+nodo1303[label= "
+ :: VARIABLE"]; 
+nodo1303->nodo1304;
+nodo1304[label= "
+ :: NOMBRES"]; 
+nodo1304->nodo1305;
+nodo1304->nodo1306;
+nodo1305[label= "
+ :: cad1"]; 
+nodo1306[label= "
+ :: NOM"]; 
+nodo1306->nodo1307;
+nodo1306->nodo1308;
+nodo1307[label= "
+ :: cad2"]; 
+nodo1308[label= "
+ :: NOM"]; 
+nodo1308->nodo1309;
+nodo1308->nodo1310;
+nodo1309[label= "
+ :: cad3"]; 
+nodo1310[label= "
+ :: NOM"]; 
+nodo1310->nodo1311;
+nodo1310->nodo1312;
+nodo1311[label= "
+ :: ejex"]; 
+nodo1312[label= "
+ :: NOM"]; 
+nodo1312->nodo1313;
+nodo1312->nodo1314;
+nodo1313[label= "
+ :: ejey"]; 
+nodo1314[label= "
+ :: ASIGN"]; 
+nodo1314->nodo1315;
+nodo1315[label= "
+ :: VALOR"]; 
+nodo1315->nodo1316;
+nodo1316[label= "
+ :: LOGICA"]; 
+nodo1316->nodo1317;
+nodo1317[label= "
+ :: L"]; 
+nodo1317->nodo1318;
+nodo1318[label= "
+ :: M"]; 
+nodo1318->nodo1319;
+nodo1319[label= "
+ :: N"]; 
+nodo1319->nodo1320;
+nodo1320[label= "
+ :: R"]; 
+nodo1320->nodo1321;
+nodo1321[label= "
+ :: Z"]; 
+nodo1321->nodo1322;
+nodo1322[label= "
+ :: RELACIONAL"]; 
+nodo1322->nodo1323;
+nodo1323[label= "
+ :: A"]; 
+nodo1323->nodo1324;
+nodo1324[label= "
+ :: EXP"]; 
+nodo1324->nodo1325;
+nodo1325[label= "
+ :: E"]; 
+nodo1325->nodo1326;
+nodo1326[label= "
+ :: T"]; 
+nodo1326->nodo1327;
+nodo1327[label= "
+ :: F"]; 
+nodo1327->nodo1328;
+nodo1328[label= "
+ :: G"]; 
+nodo1328->nodo1329;
+nodo1329[label= "
+ :: 'el miedo a traspasar la frontera de los nobles'"]; 
+nodo1295[label= "
+ :: SENTENCIAS"]; 
+nodo1295->nodo1330;
+nodo1295->nodo1331;
+nodo1330[label= "
+ :: SEN"]; 
+nodo1330->nodo1332;
+nodo1332[label= "
+ :: CONTENIDO"]; 
+nodo1332->nodo1333;
+nodo1332->nodo1335;
+nodo1333[label= "
+ :: CONSERV"]; 
+nodo1333->nodo1334;
+nodo1334[label= "
+ :: conservar"]; 
+nodo1335[label= "
+ :: CONT"]; 
+nodo1335->nodo1336;
+nodo1336[label= "
+ :: DECLARACION"]; 
+nodo1336->nodo1337;
+nodo1336->nodo1339;
+nodo1337[label= "
+ :: TIPO"]; 
+nodo1337->nodo1338;
+nodo1338[label= "
+ :: tdoble"]; 
+nodo1339[label= "
+ :: VARIABLE"]; 
+nodo1339->nodo1340;
+nodo1340[label= "
+ :: NOMBRES"]; 
+nodo1340->nodo1341;
+nodo1340->nodo1342;
+nodo1340->nodo1358;
+nodo1341[label= "
+ :: contador"]; 
+nodo1342[label= "
+ :: ASIGN"]; 
+nodo1342->nodo1343;
+nodo1343[label= "
+ :: VALOR"]; 
+nodo1343->nodo1344;
+nodo1344[label= "
+ :: LOGICA"]; 
+nodo1344->nodo1345;
+nodo1345[label= "
+ :: L"]; 
+nodo1345->nodo1346;
+nodo1346[label= "
+ :: M"]; 
+nodo1346->nodo1347;
+nodo1347[label= "
+ :: N"]; 
+nodo1347->nodo1348;
+nodo1348[label= "
+ :: R"]; 
+nodo1348->nodo1349;
+nodo1349[label= "
+ :: Z"]; 
+nodo1349->nodo1350;
+nodo1350[label= "
+ :: RELACIONAL"]; 
+nodo1350->nodo1351;
+nodo1351[label= "
+ :: A"]; 
+nodo1351->nodo1352;
+nodo1352[label= "
+ :: EXP"]; 
+nodo1352->nodo1353;
+nodo1353[label= "
+ :: E"]; 
+nodo1353->nodo1354;
+nodo1354[label= "
+ :: T"]; 
+nodo1354->nodo1355;
+nodo1355[label= "
+ :: F"]; 
+nodo1355->nodo1356;
+nodo1356[label= "
+ :: G"]; 
+nodo1356->nodo1357;
+nodo1357[label= "
+ :: 50.5"]; 
+nodo1358[label= "
+ :: NOM"]; 
+nodo1358->nodo1359;
+nodo1358->nodo1360;
+nodo1359[label= "
+ :: contador2"]; 
+nodo1360[label= "
+ :: ASIGN"]; 
+nodo1360->nodo1361;
+nodo1361[label= "
+ :: VALOR"]; 
+nodo1361->nodo1362;
+nodo1362[label= "
+ :: LOGICA"]; 
+nodo1362->nodo1363;
+nodo1363[label= "
+ :: L"]; 
+nodo1363->nodo1364;
+nodo1364[label= "
+ :: M"]; 
+nodo1364->nodo1365;
+nodo1365[label= "
+ :: N"]; 
+nodo1365->nodo1366;
+nodo1366[label= "
+ :: R"]; 
+nodo1366->nodo1367;
+nodo1367[label= "
+ :: Z"]; 
+nodo1367->nodo1368;
+nodo1368[label= "
+ :: RELACIONAL"]; 
+nodo1368->nodo1369;
+nodo1369[label= "
+ :: A"]; 
+nodo1369->nodo1370;
+nodo1370[label= "
+ :: EXP"]; 
+nodo1370->nodo1371;
+nodo1371[label= "
+ :: E"]; 
+nodo1371->nodo1372;
+nodo1372[label= "
+ :: T"]; 
+nodo1372->nodo1373;
+nodo1373[label= "
+ :: F"]; 
+nodo1373->nodo1374;
+nodo1374[label= "
+ :: G"]; 
+nodo1374->nodo1375;
+nodo1375[label= "
+ :: 30.55"]; 
+nodo1331[label= "
+ :: SENTENCIAS"]; 
+nodo1331->nodo1376;
+nodo1331->nodo1377;
+nodo1376[label= "
+ :: SEN"]; 
+nodo1376->nodo1378;
+nodo1378[label= "
+ :: CONTENIDO"]; 
+nodo1378->nodo1379;
+nodo1379[label= "
+ :: CONT"]; 
+nodo1379->nodo1380;
+nodo1380[label= "
+ :: DECLARACION"]; 
+nodo1380->nodo1381;
+nodo1380->nodo1383;
+nodo1381[label= "
+ :: TIPO"]; 
+nodo1381->nodo1382;
+nodo1382[label= "
+ :: tboolean"]; 
+nodo1383[label= "
+ :: VARIABLE"]; 
+nodo1383->nodo1384;
+nodo1384[label= "
+ :: NOMBRES"]; 
+nodo1384->nodo1385;
+nodo1384->nodo1386;
+nodo1384->nodo1402;
+nodo1385[label= "
+ :: f2"]; 
+nodo1386[label= "
+ :: ASIGN"]; 
+nodo1386->nodo1387;
+nodo1387[label= "
+ :: VALOR"]; 
+nodo1387->nodo1388;
+nodo1388[label= "
+ :: LOGICA"]; 
+nodo1388->nodo1389;
+nodo1389[label= "
+ :: L"]; 
+nodo1389->nodo1390;
+nodo1390[label= "
+ :: M"]; 
+nodo1390->nodo1391;
+nodo1391[label= "
+ :: N"]; 
+nodo1391->nodo1392;
+nodo1392[label= "
+ :: R"]; 
+nodo1392->nodo1393;
+nodo1393[label= "
+ :: Z"]; 
+nodo1393->nodo1394;
+nodo1394[label= "
+ :: RELACIONAL"]; 
+nodo1394->nodo1395;
+nodo1395[label= "
+ :: A"]; 
+nodo1395->nodo1396;
+nodo1396[label= "
+ :: EXP"]; 
+nodo1396->nodo1397;
+nodo1397[label= "
+ :: E"]; 
+nodo1397->nodo1398;
+nodo1398[label= "
+ :: T"]; 
+nodo1398->nodo1399;
+nodo1399[label= "
+ :: F"]; 
+nodo1399->nodo1400;
+nodo1400[label= "
+ :: G"]; 
+nodo1400->nodo1401;
+nodo1401[label= "
+ :: false"]; 
+nodo1402[label= "
+ :: NOM"]; 
+nodo1402->nodo1403;
+nodo1402->nodo1404;
+nodo1403[label= "
+ :: f1"]; 
+nodo1404[label= "
+ :: ASIGN"]; 
+nodo1404->nodo1405;
+nodo1405[label= "
+ :: VALOR"]; 
+nodo1405->nodo1406;
+nodo1406[label= "
+ :: LOGICA"]; 
+nodo1406->nodo1407;
+nodo1407[label= "
+ :: L"]; 
+nodo1407->nodo1408;
+nodo1408[label= "
+ :: M"]; 
+nodo1408->nodo1409;
+nodo1409[label= "
+ :: N"]; 
+nodo1409->nodo1410;
+nodo1410[label= "
+ :: R"]; 
+nodo1410->nodo1411;
+nodo1411[label= "
+ :: Z"]; 
+nodo1411->nodo1412;
+nodo1412[label= "
+ :: RELACIONAL"]; 
+nodo1412->nodo1413;
+nodo1413[label= "
+ :: A"]; 
+nodo1413->nodo1414;
+nodo1414[label= "
+ :: EXP"]; 
+nodo1414->nodo1415;
+nodo1415[label= "
+ :: E"]; 
+nodo1415->nodo1416;
+nodo1416[label= "
+ :: T"]; 
+nodo1416->nodo1417;
+nodo1417[label= "
+ :: F"]; 
+nodo1417->nodo1418;
+nodo1418[label= "
+ :: G"]; 
+nodo1418->nodo1419;
+nodo1419[label= "
+ :: true"]; 
+nodo1377[label= "
+ :: SENTENCIAS"]; 
+nodo1377->nodo1420;
+nodo1377->nodo1421;
+nodo1420[label= "
+ :: SEN"]; 
+nodo1420->nodo1422;
+nodo1422[label= "
+ :: CONTENIDO"]; 
+nodo1422->nodo1423;
+nodo1423[label= "
+ :: CONT"]; 
+nodo1423->nodo1424;
+nodo1424[label= "
+ :: DECLARACION"]; 
+nodo1424->nodo1425;
+nodo1424->nodo1427;
+nodo1425[label= "
+ :: TIPO"]; 
+nodo1425->nodo1426;
+nodo1426[label= "
+ :: tcadena"]; 
+nodo1427[label= "
+ :: VARIABLE"]; 
+nodo1427->nodo1428;
+nodo1428[label= "
+ :: NOMBRES"]; 
+nodo1428->nodo1429;
+nodo1428->nodo1430;
+nodo1429[label= "
+ :: palabra2"]; 
+nodo1430[label= "
+ :: NOM"]; 
+nodo1430->nodo1431;
+nodo1430->nodo1432;
+nodo1431[label= "
+ :: palabra3"]; 
+nodo1432[label= "
+ :: ASIGN"]; 
+nodo1432->nodo1433;
+nodo1433[label= "
+ :: VALOR"]; 
+nodo1433->nodo1434;
+nodo1434[label= "
+ :: LOGICA"]; 
+nodo1434->nodo1435;
+nodo1435[label= "
+ :: L"]; 
+nodo1435->nodo1436;
+nodo1436[label= "
+ :: M"]; 
+nodo1436->nodo1437;
+nodo1437[label= "
+ :: N"]; 
+nodo1437->nodo1438;
+nodo1438[label= "
+ :: R"]; 
+nodo1438->nodo1439;
+nodo1439[label= "
+ :: Z"]; 
+nodo1439->nodo1440;
+nodo1440[label= "
+ :: RELACIONAL"]; 
+nodo1440->nodo1441;
+nodo1441[label= "
+ :: A"]; 
+nodo1441->nodo1442;
+nodo1442[label= "
+ :: EXP"]; 
+nodo1442->nodo1443;
+nodo1443[label= "
+ :: E"]; 
+nodo1443->nodo1444;
+nodo1443->nodo1448;
+nodo1444[label= "
+ :: T"]; 
+nodo1444->nodo1445;
+nodo1445[label= "
+ :: F"]; 
+nodo1445->nodo1446;
+nodo1446[label= "
+ :: G"]; 
+nodo1446->nodo1447;
+nodo1447[label= "
+ :: '#'esto es un ejemplo #r#t:D#n'"]; 
+nodo1448[label= "
+ :: EP"]; 
+nodo1448->nodo1449;
+nodo1448->nodo1450;
+nodo1448->nodo1454;
+nodo1449[label= "
+ :: +"]; 
+nodo1450[label= "
+ :: T"]; 
+nodo1450->nodo1451;
+nodo1451[label= "
+ :: F"]; 
+nodo1451->nodo1452;
+nodo1452[label= "
+ :: G"]; 
+nodo1452->nodo1453;
+nodo1453[label= "
+ :: 'v'"]; 
+nodo1454[label= "
+ :: EP"]; 
+nodo1454->nodo1455;
+nodo1454->nodo1456;
+nodo1455[label= "
+ :: +"]; 
+nodo1456[label= "
+ :: T"]; 
+nodo1456->nodo1457;
+nodo1457[label= "
+ :: F"]; 
+nodo1457->nodo1458;
+nodo1458[label= "
+ :: G"]; 
+nodo1458->nodo1459;
+nodo1459[label= "
+ :: 'heroe##'"]; 
+nodo1421[label= "
+ :: SENTENCIAS"]; 
+nodo1421->nodo1460;
+nodo1421->nodo1461;
+nodo1460[label= "
+ :: SEN"]; 
+nodo1461[label= "
+ :: SENTENCIAS"]; 
+nodo1461->nodo1462;
+nodo1461->nodo1463;
+nodo1462[label= "
+ :: SEN"]; 
+nodo1462->nodo1464;
+nodo1464[label= "
+ :: CONTENIDO"]; 
+nodo1464->nodo1465;
+nodo1465[label= "
+ :: CONT"]; 
+nodo1465->nodo1466;
+nodo1466[label= "
+ :: CONTENIDO3"]; 
+nodo1466->nodo1467;
+nodo1466->nodo1468;
+nodo1467[label= "
+ :: variablex"]; 
+nodo1468[label= "
+ :: METODO"]; 
+nodo1468->nodo1469;
+nodo1469[label= "
+ :: VALOR"]; 
+nodo1469->nodo1470;
+nodo1470[label= "
+ :: LOGICA"]; 
+nodo1470->nodo1471;
+nodo1471[label= "
+ :: L"]; 
+nodo1471->nodo1472;
+nodo1472[label= "
+ :: M"]; 
+nodo1472->nodo1473;
+nodo1473[label= "
+ :: N"]; 
+nodo1473->nodo1474;
+nodo1474[label= "
+ :: R"]; 
+nodo1474->nodo1475;
+nodo1475[label= "
+ :: Z"]; 
+nodo1475->nodo1476;
+nodo1476[label= "
+ :: RELACIONAL"]; 
+nodo1476->nodo1477;
+nodo1477[label= "
+ :: A"]; 
+nodo1477->nodo1478;
+nodo1478[label= "
+ :: EXP"]; 
+nodo1478->nodo1479;
+nodo1479[label= "
+ :: E"]; 
+nodo1479->nodo1480;
+nodo1480[label= "
+ :: T"]; 
+nodo1480->nodo1481;
+nodo1481[label= "
+ :: F"]; 
+nodo1481->nodo1482;
+nodo1482[label= "
+ :: G"]; 
+nodo1482->nodo1483;
+nodo1483[label= "
+ :: 100"]; 
+nodo1463[label= "
+ :: SENTENCIAS"]; 
+nodo1463->nodo1484;
+nodo1463->nodo1485;
+nodo1484[label= "
+ :: SEN"]; 
+nodo1484->nodo1486;
+nodo1486[label= "
+ :: CONTENIDO"]; 
+nodo1486->nodo1487;
+nodo1487[label= "
+ :: CONT"]; 
+nodo1487->nodo1488;
+nodo1488[label= "
+ :: CONTENIDO3"]; 
+nodo1488->nodo1489;
+nodo1488->nodo1490;
+nodo1489[label= "
+ :: variabley"]; 
+nodo1490[label= "
+ :: METODO"]; 
+nodo1490->nodo1491;
+nodo1491[label= "
+ :: VALOR"]; 
+nodo1491->nodo1492;
+nodo1492[label= "
+ :: LOGICA"]; 
+nodo1492->nodo1493;
+nodo1493[label= "
+ :: L"]; 
+nodo1493->nodo1494;
+nodo1494[label= "
+ :: M"]; 
+nodo1494->nodo1495;
+nodo1495[label= "
+ :: N"]; 
+nodo1495->nodo1496;
+nodo1496[label= "
+ :: R"]; 
+nodo1496->nodo1497;
+nodo1497[label= "
+ :: Z"]; 
+nodo1497->nodo1498;
+nodo1498[label= "
+ :: RELACIONAL"]; 
+nodo1498->nodo1499;
+nodo1499[label= "
+ :: A"]; 
+nodo1499->nodo1500;
+nodo1500[label= "
+ :: EXP"]; 
+nodo1500->nodo1501;
+nodo1501[label= "
+ :: E"]; 
+nodo1501->nodo1502;
+nodo1502[label= "
+ :: T"]; 
+nodo1502->nodo1503;
+nodo1503[label= "
+ :: F"]; 
+nodo1503->nodo1504;
+nodo1504[label= "
+ :: G"]; 
+nodo1504->nodo1505;
+nodo1505[label= "
+ :: true"]; 
+nodo1485[label= "
+ :: SENTENCIAS"]; 
+nodo1485->nodo1506;
+nodo1485->nodo1507;
+nodo1506[label= "
+ :: SEN"]; 
+nodo1506->nodo1508;
+nodo1508[label= "
+ :: CONTENIDO"]; 
+nodo1508->nodo1509;
+nodo1509[label= "
+ :: CONT"]; 
+nodo1509->nodo1510;
+nodo1510[label= "
+ :: CONTENIDO3"]; 
+nodo1510->nodo1511;
+nodo1510->nodo1512;
+nodo1511[label= "
+ :: variablez"]; 
+nodo1512[label= "
+ :: METODO"]; 
+nodo1512->nodo1513;
+nodo1513[label= "
+ :: VALOR"]; 
+nodo1513->nodo1514;
+nodo1514[label= "
+ :: LOGICA"]; 
+nodo1514->nodo1515;
+nodo1515[label= "
+ :: L"]; 
+nodo1515->nodo1516;
+nodo1516[label= "
+ :: M"]; 
+nodo1516->nodo1517;
+nodo1517[label= "
+ :: N"]; 
+nodo1517->nodo1518;
+nodo1518[label= "
+ :: R"]; 
+nodo1518->nodo1519;
+nodo1519[label= "
+ :: Z"]; 
+nodo1519->nodo1520;
+nodo1520[label= "
+ :: RELACIONAL"]; 
+nodo1520->nodo1521;
+nodo1521[label= "
+ :: A"]; 
+nodo1521->nodo1522;
+nodo1522[label= "
+ :: EXP"]; 
+nodo1522->nodo1523;
+nodo1523[label= "
+ :: E"]; 
+nodo1523->nodo1524;
+nodo1524[label= "
+ :: T"]; 
+nodo1524->nodo1525;
+nodo1525[label= "
+ :: F"]; 
+nodo1525->nodo1526;
+nodo1526[label= "
+ :: G"]; 
+nodo1526->nodo1527;
+nodo1527[label= "
+ :: false"]; 
+nodo1507[label= "
+ :: SENTENCIAS"]; 
+nodo1507->nodo1528;
+nodo1507->nodo1529;
+nodo1528[label= "
+ :: SEN"]; 
+nodo1528->nodo1530;
+nodo1530[label= "
+ :: CONTENIDO"]; 
+nodo1530->nodo1531;
+nodo1531[label= "
+ :: CONT"]; 
+nodo1531->nodo1532;
+nodo1532[label= "
+ :: CONTENIDO3"]; 
+nodo1532->nodo1533;
+nodo1532->nodo1534;
+nodo1533[label= "
+ :: variablea"]; 
+nodo1534[label= "
+ :: METODO"]; 
+nodo1534->nodo1535;
+nodo1535[label= "
+ :: VALOR"]; 
+nodo1535->nodo1536;
+nodo1536[label= "
+ :: LOGICA"]; 
+nodo1536->nodo1537;
+nodo1537[label= "
+ :: L"]; 
+nodo1537->nodo1538;
+nodo1538[label= "
+ :: M"]; 
+nodo1538->nodo1539;
+nodo1539[label= "
+ :: N"]; 
+nodo1539->nodo1540;
+nodo1540[label= "
+ :: R"]; 
+nodo1540->nodo1541;
+nodo1541[label= "
+ :: Z"]; 
+nodo1541->nodo1542;
+nodo1542[label= "
+ :: RELACIONAL"]; 
+nodo1542->nodo1543;
+nodo1543[label= "
+ :: A"]; 
+nodo1543->nodo1544;
+nodo1544[label= "
+ :: EXP"]; 
+nodo1544->nodo1545;
+nodo1545[label= "
+ :: E"]; 
+nodo1545->nodo1546;
+nodo1546[label= "
+ :: T"]; 
+nodo1546->nodo1547;
+nodo1547[label= "
+ :: F"]; 
+nodo1547->nodo1548;
+nodo1548[label= "
+ :: G"]; 
+nodo1548->nodo1549;
+nodo1549[label= "
+ :: verdadero"]; 
+nodo1529[label= "
+ :: SENTENCIAS"]; 
+nodo1529->nodo1550;
+nodo1529->nodo1551;
+nodo1550[label= "
+ :: SEN"]; 
+nodo1550->nodo1552;
+nodo1552[label= "
+ :: CONTENIDO"]; 
+nodo1552->nodo1553;
+nodo1553[label= "
+ :: CONT"]; 
+nodo1553->nodo1554;
+nodo1554[label= "
+ :: CONTENIDO3"]; 
+nodo1554->nodo1555;
+nodo1554->nodo1556;
+nodo1555[label= "
+ :: variableb"]; 
+nodo1556[label= "
+ :: METODO"]; 
+nodo1556->nodo1557;
+nodo1557[label= "
+ :: VALOR"]; 
+nodo1557->nodo1558;
+nodo1558[label= "
+ :: LOGICA"]; 
+nodo1558->nodo1559;
+nodo1559[label= "
+ :: L"]; 
+nodo1559->nodo1560;
+nodo1560[label= "
+ :: M"]; 
+nodo1560->nodo1561;
+nodo1561[label= "
+ :: N"]; 
+nodo1561->nodo1562;
+nodo1562[label= "
+ :: R"]; 
+nodo1562->nodo1563;
+nodo1563[label= "
+ :: Z"]; 
+nodo1563->nodo1564;
+nodo1564[label= "
+ :: RELACIONAL"]; 
+nodo1564->nodo1565;
+nodo1565[label= "
+ :: A"]; 
+nodo1565->nodo1566;
+nodo1566[label= "
+ :: EXP"]; 
+nodo1566->nodo1567;
+nodo1567[label= "
+ :: E"]; 
+nodo1567->nodo1568;
+nodo1568[label= "
+ :: T"]; 
+nodo1568->nodo1569;
+nodo1569[label= "
+ :: F"]; 
+nodo1569->nodo1570;
+nodo1570[label= "
+ :: G"]; 
+nodo1570->nodo1571;
+nodo1571[label= "
+ :: falso"]; 
+nodo1551[label= "
+ :: SENTENCIAS"]; 
+nodo1551->nodo1572;
+nodo1551->nodo1573;
+nodo1572[label= "
+ :: SEN"]; 
+nodo1572->nodo1574;
+nodo1574[label= "
+ :: CONTENIDO"]; 
+nodo1574->nodo1575;
+nodo1575[label= "
+ :: CONT"]; 
+nodo1575->nodo1576;
+nodo1576[label= "
+ :: CONTENIDO3"]; 
+nodo1576->nodo1577;
+nodo1576->nodo1578;
+nodo1577[label= "
+ :: variablec"]; 
+nodo1578[label= "
+ :: METODO"]; 
+nodo1578->nodo1579;
+nodo1579[label= "
+ :: VALOR"]; 
+nodo1579->nodo1580;
+nodo1580[label= "
+ :: LOGICA"]; 
+nodo1580->nodo1581;
+nodo1581[label= "
+ :: L"]; 
+nodo1581->nodo1582;
+nodo1582[label= "
+ :: M"]; 
+nodo1582->nodo1583;
+nodo1583[label= "
+ :: N"]; 
+nodo1583->nodo1584;
+nodo1584[label= "
+ :: R"]; 
+nodo1584->nodo1585;
+nodo1585[label= "
+ :: Z"]; 
+nodo1585->nodo1586;
+nodo1586[label= "
+ :: RELACIONAL"]; 
+nodo1586->nodo1587;
+nodo1587[label= "
+ :: A"]; 
+nodo1587->nodo1588;
+nodo1588[label= "
+ :: EXP"]; 
+nodo1588->nodo1589;
+nodo1589[label= "
+ :: E"]; 
+nodo1589->nodo1590;
+nodo1589->nodo1594;
+nodo1590[label= "
+ :: T"]; 
+nodo1590->nodo1591;
+nodo1591[label= "
+ :: F"]; 
+nodo1591->nodo1592;
+nodo1592[label= "
+ :: G"]; 
+nodo1592->nodo1593;
+nodo1593[label= "
+ :: 100.2013123"]; 
+nodo1594[label= "
+ :: EP"]; 
+nodo1594->nodo1595;
+nodo1594->nodo1596;
+nodo1594->nodo1605;
+nodo1595[label= "
+ :: +"]; 
+nodo1596[label= "
+ :: T"]; 
+nodo1596->nodo1597;
+nodo1596->nodo1600;
+nodo1597[label= "
+ :: F"]; 
+nodo1597->nodo1598;
+nodo1598[label= "
+ :: G"]; 
+nodo1598->nodo1599;
+nodo1599[label= "
+ :: 1"]; 
+nodo1600[label= "
+ :: TP"]; 
+nodo1600->nodo1601;
+nodo1600->nodo1602;
+nodo1601[label= "
+ :: *"]; 
+nodo1602[label= "
+ :: F"]; 
+nodo1602->nodo1603;
+nodo1603[label= "
+ :: G"]; 
+nodo1603->nodo1604;
+nodo1604[label= "
+ :: 242"]; 
+nodo1605[label= "
+ :: EP"]; 
+nodo1605->nodo1606;
+nodo1605->nodo1607;
+nodo1605->nodo1611;
+nodo1606[label= "
+ :: -"]; 
+nodo1607[label= "
+ :: T"]; 
+nodo1607->nodo1608;
+nodo1608[label= "
+ :: F"]; 
+nodo1608->nodo1609;
+nodo1609[label= "
+ :: G"]; 
+nodo1609->nodo1610;
+nodo1610[label= "
+ :: b"]; 
+nodo1611[label= "
+ :: EP"]; 
+nodo1611->nodo1612;
+nodo1611->nodo1613;
+nodo1611->nodo1622;
+nodo1612[label= "
+ :: -"]; 
+nodo1613[label= "
+ :: T"]; 
+nodo1613->nodo1614;
+nodo1613->nodo1617;
+nodo1614[label= "
+ :: F"]; 
+nodo1614->nodo1615;
+nodo1615[label= "
+ :: G"]; 
+nodo1615->nodo1616;
+nodo1616[label= "
+ :: c"]; 
+nodo1617[label= "
+ :: TP"]; 
+nodo1617->nodo1618;
+nodo1617->nodo1619;
+nodo1618[label= "
+ :: /"]; 
+nodo1619[label= "
+ :: F"]; 
+nodo1619->nodo1620;
+nodo1620[label= "
+ :: G"]; 
+nodo1620->nodo1621;
+nodo1621[label= "
+ :: s"]; 
+nodo1622[label= "
+ :: EP"]; 
+nodo1622->nodo1623;
+nodo1622->nodo1624;
+nodo1622->nodo1628;
+nodo1623[label= "
+ :: +"]; 
+nodo1624[label= "
+ :: T"]; 
+nodo1624->nodo1625;
+nodo1625[label= "
+ :: F"]; 
+nodo1625->nodo1626;
+nodo1626[label= "
+ :: G"]; 
+nodo1626->nodo1627;
+nodo1627[label= "
+ :: 14"]; 
+nodo1628[label= "
+ :: EP"]; 
+nodo1628->nodo1629;
+nodo1628->nodo1630;
+nodo1629[label= "
+ :: -"]; 
+nodo1630[label= "
+ :: T"]; 
+nodo1630->nodo1631;
+nodo1630->nodo1634;
+nodo1631[label= "
+ :: F"]; 
+nodo1631->nodo1632;
+nodo1632[label= "
+ :: G"]; 
+nodo1632->nodo1633;
+nodo1633[label= "
+ :: 21"]; 
+nodo1634[label= "
+ :: TP"]; 
+nodo1634->nodo1635;
+nodo1634->nodo1636;
+nodo1635[label= "
+ :: *"]; 
+nodo1636[label= "
+ :: F"]; 
+nodo1636->nodo1637;
+nodo1637[label= "
+ :: G"]; 
+nodo1637->nodo1638;
+nodo1638[label= "
+ :: c50"]; 
+nodo1573[label= "
+ :: SENTENCIAS"]; 
+nodo1573->nodo1639;
+nodo1573->nodo1640;
+nodo1639[label= "
+ :: SEN"]; 
+nodo1639->nodo1641;
+nodo1641[label= "
+ :: CONTENIDO"]; 
+nodo1641->nodo1642;
+nodo1642[label= "
+ :: CONT"]; 
+nodo1642->nodo1643;
+nodo1643[label= "
+ :: CONTENIDO3"]; 
+nodo1643->nodo1644;
+nodo1643->nodo1645;
+nodo1644[label= "
+ :: variabled"]; 
+nodo1645[label= "
+ :: METODO"]; 
+nodo1645->nodo1646;
+nodo1646[label= "
+ :: VALOR"]; 
+nodo1646->nodo1647;
+nodo1647[label= "
+ :: LOGICA"]; 
+nodo1647->nodo1648;
+nodo1648[label= "
+ :: L"]; 
+nodo1648->nodo1649;
+nodo1649[label= "
+ :: M"]; 
+nodo1649->nodo1650;
+nodo1650[label= "
+ :: N"]; 
+nodo1650->nodo1651;
+nodo1651[label= "
+ :: R"]; 
+nodo1651->nodo1652;
+nodo1652[label= "
+ :: Z"]; 
+nodo1652->nodo1653;
+nodo1653[label= "
+ :: RELACIONAL"]; 
+nodo1653->nodo1654;
+nodo1654[label= "
+ :: A"]; 
+nodo1654->nodo1655;
+nodo1655[label= "
+ :: EXP"]; 
+nodo1655->nodo1656;
+nodo1656[label= "
+ :: E"]; 
+nodo1656->nodo1657;
+nodo1657[label= "
+ :: T"]; 
+nodo1657->nodo1658;
+nodo1658[label= "
+ :: F"]; 
+nodo1658->nodo1659;
+nodo1659[label= "
+ :: G"]; 
+nodo1659->nodo1660;
+nodo1660[label= "
+ :: '^^'"]; 
+nodo1640[label= "
+ :: SENTENCIAS"]; 
+nodo1640->nodo1661;
+nodo1640->nodo1662;
+nodo1661[label= "
+ :: SEN"]; 
+nodo1661->nodo1663;
+nodo1663[label= "
+ :: CONTENIDO"]; 
+nodo1663->nodo1664;
+nodo1664[label= "
+ :: CONT"]; 
+nodo1664->nodo1665;
+nodo1665[label= "
+ :: CONTENIDO3"]; 
+nodo1665->nodo1666;
+nodo1665->nodo1667;
+nodo1666[label= "
+ :: variablee"]; 
+nodo1667[label= "
+ :: METODO"]; 
+nodo1667->nodo1668;
+nodo1668[label= "
+ :: VALOR"]; 
+nodo1668->nodo1669;
+nodo1669[label= "
+ :: LOGICA"]; 
+nodo1669->nodo1670;
+nodo1670[label= "
+ :: L"]; 
+nodo1670->nodo1671;
+nodo1671[label= "
+ :: M"]; 
+nodo1671->nodo1672;
+nodo1672[label= "
+ :: N"]; 
+nodo1672->nodo1673;
+nodo1673[label= "
+ :: R"]; 
+nodo1673->nodo1674;
+nodo1674[label= "
+ :: Z"]; 
+nodo1674->nodo1675;
+nodo1675[label= "
+ :: RELACIONAL"]; 
+nodo1675->nodo1676;
+nodo1676[label= "
+ :: A"]; 
+nodo1676->nodo1677;
+nodo1677[label= "
+ :: EXP"]; 
+nodo1677->nodo1678;
+nodo1678[label= "
+ :: E"]; 
+nodo1678->nodo1679;
+nodo1679[label= "
+ :: T"]; 
+nodo1679->nodo1680;
+nodo1680[label= "
+ :: F"]; 
+nodo1680->nodo1681;
+nodo1681[label= "
+ :: G"]; 
+nodo1681->nodo1682;
+nodo1682[label= "
+ :: '^r'"]; 
+nodo1662[label= "
+ :: SENTENCIAS"]; 
+nodo1662->nodo1683;
+nodo1662->nodo1684;
+nodo1683[label= "
+ :: SEN"]; 
+nodo1683->nodo1685;
+nodo1685[label= "
+ :: CONTENIDO"]; 
+nodo1685->nodo1686;
+nodo1686[label= "
+ :: CONT"]; 
+nodo1686->nodo1687;
+nodo1687[label= "
+ :: CONTENIDO3"]; 
+nodo1687->nodo1688;
+nodo1687->nodo1689;
+nodo1688[label= "
+ :: variablef"]; 
+nodo1689[label= "
+ :: METODO"]; 
+nodo1689->nodo1690;
+nodo1690[label= "
+ :: VALOR"]; 
+nodo1690->nodo1691;
+nodo1691[label= "
+ :: LOGICA"]; 
+nodo1691->nodo1692;
+nodo1692[label= "
+ :: L"]; 
+nodo1692->nodo1693;
+nodo1693[label= "
+ :: M"]; 
+nodo1693->nodo1694;
+nodo1694[label= "
+ :: N"]; 
+nodo1694->nodo1695;
+nodo1695[label= "
+ :: R"]; 
+nodo1695->nodo1696;
+nodo1696[label= "
+ :: Z"]; 
+nodo1696->nodo1697;
+nodo1697[label= "
+ :: RELACIONAL"]; 
+nodo1697->nodo1698;
+nodo1698[label= "
+ :: A"]; 
+nodo1698->nodo1699;
+nodo1699[label= "
+ :: EXP"]; 
+nodo1699->nodo1700;
+nodo1700[label= "
+ :: E"]; 
+nodo1700->nodo1701;
+nodo1701[label= "
+ :: T"]; 
+nodo1701->nodo1702;
+nodo1702[label= "
+ :: F"]; 
+nodo1702->nodo1703;
+nodo1703[label= "
+ :: G"]; 
+nodo1703->nodo1704;
+nodo1704[label= "
+ :: '^t'"]; 
+nodo1684[label= "
+ :: SENTENCIAS"]; 
+nodo1684->nodo1705;
+nodo1684->nodo1706;
+nodo1705[label= "
+ :: SEN"]; 
+nodo1705->nodo1707;
+nodo1707[label= "
+ :: CONTENIDO"]; 
+nodo1707->nodo1708;
+nodo1708[label= "
+ :: CONT"]; 
+nodo1708->nodo1709;
+nodo1709[label= "
+ :: CONTENIDO3"]; 
+nodo1709->nodo1710;
+nodo1709->nodo1711;
+nodo1710[label= "
+ :: variableg"]; 
+nodo1711[label= "
+ :: METODO"]; 
+nodo1711->nodo1712;
+nodo1712[label= "
+ :: VALOR"]; 
+nodo1712->nodo1713;
+nodo1713[label= "
+ :: LOGICA"]; 
+nodo1713->nodo1714;
+nodo1714[label= "
+ :: L"]; 
+nodo1714->nodo1715;
+nodo1715[label= "
+ :: M"]; 
+nodo1715->nodo1716;
+nodo1716[label= "
+ :: N"]; 
+nodo1716->nodo1717;
+nodo1717[label= "
+ :: R"]; 
+nodo1717->nodo1718;
+nodo1718[label= "
+ :: Z"]; 
+nodo1718->nodo1719;
+nodo1719[label= "
+ :: RELACIONAL"]; 
+nodo1719->nodo1720;
+nodo1720[label= "
+ :: A"]; 
+nodo1720->nodo1721;
+nodo1721[label= "
+ :: EXP"]; 
+nodo1721->nodo1722;
+nodo1722[label= "
+ :: E"]; 
+nodo1722->nodo1723;
+nodo1723[label= "
+ :: T"]; 
+nodo1723->nodo1724;
+nodo1724[label= "
+ :: F"]; 
+nodo1724->nodo1725;
+nodo1725[label= "
+ :: G"]; 
+nodo1725->nodo1726;
+nodo1726[label= "
+ :: '^n'"]; 
+nodo1706[label= "
+ :: SENTENCIAS"]; 
+nodo1706->nodo1727;
+nodo1706->nodo1728;
+nodo1727[label= "
+ :: SEN"]; 
+nodo1727->nodo1729;
+nodo1729[label= "
+ :: CONTENIDO"]; 
+nodo1729->nodo1730;
+nodo1730[label= "
+ :: CONT"]; 
+nodo1730->nodo1731;
+nodo1731[label= "
+ :: CONTENIDO3"]; 
+nodo1731->nodo1732;
+nodo1731->nodo1733;
+nodo1732[label= "
+ :: variableh"]; 
+nodo1733[label= "
+ :: METODO"]; 
+nodo1733->nodo1734;
+nodo1734[label= "
+ :: VALOR"]; 
+nodo1734->nodo1735;
+nodo1735[label= "
+ :: LOGICA"]; 
+nodo1735->nodo1736;
+nodo1736[label= "
+ :: L"]; 
+nodo1736->nodo1737;
+nodo1737[label= "
+ :: M"]; 
+nodo1737->nodo1738;
+nodo1738[label= "
+ :: N"]; 
+nodo1738->nodo1739;
+nodo1739[label= "
+ :: R"]; 
+nodo1739->nodo1740;
+nodo1740[label= "
+ :: Z"]; 
+nodo1740->nodo1741;
+nodo1741[label= "
+ :: RELACIONAL"]; 
+nodo1741->nodo1742;
+nodo1742[label= "
+ :: A"]; 
+nodo1742->nodo1743;
+nodo1743[label= "
+ :: EXP"]; 
+nodo1743->nodo1744;
+nodo1744[label= "
+ :: E"]; 
+nodo1744->nodo1745;
+nodo1745[label= "
+ :: T"]; 
+nodo1745->nodo1746;
+nodo1746[label= "
+ :: F"]; 
+nodo1746->nodo1747;
+nodo1747[label= "
+ :: G"]; 
+nodo1747->nodo1748;
+nodo1748[label= "
+ :: '^''"]; 
+nodo1728[label= "
+ :: SENTENCIAS"]; 
+nodo1728->nodo1749;
+nodo1728->nodo1750;
+nodo1749[label= "
+ :: SEN"]; 
+nodo1749->nodo1751;
+nodo1751[label= "
+ :: CONTENIDO"]; 
+nodo1751->nodo1752;
+nodo1752[label= "
+ :: CONT"]; 
+nodo1752->nodo1753;
+nodo1753[label= "
+ :: CONTENIDO3"]; 
+nodo1753->nodo1754;
+nodo1753->nodo1755;
+nodo1754[label= "
+ :: variablei"]; 
+nodo1755[label= "
+ :: METODO"]; 
+nodo1755->nodo1756;
+nodo1756[label= "
+ :: VALOR"]; 
+nodo1756->nodo1757;
+nodo1757[label= "
+ :: LOGICA"]; 
+nodo1757->nodo1758;
+nodo1758[label= "
+ :: L"]; 
+nodo1758->nodo1759;
+nodo1759[label= "
+ :: M"]; 
+nodo1759->nodo1760;
+nodo1760[label= "
+ :: N"]; 
+nodo1760->nodo1761;
+nodo1761[label= "
+ :: R"]; 
+nodo1761->nodo1762;
+nodo1762[label= "
+ :: Z"]; 
+nodo1762->nodo1763;
+nodo1763[label= "
+ :: RELACIONAL"]; 
+nodo1763->nodo1764;
+nodo1764[label= "
+ :: A"]; 
+nodo1764->nodo1765;
+nodo1765[label= "
+ :: EXP"]; 
+nodo1765->nodo1766;
+nodo1766[label= "
+ :: E"]; 
+nodo1766->nodo1767;
+nodo1767[label= "
+ :: T"]; 
+nodo1767->nodo1768;
+nodo1768[label= "
+ :: F"]; 
+nodo1768->nodo1769;
+nodo1769[label= "
+ :: G"]; 
+nodo1769->nodo1770;
+nodo1770[label= "
+ :: '##'"]; 
+nodo1750[label= "
+ :: SENTENCIAS"]; 
+nodo1750->nodo1771;
+nodo1750->nodo1772;
+nodo1771[label= "
+ :: SEN"]; 
+nodo1771->nodo1773;
+nodo1773[label= "
+ :: CONTENIDO"]; 
+nodo1773->nodo1774;
+nodo1774[label= "
+ :: CONT"]; 
+nodo1774->nodo1775;
+nodo1775[label= "
+ :: CONTENIDO3"]; 
+nodo1775->nodo1776;
+nodo1775->nodo1777;
+nodo1776[label= "
+ :: variablei"]; 
+nodo1777[label= "
+ :: METODO"]; 
+nodo1777->nodo1778;
+nodo1778[label= "
+ :: VALOR"]; 
+nodo1778->nodo1779;
+nodo1779[label= "
+ :: LOGICA"]; 
+nodo1779->nodo1780;
+nodo1780[label= "
+ :: L"]; 
+nodo1780->nodo1781;
+nodo1781[label= "
+ :: M"]; 
+nodo1781->nodo1782;
+nodo1782[label= "
+ :: N"]; 
+nodo1782->nodo1783;
+nodo1783[label= "
+ :: R"]; 
+nodo1783->nodo1784;
+nodo1784[label= "
+ :: Z"]; 
+nodo1784->nodo1785;
+nodo1785[label= "
+ :: RELACIONAL"]; 
+nodo1785->nodo1786;
+nodo1786[label= "
+ :: A"]; 
+nodo1786->nodo1787;
+nodo1787[label= "
+ :: EXP"]; 
+nodo1787->nodo1788;
+nodo1788[label= "
+ :: E"]; 
+nodo1788->nodo1789;
+nodo1789[label= "
+ :: T"]; 
+nodo1789->nodo1790;
+nodo1790[label= "
+ :: F"]; 
+nodo1790->nodo1791;
+nodo1791[label= "
+ :: G"]; 
+nodo1791->nodo1792;
+nodo1792[label= "
+ :: '#r'"]; 
+nodo1772[label= "
+ :: SENTENCIAS"]; 
+nodo1772->nodo1793;
+nodo1772->nodo1794;
+nodo1793[label= "
+ :: SEN"]; 
+nodo1793->nodo1795;
+nodo1795[label= "
+ :: CONTENIDO"]; 
+nodo1795->nodo1796;
+nodo1796[label= "
+ :: CONT"]; 
+nodo1796->nodo1797;
+nodo1797[label= "
+ :: CONTENIDO3"]; 
+nodo1797->nodo1798;
+nodo1797->nodo1799;
+nodo1798[label= "
+ :: variablei"]; 
+nodo1799[label= "
+ :: METODO"]; 
+nodo1799->nodo1800;
+nodo1800[label= "
+ :: VALOR"]; 
+nodo1800->nodo1801;
+nodo1801[label= "
+ :: LOGICA"]; 
+nodo1801->nodo1802;
+nodo1802[label= "
+ :: L"]; 
+nodo1802->nodo1803;
+nodo1803[label= "
+ :: M"]; 
+nodo1803->nodo1804;
+nodo1804[label= "
+ :: N"]; 
+nodo1804->nodo1805;
+nodo1805[label= "
+ :: R"]; 
+nodo1805->nodo1806;
+nodo1806[label= "
+ :: Z"]; 
+nodo1806->nodo1807;
+nodo1807[label= "
+ :: RELACIONAL"]; 
+nodo1807->nodo1808;
+nodo1808[label= "
+ :: A"]; 
+nodo1808->nodo1809;
+nodo1809[label= "
+ :: EXP"]; 
+nodo1809->nodo1810;
+nodo1810[label= "
+ :: E"]; 
+nodo1810->nodo1811;
+nodo1811[label= "
+ :: T"]; 
+nodo1811->nodo1812;
+nodo1812[label= "
+ :: F"]; 
+nodo1812->nodo1813;
+nodo1813[label= "
+ :: G"]; 
+nodo1813->nodo1814;
+nodo1814[label= "
+ :: '#t'"]; 
+nodo1794[label= "
+ :: SENTENCIAS"]; 
+nodo1794->nodo1815;
+nodo1794->nodo1816;
+nodo1815[label= "
+ :: SEN"]; 
+nodo1815->nodo1817;
+nodo1817[label= "
+ :: CONTENIDO"]; 
+nodo1817->nodo1818;
+nodo1818[label= "
+ :: CONT"]; 
+nodo1818->nodo1819;
+nodo1819[label= "
+ :: CONTENIDO3"]; 
+nodo1819->nodo1820;
+nodo1819->nodo1821;
+nodo1820[label= "
+ :: variablei"]; 
+nodo1821[label= "
+ :: METODO"]; 
+nodo1821->nodo1822;
+nodo1822[label= "
+ :: VALOR"]; 
+nodo1822->nodo1823;
+nodo1823[label= "
+ :: LOGICA"]; 
+nodo1823->nodo1824;
+nodo1824[label= "
+ :: L"]; 
+nodo1824->nodo1825;
+nodo1825[label= "
+ :: M"]; 
+nodo1825->nodo1826;
+nodo1826[label= "
+ :: N"]; 
+nodo1826->nodo1827;
+nodo1827[label= "
+ :: R"]; 
+nodo1827->nodo1828;
+nodo1828[label= "
+ :: Z"]; 
+nodo1828->nodo1829;
+nodo1829[label= "
+ :: RELACIONAL"]; 
+nodo1829->nodo1830;
+nodo1830[label= "
+ :: A"]; 
+nodo1830->nodo1831;
+nodo1831[label= "
+ :: EXP"]; 
+nodo1831->nodo1832;
+nodo1832[label= "
+ :: E"]; 
+nodo1832->nodo1833;
+nodo1833[label= "
+ :: T"]; 
+nodo1833->nodo1834;
+nodo1834[label= "
+ :: F"]; 
+nodo1834->nodo1835;
+nodo1835[label= "
+ :: G"]; 
+nodo1835->nodo1836;
+nodo1836[label= "
+ :: '#n'"]; 
+nodo1816[label= "
+ :: SENTENCIAS"]; 
+nodo1816->nodo1837;
+nodo1816->nodo1838;
+nodo1837[label= "
+ :: SEN"]; 
+nodo1837->nodo1839;
+nodo1839[label= "
+ :: CONTENIDO"]; 
+nodo1839->nodo1840;
+nodo1840[label= "
+ :: CONT"]; 
+nodo1840->nodo1841;
+nodo1841[label= "
+ :: CONTENIDO3"]; 
+nodo1841->nodo1842;
+nodo1841->nodo1843;
+nodo1842[label= "
+ :: variablei"]; 
+nodo1843[label= "
+ :: METODO"]; 
+nodo1843->nodo1844;
+nodo1844[label= "
+ :: VALOR"]; 
+nodo1844->nodo1845;
+nodo1845[label= "
+ :: LOGICA"]; 
+nodo1845->nodo1846;
+nodo1846[label= "
+ :: L"]; 
+nodo1846->nodo1847;
+nodo1847[label= "
+ :: M"]; 
+nodo1847->nodo1848;
+nodo1848[label= "
+ :: N"]; 
+nodo1848->nodo1849;
+nodo1849[label= "
+ :: R"]; 
+nodo1849->nodo1850;
+nodo1850[label= "
+ :: Z"]; 
+nodo1850->nodo1851;
+nodo1851[label= "
+ :: RELACIONAL"]; 
+nodo1851->nodo1852;
+nodo1852[label= "
+ :: A"]; 
+nodo1852->nodo1853;
+nodo1853[label= "
+ :: EXP"]; 
+nodo1853->nodo1854;
+nodo1854[label= "
+ :: E"]; 
+nodo1854->nodo1855;
+nodo1855[label= "
+ :: T"]; 
+nodo1855->nodo1856;
+nodo1856[label= "
+ :: F"]; 
+nodo1856->nodo1857;
+nodo1857[label= "
+ :: G"]; 
+nodo1857->nodo1858;
+nodo1858[label= "
+ :: '#''"]; 
+nodo1838[label= "
+ :: SENTENCIAS"]; 
+nodo1838->nodo1859;
+nodo1838->nodo1860;
+nodo1859[label= "
+ :: SEN"]; 
+nodo1859->nodo1861;
+nodo1861[label= "
+ :: CONTENIDO"]; 
+nodo1861->nodo1862;
+nodo1862[label= "
+ :: CONT"]; 
+nodo1862->nodo1863;
+nodo1863[label= "
+ :: CONTENIDO3"]; 
+nodo1863->nodo1864;
+nodo1863->nodo1866;
+nodo1863->nodo1867;
+nodo1864[label= "
+ :: TIPOMETODO"]; 
+nodo1864->nodo1865;
+nodo1865[label= "
+ :: tentero"]; 
+nodo1866[label= "
+ :: numero1"]; 
+nodo1867[label= "
+ :: METODO"]; 
+nodo1867->nodo1868;
+nodo1868[label= "
+ :: VALOR"]; 
+nodo1868->nodo1869;
+nodo1869[label= "
+ :: LOGICA"]; 
+nodo1869->nodo1870;
+nodo1870[label= "
+ :: L"]; 
+nodo1870->nodo1871;
+nodo1871[label= "
+ :: M"]; 
+nodo1871->nodo1872;
+nodo1872[label= "
+ :: N"]; 
+nodo1872->nodo1873;
+nodo1873[label= "
+ :: R"]; 
+nodo1873->nodo1874;
+nodo1874[label= "
+ :: Z"]; 
+nodo1874->nodo1875;
+nodo1875[label= "
+ :: RELACIONAL"]; 
+nodo1875->nodo1876;
+nodo1876[label= "
+ :: A"]; 
+nodo1876->nodo1877;
+nodo1877[label= "
+ :: EXP"]; 
+nodo1877->nodo1878;
+nodo1878[label= "
+ :: E"]; 
+nodo1878->nodo1879;
+nodo1879[label= "
+ :: T"]; 
+nodo1879->nodo1880;
+nodo1880[label= "
+ :: F"]; 
+nodo1880->nodo1881;
+nodo1881[label= "
+ :: G"]; 
+nodo1881->nodo1882;
+nodo1882[label= "
+ :: true"]; 
+nodo1860[label= "
+ :: SENTENCIAS"]; 
+nodo1860->nodo1883;
+nodo1860->nodo1884;
+nodo1883[label= "
+ :: SEN"]; 
+nodo1883->nodo1885;
+nodo1885[label= "
+ :: CONTENIDO"]; 
+nodo1885->nodo1886;
+nodo1886[label= "
+ :: CONT"]; 
+nodo1886->nodo1887;
+nodo1887[label= "
+ :: CONTENIDO3"]; 
+nodo1887->nodo1888;
+nodo1887->nodo1890;
+nodo1887->nodo1891;
+nodo1888[label= "
+ :: TIPOMETODO"]; 
+nodo1888->nodo1889;
+nodo1889[label= "
+ :: tboolean"]; 
+nodo1890[label= "
+ :: contador"]; 
+nodo1891[label= "
+ :: METODO"]; 
+nodo1891->nodo1892;
+nodo1892[label= "
+ :: VALOR"]; 
+nodo1892->nodo1893;
+nodo1893[label= "
+ :: LOGICA"]; 
+nodo1893->nodo1894;
+nodo1894[label= "
+ :: L"]; 
+nodo1894->nodo1895;
+nodo1895[label= "
+ :: M"]; 
+nodo1895->nodo1896;
+nodo1896[label= "
+ :: N"]; 
+nodo1896->nodo1897;
+nodo1897[label= "
+ :: R"]; 
+nodo1897->nodo1898;
+nodo1898[label= "
+ :: Z"]; 
+nodo1898->nodo1899;
+nodo1899[label= "
+ :: RELACIONAL"]; 
+nodo1899->nodo1900;
+nodo1900[label= "
+ :: A"]; 
+nodo1900->nodo1901;
+nodo1901[label= "
+ :: EXP"]; 
+nodo1901->nodo1902;
+nodo1902[label= "
+ :: E"]; 
+nodo1902->nodo1903;
+nodo1902->nodo1912;
+nodo1903[label= "
+ :: T"]; 
+nodo1903->nodo1904;
+nodo1903->nodo1907;
+nodo1904[label= "
+ :: F"]; 
+nodo1904->nodo1905;
+nodo1905[label= "
+ :: G"]; 
+nodo1905->nodo1906;
+nodo1906[label= "
+ :: 50.5"]; 
+nodo1907[label= "
+ :: TP"]; 
+nodo1907->nodo1908;
+nodo1907->nodo1909;
+nodo1908[label= "
+ :: *"]; 
+nodo1909[label= "
+ :: F"]; 
+nodo1909->nodo1910;
+nodo1910[label= "
+ :: G"]; 
+nodo1910->nodo1911;
+nodo1911[label= "
+ :: 20"]; 
+nodo1912[label= "
+ :: EP"]; 
+nodo1912->nodo1913;
+nodo1912->nodo1914;
+nodo1913[label= "
+ :: +"]; 
+nodo1914[label= "
+ :: T"]; 
+nodo1914->nodo1915;
+nodo1914->nodo1918;
+nodo1915[label= "
+ :: F"]; 
+nodo1915->nodo1916;
+nodo1916[label= "
+ :: G"]; 
+nodo1916->nodo1917;
+nodo1917[label= "
+ :: 115"]; 
+nodo1918[label= "
+ :: TP"]; 
+nodo1918->nodo1919;
+nodo1918->nodo1920;
+nodo1919[label= "
+ :: *"]; 
+nodo1920[label= "
+ :: F"]; 
+nodo1920->nodo1921;
+nodo1921[label= "
+ :: G"]; 
+nodo1921->nodo1922;
+nodo1922[label= "
+ :: b"]; 
+nodo1884[label= "
+ :: SENTENCIAS"]; 
+nodo1884->nodo1923;
+nodo1884->nodo1924;
+nodo1923[label= "
+ :: SEN"]; 
+nodo1923->nodo1925;
+nodo1925[label= "
+ :: CONTENIDO"]; 
+nodo1925->nodo1926;
+nodo1926[label= "
+ :: CONT"]; 
+nodo1926->nodo1927;
+nodo1927[label= "
+ :: CONTENIDO3"]; 
+nodo1927->nodo1928;
+nodo1927->nodo1930;
+nodo1927->nodo1931;
+nodo1928[label= "
+ :: TIPOMETODO"]; 
+nodo1928->nodo1929;
+nodo1929[label= "
+ :: tcadena"]; 
+nodo1930[label= "
+ :: cad"]; 
+nodo1931[label= "
+ :: METODO"]; 
+nodo1931->nodo1932;
+nodo1932[label= "
+ :: VALOR"]; 
+nodo1932->nodo1933;
+nodo1933[label= "
+ :: LOGICA"]; 
+nodo1933->nodo1934;
+nodo1934[label= "
+ :: L"]; 
+nodo1934->nodo1935;
+nodo1935[label= "
+ :: M"]; 
+nodo1935->nodo1936;
+nodo1936[label= "
+ :: N"]; 
+nodo1936->nodo1937;
+nodo1937[label= "
+ :: R"]; 
+nodo1937->nodo1938;
+nodo1938[label= "
+ :: Z"]; 
+nodo1938->nodo1939;
+nodo1939[label= "
+ :: RELACIONAL"]; 
+nodo1939->nodo1940;
+nodo1940[label= "
+ :: A"]; 
+nodo1940->nodo1941;
+nodo1941[label= "
+ :: EXP"]; 
+nodo1941->nodo1942;
+nodo1942[label= "
+ :: E"]; 
+nodo1942->nodo1943;
+nodo1942->nodo1947;
+nodo1943[label= "
+ :: T"]; 
+nodo1943->nodo1944;
+nodo1944[label= "
+ :: F"]; 
+nodo1944->nodo1945;
+nodo1945[label= "
+ :: G"]; 
+nodo1945->nodo1946;
+nodo1946[label= "
+ :: 'holamundo'"]; 
+nodo1947[label= "
+ :: EP"]; 
+nodo1947->nodo1948;
+nodo1947->nodo1949;
+nodo1947->nodo1953;
+nodo1948[label= "
+ :: +"]; 
+nodo1949[label= "
+ :: T"]; 
+nodo1949->nodo1950;
+nodo1950[label= "
+ :: F"]; 
+nodo1950->nodo1951;
+nodo1951[label= "
+ :: G"]; 
+nodo1951->nodo1952;
+nodo1952[label= "
+ :: a"]; 
+nodo1953[label= "
+ :: EP"]; 
+nodo1953->nodo1954;
+nodo1953->nodo1955;
+nodo1954[label= "
+ :: -"]; 
+nodo1955[label= "
+ :: T"]; 
+nodo1955->nodo1956;
+nodo1956[label= "
+ :: F"]; 
+nodo1956->nodo1957;
+nodo1957[label= "
+ :: G"]; 
+nodo1957->nodo1958;
+nodo1958[label= "
+ :: c"]; 
+nodo1924[label= "
+ :: SENTENCIAS"]; 
+nodo1924->nodo1959;
+nodo1924->nodo1960;
+nodo1959[label= "
+ :: SEN"]; 
+nodo1959->nodo1961;
+nodo1961[label= "
+ :: CONTENIDO"]; 
+nodo1961->nodo1962;
+nodo1962[label= "
+ :: CONT"]; 
+nodo1962->nodo1963;
+nodo1963[label= "
+ :: CONTENIDO3"]; 
+nodo1963->nodo1964;
+nodo1963->nodo1966;
+nodo1963->nodo1967;
+nodo1964[label= "
+ :: TIPOMETODO"]; 
+nodo1964->nodo1965;
+nodo1965[label= "
+ :: tcaracter"]; 
+nodo1966[label= "
+ :: car"]; 
+nodo1967[label= "
+ :: METODO"]; 
+nodo1967->nodo1968;
+nodo1968[label= "
+ :: VALOR"]; 
+nodo1968->nodo1969;
+nodo1969[label= "
+ :: LOGICA"]; 
+nodo1969->nodo1970;
+nodo1970[label= "
+ :: L"]; 
+nodo1970->nodo1971;
+nodo1971[label= "
+ :: M"]; 
+nodo1971->nodo1972;
+nodo1972[label= "
+ :: N"]; 
+nodo1972->nodo1973;
+nodo1973[label= "
+ :: R"]; 
+nodo1973->nodo1974;
+nodo1974[label= "
+ :: Z"]; 
+nodo1974->nodo1975;
+nodo1975[label= "
+ :: RELACIONAL"]; 
+nodo1975->nodo1976;
+nodo1976[label= "
+ :: A"]; 
+nodo1976->nodo1977;
+nodo1977[label= "
+ :: EXP"]; 
+nodo1977->nodo1978;
+nodo1978[label= "
+ :: E"]; 
+nodo1978->nodo1979;
+nodo1978->nodo1983;
+nodo1979[label= "
+ :: T"]; 
+nodo1979->nodo1980;
+nodo1980[label= "
+ :: F"]; 
+nodo1980->nodo1981;
+nodo1981[label= "
+ :: G"]; 
+nodo1981->nodo1982;
+nodo1982[label= "
+ :: 'c'"]; 
+nodo1983[label= "
+ :: EP"]; 
+nodo1983->nodo1984;
+nodo1983->nodo1985;
+nodo1984[label= "
+ :: +"]; 
+nodo1985[label= "
+ :: T"]; 
+nodo1985->nodo1986;
+nodo1986[label= "
+ :: F"]; 
+nodo1986->nodo1987;
+nodo1987[label= "
+ :: G"]; 
+nodo1987->nodo1988;
+nodo1988[label= "
+ :: 150"]; 
+nodo1960[label= "
+ :: SENTENCIAS"]; 
+nodo1960->nodo1989;
+nodo1960->nodo1990;
+nodo1989[label= "
+ :: SEN"]; 
+nodo1989->nodo1991;
+nodo1991[label= "
+ :: CONTENIDO"]; 
+nodo1991->nodo1992;
+nodo1992[label= "
+ :: CONT"]; 
+nodo1992->nodo1993;
+nodo1993[label= "
+ :: CONTENIDO3"]; 
+nodo1993->nodo1994;
+nodo1993->nodo1996;
+nodo1993->nodo1997;
+nodo1994[label= "
+ :: TIPOMETODO"]; 
+nodo1994->nodo1995;
+nodo1995[label= "
+ :: tdoble"]; 
+nodo1996[label= "
+ :: dob"]; 
+nodo1997[label= "
+ :: METODO"]; 
+nodo1997->nodo1998;
+nodo1998[label= "
+ :: VALOR"]; 
+nodo1998->nodo1999;
+nodo1999[label= "
+ :: LOGICA"]; 
+nodo1999->nodo2000;
+nodo2000[label= "
+ :: L"]; 
+nodo2000->nodo2001;
+nodo2001[label= "
+ :: M"]; 
+nodo2001->nodo2002;
+nodo2002[label= "
+ :: N"]; 
+nodo2002->nodo2003;
+nodo2003[label= "
+ :: R"]; 
+nodo2003->nodo2004;
+nodo2004[label= "
+ :: Z"]; 
+nodo2004->nodo2005;
+nodo2005[label= "
+ :: RELACIONAL"]; 
+nodo2005->nodo2006;
+nodo2006[label= "
+ :: A"]; 
+nodo2006->nodo2007;
+nodo2007[label= "
+ :: EXP"]; 
+nodo2007->nodo2008;
+nodo2008[label= "
+ :: E"]; 
+nodo2008->nodo2009;
+nodo2008->nodo2013;
+nodo2009[label= "
+ :: T"]; 
+nodo2009->nodo2010;
+nodo2010[label= "
+ :: F"]; 
+nodo2010->nodo2011;
+nodo2011[label= "
+ :: G"]; 
+nodo2011->nodo2012;
+nodo2012[label= "
+ :: 12.3201"]; 
+nodo2013[label= "
+ :: EP"]; 
+nodo2013->nodo2014;
+nodo2013->nodo2015;
+nodo2013->nodo2019;
+nodo2014[label= "
+ :: +"]; 
+nodo2015[label= "
+ :: T"]; 
+nodo2015->nodo2016;
+nodo2016[label= "
+ :: F"]; 
+nodo2016->nodo2017;
+nodo2017[label= "
+ :: G"]; 
+nodo2017->nodo2018;
+nodo2018[label= "
+ :: 2342"]; 
+nodo2019[label= "
+ :: EP"]; 
+nodo2019->nodo2020;
+nodo2019->nodo2021;
+nodo2020[label= "
+ :: +"]; 
+nodo2021[label= "
+ :: T"]; 
+nodo2021->nodo2022;
+nodo2022[label= "
+ :: F"]; 
+nodo2022->nodo2023;
+nodo2023[label= "
+ :: G"]; 
+nodo2023->nodo2024;
+nodo2024[label= "
+ :: true"]; 
+nodo1990[label= "
+ :: SENTENCIAS"]; 
+nodo1990->nodo2025;
+nodo1990->nodo2026;
+nodo2025[label= "
+ :: SEN"]; 
+nodo2025->nodo2027;
+nodo2027[label= "
+ :: CONTENIDO"]; 
+nodo2027->nodo2028;
+nodo2028[label= "
+ :: CONT"]; 
+nodo2028->nodo2029;
+nodo2029[label= "
+ :: CONTENIDO3"]; 
+nodo2029->nodo2030;
+nodo2029->nodo2031;
+nodo2030[label= "
+ :: variable1"]; 
+nodo2031[label= "
+ :: METODO"]; 
+nodo2031->nodo2032;
+nodo2032[label= "
+ :: CONT2"]; 
+nodo2032->nodo2033;
+nodo2033[label= "
+ :: ++"]; 
+nodo2026[label= "
+ :: SENTENCIAS"]; 
+nodo2026->nodo2034;
+nodo2026->nodo2035;
+nodo2034[label= "
+ :: SEN"]; 
+nodo2034->nodo2036;
+nodo2036[label= "
+ :: CONTENIDO"]; 
+nodo2036->nodo2037;
+nodo2037[label= "
+ :: CONT"]; 
+nodo2037->nodo2038;
+nodo2038[label= "
+ :: CONTENIDO3"]; 
+nodo2038->nodo2039;
+nodo2038->nodo2040;
+nodo2039[label= "
+ :: variable2"]; 
+nodo2040[label= "
+ :: METODO"]; 
+nodo2040->nodo2041;
+nodo2041[label= "
+ :: CONT2"]; 
+nodo2041->nodo2042;
+nodo2042[label= "
+ :: --"]; 
+nodo2035[label= "
+ :: SENTENCIAS"]; 
+nodo2035->nodo2043;
+nodo2035->nodo2044;
+nodo2043[label= "
+ :: SEN"]; 
+nodo2043->nodo2045;
+nodo2045[label= "
+ :: CONTENIDO"]; 
+nodo2045->nodo2046;
+nodo2046[label= "
+ :: CONT"]; 
+nodo2046->nodo2047;
+nodo2047[label= "
+ :: CONTENIDO3"]; 
+nodo2047->nodo2048;
+nodo2047->nodo2049;
+nodo2048[label= "
+ :: varc"]; 
+nodo2049[label= "
+ :: METODO"]; 
+nodo2049->nodo2050;
+nodo2050[label= "
+ :: CONT2"]; 
+nodo2050->nodo2051;
+nodo2051[label= "
+ :: ++"]; 
+nodo2044[label= "
+ :: SENTENCIAS"]; 
+nodo2044->nodo2052;
+nodo2044->nodo2053;
+nodo2052[label= "
+ :: SEN"]; 
+nodo2052->nodo2054;
+nodo2054[label= "
+ :: CONTENIDO"]; 
+nodo2054->nodo2055;
+nodo2055[label= "
+ :: CONT"]; 
+nodo2055->nodo2056;
+nodo2056[label= "
+ :: CONTENIDO3"]; 
+nodo2056->nodo2057;
+nodo2056->nodo2058;
+nodo2057[label= "
+ :: vard"]; 
+nodo2058[label= "
+ :: METODO"]; 
+nodo2058->nodo2059;
+nodo2059[label= "
+ :: CONT2"]; 
+nodo2059->nodo2060;
+nodo2060[label= "
+ :: --"]; 
+nodo2053[label= "
+ :: SENTENCIAS"]; 
+nodo2053->nodo2061;
+nodo2053->nodo2062;
+nodo2061[label= "
+ :: SEN"]; 
+nodo2061->nodo2063;
+nodo2063[label= "
+ :: CONTENIDO"]; 
+nodo2063->nodo2064;
+nodo2064[label= "
+ :: CONT"]; 
+nodo2064->nodo2065;
+nodo2065[label= "
+ :: CONTENIDO3"]; 
+nodo2065->nodo2066;
+nodo2065->nodo2067;
+nodo2066[label= "
+ :: varmas"]; 
+nodo2067[label= "
+ :: METODO"]; 
+nodo2067->nodo2068;
+nodo2067->nodo2070;
+nodo2068[label= "
+ :: CONT2"]; 
+nodo2068->nodo2069;
+nodo2069[label= "
+ :: +="]; 
+nodo2070[label= "
+ :: VALOR"]; 
+nodo2070->nodo2071;
+nodo2071[label= "
+ :: LOGICA"]; 
+nodo2071->nodo2072;
+nodo2072[label= "
+ :: L"]; 
+nodo2072->nodo2073;
+nodo2073[label= "
+ :: M"]; 
+nodo2073->nodo2074;
+nodo2074[label= "
+ :: N"]; 
+nodo2074->nodo2075;
+nodo2075[label= "
+ :: R"]; 
+nodo2075->nodo2076;
+nodo2076[label= "
+ :: Z"]; 
+nodo2076->nodo2077;
+nodo2077[label= "
+ :: RELACIONAL"]; 
+nodo2077->nodo2078;
+nodo2078[label= "
+ :: A"]; 
+nodo2078->nodo2079;
+nodo2079[label= "
+ :: EXP"]; 
+nodo2079->nodo2080;
+nodo2080[label= "
+ :: E"]; 
+nodo2080->nodo2081;
+nodo2080->nodo2085;
+nodo2081[label= "
+ :: T"]; 
+nodo2081->nodo2082;
+nodo2082[label= "
+ :: F"]; 
+nodo2082->nodo2083;
+nodo2083[label= "
+ :: G"]; 
+nodo2083->nodo2084;
+nodo2084[label= "
+ :: c"]; 
+nodo2085[label= "
+ :: EP"]; 
+nodo2085->nodo2086;
+nodo2085->nodo2087;
+nodo2085->nodo2091;
+nodo2086[label= "
+ :: +"]; 
+nodo2087[label= "
+ :: T"]; 
+nodo2087->nodo2088;
+nodo2088[label= "
+ :: F"]; 
+nodo2088->nodo2089;
+nodo2089[label= "
+ :: G"]; 
+nodo2089->nodo2090;
+nodo2090[label= "
+ :: d"]; 
+nodo2091[label= "
+ :: EP"]; 
+nodo2091->nodo2092;
+nodo2091->nodo2093;
+nodo2092[label= "
+ :: +"]; 
+nodo2093[label= "
+ :: T"]; 
+nodo2093->nodo2094;
+nodo2094[label= "
+ :: F"]; 
+nodo2094->nodo2095;
+nodo2095[label= "
+ :: G"]; 
+nodo2095->nodo2096;
+nodo2096[label= "
+ :: quepisados"]; 
+nodo2062[label= "
+ :: SENTENCIAS"]; 
+nodo2062->nodo2097;
+nodo2062->nodo2098;
+nodo2097[label= "
+ :: SEN"]; 
+nodo2097->nodo2099;
+nodo2099[label= "
+ :: CONTENIDO"]; 
+nodo2099->nodo2100;
+nodo2100[label= "
+ :: CONT"]; 
+nodo2100->nodo2101;
+nodo2101[label= "
+ :: CONTENIDO3"]; 
+nodo2101->nodo2102;
+nodo2101->nodo2103;
+nodo2102[label= "
+ :: varmas"]; 
+nodo2103[label= "
+ :: METODO"]; 
+nodo2103->nodo2104;
+nodo2103->nodo2106;
+nodo2104[label= "
+ :: CONT2"]; 
+nodo2104->nodo2105;
+nodo2105[label= "
+ :: +="]; 
+nodo2106[label= "
+ :: VALOR"]; 
+nodo2106->nodo2107;
+nodo2107[label= "
+ :: LOGICA"]; 
+nodo2107->nodo2108;
+nodo2108[label= "
+ :: L"]; 
+nodo2108->nodo2109;
+nodo2109[label= "
+ :: M"]; 
+nodo2109->nodo2110;
+nodo2110[label= "
+ :: N"]; 
+nodo2110->nodo2111;
+nodo2111[label= "
+ :: R"]; 
+nodo2111->nodo2112;
+nodo2112[label= "
+ :: Z"]; 
+nodo2112->nodo2113;
+nodo2113[label= "
+ :: RELACIONAL"]; 
+nodo2113->nodo2114;
+nodo2114[label= "
+ :: A"]; 
+nodo2114->nodo2115;
+nodo2115[label= "
+ :: EXP"]; 
+nodo2115->nodo2116;
+nodo2116[label= "
+ :: E"]; 
+nodo2116->nodo2117;
+nodo2116->nodo2121;
+nodo2117[label= "
+ :: T"]; 
+nodo2117->nodo2118;
+nodo2118[label= "
+ :: F"]; 
+nodo2118->nodo2119;
+nodo2119[label= "
+ :: G"]; 
+nodo2119->nodo2120;
+nodo2120[label= "
+ :: 10"]; 
+nodo2121[label= "
+ :: EP"]; 
+nodo2121->nodo2122;
+nodo2121->nodo2123;
+nodo2122[label= "
+ :: +"]; 
+nodo2123[label= "
+ :: T"]; 
+nodo2123->nodo2124;
+nodo2124[label= "
+ :: F"]; 
+nodo2124->nodo2125;
+nodo2125[label= "
+ :: G"]; 
+nodo2125->nodo2126;
+nodo2126[label= "
+ :: perro"]; 
+nodo2098[label= "
+ :: SENTENCIAS"]; 
+nodo2098->nodo2127;
+nodo2098->nodo2128;
+nodo2127[label= "
+ :: SEN"]; 
+nodo2127->nodo2129;
+nodo2129[label= "
+ :: CONTENIDO"]; 
+nodo2129->nodo2130;
+nodo2130[label= "
+ :: CONT"]; 
+nodo2130->nodo2131;
+nodo2131[label= "
+ :: CONTENIDO3"]; 
+nodo2131->nodo2132;
+nodo2131->nodo2133;
+nodo2132[label= "
+ :: varmas"]; 
+nodo2133[label= "
+ :: METODO"]; 
+nodo2133->nodo2134;
+nodo2133->nodo2136;
+nodo2134[label= "
+ :: CONT2"]; 
+nodo2134->nodo2135;
+nodo2135[label= "
+ :: +="]; 
+nodo2136[label= "
+ :: VALOR"]; 
+nodo2136->nodo2137;
+nodo2137[label= "
+ :: LOGICA"]; 
+nodo2137->nodo2138;
+nodo2138[label= "
+ :: L"]; 
+nodo2138->nodo2139;
+nodo2139[label= "
+ :: M"]; 
+nodo2139->nodo2140;
+nodo2140[label= "
+ :: N"]; 
+nodo2140->nodo2141;
+nodo2141[label= "
+ :: R"]; 
+nodo2141->nodo2142;
+nodo2142[label= "
+ :: Z"]; 
+nodo2142->nodo2143;
+nodo2143[label= "
+ :: RELACIONAL"]; 
+nodo2143->nodo2144;
+nodo2144[label= "
+ :: A"]; 
+nodo2144->nodo2145;
+nodo2145[label= "
+ :: EXP"]; 
+nodo2145->nodo2146;
+nodo2146[label= "
+ :: E"]; 
+nodo2146->nodo2147;
+nodo2147[label= "
+ :: T"]; 
+nodo2147->nodo2148;
+nodo2148[label= "
+ :: F"]; 
+nodo2148->nodo2149;
+nodo2149[label= "
+ :: G"]; 
+nodo2149->nodo2150;
+nodo2150[label= "
+ :: cad"]; 
+nodo2128[label= "
+ :: SENTENCIAS"]; 
+nodo2128->nodo2151;
+nodo2128->nodo2152;
+nodo2151[label= "
+ :: SEN"]; 
+nodo2151->nodo2153;
+nodo2153[label= "
+ :: CONTENIDO"]; 
+nodo2153->nodo2154;
+nodo2154[label= "
+ :: CONT"]; 
+nodo2154->nodo2155;
+nodo2155[label= "
+ :: CONTENIDO3"]; 
+nodo2155->nodo2156;
+nodo2155->nodo2157;
+nodo2156[label= "
+ :: varmas"]; 
+nodo2157[label= "
+ :: METODO"]; 
+nodo2157->nodo2158;
+nodo2157->nodo2160;
+nodo2158[label= "
+ :: CONT2"]; 
+nodo2158->nodo2159;
+nodo2159[label= "
+ :: +="]; 
+nodo2160[label= "
+ :: VALOR"]; 
+nodo2160->nodo2161;
+nodo2161[label= "
+ :: LOGICA"]; 
+nodo2161->nodo2162;
+nodo2162[label= "
+ :: L"]; 
+nodo2162->nodo2163;
+nodo2163[label= "
+ :: M"]; 
+nodo2163->nodo2164;
+nodo2164[label= "
+ :: N"]; 
+nodo2164->nodo2165;
+nodo2165[label= "
+ :: R"]; 
+nodo2165->nodo2166;
+nodo2166[label= "
+ :: Z"]; 
+nodo2166->nodo2167;
+nodo2167[label= "
+ :: RELACIONAL"]; 
+nodo2167->nodo2168;
+nodo2168[label= "
+ :: A"]; 
+nodo2168->nodo2169;
+nodo2169[label= "
+ :: EXP"]; 
+nodo2169->nodo2170;
+nodo2170[label= "
+ :: E"]; 
+nodo2170->nodo2171;
+nodo2171[label= "
+ :: T"]; 
+nodo2171->nodo2172;
+nodo2172[label= "
+ :: F"]; 
+nodo2172->nodo2173;
+nodo2173[label= "
+ :: G"]; 
+nodo2173->nodo2174;
+nodo2174[label= "
+ :: 14234"]; 
+nodo2152[label= "
+ :: SENTENCIAS"]; 
+nodo2152->nodo2175;
+nodo2152->nodo2176;
+nodo2175[label= "
+ :: SEN"]; 
+nodo2175->nodo2177;
+nodo2177[label= "
+ :: CONTENIDO"]; 
+nodo2177->nodo2178;
+nodo2178[label= "
+ :: CONT"]; 
+nodo2178->nodo2179;
+nodo2179[label= "
+ :: CONTENIDO3"]; 
+nodo2179->nodo2180;
+nodo2179->nodo2181;
+nodo2180[label= "
+ :: varmenos"]; 
+nodo2181[label= "
+ :: METODO"]; 
+nodo2181->nodo2182;
+nodo2181->nodo2184;
+nodo2182[label= "
+ :: CONT2"]; 
+nodo2182->nodo2183;
+nodo2183[label= "
+ :: -="]; 
+nodo2184[label= "
+ :: VALOR"]; 
+nodo2184->nodo2185;
+nodo2185[label= "
+ :: LOGICA"]; 
+nodo2185->nodo2186;
+nodo2186[label= "
+ :: L"]; 
+nodo2186->nodo2187;
+nodo2187[label= "
+ :: M"]; 
+nodo2187->nodo2188;
+nodo2188[label= "
+ :: N"]; 
+nodo2188->nodo2189;
+nodo2189[label= "
+ :: R"]; 
+nodo2189->nodo2190;
+nodo2190[label= "
+ :: Z"]; 
+nodo2190->nodo2191;
+nodo2191[label= "
+ :: RELACIONAL"]; 
+nodo2191->nodo2192;
+nodo2192[label= "
+ :: A"]; 
+nodo2192->nodo2193;
+nodo2193[label= "
+ :: EXP"]; 
+nodo2193->nodo2194;
+nodo2194[label= "
+ :: E"]; 
+nodo2194->nodo2195;
+nodo2194->nodo2199;
+nodo2195[label= "
+ :: T"]; 
+nodo2195->nodo2196;
+nodo2196[label= "
+ :: F"]; 
+nodo2196->nodo2197;
+nodo2197[label= "
+ :: G"]; 
+nodo2197->nodo2198;
+nodo2198[label= "
+ :: c"]; 
+nodo2199[label= "
+ :: EP"]; 
+nodo2199->nodo2200;
+nodo2199->nodo2201;
+nodo2199->nodo2205;
+nodo2200[label= "
+ :: -"]; 
+nodo2201[label= "
+ :: T"]; 
+nodo2201->nodo2202;
+nodo2202[label= "
+ :: F"]; 
+nodo2202->nodo2203;
+nodo2203[label= "
+ :: G"]; 
+nodo2203->nodo2204;
+nodo2204[label= "
+ :: d"]; 
+nodo2205[label= "
+ :: EP"]; 
+nodo2205->nodo2206;
+nodo2205->nodo2207;
+nodo2206[label= "
+ :: -"]; 
+nodo2207[label= "
+ :: T"]; 
+nodo2207->nodo2208;
+nodo2208[label= "
+ :: F"]; 
+nodo2208->nodo2209;
+nodo2209[label= "
+ :: G"]; 
+nodo2209->nodo2210;
+nodo2210[label= "
+ :: quepisados"]; 
+nodo2176[label= "
+ :: SENTENCIAS"]; 
+nodo2176->nodo2211;
+nodo2176->nodo2212;
+nodo2211[label= "
+ :: SEN"]; 
+nodo2211->nodo2213;
+nodo2213[label= "
+ :: CONTENIDO"]; 
+nodo2213->nodo2214;
+nodo2214[label= "
+ :: CONT"]; 
+nodo2214->nodo2215;
+nodo2215[label= "
+ :: CONTENIDO3"]; 
+nodo2215->nodo2216;
+nodo2215->nodo2217;
+nodo2216[label= "
+ :: varmenos"]; 
+nodo2217[label= "
+ :: METODO"]; 
+nodo2217->nodo2218;
+nodo2217->nodo2220;
+nodo2218[label= "
+ :: CONT2"]; 
+nodo2218->nodo2219;
+nodo2219[label= "
+ :: -="]; 
+nodo2220[label= "
+ :: VALOR"]; 
+nodo2220->nodo2221;
+nodo2221[label= "
+ :: LOGICA"]; 
+nodo2221->nodo2222;
+nodo2222[label= "
+ :: L"]; 
+nodo2222->nodo2223;
+nodo2223[label= "
+ :: M"]; 
+nodo2223->nodo2224;
+nodo2224[label= "
+ :: N"]; 
+nodo2224->nodo2225;
+nodo2225[label= "
+ :: R"]; 
+nodo2225->nodo2226;
+nodo2226[label= "
+ :: Z"]; 
+nodo2226->nodo2227;
+nodo2227[label= "
+ :: RELACIONAL"]; 
+nodo2227->nodo2228;
+nodo2228[label= "
+ :: A"]; 
+nodo2228->nodo2229;
+nodo2229[label= "
+ :: EXP"]; 
+nodo2229->nodo2230;
+nodo2230[label= "
+ :: E"]; 
+nodo2230->nodo2231;
+nodo2230->nodo2235;
+nodo2231[label= "
+ :: T"]; 
+nodo2231->nodo2232;
+nodo2232[label= "
+ :: F"]; 
+nodo2232->nodo2233;
+nodo2233[label= "
+ :: G"]; 
+nodo2233->nodo2234;
+nodo2234[label= "
+ :: 10"]; 
+nodo2235[label= "
+ :: EP"]; 
+nodo2235->nodo2236;
+nodo2235->nodo2237;
+nodo2236[label= "
+ :: -"]; 
+nodo2237[label= "
+ :: T"]; 
+nodo2237->nodo2238;
+nodo2238[label= "
+ :: F"]; 
+nodo2238->nodo2239;
+nodo2239[label= "
+ :: G"]; 
+nodo2239->nodo2240;
+nodo2240[label= "
+ :: perro"]; 
+nodo2212[label= "
+ :: SENTENCIAS"]; 
+nodo2212->nodo2241;
+nodo2212->nodo2242;
+nodo2241[label= "
+ :: SEN"]; 
+nodo2241->nodo2243;
+nodo2243[label= "
+ :: CONTENIDO"]; 
+nodo2243->nodo2244;
+nodo2244[label= "
+ :: CONT"]; 
+nodo2244->nodo2245;
+nodo2245[label= "
+ :: CONTENIDO3"]; 
+nodo2245->nodo2246;
+nodo2245->nodo2247;
+nodo2246[label= "
+ :: varmenos"]; 
+nodo2247[label= "
+ :: METODO"]; 
+nodo2247->nodo2248;
+nodo2247->nodo2250;
+nodo2248[label= "
+ :: CONT2"]; 
+nodo2248->nodo2249;
+nodo2249[label= "
+ :: -="]; 
+nodo2250[label= "
+ :: VALOR"]; 
+nodo2250->nodo2251;
+nodo2251[label= "
+ :: LOGICA"]; 
+nodo2251->nodo2252;
+nodo2252[label= "
+ :: L"]; 
+nodo2252->nodo2253;
+nodo2253[label= "
+ :: M"]; 
+nodo2253->nodo2254;
+nodo2254[label= "
+ :: N"]; 
+nodo2254->nodo2255;
+nodo2255[label= "
+ :: R"]; 
+nodo2255->nodo2256;
+nodo2256[label= "
+ :: Z"]; 
+nodo2256->nodo2257;
+nodo2257[label= "
+ :: RELACIONAL"]; 
+nodo2257->nodo2258;
+nodo2258[label= "
+ :: A"]; 
+nodo2258->nodo2259;
+nodo2259[label= "
+ :: EXP"]; 
+nodo2259->nodo2260;
+nodo2260[label= "
+ :: E"]; 
+nodo2260->nodo2261;
+nodo2261[label= "
+ :: T"]; 
+nodo2261->nodo2262;
+nodo2262[label= "
+ :: F"]; 
+nodo2262->nodo2263;
+nodo2263[label= "
+ :: G"]; 
+nodo2263->nodo2264;
+nodo2264[label= "
+ :: cad"]; 
+nodo2242[label= "
+ :: SENTENCIAS"]; 
+nodo2242->nodo2265;
+nodo2242->nodo2266;
+nodo2265[label= "
+ :: SEN"]; 
+nodo2265->nodo2267;
+nodo2267[label= "
+ :: CONTENIDO"]; 
+nodo2267->nodo2268;
+nodo2268[label= "
+ :: CONT"]; 
+nodo2268->nodo2269;
+nodo2269[label= "
+ :: CONTENIDO3"]; 
+nodo2269->nodo2270;
+nodo2269->nodo2271;
+nodo2270[label= "
+ :: varmenos"]; 
+nodo2271[label= "
+ :: METODO"]; 
+nodo2271->nodo2272;
+nodo2271->nodo2274;
+nodo2272[label= "
+ :: CONT2"]; 
+nodo2272->nodo2273;
+nodo2273[label= "
+ :: -="]; 
+nodo2274[label= "
+ :: VALOR"]; 
+nodo2274->nodo2275;
+nodo2275[label= "
+ :: LOGICA"]; 
+nodo2275->nodo2276;
+nodo2276[label= "
+ :: L"]; 
+nodo2276->nodo2277;
+nodo2277[label= "
+ :: M"]; 
+nodo2277->nodo2278;
+nodo2278[label= "
+ :: N"]; 
+nodo2278->nodo2279;
+nodo2279[label= "
+ :: R"]; 
+nodo2279->nodo2280;
+nodo2280[label= "
+ :: Z"]; 
+nodo2280->nodo2281;
+nodo2281[label= "
+ :: RELACIONAL"]; 
+nodo2281->nodo2282;
+nodo2282[label= "
+ :: A"]; 
+nodo2282->nodo2283;
+nodo2283[label= "
+ :: EXP"]; 
+nodo2283->nodo2284;
+nodo2284[label= "
+ :: E"]; 
+nodo2284->nodo2285;
+nodo2285[label= "
+ :: T"]; 
+nodo2285->nodo2286;
+nodo2286[label= "
+ :: F"]; 
+nodo2286->nodo2287;
+nodo2287[label= "
+ :: G"]; 
+nodo2287->nodo2288;
+nodo2288[label= "
+ :: 14234"]; 
+nodo2266[label= "
+ :: SENTENCIAS"]; 
 }
  }

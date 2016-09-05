@@ -15,11 +15,16 @@ public class Simbolo {
     public String tipo;
     public String rol;
     public String ambito;
+    public String visibilidad; 
+    public String conservar;
+    public String valor="false";
     
     Simbolo(String id, String tipo, String rol, String ambito){
         this.id = id;
         this.tipo = tipo;
         this.rol = rol;
         this.ambito = ambito;
+    }
+    Simbolo(){
     }
 }
