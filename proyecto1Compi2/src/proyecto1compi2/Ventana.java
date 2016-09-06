@@ -411,7 +411,8 @@ compilador ana = new compilador();
         ana.analizar(s2);
         f.graphArbol(ana.root);
         ejecutar ejec = new ejecutar();
-        ejec.ejecucion(ana.root, LS);
+        Simbolo sim = new Simbolo();
+        ejec.ejecucion(ana.root, LS,ana.root,sim,LE);
         System.out.println("TABLA DE SIMBOLOS \n");
         for(int i=0; i<LS.size();i++){
             System.out.println("Simbolo "+LS.get(i).id+" size "+LS.size()+"\n");
@@ -480,11 +481,12 @@ compilador ana = new compilador();
         System.out.println("Tabla de Simbolos --\n");
         Funcion f = new Funcion();
         f.generarhtmlTS(LS);
-        char c = '\n';
-        int x = 10 + c;
-        System.out.println("--\n"+x);
-       
-        // TODO add your handling code here:
+        
+        String x="2.5";
+        String g="8";
+        double resultado = (double)Math.pow(Double.parseDouble(x), Double.parseDouble(g));
+        System.out.println("resultado "+resultado);        
+// TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem9ActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
@@ -499,18 +501,6 @@ compilador ana = new compilador();
     }//GEN-LAST:event_jMenu3ActionPerformed
 
     private void jMenuItem10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem10ActionPerformed
-        
-        NodeError s1 = new NodeError(1,1,"rol1","ambito1");
-        NodeError s2 = new NodeError(2,2,"rol2","ambito2");
-        NodeError s3 = new NodeError(3,3,"rol3","ambito3");
-        NodeError s4 = new NodeError(4,4,"rol4","ambito4");
-        NodeError s5 = new NodeError(5,5,"rol5","ambito5");
-        
-        LE.add(s1);
-        LE.add(s2);
-        LE.add(s3);
-        LE.add(s4);
-        LE.add(s5);
         Funcion f = new Funcion();
         f.generarhtmlErrores(LE);
         

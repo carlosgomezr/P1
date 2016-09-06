@@ -206,7 +206,7 @@ public void generarhtmlTS(ArrayList<Simbolo> simbolo){
             pw.write("<h2> Fecha: "+calendario.get(Calendar.DAY_OF_MONTH)+ "/" +calendario.get(Calendar.MONTH) + "/"+ calendario.get(Calendar.YEAR)+"</h2>");
             pw.write("<h2> Hora: "+calendario.get(Calendar.HOUR_OF_DAY)+ " : " +calendario.get(Calendar.MINUTE) + " : "+ calendario.get(Calendar.SECOND)+"</h2>");
             pw.write("<table font face=arial black size=12>");
-            pw.write("<tr>\n<td>No</td>\n<td>ID</td>\n<td>Tipo</td>\n<td>Rol</td>\n<td>Ambito</td>\n</tr>");
+            pw.write("<tr>\n<td>No</td>\n<td>ID</td>\n<td>Tipo</td>\n<td>Rol</td>\n<td>Ambito</td>\n<td>VALOR</td>\n<td>CONSERVAR</td>\n<td>VISIBILIDAD</td>\n</tr>");
              for(int i=0;i< simbolo.size();i++){
                        pw.write("<tr>\n");
                        pw.write("<td>"+i+"</td>\n");
@@ -214,6 +214,9 @@ public void generarhtmlTS(ArrayList<Simbolo> simbolo){
                        pw.write("<td>"+ simbolo.get(i).tipo + "</td>\n");
                        pw.write("<td>"+ simbolo.get(i).rol + "</td>\n");
                        pw.write("<td>"+ simbolo.get(i).ambito + "</td>\n");
+                       pw.write("<td>"+ simbolo.get(i).valor + "</td>\n");
+                       pw.write("<td>"+ simbolo.get(i).conservar + "</td>\n");
+                       pw.write("<td>"+ simbolo.get(i).visibilidad + "</td>\n");
                        pw.write("</tr>\n");
             }
            
