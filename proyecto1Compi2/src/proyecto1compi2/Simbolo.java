@@ -17,9 +17,11 @@ public class Simbolo {
     public String ambito;
     public String visibilidad="publico";//valor de visibilidad por defecto 
     public String conservar;
-    public String valor="false";//valor de la variable por defecto false
+    public String valor;//valor de la variable por defecto null
     public int fila;
     public int columna;
+    //public ListaArreglo arreglo = new ListaArreglo();
+    
     
     Simbolo(String id, String tipo, String rol, String ambito){
         this.id = id;

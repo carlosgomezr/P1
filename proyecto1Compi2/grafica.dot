@@ -8,86 +8,89 @@ nodo2[label= "
 nodo2->nodo3;
 nodo2->nodo4;
 nodo2->nodo5;
-nodo2->nodo6;
 nodo3[label= "
  :: lienzo"]; 
 nodo4[label= "
- :: sookiedoll"]; 
+ :: kaya"]; 
 nodo5[label= "
- :: SEN"]; 
+ :: SENTENCIAS"]; 
+nodo5->nodo6;
 nodo5->nodo7;
-nodo7[label= "
- :: CONTENIDO"]; 
-nodo7->nodo8;
+nodo6[label= "
+ :: SEN"]; 
+nodo6->nodo8;
 nodo8[label= "
- :: CONT"]; 
+ :: CONTENIDO"]; 
 nodo8->nodo9;
 nodo9[label= "
- :: DECLARACION"]; 
+ :: CONT"]; 
 nodo9->nodo10;
-nodo9->nodo12;
 nodo10[label= "
- :: TIPO"]; 
+ :: DECLARACION"]; 
 nodo10->nodo11;
+nodo10->nodo13;
 nodo11[label= "
- :: tentero"]; 
+ :: TIPO"]; 
+nodo11->nodo12;
 nodo12[label= "
- :: VARIABLE"]; 
-nodo12->nodo13;
+ :: tentero"]; 
 nodo13[label= "
- :: NOMBRES"]; 
+ :: VARIABLE"]; 
 nodo13->nodo14;
-nodo13->nodo15;
 nodo14[label= "
- :: x"]; 
+ :: NOMBRES"]; 
+nodo14->nodo15;
+nodo14->nodo16;
 nodo15[label= "
- :: ASIGN"]; 
-nodo15->nodo16;
+ :: x"]; 
 nodo16[label= "
- :: VALOR"]; 
+ :: ASIGN"]; 
 nodo16->nodo17;
 nodo17[label= "
- :: LOGICA"]; 
+ :: VALOR"]; 
 nodo17->nodo18;
 nodo18[label= "
- :: L"]; 
+ :: LOGICA"]; 
 nodo18->nodo19;
 nodo19[label= "
- :: M"]; 
+ :: L"]; 
 nodo19->nodo20;
 nodo20[label= "
- :: N"]; 
+ :: M"]; 
 nodo20->nodo21;
 nodo21[label= "
- :: R"]; 
+ :: N"]; 
 nodo21->nodo22;
 nodo22[label= "
- :: Z"]; 
+ :: R"]; 
 nodo22->nodo23;
 nodo23[label= "
- :: RELACIONAL"]; 
+ :: Z"]; 
 nodo23->nodo24;
 nodo24[label= "
- :: A"]; 
+ :: RELACIONAL"]; 
 nodo24->nodo25;
 nodo25[label= "
- :: EXP"]; 
+ :: A"]; 
 nodo25->nodo26;
 nodo26[label= "
- :: E"]; 
+ :: EXP"]; 
 nodo26->nodo27;
 nodo27[label= "
- :: T"]; 
+ :: E"]; 
 nodo27->nodo28;
 nodo28[label= "
- :: F"]; 
+ :: T"]; 
 nodo28->nodo29;
 nodo29[label= "
- :: G"]; 
+ :: F"]; 
 nodo29->nodo30;
 nodo30[label= "
- :: 10"]; 
-nodo6[label= "
+ :: G"]; 
+nodo30->nodo31;
+nodo31[label= "
+ :: 'cadena'"]; 
+nodo7[label= "
  :: SENTENCIAS"]; 
 }
  }

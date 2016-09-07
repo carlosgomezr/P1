@@ -184,7 +184,7 @@ Conservar var doble contador = 50.5, contador2 = 30.55$
     ?
     
     
-    entero funcion1( int parametro1, string parametro2)¿                       
+    entero funcion1(entero parametro1, cadena parametro2)¿                       
         var entero numero2$                       
         numero2+=parametro1$ retorna numero2$  
     ? 

@@ -203,6 +203,7 @@ void S(NodoArbol padre):
 	NodoArbol nodo = new NodoArbol();
 	NodoArbol nodo2 = new NodoArbol();
 	NodoArbol nodo3 = new NodoArbol();
+	NodoArbol nodo4 = new NodoArbol();
 	nodo.grafoname=getEtiqueta(); nodo.cadena="S";
 	padre.hijos.add(nodo);
 }
@@ -214,7 +215,7 @@ void S(NodoArbol padre):
 		nodo.hijos.add(nodo2);
 		nodo.hijos.add(nodo3);
 	}
-											(EXT(nodo))? <sigabrir> (SENTENCIAS(nodo))? <sigcerrar> (COMENTARIOS())* <EOF> // End of file
+											(EXT(nodo))? <sigabrir> ({nodo4.grafoname=getEtiqueta(); nodo4.cadena="SENTENCIAS"; nodo.hijos.add(nodo4);} SENTENCIAS(nodo4))? <sigcerrar> (COMENTARIOS())* <EOF> // End of file
 }
 void COMENTARIOS():
 {}
@@ -714,7 +715,7 @@ void A(NodoArbol padre):
 void AP(NodoArbol padre):
 {
 	NodoArbol nodo = new NodoArbol();
-	NodoArbol nodo2 = new NodoArbol();
+    NodoArbol nodo2 = new NodoArbol();
 	nodo.grafoname=getEtiqueta(); nodo.cadena="AP";
 	padre.hijos.add(nodo);
 }
@@ -811,9 +812,9 @@ void N(NodoArbol padre):
 	padre.hijos.add(nodo);
 }
 {
-	R(nodo) (NP(nodo))?
+	R(nodo) //(NP(nodo))?
 }
-
+/*
 void NP(NodoArbol padre):
 {
 	NodoArbol nodo = new NodoArbol();
@@ -823,7 +824,7 @@ void NP(NodoArbol padre):
 {
 	R(nodo) (NP(nodo))?
 }
-
+*/
 //LA PARTE DE DECLARACION NO SE HA COMPLETADO
 //LA PARTE DEL CONT2 NO SE HA COMPLETADO
 

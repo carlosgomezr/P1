@@ -13,6 +13,7 @@ public class NodoArbol {
     public String nombre;
     public String grafoname;
     public String cadena;
+    public String valor;
     public int numero;
     public int f;
     public int c;
