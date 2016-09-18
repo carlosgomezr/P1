@@ -1,3 +1,13 @@
-lienzo kaya ¿
-    var entero x="cadena"$
+lienzo l¿
+    var entero x=50$
+    
+    cadena metodo()¿
+        si(1==1)¿
+            retorna 5$   
+        ?
+    ?
+
+    principal()¿
+        metodo()$
+    ?
 ?

@@ -18,6 +18,8 @@ public class NodoArbol {
     public int f;
     public int c;
     public String ty;
+    public int hacer=0;
+    public int para=0;
     ArrayList<NodoArbol> hijos = new ArrayList<NodoArbol>();
     
     NodoArbol(String nombre, String grafoname, String cadena, int numero,int f, int c){

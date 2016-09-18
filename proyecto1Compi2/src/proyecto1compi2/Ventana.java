@@ -43,7 +43,7 @@ ArrayList<Simbolo> LS2 = new ArrayList<Simbolo>();
 
 //ArrayList estatico que contiene la tabla de errores
 ArrayList<NodeError> LE = new ArrayList<NodeError>();
-       
+String directorio="";       
 
 
 compilador ana = new compilador();
@@ -55,6 +55,261 @@ compilador ana = new compilador();
         initComponents();
         this.iniciarEditor();
     }
+    
+    
+    public String getDirectory(String original){
+        String directory="";
+        int aux=0;
+            for(int i=original.length()-1;i>0;i--){
+                if(original.charAt(i)=='\\'){
+                    aux = i;
+                    break;
+                }
+            }
+            directory = original.substring(0, aux+1);
+            System.out.println("    Directory ~ "+directory);
+        return directory;
+    }
+    
+    public void crearArreglo(ArrayList<String> Dim,int actual,ListaArreglo D){
+        ListaArreglo auxiliar = new ListaArreglo();
+        
+        if(actual==0 && Dim.size()-1>0){
+            System.out.println("    -Dimension "+Dim.get(actual) +" "+actual+"  D.size "+D.siguientedim.size());
+            for(int i=0;i<Integer.parseInt(Dim.get(actual));i++){
+                ListaArreglo nueva = new ListaArreglo();
+                //D.siguientedim = new ArrayList<ListaArreglo>();
+                D.siguientedim.add(nueva);
+                auxiliar.siguientedim.add(nueva);
+                System.out.println("    actual<Dim.size "+i+" actual "+actual);
+            }
+            int auxactual = actual +1;
+            crearArreglo(Dim,auxactual,auxiliar);
+        }
+        else if(actual==0 && Dim.size()-1==0){
+            for(int i=0;i<Integer.parseInt(Dim.get(actual));i++){
+                String nueva=null;
+                D.dimension.add(nueva);
+                System.out.println(" >> insertando word"+i);
+            }
+        }
+        else if(actual<Dim.size()-1 && actual>0)
+        {
+            System.out.println("    -Dimension "+Dim.get(actual) +" "+actual+"  D.size "+D.siguientedim.size());
+            int x = actual -1;
+            
+            for(int i=0;i<D.siguientedim.size();i++){
+             
+                for(int j=0;j<Integer.parseInt(Dim.get(actual));j++){
+                    ListaArreglo nueva = new ListaArreglo();
+                    D.siguientedim.get(i).siguientedim.add(nueva);
+                    auxiliar.siguientedim.add(nueva);
+                    System.out.println(" >> insertando "+i+"  "+j);
+                }
+            }
+            
+            int auxactual = actual + 1;
+            crearArreglo(Dim,auxactual,auxiliar);
+        }
+        else if(actual==Dim.size()-1){
+            System.out.println("    -Dimension "+Dim.get(actual) +" "+actual+"  D.size "+D.siguientedim.size());
+            int x = actual -1;
+            for(int i=0;i<D.siguientedim.size();i++){
+                
+                for(int j=0;j<Integer.parseInt(Dim.get(actual));j++){
+                    String nueva=null;
+                    D.siguientedim.get(i).dimension.add(nueva);
+                    System.out.println(" >> insertando palabras"+i+"  "+j);
+                    //auxiliar.siguientedim.add(nueva);
+                }
+            }
+        }
+    }
+
+    int position=0;
+    
+    public void insertAllArreglo(ArrayList<String> Dim,int actual,ListaArreglo D,ArrayList<String> word){
+        
+        if(actual==0 && Dim.size()-1>0){
+            int auxactual = actual +1;
+            for(int i=0; i<D.siguientedim.size();i++){
+                insertAllArreglo(Dim,auxactual,D.siguientedim.get(i),word);
+            }
+            
+        }
+        else if(actual==0 && Dim.size()-1==0){
+            System.out.println("    ---"+(int)Double.parseDouble(Dim.get(actual))+word.get(0) + word.size());
+            for(int i=0; i<(int)Double.parseDouble(Dim.get(actual));i++){
+                D.dimension.remove(i);
+                D.dimension.add(i, word.get(i));
+                System.out.println("    insertado word "+i+" "+word.get(i)+D.dimension.get(i));
+            }
+           
+        }
+        else if(actual<Dim.size()-1 && actual>0)
+        {
+            int auxactual = actual +1;
+            for(int i=0; i<D.siguientedim.size();i++){
+                insertAllArreglo(Dim,auxactual,D.siguientedim.get(i),word);
+            }
+        }
+        else if(actual==Dim.size()-1){
+            for(int i=0; i<(int)Double.parseDouble(Dim.get(actual));i++){
+                D.dimension.remove(i);
+                D.dimension.add(i,word.get(position));
+                position++;
+                System.out.println("    insertado word "+i+" "+word.get(i)+D.dimension.get(i));
+                //word.remove(0);
+            }
+            //for(int i=0; i<(int)Double.parseDouble(Dim.get(actual));i++){
+            //    word.remove(0);
+            //}
+        }
+    }    
+    public void ordenarAscendente(int actual,ListaArreglo D,int size){
+        int auxdim = D.dimension.size();
+        int auxsig = D.siguientedim.size();
+        if(auxdim>0 && actual<size){
+            Collections.sort(D.dimension);
+        }else if(auxsig>0 && actual<size){
+            for(int i=0;i<auxsig;i++){
+                ordenarAscendente(actual+1,D.siguientedim.get(i),size);
+            } 
+        }
+    }
+
+    public void ordenarAscendenteInt(int actual,ListaArreglo D,int size){
+        int auxdim = D.dimension.size();
+        int auxsig = D.siguientedim.size();
+        if(auxdim>0 && actual<size){
+            Collections.sort(D.dimension);
+        }else if(auxsig>0 && actual<size){
+            for(int i=0;i<auxsig;i++){
+                ordenarAscendenteInt(actual+1,D.siguientedim.get(i),size);
+            } 
+        }
+    }
+
+    public void ordenarDescendenteInt(int actual,ListaArreglo D,int size){
+        int auxdim = D.dimension.size();
+        int auxsig = D.siguientedim.size();
+        if(auxdim>0 && actual<size){
+            Collections.sort(D.dimension,Collections.reverseOrder());
+        }else if(auxsig>0 && actual<size){
+            for(int i=0;i<auxsig;i++){
+                ordenarDescendenteInt(actual+1,D.siguientedim.get(i),size);
+            } 
+        }
+    }
+    
+    public void ordenarDescendente(int actual,ListaArreglo D,int size){
+        int auxdim = D.dimension.size();
+        int auxsig = D.siguientedim.size();
+        if(auxdim>0 && actual<size){
+            Collections.sort(D.dimension,Collections.reverseOrder());
+        }else if(auxsig>0 && actual<size){
+            for(int i=0;i<auxsig;i++){
+                ordenarDescendente(actual+1,D.siguientedim.get(i),size);
+            } 
+        }
+    }
+    
+    public String sumari(int actual,ListaArreglo D, int size,String ret){
+        int auxdim = D.dimension.size();
+        int auxsig = D.siguientedim.size();
+        if(auxdim>0 && actual<size){
+            for(int i=0;i<auxdim;i++){
+                ret = ret + D.dimension.get(i)+" ";
+            }
+        }else if(auxsig>0 && actual<size){
+            for(int i=0;i<auxsig;i++){
+                ret = sumari(actual+1,D.siguientedim.get(i),size,ret);
+            }
+        }
+        return ret;
+    }
+
+    public String sumariInt(int actual,ListaArreglo D, int size,String ret){
+        int auxdim = D.dimension.size();
+        int auxsig = D.siguientedim.size();
+       if(auxdim>0 && actual<size){
+            for(int i=0;i<auxdim;i++){
+                double auxret = Double.parseDouble(ret) + Double.parseDouble(D.dimension.get(i));
+                ret = String.valueOf(auxret);
+            }
+        }else if(auxsig>0 && actual<size){
+            for(int i=0;i<auxsig;i++){
+                ret = sumariInt(actual+1,D.siguientedim.get(i),size,ret);
+            }
+        }
+        return ret;
+    }
+        
+    public void insertArreglo(ArrayList<String> Dim,int actual,ListaArreglo D,String word){
+        
+        if(actual==0 && Dim.size()-1>0){
+            int auxactual = actual +1;
+            insertArreglo(Dim,auxactual,D.siguientedim.get(Integer.parseInt(Dim.get(actual))),word);
+        }
+        else if(actual==0 && Dim.size()-1==0){
+            //System.out.println("    dimension.remove "+Integer.parseInt(Dim.get(Integer.parseInt(Dim.get(actual)))));
+            D.dimension.remove(Integer.parseInt(Dim.get(actual)));
+            D.dimension.add(Integer.parseInt(Dim.get(actual)), word);
+        }
+        else if(actual<Dim.size()-1 && actual>0)
+        {
+            int auxactual = actual + 1;
+            insertArreglo(Dim,auxactual,D.siguientedim.get(Integer.parseInt(Dim.get(actual))),word);
+        }
+        else if(actual==Dim.size()-1){
+            D.dimension.remove(Integer.parseInt(Dim.get(actual)));
+            D.dimension.add(Integer.parseInt(Dim.get(actual)),word);
+        }
+    }
+
+    public String getvalArreglo(ArrayList<String> Dim,int actual,ListaArreglo D,String word){
+        String ret = word;
+        if(actual==0 && Dim.size()-1>0){
+            int auxactual = actual +1;
+            ret = getvalArreglo(Dim,auxactual,D.siguientedim.get(Integer.parseInt(Dim.get(actual))),word);
+        }
+        else if(actual==0 && Dim.size()-1==0){
+            ret = D.dimension.get(Integer.parseInt(Dim.get(actual)));
+        }
+        else if(actual<Dim.size()-1 && actual>0)
+        {
+            int auxactual = actual + 1;
+            ret = getvalArreglo(Dim,auxactual,D.siguientedim.get(Integer.parseInt(Dim.get(actual))),word);
+        }
+        else if(actual==Dim.size()-1){
+            ret = D.dimension.get(Integer.parseInt(Dim.get(actual)));
+            //System.out.println("    find---"+D.dimension.get(Integer.parseInt(Dim.get(actual)))+"   "+ret);            
+        }
+        
+        return ret;
+    } 
+    
+    
+        //INGRESA UNA LSITA DE DIMENSIONES Y DEVUELVE EL NUMERO DE CELDAS QUE DEBE TENER EL ARREGLO
+    public int multiDimension(ArrayList<String> Dim, int ListaSize,ArrayList<NodeError> LE,int fila,int columna){
+        int size = Dim.size();
+        int aux=1; 
+        int ret =0;
+        
+        for(int i=0; i<size; i++){
+            aux = aux * Integer.parseInt(Dim.get(i));
+        }
+        if(aux!=ListaSize){
+            ret = 1;
+            //CREAR ERROR
+            System.out.println("    Size Error Array");
+            NodeError e = new NodeError(fila,columna,"Error en tamanio del arreglo","El tamano de arreglo es  "+aux + " valores recibidos "+ListaSize);
+            LE.add(e);
+        }
+        System.out.println("    mmultisize "+aux);
+        return ret; // 1 exite eerror                   0 no existe error
+    }
+    
     
       private void iniciarEditor()
     {        
@@ -133,6 +388,8 @@ compilador ana = new compilador();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jButton4 = new javax.swing.JButton();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -162,12 +419,12 @@ compilador ana = new compilador();
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(112, 14, 80, 80));
 
         jSlider1.addAncestorListener(new javax.swing.event.AncestorListener() {
-            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
-                jSlider1AncestorMoved(evt);
-            }
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
             }
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+                jSlider1AncestorMoved(evt);
             }
         });
         jSlider1.addChangeListener(new javax.swing.event.ChangeListener() {
@@ -199,7 +456,7 @@ compilador ana = new compilador();
 
         jTabbedPane1.addTab("tab1", jScrollPane2);
 
-        getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(21, 182, 1190, 480));
+        getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(21, 192, 1310, 470));
 
         jLabel1.setText("Reporte de Errores");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 110, 111, -1));
@@ -244,6 +501,10 @@ compilador ana = new compilador();
             }
         });
         getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 153, -1, 20));
+        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 40, 580, 20));
+
+        jLabel14.setText("Directorio:");
+        getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 10, -1, 20));
 
         jMenu1.setText("Archivo");
 
@@ -299,7 +560,7 @@ compilador ana = new compilador();
 
         jMenu2.setText("Herramientas");
 
-        jMenuItem7.setText("Ejecutar");
+        jMenuItem7.setText("Forzar Ejecucion");
         jMenuItem7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem7ActionPerformed(evt);
@@ -389,7 +650,15 @@ compilador ana = new compilador();
     }//GEN-LAST:event_jSlider1AncestorMoved
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    
+        LS.clear();
+        LE.clear();
         int x= jTabbedPane1.getSelectedIndex();
+        //directorio del proyecto
+        directorio = getDirectory(jTabbedPane1.getTitleAt(x));
+        jLabel13.setText(directorio);
+        
+        
         String aux = ListaEditor.get(x).getText();
         /*final String UTF8_BOM = new String("\u00bf".getBytes(StandardCharsets.UTF_8));
         System.out.println("Archivo con boom \n"+aux);
@@ -409,14 +678,16 @@ compilador ana = new compilador();
         br.close(); 
   
         ana.analizar(s2);
-        f.graphArbol(ana.root);
-        ejecutar ejec = new ejecutar();
+        f.graphArbol(ana.root,"arbolcc");
+        ejecutar ejec = new ejecutar(directorio);
         Simbolo sim = new Simbolo();
-        ejec.ejecucion(ana.root, LS,ana.root,sim,LE);
-        System.out.println("TABLA DE SIMBOLOS \n");
-        for(int i=0; i<LS.size();i++){
-            System.out.println("Simbolo "+LS.get(i).id+" size "+LS.size()+"\n");
-        }
+        ArrayList<String> Dim = new ArrayList<String>();
+        ArrayList<String> words = new ArrayList<String>();
+        NodoArbol otronodo = new NodoArbol();
+        ArrayList<ListaParametro> para = new ArrayList<ListaParametro>();
+        String ambito="";
+        ejec.ejecucion(ana.root, LS,ana.root,sim,LE,Dim,LDibujo,words,otronodo,0,para,ambito);
+        
         //System.out.println("Root \n Nombre root "+ana.root.nombre+" grafoname "+ana.root.grafoname+" cadena "+ana.root.cadena+" numero "+ana.root.numero); 
         //System.out.println("S\n Nombre "+ana.root.hijos.get(0).nombre+" grafoname "+ana.root.hijos.get(0).grafoname);
         //System.out.println("COMMM\n Nombre "+ana.root.hijos.get(0).hijos.get(0).nombre+" grafoname "+ana.root.hijos.get(0).hijos.get(0).grafoname);
@@ -427,13 +698,21 @@ compilador ana = new compilador();
     } catch (ParseException ex) {
         Logger.getLogger(Ventana.class.getName()).log(Level.SEVERE, null, ex);
     }
+    
+        System.out.println("Tabla de Simbolos --\n");
+        f.generarhtmlTS(LS);
+        f.generarhtmlErrores(LE);
+        
+    
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        for(int x=0;x<5;x+=1){
+            System.out.println(" xd "+x);
+        }
         int x;
         x = jSlider1.getValue() * 99 + 10; 
         JOptionPane.showMessageDialog(null, "Velocidad del Debugger "+x,"DEBUGGER", JOptionPane.INFORMATION_MESSAGE);
-       
         
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -465,7 +744,175 @@ compilador ana = new compilador();
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        String concat="";
+        System.out.println("    concat "+concat);
+        ArrayList<String> dim1 = new ArrayList<String>();
+        ArrayList<String> dim2 = new ArrayList<String>();
+        ArrayList<String> dim3 = new ArrayList<String>();
+        ArrayList<String> dim4 = new ArrayList<String>();
+        dim1.add("5");
+        dim2.add("5");dim2.add("4");
+        dim3.add("5");dim3.add("4");dim3.add("3");
+        dim4.add("5");dim4.add("4");dim4.add("3");dim4.add("6");
+        System.out.println("    dim 1 "+multiDimension(dim1,5,LE,0,0));
+        System.out.println("    dim 2 "+multiDimension(dim2,20,LE,0,0));
+        System.out.println("    dim 3 "+multiDimension(dim3,60,LE,0,0));
+        System.out.println("    dim 4 "+multiDimension(dim4,360,LE,0,0));
         
+        ListaArreglo l = new ListaArreglo();
+        ArrayList<String> dim = new ArrayList<String>();
+        dim.add("2");
+        dim.add("3");
+        dim.add("5");
+ //       dim.add("4");
+        crearArreglo(dim,0,l);
+        ArrayList<String> contenido = new ArrayList<String>();
+        
+        contenido.add("3");
+        contenido.add("5");
+        contenido.add("2");
+        contenido.add("1");
+        contenido.add("4");
+        
+        contenido.add("7");
+        contenido.add("9");
+        contenido.add("6");
+        contenido.add("10");
+        contenido.add("8");
+        
+        contenido.add("13");
+        contenido.add("12");
+        contenido.add("15");
+        contenido.add("11");
+        contenido.add("14");
+
+
+        contenido.add("17");
+        contenido.add("20");
+        contenido.add("19");
+        contenido.add("18");
+        contenido.add("16");
+        
+        contenido.add("21");
+        contenido.add("25");
+        contenido.add("23");
+        contenido.add("22");
+        contenido.add("24");
+        
+        contenido.add("27");
+        contenido.add("26");
+        contenido.add("28");
+        contenido.add("30");
+        contenido.add("29");
+        
+        insertAllArreglo(dim,0,l,contenido);
+        String sum="";
+        System.out.println("    sumari "+sumari(0,l,3,sum));
+        String sum2="0";
+        System.out.println("    sumariInt "+sumariInt(0,l,3,sum2));
+        ordenarDescendente(0,l,3);
+        
+        System.out.println("    buscando ... "+l.siguientedim.get(0).siguientedim.get(0).dimension.get(0));
+        System.out.println("    buscando ... "+l.siguientedim.get(0).siguientedim.get(0).dimension.get(1));
+        System.out.println("    buscando ... "+l.siguientedim.get(0).siguientedim.get(0).dimension.get(2));
+        System.out.println("    buscando ... "+l.siguientedim.get(0).siguientedim.get(0).dimension.get(3));
+        System.out.println("    buscando ... "+l.siguientedim.get(0).siguientedim.get(0).dimension.get(4));
+        System.out.println("    buscando ... "+l.siguientedim.get(0).siguientedim.get(1).dimension.get(0));
+        System.out.println("    buscando ... "+l.siguientedim.get(0).siguientedim.get(1).dimension.get(1));
+        System.out.println("    buscando ... "+l.siguientedim.get(0).siguientedim.get(1).dimension.get(2));
+        System.out.println("    buscando ... "+l.siguientedim.get(0).siguientedim.get(1).dimension.get(3));
+        System.out.println("    buscando ... "+l.siguientedim.get(0).siguientedim.get(1).dimension.get(4));
+        System.out.println("    buscando ... "+l.siguientedim.get(0).siguientedim.get(2).dimension.get(0));
+        System.out.println("    buscando ... "+l.siguientedim.get(0).siguientedim.get(2).dimension.get(1));
+        System.out.println("    buscando ... "+l.siguientedim.get(0).siguientedim.get(2).dimension.get(2));
+        System.out.println("    buscando ... "+l.siguientedim.get(0).siguientedim.get(2).dimension.get(3));
+        System.out.println("    buscando ... "+l.siguientedim.get(0).siguientedim.get(2).dimension.get(4));    
+        
+        System.out.println("    buscando ... "+l.siguientedim.get(1).siguientedim.get(0).dimension.get(0));
+        System.out.println("    buscando ... "+l.siguientedim.get(1).siguientedim.get(0).dimension.get(1));
+        System.out.println("    buscando ... "+l.siguientedim.get(1).siguientedim.get(0).dimension.get(2));
+        System.out.println("    buscando ... "+l.siguientedim.get(1).siguientedim.get(0).dimension.get(3));
+        System.out.println("    buscando ... "+l.siguientedim.get(1).siguientedim.get(0).dimension.get(4));
+        System.out.println("    buscando ... "+l.siguientedim.get(1).siguientedim.get(1).dimension.get(0));
+        System.out.println("    buscando ... "+l.siguientedim.get(1).siguientedim.get(1).dimension.get(1));
+        System.out.println("    buscando ... "+l.siguientedim.get(1).siguientedim.get(1).dimension.get(2));
+        System.out.println("    buscando ... "+l.siguientedim.get(1).siguientedim.get(1).dimension.get(3));
+        System.out.println("    buscando ... "+l.siguientedim.get(1).siguientedim.get(1).dimension.get(4));
+        System.out.println("    buscando ... "+l.siguientedim.get(1).siguientedim.get(2).dimension.get(0));
+        System.out.println("    buscando ... "+l.siguientedim.get(1).siguientedim.get(2).dimension.get(1));
+        System.out.println("    buscando ... "+l.siguientedim.get(1).siguientedim.get(2).dimension.get(2));
+        System.out.println("    buscando ... "+l.siguientedim.get(1).siguientedim.get(2).dimension.get(3));
+        System.out.println("    buscando ... "+l.siguientedim.get(1).siguientedim.get(2).dimension.get(4));
+       
+        /*        dim.add("4");
+        crearArreglo(dim,0,l);
+        System.out.println("    dimension 1 "+l.siguientedim.size()+"   dimension 2 "+l.siguientedim.get(0).siguientedim.size()+" dimension 3 "+l.siguientedim.get(0).siguientedim.get(0).dimension.size());
+        System.out.println("    dimension 1 "+l.siguientedim.size()+"   dimension 2 "+l.siguientedim.get(0).siguientedim.size()+" dimension 3 "+l.siguientedim.get(0).siguientedim.get(1).dimension.size());
+        System.out.println("    dimension 1 "+l.siguientedim.size()+"   dimension 2 "+l.siguientedim.get(0).siguientedim.size()+" dimension 3 "+l.siguientedim.get(0).siguientedim.get(2).dimension.size());
+        
+        System.out.println("    dimension 1 "+l.siguientedim.size()+"   dimension 2 "+l.siguientedim.get(1).siguientedim.size()+" dimension 3 "+l.siguientedim.get(1).siguientedim.get(0).dimension.size());
+        System.out.println("    dimension 1 "+l.siguientedim.size()+"   dimension 2 "+l.siguientedim.get(1).siguientedim.size()+" dimension 3 "+l.siguientedim.get(1).siguientedim.get(1).dimension.size());
+        System.out.println("    dimension 1 "+l.siguientedim.size()+"   dimension 2 "+l.siguientedim.get(1).siguientedim.size()+" dimension 3 "+l.siguientedim.get(1).siguientedim.get(2).dimension.size());
+*/
+
+  //     ArrayList<String> b = new ArrayList<String>();
+  //      b.add("4");
+  //    b.add("1");
+  //    b.add("3");
+  //      insertArreglo(b,0,l,"ana");
+  //      System.out.println("    buscando ... "+l.dimension.get(0));
+  //      String aux = getvalArreglo(b,0,l,"");
+  //      System.out.println("    my find..."+aux);
+        
+//        System.out.println("    dimension 1 "+l.siguientedim.size()+"   dimension 2 "+l.siguientedim.get(0).dimension.size());
+//        System.out.println("    dimension 1 "+l.siguientedim.size()+"   dimension 2 "+l.siguientedim.get(1).dimension.size());
+
+        
+        
+        //System.out.println("    dimension 1 "+l.siguientedim.size());
+        //System.out.println("    dimension 1 word"+l.dimension.size());
+        
+        
+        String g = "%holamundo%";
+        System.out.println(g.length()+"  "+g.substring(1,10));
+        ListaArreglo n = new ListaArreglo();
+        ListaArreglo p = new ListaArreglo();
+        ListaArreglo p2 = new ListaArreglo();
+       
+        ListaArreglo r = new ListaArreglo();
+        ListaArreglo r2 = new ListaArreglo();
+        
+        n.siguientedim.add(p);
+        n.siguientedim.add(p2);
+        
+        p.siguientedim.add(r);
+        p.siguientedim.add(r2);
+        
+        p2.siguientedim.add(r);
+        p.siguientedim.add(r2);
+        int y = 10;
+        do{
+            System.out.println(" VALOR Y "+y);
+            y--;
+        }while(y>0);
+        int z = 10;
+        while(z>0){
+              System.out.println(" VALOR Z "+z);
+              z--;
+        }
+        System.out.println("    Valor y "+y+"   Valor z "+z);
+        Simbolo ss = new Simbolo();
+        Simbolo sscopy = new Simbolo();
+        
+        ss.id="conservar";
+        if(ss.id==null){
+            System.out.println("    ss null xdd");
+        }else{
+            System.out.println("    ss diferente de null");
+        } 
+        sscopy.root = ss.root;
+        System.out.println("    sscopyroot "+sscopy.root+"  ss.root "+ss.root);
+       
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
 
@@ -511,6 +958,7 @@ compilador ana = new compilador();
 
     private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
         Panel p = new Panel();
+        /*
         //circles
         dibujo d = new dibujo(0,0,"circulo","",0,0,20,Color.BLUE);
         dibujo d1 = new dibujo(20,0,"circulo","",0,0,30,Color.RED);
@@ -560,7 +1008,7 @@ compilador ana = new compilador();
         LDibujo.add(c7);
         LDibujo.add(c8);
         LDibujo.add(c9);
-        LDibujo.add(c10);        
+        LDibujo.add(c10);     */   
         
         for(int i=0;i<LDibujo.size();i++){
             p.LDibujo.add(LDibujo.get(i));
@@ -623,6 +1071,8 @@ compilador ana = new compilador();
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

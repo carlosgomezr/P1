@@ -5,6 +5,8 @@
  */
 package proyecto1compi2;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Carlos Gomez
@@ -20,8 +22,13 @@ public class Simbolo {
     public String valor;//valor de la variable por defecto null
     public int fila;
     public int columna;
-    //public ListaArreglo arreglo = new ListaArreglo();
-    
+    public String lienzo;
+    public ListaArreglo arreglo = new ListaArreglo();
+    public int size;
+    public int dim;
+    public NodoArbol root = new NodoArbol();
+    public ArrayList<String> heredado = new ArrayList<String>();
+    public ArrayList<ListaParametro> parametros = new ArrayList<ListaParametro>();
     
     Simbolo(String id, String tipo, String rol, String ambito){
         this.id = id;

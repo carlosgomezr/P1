@@ -1,0 +1,15 @@
+protegido Lienzo heredado3¿
+    >>comentario heredado 3
+    var entero heredado$
+
+	mheredado3()¿
+		var doble siete$
+	?
+	mheredado3(entero k)¿
+		var entero ocho$
+	?
+	mheredado3(entero k,entero l)¿
+		var entero nueve$
+	?
+	>>metodo2()$
+?

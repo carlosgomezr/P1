@@ -206,17 +206,26 @@ public void generarhtmlTS(ArrayList<Simbolo> simbolo){
             pw.write("<h2> Fecha: "+calendario.get(Calendar.DAY_OF_MONTH)+ "/" +calendario.get(Calendar.MONTH) + "/"+ calendario.get(Calendar.YEAR)+"</h2>");
             pw.write("<h2> Hora: "+calendario.get(Calendar.HOUR_OF_DAY)+ " : " +calendario.get(Calendar.MINUTE) + " : "+ calendario.get(Calendar.SECOND)+"</h2>");
             pw.write("<table font face=arial black size=12>");
-            pw.write("<tr>\n<td>No</td>\n<td>ID</td>\n<td>Tipo</td>\n<td>Rol</td>\n<td>Ambito</td>\n<td>VALOR</td>\n<td>CONSERVAR</td>\n<td>VISIBILIDAD</td>\n</tr>");
+            pw.write("<tr>\n<td>No</td>\n<td>ID</td>\n<td>ROOT</td>\n<td>Tipo</td>\n<td>Rol</td>\n<td>Ambito</td>\n<td>VALOR</td>\n<td>CONSERVAR</td>\n<td>VISIBILIDAD</td>\n<td>LIENZO</td>\n<td>SIZE</td>\n<td>PARAMETROS</td>\n</tr>");
              for(int i=0;i< simbolo.size();i++){
                        pw.write("<tr>\n");
                        pw.write("<td>"+i+"</td>\n");
                        pw.write("<td>"+ simbolo.get(i).id + "</td>\n");
+                       pw.write("<td>"+ simbolo.get(i).root + "</td>\n");
                        pw.write("<td>"+ simbolo.get(i).tipo + "</td>\n");
                        pw.write("<td>"+ simbolo.get(i).rol + "</td>\n");
                        pw.write("<td>"+ simbolo.get(i).ambito + "</td>\n");
                        pw.write("<td>"+ simbolo.get(i).valor + "</td>\n");
                        pw.write("<td>"+ simbolo.get(i).conservar + "</td>\n");
                        pw.write("<td>"+ simbolo.get(i).visibilidad + "</td>\n");
+                       pw.write("<td>"+ simbolo.get(i).lienzo + "</td>\n");
+                       pw.write("<td>"+ simbolo.get(i).size + "</td>\n");
+                       pw.write("<td>");
+                            for(int j=0; j<simbolo.get(i).parametros.size();j++){
+                                pw.write(simbolo.get(i).parametros.get(j).parametro);
+                                pw.write(simbolo.get(i).parametros.get(j).valorparametro);
+                            }
+                       pw.write("</td>\n");
                        pw.write("</tr>\n");
             }
            
@@ -269,17 +278,48 @@ public void generarhtmlErrores(ArrayList<NodeError> error){
 	    pw.close();
 	    bw.close();
          
-            JOptionPane.showMessageDialog(null,"Lita de Errores: errores.html");
+            JOptionPane.showMessageDialog(null,"Lista de Errores: errores.html");
 	    }
 	    catch(IOException e){System.out.println("Error: "+e.getMessage());}
 }
 
-
+public void ReemplazarCadena(NodoArbol node){
+    if(node.ty==null){
+    
+    }else{
+        if(node.ty.compareTo("cadena")==0){
+            //comillas
+            int size = node.cadena.length();
+            node.cadena = node.cadena.substring(1,size-1);
+            //#"-> "
+            node.cadena = node.cadena.replace("#\"","\"");
+            //##-> #
+            node.cadena = node.cadena.replace("##","#");
+            //#r-> \r
+            node.cadena = node.cadena.replace("#r","\r");
+            //#n-> \n
+            node.cadena = node.cadena.replace("#n", "\n");
+            //#t-> \t
+            node.cadena = node.cadena.replace("#t","\t");
+        }else if(node.ty.compareTo("caracter")==0){
+            //^' -> '
+            node.cadena = node.cadena.replace("^'","'");
+            //^^ -> ^
+            node.cadena = node.cadena.replace("^^","^");
+            //^r -> \r
+            node.cadena = node.cadena.replace("^r","\r");
+            //^n -> n
+            node.cadena = node.cadena.replace("^n","\n");
+            //^t -> \t
+            node.cadena = node.cadena.replace("^t","\t");
+        }
+    }    
+}
 public String getTexto(NodoArbol node, String cadena){
     cadena = cadena + node.grafoname;
     NodoArbol auxnodo = new NodoArbol();
     auxnodo.cadena = node.cadena;
-    
+    ReemplazarCadena(node);
     cadena=cadena+"[label= \""+"\n :: "+auxnodo.cadena.replace('"','\'')+"\"]; \n";
     for(int i=0; i<node.hijos.size();i++){
         cadena = cadena + node.grafoname + "->" +node.hijos.get(i).grafoname+";\n";
@@ -290,12 +330,12 @@ public String getTexto(NodoArbol node, String cadena){
     return cadena;
 }
 
-public void graphArbol(NodoArbol node){
+public void graphArbol(NodoArbol node,String nameFile){
     String texto="digraph G { \n label= \"Tree LZ \"node [shape=record]; \n subgraph g {";
     texto=getTexto(node,texto);
     texto+="}\n }";
     crearArchivo(texto,"grafica.dot");
-    generarImagen("arbolcc","grafica.dot","C:\\Users\\estua_000\\Desktop\\");
+    generarImagen(nameFile,"grafica.dot","C:\\Users\\estua_000\\Desktop\\");
 }
 
 public void generarImagen(String nombre,String ruta, String pathimagen) {

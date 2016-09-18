@@ -1,0 +1,13 @@
+lienzo l¿
+    var cadena arreglo i[5]={"isla","dedo","casa","burro","arco"}$
+    ordenar(arreglo i,tipo ascendente)$
+    var cadena var1 = i[0]$
+    var cadena var2 = i[1]$
+    var cadena var3 = i[2]$
+    var cadena var4 = i[3]$
+    var cadena var5 = i[4]$
+    var cadena resul0 = var1+var2+var3+var4+var5 $
+    
+    
+    
+?

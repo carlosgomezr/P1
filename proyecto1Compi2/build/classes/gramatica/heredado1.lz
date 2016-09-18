@@ -1,0 +1,23 @@
+publico Lienzo heredado1¿
+
+    var entero x=10$
+    var doble a,b,c=20.4$
+    var boolean ban1,ban2,ban3 = true$
+	
+	publico mheredado1()¿
+		var doble cuatro$
+	?
+	protegido mheredado1(entero x)¿
+		var entero cinco=5003$
+	?
+
+	mheredado1(cadena gy,entero gx)¿
+	>>com
+	?
+	
+	conservar publico mheredado2()¿
+		var boolean aoc=true$
+		mheredado1()$
+		mheredado3()$
+	?
+?

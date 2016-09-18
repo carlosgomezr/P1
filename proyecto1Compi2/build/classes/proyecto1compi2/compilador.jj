@@ -738,7 +738,7 @@ void EXP(NodoArbol padre):
 	padre.hijos.add(nodo);
 }
 {
-	(<nulo>	{ nodo2.grafoname=getEtiqueta(); nodo2.cadena="!¡"; nodo.hijos.add(nodo2);}	)? 
+	(<nulo>	{ nodo2.grafoname=getEtiqueta(); nodo2.cadena="nulo"; nodo.hijos.add(nodo2);}	)? 
 			E(nodo)
 //	|<parenti> A() <parentd>
 }
@@ -928,7 +928,7 @@ void SENPARA(NodoArbol padre):
 	padre.hijos.add(nodo);
 }
 {
-	<para> { nodo2.grafoname=getEtiqueta(); nodo2.cadena="para"; nodo.hijos.add(nodo2); } <parenti> INIPARA(nodo) <puntoycoma> LOGICA(nodo) <puntoycoma> <id> { nodo3.grafoname=getEtiqueta(); nodo3.cadena=token.image; nodo3.f=token.beginLine; nodo3.c=token.beginColumn; nodo.hijos.add(nodo3); } FINPARA(nodo) <parentd> <sigabrir> (SENTENCIAS(nodo))? <sigcerrar>
+	<para> { nodo2.grafoname=getEtiqueta(); nodo2.cadena="para"; nodo.hijos.add(nodo2); } <parenti> INIPARA(nodo) <puntoycoma> LOGICA(nodo) <puntoycoma> G(nodo) (FINPARA(nodo))? <parentd> <sigabrir> (SENTENCIAS(nodo))? <sigcerrar>
 }
 
 void INIPARA(NodoArbol padre):
@@ -940,8 +940,8 @@ void INIPARA(NodoArbol padre):
 }
 {
 	DECLARACION(nodo) 
-	| <id> { nodo2.grafoname=getEtiqueta(); nodo2.cadena=token.image; nodo2.f=token.beginLine; nodo2.c=token.beginColumn; nodo.hijos.add(nodo2); } (DIMENSION(nodo))? (ASIGN(nodo))?
-	| TIPO(nodo) <id>  { nodo2.grafoname=getEtiqueta(); nodo2.cadena=token.image; nodo2.f=token.beginLine; nodo2.c=token.beginColumn; nodo.hijos.add(nodo2); } <igual> VALOR(nodo)
+	| G(nodo) (ASIGN(nodo))?
+	| TIPO(nodo) G(nodo) ASIGN(nodo)
 }
 
 
@@ -954,7 +954,7 @@ void FINPARA(NodoArbol padre):
 }
 {
 	<igual> { nodo2.grafoname=getEtiqueta(); nodo2.cadena="="; nodo.hijos.add(nodo2); } VALOR(nodo)
-	|CONT2(nodo) (VALOR(nodo))?
+	|VALOR(nodo)
 }
 void SENMIENTRAS(NodoArbol padre):
 {
@@ -1136,7 +1136,7 @@ void COLOR(NodoArbol padre):
 }
 {
 	C(nodo)
-	|<colore> { nodo2.grafoname=getEtiqueta(); nodo2.cadena=token.image; nodo2.f=token.beginLine; nodo2.c=token.beginColumn; nodo.hijos.add(nodo2); } 
+	|<colore> { nodo2.grafoname=getEtiqueta(); nodo2.cadena=token.image; nodo2.f=token.beginLine; nodo2.c=token.beginColumn; nodo2.ty="cadena"; nodo.hijos.add(nodo2); } 
 	
 }
 

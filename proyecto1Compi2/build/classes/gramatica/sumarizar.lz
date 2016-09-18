@@ -1,0 +1,56 @@
+lienzo l¿
+    var entero arreglo z[5]={5,6,8,9,10}$
+    var entero arreglo x[5][2]={{10,20},{50,70},{90,100},{25,24},{12,13}}$
+    var entero b = 2$
+    var entero c = 3$
+    var entero arreglo a[5][2][3]={{{6,7,8},{9,10,11}},{{12,13,14},{0,1,2}},{{b,b,b},{c,c,c}},{{b,c,b},{c,b,c}},{{1,2,3},{4,5,6}}}$
+    var cadena y = sumarizar(z)$
+    var cadena yy = sumarizar(x)$
+    var cadena yyy = sumarizar(a)$
+    
+    var cadena t = y+"hola"$
+    var cadena tt = yy+"mundo"$
+    var cadena ttt = yyy+"!"$
+    
+    var doble arreglo z1[5]={5.0,6.5,8.0,9.2,10.3}$
+    var doble arreglo x2[5][2]={{10.05,20.15},{50.25,70.35},{90.45,100.55},{25.65,24.75},{12.85,13.95}}$
+    var doble b1 = 2.0$
+    var doble c1 = 3.0$
+    var doble arreglo a1[5][2][3]={{{6.66,7.71,8.3},{9.4,10.76,11.12}},{{12.1,13.1,14.1},{0.5,1.4,2.5}},{{b1,b1,b1},{c1,c1,c1}},{{b1,c1,b1},{c1,b1,c1}},{{1.0,2.0,3.0},{4.0,5.0,6.0}}}$
+    var cadena y1 = sumarizar(z1)$
+    var cadena yy1 = sumarizar(x2)$
+    var cadena yyy1 = sumarizar(a1)$
+    
+    var cadena t1 = y1+"hola"$
+    var cadena tt1 = yy1+"mundo"$
+    var cadena ttt1 = yyy1+"!"$
+    
+    
+    var caracter arreglo z5[5]={'a','b','c','d','e'}$
+    var caracter arreglo x5[5][2]={{'a','b'},{'d','e'},{'g','h'},{'j','k'},{'m','^n'}}$
+    var caracter b5 = 2$
+    var caracter c5 = 3$
+    var caracter arreglo a5[5][2][3]={{{'a','b','5'},{'d','e','f'}},{{'h','i','j'},{'k','l','m'}},{{'o','^n','q'},{'a','b','c'}},{{'a','b','c'},{'d','e','f'}},{{'g','h','i'},{'j','k','l'}}}$
+    var cadena y5 = sumarizar(z5)$
+    var cadena yy5 = sumarizar(x5)$
+    var cadena yyy5 = sumarizar(a5)$
+    
+    var cadena t5 = y5+"hola"$
+    var cadena tt5 = yy5+"mundo"$
+    var cadena ttt5 = yyy5+"!"$
+    
+    var cadena arreglo z6[5]={"hola1","hola2","hola3","hola4","hola5"}$
+    var cadena arreglo x6[5][2]={{"hola1","hola2"},{"hola3","hola4"},{"hola5","hola6"},{"hola7","hola8"},{"hola9","hola10"}}$
+    var cadena b6 = 2$
+    var cadena c6 = 3$
+    var cadena arreglo a6[5][2][3]={{{"hola1","hola2","3"},{"hola4","hola5","6"}},{{"hola7","hola8","9"},{"hola10","hola12","13"}},{{"hola14","hola15","16"},{"hola17","hola18","19"}},{{"hola20","hola21","22"},{"hola23","hola24","25"}},{{"hola26","hola27","28"},{"hola29","hola30","31"}}}$
+    var cadena y6 = sumarizar(z6)$
+    var cadena yy6 = sumarizar(x6)$
+    var cadena yyy6 = sumarizar(a6)$
+    
+    var cadena t6 = y6+"hola"$
+    var cadena tt6 = yy6+"mundo"$
+    var cadena ttt6 = yyy6+"!"$
+    var cadena su = sumarizar({"1","3","4","sumarizar","5"})$
+    
+?

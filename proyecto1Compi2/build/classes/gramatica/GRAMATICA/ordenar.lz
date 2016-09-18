@@ -1,0 +1,46 @@
+lienzo l¿
+    var entero arreglo z[5]={9,6,5,8,7}$
+    ordenar(arreglo z,tipo descendente)$
+    var entero r1 = z[0]$
+    var entero r2 = z[1]$
+    var entero r3 = z[2]$
+    var entero r4 = z[3]$
+    var entero r5 = z[4]$
+    var cadena res0 = r1+r2+r3+r4+r5 $
+    
+    var doble arreglo a[5]={10.0,6.5,5.4,5.3,6.3}$
+    ordenar(arreglo a,tipo descendente)$
+    var cadena r6 = a[0]$
+    var cadena r7 = a[1]$
+    var cadena r8 = a[2]$
+    var cadena r9 = a[3]$
+    var cadena r10 = a[4]$
+    var cadena res = r6+r7+r8+r9+r10$
+    
+    var entero arreglo zz[2][5]={{9,6,5,8,7},{4,12,6,0,2}}$
+    ordenar(arreglo zz,tipo descendente)$
+    var entero rr1 = zz[0][0]$
+    var entero rr2 = zz[0][1]$
+    var entero rr3 = zz[0][2]$
+    var entero rr4 = zz[0][3]$
+    var entero rr5 = zz[0][4]$
+    var entero rr6 = zz[1][0]$
+    var entero rr7 = zz[1][1]$
+    var entero rr8 = zz[1][2]$
+    var entero rr9 = zz[1][3]$
+    var entero rr0 = zz[1][4]$
+    
+    var doble arreglo aa[2][5]={{9.5,6.3,4.5,1.8,1.7},{1.4,12.3,6.5,0.4,2.4}}$
+    ordenar(arreglo aa,tipo descendente)$
+    var doble bb1 = aa[0][0]$
+    var doble bb2 = aa[0][1]$
+    var doble bb3 = aa[0][2]$
+    var doble bb4 = aa[0][3]$
+    var doble bb5 = aa[0][4]$
+    var doble bb6 = aa[1][0]$
+    var doble bb7 = aa[1][1]$
+    var doble bb8 = aa[1][2]$
+    var doble bb9 = aa[1][3]$
+    var doble bb0 = aa[1][4]$      
+
+?

@@ -1,0 +1,23 @@
+publico Lienzo Kaya extiende heredado1,heredado2¿
+    var entero a = 'c'$
+    var entero b = 'c'$
+    
+    privado metodo1(entero x)¿
+        var entero kasha=150$
+        kasha=20$
+        metodo11()$
+    ?
+    metodo11()¿
+        var entero dd=12$
+        retorna dd$
+    ?
+    
+    principal()¿
+        mheredado2()$
+        mheredado1(5)$
+        metodo11()$
+       
+    ?
+    
+    
+?

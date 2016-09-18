@@ -14,7 +14,7 @@ import java.util.ArrayList;
 public class ListaArreglo {
     
     public ArrayList<String> dimension = new ArrayList<String>();
-    public ListaArreglo siguientedim = new ListaArreglo();
+    public ArrayList<ListaArreglo> siguientedim = new ArrayList<ListaArreglo>();
     
     ListaArreglo(){
     }

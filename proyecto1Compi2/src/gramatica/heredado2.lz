@@ -1,0 +1,28 @@
+protegido Lienzo heredado2 extiende heredado3¿
+    >>comentario heredado 2
+    var boolean cond = true$
+    
+    si(cond==true)¿
+        var entero hola = 5$
+    ?
+    
+    si(cond==false)¿
+        var entero mundo =10$
+    ?
+    sino¿
+        var cadena holamnudo = hola$
+    ?
+
+
+	conservar mheredado2()¿
+		var doble uno$
+		mheredado3()$
+	?
+	mheredado2(entero k)¿
+		var entero dos$
+	?
+	mheredado2(entero k,entero l)¿
+		var entero tres$
+	?
+	>>metodo5()$
+?
